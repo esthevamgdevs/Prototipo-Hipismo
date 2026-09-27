@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-27T13:26:57.958Z",
+ "atualizadoEm": "2026-09-27T15:27:12.108Z",
  "torneios": [
   {
    "id": 3404,
@@ -10247,8 +10247,14 @@
      "hora": "12:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 138
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "MARIANA SERRATO PASQUALINI"
+     },
+     "oe": 138,
+     "n": 1
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3487"
