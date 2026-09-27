@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-27T18:30:02.770Z",
+ "atualizadoEm": "2026-09-27T20:26:57.383Z",
  "torneios": [
   {
    "id": 3404,
@@ -10100,7 +10100,7 @@
    "nome": "CAMPEONATO PAULISTA AMAZONAS INICIANTE - 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "SOCIEDADE HIPICA DE CAMPINAS",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-09-23",
    "fim": "2026-09-27",
    "provas": [
@@ -10250,11 +10250,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "MARINA CAVALCANTI LEAL"
+      "c": "ANA LUIZA CARLINI ESPER",
+      "h": "TRIDIMENSIONAL"
      },
      "oe": 138,
-     "n": 1
+     "n": 137
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3487"
