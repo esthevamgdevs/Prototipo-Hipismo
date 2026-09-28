@@ -220,6 +220,9 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .destaque-aviso .quando{color:var(--ouro-claro)}}
 :root[data-theme="dark"] .destaque-aviso .quando{color:var(--ouro-claro)}
 
+/* selo dos cavalos vendidos pela Opportunity */
+.selo-opp{display:inline-flex;align-items:center;margin-left:6px;padding:0 5px;border:1px solid var(--ouro);border-radius:3px;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.05em;line-height:15px;color:var(--ouro-escuro);vertical-align:1px;white-space:nowrap}
+.venda-opp{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:2px;padding:6px 10px;border:1px solid var(--ouro);border-radius:4px;font-size:12.5px;font-weight:600;color:inherit}
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -296,7 +299,7 @@ const push = { estado: 'verificando', reg: null, sub: null, ocupado: false, erro
 // ---------- estado ----------
 const S = {
   aba: 'calendario', tela: null, erro: null,
-  dados: null, stats: null, busca: null, destaques: null,
+  dados: null, stats: null, busca: null, destaques: null, vendidos: null,
   torneios: {}, perfis: {},
   cat: 'Todas', altura: 'todas', soSalvos: false,
   torneio: null, dia: null, prova: null, filtro: '',
@@ -335,6 +338,8 @@ async function carregar() {
   try { S.stats = await pegar(`${BASE}/stats.json`); render(); } catch {}
   // destaques são escritos à mão em data/hipica/destaques.json e o coletor não mexe neles
   try { S.destaques = await pegar(`${BASE}/destaques.json`); render(); } catch {}
+  // cavalos vendidos pela Opportunity: o app marca cada um com um selo onde ele aparecer
+  try { const v = await pegar(`${BASE}/vendidos.json`); S.vendidos = new Map((v.cavalos || []).map(x => [x.k, x])); render(); } catch {}
 }
 async function carregarTorneio(id) {
   if (S.torneios[id]) return;
@@ -534,6 +539,8 @@ const torneioVisivel = t => !cancelado(t)
   && !(t.inicio && t.inicio <= hojeISO() && t.todasProvas && !t.todasProvas.length);
 const achar = id => S.dados.torneios.find(t => t.id === +id);
 const destaqueDe = t => (S.destaques && S.destaques[String(t.id)]) || null;
+const vendidoDe = nomeCavalo => (S.vendidos && S.vendidos.get(chave(nomeCavalo))) || null;
+const seloOpp = nomeCavalo => vendidoDe(nomeCavalo) ? `<span class="selo-opp" title="Vendido pela Opportunity Leilões">Opportunity</span>` : '';
 const numProva = p => String(p.numero).replace(/^0+(?=\d)/, '');
 function provaDestaque(t) {
   const com = t.provas.filter(p => p.res && p.v);
@@ -734,7 +741,7 @@ function telaProva() {
         ${roseta(l.p, 38)}
         <span class="conj" style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(l.c))}</span>
-          <span class="meta">${esc(titulo(l.h))}${f ? ' · ' + esc(fedCurta(f)) : ''}</span>
+          <span class="meta">${esc(titulo(l.h))}${seloOpp(l.h)}${f ? ' · ' + esc(fedCurta(f)) : ''}</span>
         </span>
         <span class="res"><b>${l.s ? esc(l.s) : fmtN((des || perc)?.[0]) + ' · ' + fmtT((des || perc)?.[1])}</b><span>${des ? 'desempate' : 'percurso'}</span></span>
       </button>`;
@@ -783,7 +790,7 @@ function linhasCruzadas(lista, resultadoDo, proximo, p) {
         <span style="font-size:11.5px;color:var(--muted)">${fmtN(perc && perc[0])} flt · ${fmtT(perc && perc[1])}</span></span>`;
     return `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(o.c))}" style="${r ? '' : 'opacity:.72'}">
       <span class="pos">${o.o}</span>
-      <span class="conj"><span class="cav">${esc(titulo(o.c))}</span><span class="cavalo">${esc(titulo(o.h))}${o.cat ? ' · ' + esc(o.cat) : ''}</span></span>
+      <span class="conj"><span class="cav">${esc(titulo(o.c))}</span><span class="cavalo">${esc(titulo(o.h))}${seloOpp(o.h)}${o.cat ? ' · ' + esc(o.cat) : ''}</span></span>
       <span class="f" style="width:92px">${res}</span>
     </button>`;
   }).join('');
@@ -805,7 +812,7 @@ function linhasOrdem(lista) {
   if (!lista.length) return `<div class="vazio">Ninguém encontrado com esse nome.</div>`;
   return lista.map(l => `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
       <span class="pos">${l.o}</span>
-      <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}</span></span>
+      <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span></span>
       <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span>
     </button>`).join('');
 }
@@ -816,7 +823,7 @@ function corpoLinhas(linhas, fed, ordemDoCavalo) {
     const entrou = ordemDoCavalo && ordemDoCavalo.get(chave(l.h));
     return `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
       <span class="pos">${l.p}</span>
-      <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${f ? ' · ' + esc(fedCurta(f)) : ''}${entrou ? ` · entrou em ${entrou}º` : ''}</span></span>
+      <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}${f ? ' · ' + esc(fedCurta(f)) : ''}${entrou ? ` · entrou em ${entrou}º` : ''}</span></span>
       <span class="f${!l.s && perc?.[0] === 0 ? ' zero' : ''}">${l.s ? `<span class="status">${esc(l.s)}</span>` : fmtN(perc?.[0])}</span>
       <span class="t">${l.s || !perc ? '–' : fmtT(perc[1])}</span>
     </button>`;
@@ -917,12 +924,13 @@ function telaRanking() {
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações']].map(([k, t]) =>
+        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações'], ...(S.stats?.opp?.cavalos?.length ? [['opp', 'Opportunity']] : [])].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
   if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
   const t = S.stats.totais;
+  if (S.rankTipo === 'opp' && S.stats.opp) return capa + telaVendidosOpp(S.stats.opp);
   let corpo = `<main class="fade"><div class="secao"><h2>${S.rankTipo === 'clubes' ? 'Por federação' : 'Por vitórias'}</h2><span class="risco"></span></div><div class="podio">`;
   if (S.rankTipo === 'clubes') {
     corpo += (S.stats.clubes || []).map((c, i) => `<div class="linha-podio">
@@ -938,13 +946,37 @@ function telaRanking() {
       return `<button class="linha-podio" data-perfil="${S.rankTipo}" data-k="${esc(r.k)}">
         ${pos <= 3 ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${pos}</span>`}
         <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
-          <span class="nome">${esc(titulo(r.nome))}</span>
+          <span class="nome">${esc(titulo(r.nome))}${S.rankTipo === 'cavalos' ? seloOpp(r.nome) : ''}</span>
           <span class="meta">${r.fed ? esc(r.fed) + ' · ' : ''}${r.l} largadas · ${r.po} pódios</span></span>
         <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
     }).join('');
   }
   corpo += `</div><p class="fonte">Contagem do Pista em ${t.torneios} torneios, ${t.cavaleiros.toLocaleString('pt-BR')} cavaleiros e ${t.percursos.toLocaleString('pt-BR')} percursos de ${(S.stats.desde || '').slice(0, 4)}, a partir dos resultados públicos da FPH. Não é o ranking oficial da federação.</p></main>`;
   return capa + corpo;
+}
+
+function telaVendidosOpp(opp) {
+  const t = opp.totais;
+  let pos = 0, ult = null;
+  return `<main class="fade">
+    <div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <div><b>${t.cavalos}</b><span>cavalos em pista</span></div>
+      <div><b>${t.largadas.toLocaleString('pt-BR')}</b><span>largadas</span></div>
+      <div><b style="color:var(--ouro-escuro)">${t.vitorias}</b><span>vitórias</span></div>
+      <div><b>${t.podios}</b><span>pódios</span></div>
+    </div>
+    <div class="secao"><h2>Vendidos pela Opportunity</h2><span class="risco"></span></div>
+    <div class="podio">${opp.cavalos.map((r, i) => {
+      if (r.v !== ult) { pos = i + 1; ult = r.v; }
+      return `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(r.k)}">
+        ${pos <= 3 && r.v > 0 ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${pos}</span>`}
+        <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span class="nome">${esc(titulo(r.nome))}</span>
+          <span class="meta">${esc(titulo(r.leilao))}${r.ano ? ', ' + r.ano : ''} · ${r.l} largadas${r.max ? ' · até ' + fmtAlt(r.max) : ''}</span></span>
+        <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
+    }).join('')}</div>
+    <p class="fonte">Cavalos vendidos em leilões da Opportunity que competiram nesta temporada nos torneios do sistema da FPH. A identificação é feita pelo nome do animal.</p>
+  </main>`;
 }
 
 function telaPerfil() {
@@ -961,7 +993,9 @@ function telaPerfil() {
   const pct = p.l ? Math.round(p.z / p.l * 100) : 0;
   const alturas = Object.entries(p.alt || {}).sort((a, b) => b[0].localeCompare(a[0]));
   const maxL = Math.max(1, ...alturas.map(([, v]) => v[0]));
+  const venda = !pessoa && vendidoDe(p.nome);
   let corpo = cab(p.nome) + `<span class="sub">${p.fed ? esc(p.fed) + ' · ' : ''}${p.par?.length ? (pessoa ? 'Monta ' : 'Montado por ') + esc(titulo(p.par[0].n)) : ''}</span>
+    ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
     <div class="acoes"><button class="btn ouro" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">★ ${seguido ? 'Seguindo' : (pessoa ? 'Seguir cavaleiro' : 'Seguir cavalo')}</button></div>
     </header><main class="fade">
     <div class="stats">
