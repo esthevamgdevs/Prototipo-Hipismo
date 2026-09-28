@@ -298,6 +298,8 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
+const VERSAO_APP = '28/09/2026 · 17h40';
+
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
 const PUSH = {
@@ -929,6 +931,7 @@ function telaSobre() {
     <div class="painel"><h3>Seus dados</h3>
       <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">O que você salva e segue fica guardado só neste aparelho, no seu navegador. Nada é enviado para lugar nenhum e não existe cadastro.</p>
     </div>
+    <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
 }
 
@@ -938,13 +941,13 @@ function telaRanking() {
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações'], ...(S.stats?.opp?.totais?.cavalos ? [['opp', 'Opportunity']] : [])].map(([k, t]) =>
+        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações'], ...((S.stats?.opp?.totais?.cavalos || S.vendidos?.size) ? [['opp', 'Opportunity']] : [])].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
   if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
   const t = S.stats.totais;
-  if (S.rankTipo === 'opp' && S.stats.opp) return capa + telaVendidosOpp();
+  if (S.rankTipo === 'opp') return capa + telaVendidosOpp();
   let corpo = `<main class="fade"><div class="secao"><h2>${S.rankTipo === 'clubes' ? 'Por federação' : 'Por vitórias'}</h2><span class="risco"></span></div><div class="podio">`;
   if (S.rankTipo === 'clubes') {
     corpo += (S.stats.clubes || []).map((c, i) => `<div class="linha-podio">
