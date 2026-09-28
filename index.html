@@ -630,7 +630,8 @@ function telaCalendario() {
     let mes = '';
     lista.forEach(t => {
       const m = t.inicio.slice(0, 7);
-      if (m !== mes) { corpo += `<div class="secao"><h2>${titulo(MES_LONGO[+m.slice(5) - 1])}</h2><span class="risco"></span></div><div class="lista">`; mes = m; }
+      // fecha a lista do mês anterior antes de abrir a do próximo (sem isso cada mês ficava dentro do anterior)
+      if (m !== mes) { corpo += `${mes ? '</div>' : ''}<div class="secao"><h2>${titulo(MES_LONGO[+m.slice(5) - 1])}</h2><span class="risco"></span></div><div class="lista">`; mes = m; }
       corpo += cartaoTorneio(t, false);
     });
     corpo += '</div>';
