@@ -243,6 +243,8 @@ nav.abas button{flex:1;min-height:64px;display:flex;flex-direction:column;align-
 nav.abas button b{width:18px;height:3px;border-radius:2px;background:transparent;display:block}
 nav.abas button[aria-current="page"]{color:var(--verde);font-weight:700}
 nav.abas button[aria-current="page"] b{background:var(--ouro)}
+/* com cinco abas, textos um pouco menores para caber em telas estreitas */
+nav.abas.cinco button{font-size:10.5px;letter-spacing:-.01em}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) nav.abas button[aria-current="page"]{color:var(--ouro-claro)}}
 :root[data-theme="dark"] nav.abas button[aria-current="page"]{color:var(--ouro-claro)}
 
@@ -298,7 +300,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '28/09/2026 · 17h40';
+const VERSAO_APP = '28/09/2026 · 20h50';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -512,11 +514,14 @@ function marcaSvg(t = 26) {
   // oxer com a trajetória do salto: marca do Salta
   return `<svg width="${t}" height="${t}" viewBox="0 0 100 100" fill="none" aria-hidden="true" style="flex:none"><path d="M6 88C10 46 26 20 50 20s40 26 44 68" stroke="#D9B45A" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 14" fill="none"></path> <rect x="20" y="50" width="52" height="7" rx="3.5" fill="#A8801F"></rect> <rect x="18" y="40" width="8" height="36" rx="4" fill="#7E9A8D"></rect> <rect x="66" y="40" width="8" height="36" rx="4" fill="#7E9A8D"></rect> <rect x="28" y="64" width="52" height="8" rx="4" fill="#D9B45A"></rect> <rect x="26" y="54" width="10" height="38" rx="5" fill="#F4F1EA"></rect> <rect x="72" y="54" width="10" height="38" rx="5" fill="#F4F1EA"></rect></svg>`;
 }
+// símbolo do Salta em uma cor só, para a aba Opportunity
+const iconeOpp = `<svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M6 88C10 46 26 20 50 20s40 26 44 68" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 14"/><rect x="20" y="50" width="52" height="7" rx="3.5" fill="currentColor" opacity=".55"/><rect x="28" y="64" width="52" height="8" rx="4" fill="currentColor"/><rect x="26" y="54" width="10" height="38" rx="5" fill="currentColor"/><rect x="72" y="54" width="10" height="38" rx="5" fill="currentColor"/></svg>`;
+const temOpp = () => !!(S.vendidos?.size || S.stats?.opp?.totais?.cavalos);
 function abas() {
-  const itens = [['calendario', 'Calendário'], ['resultados', 'Resultados'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking']];
+  const itens = [['calendario', 'Calendário'], ['resultados', 'Resultados'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
   const naAba = !S.tela;
-  return `<nav class="abas"><div class="inner">${itens.map(([k, t]) =>
-    `<button data-aba="${k}" aria-current="${naAba && S.aba === k ? 'page' : 'false'}">${svg(ICONES[k])}${t}<b></b></button>`).join('')}</div></nav>`;
+  return `<nav class="abas${itens.length > 4 ? ' cinco' : ''}"><div class="inner">${itens.map(([k, t]) =>
+    `<button data-aba="${k}" aria-current="${naAba && S.aba === k ? 'page' : 'false'}">${k === 'opp' ? iconeOpp : svg(ICONES[k])}${t}<b></b></button>`).join('')}</div></nav>`;
 }
 const voltar = (acao, texto) => `<button class="voltar" data-acao="${acao}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>${esc(texto)}</button>`;
 
@@ -941,13 +946,13 @@ function telaRanking() {
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações'], ...((S.stats?.opp?.totais?.cavalos || S.vendidos?.size) ? [['opp', 'Opportunity']] : [])].map(([k, t]) =>
+        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações']].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
   if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
   const t = S.stats.totais;
-  if (S.rankTipo === 'opp') return capa + telaVendidosOpp();
+
   let corpo = `<main class="fade"><div class="secao"><h2>${S.rankTipo === 'clubes' ? 'Por federação' : 'Por vitórias'}</h2><span class="risco"></span></div><div class="podio">`;
   if (S.rankTipo === 'clubes') {
     corpo += (S.stats.clubes || []).map((c, i) => `<div class="linha-podio">
@@ -977,6 +982,16 @@ async function carregarOpp() {
   S.opp = 'carregando';
   try { S.opp = await pegar(`${BASE}/opp.json`); } catch { S.opp = 'erro'; }
   render();
+}
+function telaOpp() {
+  const t = S.opp && typeof S.opp === 'object' ? S.opp.totais : S.stats?.opp?.totais;
+  const capa = `<header class="capa">
+      <div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
+      <span class="olho">VENDIDOS PELA OPPORTUNITY</span>
+      <h1>Nossos cavalos em pista</h1>
+      <span class="sub">${t ? `${t.cavalos} cavalos vendidos em leilões da Opportunity competindo na temporada` : 'Cavalos vendidos em leilões da Opportunity competindo na temporada'}</span>
+    </header>`;
+  return capa + telaVendidosOpp();
 }
 function telaVendidosOpp() {
   if (!S.opp || S.opp === 'carregando') { carregarOpp(); return `<main><div class="vazio">Carregando os cavalos vendidos…</div></main>`; }
@@ -1199,6 +1214,7 @@ function render() {
   else if (S.aba === 'resultados') html = telaResultados();
   else if (S.aba === 'seguindo') html = telaSeguindo();
   else if (S.aba === 'ranking') html = telaRanking();
+  else if (S.aba === 'opp') html = telaOpp();
   else html = telaCalendario();
   app.innerHTML = html + abas() + folhaCompartilhar();
   const sel = document.getElementById('altura'); if (sel) sel.value = S.altura;
@@ -1234,7 +1250,7 @@ document.addEventListener('click', e => {
   if (d.acao === 'desativarAvisos') return desativarAvisos();
   if (d.cat) { S.cat = d.cat; return render(); }
   if (d.dia) { S.dia = d.dia; return render(); }
-  if (d.rank) { S.rankTipo = d.rank; return render(); }
+  if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
   if (d.abrirProva) {
     const [ti, pid] = d.abrirProva.split(':').map(Number);
