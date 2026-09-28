@@ -119,8 +119,26 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     .slice(0, 50)
     .map(({ k, nome, fed, l, v, po, z }) => ({ k, nome, fed, l, v, po, z }));
 
+  // Cavalos vendidos pela Opportunity (lista mantida à mão em data/hipica/vendidos.json)
+  let opp = null;
+  try {
+    const vendidos = JSON.parse(await fs.readFile(path.join(saida, 'vendidos.json'), 'utf8')).cavalos || [];
+    const lista = vendidos.map(x => {
+      const h = cavalos.get(x.k);
+      if (!h) return null;
+      const perfil = arruma(h, false);
+      const alts = Object.keys(perfil.alt || {}).map(Number);
+      return { k: x.k, nome: perfil.nome, leilao: x.leilao, ano: x.ano, l: perfil.l, v: perfil.v, po: perfil.po, z: perfil.z, max: alts.length ? Math.max(...alts) : null };
+    }).filter(Boolean).sort((a, b) => b.v - a.v || b.po - a.po || b.l - a.l);
+    opp = {
+      totais: { cavalos: lista.length, largadas: lista.reduce((s, x) => s + x.l, 0), vitorias: lista.reduce((s, x) => s + x.v, 0), podios: lista.reduce((s, x) => s + x.po, 0) },
+      cavalos: lista,
+    };
+  } catch { /* sem lista de vendidos: o app simplesmente não mostra a seção */ }
+
   const stats = {
     atualizadoEm: new Date().toISOString(),
+    opp,
     desde: anoDe,
     totais: {
       torneios: torneios.filter(t => t.fim >= anoDe && t.provas.some(p => p.res)).length,
