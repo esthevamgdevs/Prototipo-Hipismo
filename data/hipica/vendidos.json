@@ -1,0 +1,1000 @@
+{
+ "_sobre": "Cavalos vendidos pela Opportunity Leilões que competem na temporada. Chave = nome do cavalo como aparece nos resultados da FPH, sem acentos e pontuação. Para incluir um cavalo, acrescente um item com a chave, o leilão e o ano da venda.",
+ "cavalos": [
+  {
+   "k": "AEROSMITH TF IA",
+   "leilao": "LEILÃO VIRTUAL HARAS ATF",
+   "ano": 2018
+  },
+  {
+   "k": "AG CAPRIOLE",
+   "leilao": "6º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2024
+  },
+  {
+   "k": "AMARULA JMEN IA",
+   "leilao": "LEILÃO VIRTUAL AGROMEN",
+   "ano": 2020
+  },
+  {
+   "k": "ARAMIS FLORES TE",
+   "leilao": "6º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2024
+  },
+  {
+   "k": "BALDWIN JMEN II TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "BALOU B IMPERIO EGIPCIO TE",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "BALOUVILLE FLORES TE",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "BARBACENA JMEN",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "BARISTHO JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "BARON ROUGE JMEN II",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "BELLA DIAMANT DO FEROLETO IA",
+   "leilao": "3º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "BELLA ROSA JMEN TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "BIG SILVER W CZ IA",
+   "leilao": "1º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "BRUNELLO AGROMIX IA",
+   "leilao": "LEILÃO VIRTUAL OPEN SALES - CAVALOS DE SALTOS",
+   "ano": 2018
+  },
+  {
+   "k": "BULGARY IV JMEN",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "BURGUESA JMEN",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "C TAISSA JMEN",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "C TANARA II JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "C THUANY JMEN IA",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "C THUMBLER JMEN II TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "C TOBRUK JMEN IA",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "C TOSCANO I JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "C TROPICALIA JMEN",
+   "leilao": "LEILÃO VIRTUAL AGROMEN",
+   "ano": 2020
+  },
+  {
+   "k": "CABERNET DAS UMBURANAS",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - SUMMER",
+   "ano": 2022
+  },
+  {
+   "k": "CABOCHON JMEN IA",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CAIRO JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CAITANA JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CALISKANE JMEN",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CALIXTO JMEN",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CALVANA BR IA",
+   "leilao": "LEILÃO BREEDING STARS",
+   "ano": 2017
+  },
+  {
+   "k": "CALVIN KLEIN JMEN II TE",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CALVIN KLEIN JMEN TE",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CAMELIE C JMEN V",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CAMPBELLA C JMEN",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CANDICE BERGEN JMEN",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CANDORRA JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CANOSO JMEN I TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CANOSO JMEN II TE",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CANTHAGO JMEN IA",
+   "leilao": "LEILÃO VIRTUAL DEJET - CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "CANTHAGO JMEN IA",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CARA MIA JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CARACALLA JMEN TE",
+   "leilao": "LEILÃO VIRTUAL AGROMEN",
+   "ano": 2020
+  },
+  {
+   "k": "CARBACANY C II JMEN",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CARBALARA C JMEN",
+   "leilao": "35º LEILÃO HARAS AGROMEN",
+   "ano": 2025
+  },
+  {
+   "k": "CARBARUTH JMEN",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CARBATOSCA III JMEN",
+   "leilao": "35º LEILÃO HARAS AGROMEN",
+   "ano": 2025
+  },
+  {
+   "k": "CARBELLA C JMEN V TE",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CAROLA C JMEN V",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CARTER V A",
+   "leilao": "LEILÃO BREEDING STARS",
+   "ano": 2017
+  },
+  {
+   "k": "CARTIER JMEN II TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CASABELLA JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CASALLENA JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CASALLIA JMEN IA",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CASALTINA JMEN TE",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CASARELO HCRUZ",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP WINTER",
+   "ano": 2024
+  },
+  {
+   "k": "CASARENA III JMEN",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CASARENA JMEN II TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CASARETTO JMEN",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CASELLO JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CASHMAN JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CASINELLO III JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CASPER JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CASSANA C JMEN TE",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CASSILANO JMEN V TE",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CASTA DIVA II JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CAT WAR CZ IA",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "CELANDINE C JMEN III TE",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CELTIC GIRL JMEN II IA",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CHALISE JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CHALOW JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CHAMBERLAIN I JMEN",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CHANDRON JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CHAPLIN JMEN",
+   "leilao": "10º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2026
+  },
+  {
+   "k": "CHAPMAN BOY JB",
+   "leilao": "4º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "CHAPO CHACCO ENTREVERO",
+   "leilao": "LEILÃO SMART JUMP PRIME",
+   "ano": 2022
+  },
+  {
+   "k": "CHARLE JMEN",
+   "leilao": "35º LEILÃO HARAS AGROMEN",
+   "ano": 2025
+  },
+  {
+   "k": "CHARMANT C JMEN TE",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "CHGV KAISER TE",
+   "leilao": "3º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "CITY HEAT Z",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "CLACK JMEN TE",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CLAKSON B JMEN IV TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CLARISSA JMEN TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CLOONEY JMEN II TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "COLIBRI C JMEN II",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "COMANCHERO C JMEN II TE",
+   "leilao": "LEILÃO VIRTUAL DEJET - CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "CONTINI JMEN TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "COOL GIRL C JMEN II TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "CORDIGRAPH II JMEN",
+   "leilao": "35º LEILÃO HARAS AGROMEN",
+   "ano": 2025
+  },
+  {
+   "k": "CORIELLO JMEN",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CORNANDA JMEN TE",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "CORNET FINEST JMEN II",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CORNET GIFT BR TE",
+   "leilao": "1º LEILÃO SMART JUMP - CAVALOS DE SALTO",
+   "ano": 2017
+  },
+  {
+   "k": "CORNET ONE JMEN I TE",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CORNET SKY JMEN IA",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CORNET SNIF JMEN IA",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CORNETANA JMEN",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "CORNETTA JMEN IA",
+   "leilao": "II LEILÃO AGROMEN WINTER",
+   "ano": 2025
+  },
+  {
+   "k": "CRISTALLO JMEN",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "CRM ONE SHOT",
+   "leilao": "4º LEILÃO VIRTUAL IHORSES",
+   "ano": 2023
+  },
+  {
+   "k": "CS ERAGON",
+   "leilao": "10º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2026
+  },
+  {
+   "k": "DANCE STAR I JMEN",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "DANCE STAR II JMEN TE",
+   "leilao": "33º LEILÃO HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "DANESSA JMEN II TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "DEBORAH JMEN IA",
+   "leilao": "LEILÃO DE VERÃO JMEN",
+   "ano": 2022
+  },
+  {
+   "k": "DIAMANTHUS JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "DIAMANTINO DA PENINSULA IA",
+   "leilao": "5º LEILÃO VIRTUAL DEJET CLASSIC'S",
+   "ano": 2024
+  },
+  {
+   "k": "DIULIA JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "DOMINIQUE MYSTIC ROSE TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - WINTER",
+   "ano": 2022
+  },
+  {
+   "k": "DON GREGORY JMEN TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "DOROTHEIA JMEN",
+   "leilao": "II LEILÃO AGROMEN WINTER",
+   "ano": 2025
+  },
+  {
+   "k": "DROSA BALOUGEM TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP SPRING",
+   "ano": 2020
+  },
+  {
+   "k": "EC KONNAN IA",
+   "leilao": "6º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2024
+  },
+  {
+   "k": "ELVIS GIRL BR",
+   "leilao": "LEILÃO BREEDING STARS",
+   "ano": 2017
+  },
+  {
+   "k": "EMOTION BR",
+   "leilao": "1º LEILÃO HARAS BR & CONVIDADOS",
+   "ano": 2024
+  },
+  {
+   "k": "EPLEASER BR",
+   "leilao": "2º LEILÃO HARAS BR & CONVIDADOS",
+   "ano": 2025
+  },
+  {
+   "k": "EXPECTANCY BR",
+   "leilao": "1º LEILÃO HARAS BR & CONVIDADOS",
+   "ano": 2024
+  },
+  {
+   "k": "FANNAN LOAR TE",
+   "leilao": "LEILÃO ONLINE HARAS LOAR",
+   "ano": 2018
+  },
+  {
+   "k": "FELINA LOAR IA",
+   "leilao": "LEILÃO ONLINE HARAS LOAR",
+   "ano": 2018
+  },
+  {
+   "k": "FETICHE DE BLUE 3K IA",
+   "leilao": "5º LEILÃO VIRTUAL DEJET CLASSIC'S",
+   "ano": 2024
+  },
+  {
+   "k": "FLORINDA B JMEN III IA",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "FOR EMOTION JMEN IA",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "FREDERICO SI IA",
+   "leilao": "LEILÃO VIRTUAL DEJET - CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "GARDENIA MYSTIC ROSE TE",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "GARDENIA MYSTIC ROSE TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - SUMMER",
+   "ano": 2022
+  },
+  {
+   "k": "GB ARGEL TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - SUMMER",
+   "ano": 2022
+  },
+  {
+   "k": "GLOCK BR IA",
+   "leilao": "5º LEILÃO VIRTUAL DEJET CLASSIC'S",
+   "ano": 2024
+  },
+  {
+   "k": "HFB ECCO II IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - SPRING",
+   "ano": 2021
+  },
+  {
+   "k": "HFB KINSEI IA",
+   "leilao": "1º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "HFG NUMERO DOS IA",
+   "leilao": "2º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "HIGH FLY DA ESSENCIA TE",
+   "leilao": "5º LEILÃO VIRTUAL DEJET CLASSIC'S",
+   "ano": 2024
+  },
+  {
+   "k": "HPH EMERLO TRV TE",
+   "leilao": "LEILÃO SMART JUMP PRIME",
+   "ano": 2022
+  },
+  {
+   "k": "HPH HANADIA TRV TE",
+   "leilao": "4º LEILÃO VIRTUAL IHORSES",
+   "ano": 2023
+  },
+  {
+   "k": "HSF GIUSTO",
+   "leilao": "LEILÃO VIRTUAL OPEN SALES - CAVALOS DE SALTOS",
+   "ano": 2018
+  },
+  {
+   "k": "HSF JAZZ TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - WINTER",
+   "ano": 2021
+  },
+  {
+   "k": "HST CATRINA TE",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "HUNTER JOSILMAR",
+   "leilao": "10º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2026
+  },
+  {
+   "k": "ICHIBAN GFC",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP SUMMER",
+   "ano": 2024
+  },
+  {
+   "k": "JADE DA SANTA HELENA TE",
+   "leilao": "4º LEILÃO VIRTUAL IHORSES",
+   "ano": 2023
+  },
+  {
+   "k": "JADE METODO IA",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "JCR VENEZIA IA",
+   "leilao": "1º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "JF KUBA IA",
+   "leilao": "4º LEILÃO VIRTUAL IHORSES",
+   "ano": 2023
+  },
+  {
+   "k": "JIGSAW MAPOCHO",
+   "leilao": "9º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2026
+  },
+  {
+   "k": "JOCASTA POLANA",
+   "leilao": "LEILÃO VIRTUAL POLANA HIPERFORMANCE SPORTHORSES",
+   "ano": 2018
+  },
+  {
+   "k": "JOLIE CHCP IA",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "JORDAN TB",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - SUMMER",
+   "ano": 2020
+  },
+  {
+   "k": "K LUPI DA CABANA IA",
+   "leilao": "3º LEILÃO VIRTUAL IHORSES",
+   "ano": 2022
+  },
+  {
+   "k": "KALANDA JMEN TE",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "KANNANTHUS JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "KARAJAN JMEN IA",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "KAUANY JMEN",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "KEANU JMEN IA",
+   "leilao": "31º LEILÃO HARAS AGROMEN 2021",
+   "ano": 2021
+  },
+  {
+   "k": "KENTUCKY G IA",
+   "leilao": "6º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2024
+  },
+  {
+   "k": "KEVIN JMEN TE",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "LA PERFECCION ADMIRACION IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - WINTER",
+   "ano": 2021
+  },
+  {
+   "k": "LITTLE KING JMEN IA",
+   "leilao": "LEILÃO VIRTUAL HARAS AGROMEN",
+   "ano": 2023
+  },
+  {
+   "k": "LOKI TB IA",
+   "leilao": "3º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "LUKE GMS IA",
+   "leilao": "4º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "MIRELA JMEN TE",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "MISS JMEN TE",
+   "leilao": "II LEILÃO AGROMEN WINTER",
+   "ano": 2025
+  },
+  {
+   "k": "MITO DA CABANA IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - WINTER",
+   "ano": 2021
+  },
+  {
+   "k": "NALVARO BR TE",
+   "leilao": "LEILÃO BREEDING STARS",
+   "ano": 2017
+  },
+  {
+   "k": "NHA BENTA DA CABANA IA",
+   "leilao": "LEILÃO VIRTUAL DEJET - CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "NICK COOPER",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "NICOLE JMEN IA",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "NOBLE LADY JMEN IA",
+   "leilao": "30º LEILÃO HARAS AGROMEN 2020",
+   "ano": 2020
+  },
+  {
+   "k": "NORTON G",
+   "leilao": "5º LEILÃO VIRTUAL DEJET CLASSIC'S",
+   "ano": 2024
+  },
+  {
+   "k": "OH BALOU DA SANTA ESMERALDA TE",
+   "leilao": "3º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "ONIX TW",
+   "leilao": "II LEILÃO VIRTUAL SMART JUMP",
+   "ano": 2019
+  },
+  {
+   "k": "QUADRILLE FLORES TE",
+   "leilao": "6º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2024
+  },
+  {
+   "k": "QUANTICO TW IA",
+   "leilao": "4º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "QUEEN CLASS KANNAN SM IA",
+   "leilao": "LEILÃO BREEDING STARS",
+   "ano": 2017
+  },
+  {
+   "k": "QUIRANTHA DO CACH IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP SPRING",
+   "ano": 2020
+  },
+  {
+   "k": "RAMON JMEN",
+   "leilao": "32º LEILÃO HARAS AGROMEN",
+   "ano": 2022
+  },
+  {
+   "k": "ROLANDIA II JMEN",
+   "leilao": "35º LEILÃO HARAS AGROMEN",
+   "ano": 2025
+  },
+  {
+   "k": "ROXY IHB TE",
+   "leilao": "LEILÃO SMART JUMP PRIME",
+   "ano": 2022
+  },
+  {
+   "k": "RUBINERA JMEN TE",
+   "leilao": "LEILÃO WINTER AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "SAMURAI DO TRIUNFO",
+   "leilao": "1º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "SANTORINI TW",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "SLAM DO CACH TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP SPRING",
+   "ano": 2020
+  },
+  {
+   "k": "SOLAR DO ENGENHO KARINE",
+   "leilao": "2º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "SOLAR DO ENGENHO LUNA",
+   "leilao": "LEILÃO VIRTUAL DEJET - CLASSICS",
+   "ano": 2022
+  },
+  {
+   "k": "SOLAR DO ENGENHO NAVARRO TE",
+   "leilao": "8ª LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "SPECIAL EFFECT",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "SRTA DOLLAR GIRL JOTER",
+   "leilao": "4º LEILÃO VIRTUAL IHORSES",
+   "ano": 2023
+  },
+  {
+   "k": "STAY HOME TRAPICHE",
+   "leilao": "7º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2025
+  },
+  {
+   "k": "TANGERO REC IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP SUMMER",
+   "ano": 2023
+  },
+  {
+   "k": "TCHALI BOY IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP AUTUMN",
+   "ano": 2021
+  },
+  {
+   "k": "TCHALI DUKE IA",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP AUTUMN",
+   "ano": 2021
+  },
+  {
+   "k": "THULYA JMEN",
+   "leilao": "II LEILÃO AGROMEN WINTER",
+   "ano": 2025
+  },
+  {
+   "k": "VAUGHAN CLS TE",
+   "leilao": "4º LEILÃO VIRTUAL DEJET CLASSICS",
+   "ano": 2023
+  },
+  {
+   "k": "VIGORY BR IA",
+   "leilao": "2º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "WENDEL TOK TE",
+   "leilao": "3º LEILÃO VIRTUAL IHORSES",
+   "ano": 2022
+  },
+  {
+   "k": "WENDY DES FLANDRES",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP WINTER",
+   "ano": 2020
+  },
+  {
+   "k": "XANTHE RI",
+   "leilao": "1º LEILÃO VIRTUAL IHORSES",
+   "ano": 2021
+  },
+  {
+   "k": "ZIARA JMEN",
+   "leilao": "II LEILÃO AGROMEN WINTER",
+   "ano": 2025
+  },
+  {
+   "k": "ZIARA JMEN",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "ZIRADA TRV IA",
+   "leilao": "LEILÃO VIRTUAL OPEN SALES - CAVALOS DE SALTOS",
+   "ano": 2018
+  },
+  {
+   "k": "ZIRANNA JMEN",
+   "leilao": "34º LEILÃO HARAS AGROMEN",
+   "ano": 2024
+  },
+  {
+   "k": "ZURICH ITG TE",
+   "leilao": "LEILÃO VIRTUAL SMART JUMP - WINTER",
+   "ano": 2021
+  }
+ ]
+}
