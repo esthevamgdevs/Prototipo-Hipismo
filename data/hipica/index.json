@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-28T22:27:25.857Z",
+ "atualizadoEm": "2026-09-29T16:31:32.245Z",
  "torneios": [
   {
    "id": 3404,
@@ -10300,8 +10300,14 @@
      "hora": "13:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 76
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LUIS GUSTAVO GODINHO",
+      "h": "CAMILLO TER WILGEN Z"
+     },
+     "oe": 76,
+     "n": 17
     },
     {
      "id": 14614,
@@ -10314,7 +10320,7 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false,
-     "oe": 56
+     "oe": 57
     },
     {
      "id": null,
