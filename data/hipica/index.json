@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-29T18:09:38.520Z",
+ "atualizadoEm": "2026-09-29T21:44:03.456Z",
  "torneios": [
   {
    "id": 3404,
@@ -10303,11 +10303,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "RAFAEL XAVIER NORONHA"
+      "c": "PEDRO PAULO ONETY CORDEIRO",
+      "h": "SHY BOY"
      },
      "oe": 76,
-     "n": 64
+     "n": 75
     },
     {
      "id": 14614,
@@ -10319,11 +10319,17 @@
      "hora": "15:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "PEDRO PAULO ONETY CORDEIRO",
+      "h": "ROCCADERO JMEN DE MOR"
+     },
+     "oe": 57,
+     "n": 53
     },
     {
-     "id": null,
+     "id": 14633,
      "numero": "03",
      "nome": "1,20M",
      "desc": "1,20M - JR/ SR/ U25 - 1,20M - JR/SR/U25",
@@ -10332,10 +10338,11 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 74
     },
     {
-     "id": null,
+     "id": 14613,
      "numero": "04",
      "nome": "1,30M",
      "desc": "1,30M - JR/ SR /U25 - 1,30M - JR/SR/U25",
@@ -10344,10 +10351,11 @@
      "hora": "11:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 78
     },
     {
-     "id": null,
+     "id": 14632,
      "numero": "05",
      "nome": "1,45M",
      "desc": "1,45M - JR/ SR/ U25/ AST - 1,45M - JR/SR/U25/AST",
@@ -10356,10 +10364,11 @@
      "hora": "14:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 50
     },
     {
-     "id": null,
+     "id": 14621,
      "numero": "06",
      "nome": "1,20M",
      "desc": "1,20M - MR/JC - AM/M - PJR - 1,20M - AM/JC/M/MR/PJR",
@@ -10368,10 +10377,11 @@
      "hora": "16:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 40
     },
     {
-     "id": null,
+     "id": 14615,
      "numero": "07",
      "nome": "1,30M",
      "desc": "1,30M - JCT/PJR - AMT/MT - 1,30M - AMT/JCT/MT/PJR",
@@ -10380,7 +10390,8 @@
      "hora": "17:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 18
     },
     {
      "id": null,
@@ -10594,7 +10605,7 @@
    "nome": "CAMPEONATO PAULISTA AMAZONAS SALTO",
    "modalidade": "SALTO",
    "local": "SOCIEDADE HIPICA DE CAMPINAS",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-06",
    "fim": "2026-10-11",
    "provas": [
