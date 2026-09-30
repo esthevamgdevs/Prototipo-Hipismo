@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { parseTorneio, parseResultados, parseOrdemEntrada, idsDoCalendario } from './parsers.mjs';
 import { gerarEstatisticas, CAT_INFANTIL, abreviar } from './estatisticas.mjs';
 import { enviarAvisos } from './avisos.mjs';
+import { atualizarTransmissoes } from './transmissoes.mjs';
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
 const SAIDA = path.resolve(DIR, process.env.SAIDA || '../../data/hipica');
@@ -268,6 +269,10 @@ async function main() {
   // 4) Ranking e perfis, calculados sobre o que já está gravado
   const totais = await gerarEstatisticas(SAIDA, listaTorneios, A_PARTIR);
   console.log(`Estatísticas: ${totais.cavaleiros} cavaleiros, ${totais.cavalos} cavalos, ${totais.percursos} percursos.`);
+
+  // Transmissões da HorsePix no YouTube (uma falha aqui nunca derruba a coleta)
+  try { await atualizarTransmissoes({ saida: SAIDA, torneios: listaTorneios }); }
+  catch (e) { console.warn('Transmissões: falha ao ler o canal,', e.message); }
 
   // 5) Avisos para quem ativou as notificações (uma falha aqui nunca derruba a coleta)
   try { await enviarAvisos({ saida: SAIDA, anterior, atual: listaTorneios }); }
