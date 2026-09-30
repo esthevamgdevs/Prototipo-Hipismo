@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-30T18:04:11.878Z",
+ "atualizadoEm": "2026-09-30T20:49:44.268Z",
  "torneios": [
   {
    "id": 3404,
@@ -10376,14 +10376,14 @@
      "hora": "14:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "IVO ROZA FILHO"
+      "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
+      "h": "CORNET STAR JMEN II"
      },
      "oe": 50,
-     "n": 1
+     "n": 45
     },
     {
      "id": 14621,
@@ -10395,8 +10395,14 @@
      "hora": "16:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 37
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "RAFAELA KUHL ANTUNES"
+     },
+     "oe": 37,
+     "n": 16
     },
     {
      "id": 14615,
