@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-30T15:55:53.168Z",
+ "atualizadoEm": "2026-09-30T18:04:11.878Z",
  "torneios": [
   {
    "id": 3404,
@@ -10360,11 +10360,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "FELIPE JUARES DE LIMA",
-      "h": "YDALINA QUIRON"
+      "c": "PEDRO PAULO ONETY CORDEIRO",
+      "h": "SHY BOY"
      },
      "oe": 78,
-     "n": 39
+     "n": 75
     },
     {
      "id": 14632,
@@ -10377,7 +10377,13 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false,
-     "oe": 50
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "IVO ROZA FILHO"
+     },
+     "oe": 50,
+     "n": 1
     },
     {
      "id": 14621,
@@ -10390,7 +10396,7 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false,
-     "oe": 38
+     "oe": 37
     },
     {
      "id": 14615,
@@ -10403,7 +10409,7 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false,
-     "oe": 18
+     "oe": 17
     },
     {
      "id": null,
