@@ -236,6 +236,27 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 .cav-opp span{font-size:12.5px;color:var(--muted)}
 .res-opp{flex:none;font-size:13px;color:var(--muted);text-align:right}
 .res-opp b{font-size:15px}
+/* transmissão HorsePix */
+.transmissao{margin:16px 20px 0;display:flex;flex-direction:column;gap:10px}
+.tr-olho{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--ouro-escuro)}
+.tr-olho i{width:8px;height:8px;border-radius:50%;background:var(--vivo);display:block}
+.tr-player{position:relative;aspect-ratio:16/9;background:#0A0F0D;border-radius:4px;overflow:hidden;border:1px solid var(--linha)}
+.tr-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tr-capa{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#0A0F0D;cursor:pointer}
+.tr-capa img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+.tr-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--ouro);color:#1C231F;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.tr-play svg{margin-left:4px}
+.tr-dias{padding:0}
+.tr-yt{align-self:flex-end;font-size:12.5px;font-weight:600;color:var(--muted)}
+.selo-tr{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin-top:6px;margin-right:6px;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--vivo);border:1px solid var(--vivo);border-radius:999px;padding:4px 10px}
+.selo-tr i{width:7px;height:7px;border-radius:50%;background:var(--vivo);display:block}
+/* logos de parceiros: sempre sobre uma placa clara, para a marca aparecer igual no modo claro e no escuro */
+.placa-logo{display:inline-flex;align-items:center;background:#FFFFFF;border-radius:4px;padding:5px 8px;border:1px solid rgba(0,0,0,.06)}
+.placa-logo img{display:block;width:auto}
+.link-logo{display:inline-flex}
+.tr-cab{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tr-credito{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted)}
+.parceiro{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -300,7 +321,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '28/09/2026 · 20h50';
+const VERSAO_APP = '30/09/2026 · parceiros';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -355,6 +376,8 @@ async function carregar() {
   try { S.stats = await pegar(`${BASE}/stats.json`); render(); } catch {}
   // destaques são escritos à mão em data/hipica/destaques.json e o coletor não mexe neles
   try { S.destaques = await pegar(`${BASE}/destaques.json`); render(); } catch {}
+  // transmissões da HorsePix por torneio (arquivo mantido à mão em data/hipica/transmissoes.json)
+  try { S.transmissoes = await pegar(`${BASE}/transmissoes.json`); render(); } catch {}
   // cavalos vendidos pela Opportunity: o app marca cada um com um selo onde ele aparecer
   try { const v = await pegar(`${BASE}/vendidos.json`); S.vendidos = new Map((v.cavalos || []).map(x => [x.k, x])); render(); } catch {}
 }
@@ -559,6 +582,45 @@ const torneioVisivel = t => !cancelado(t)
   && !(t.inicio && t.inicio <= hojeISO() && t.todasProvas && !t.todasProvas.length);
 const achar = id => S.dados.torneios.find(t => t.id === +id);
 const destaqueDe = t => (S.destaques && S.destaques[String(t.id)]) || null;
+// parceiros exibidos com logo; url do canal fica vazia até termos o endereço oficial
+const PARCEIROS = { horsepix: { nome: 'HorsePix', logo: './img/horsepix.png', url: null } };
+function logoParceiro(k, altura = 18) {
+  const x = PARCEIROS[k];
+  const img = `<span class="placa-logo"><img src="${x.logo}" alt="${esc(x.nome)}" style="height:${altura}px"></span>`;
+  return x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener" class="link-logo">${img}</a>` : img;
+}
+
+// aceita qualquer formato de link do YouTube: watch?v=, youtu.be/, /live/, /embed/, /shorts/
+function idYoutube(url) {
+  const m = String(url || '').match(/(?:v=|youtu\.be\/|\/live\/|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+const transmissoesDe = t => ((S.transmissoes && S.transmissoes[String(t.id)]) || []).map(x => ({ ...x, yt: idYoutube(x.url) })).filter(x => x.yt);
+const aoVivoHoje = t => emAndamento(t) && transmissoesDe(t).some(x => x.dia === hojeISO());
+function blocoTransmissao(t) {
+  const lista = transmissoesDe(t);
+  if (!lista.length) return '';
+  if (S.trTorneio !== t.id) {
+    // abre na transmissão de hoje; sem transmissão hoje, na mais recente
+    const hoje = lista.findIndex(x => x.dia === hojeISO());
+    Object.assign(S, { trTorneio: t.id, trIdx: hoje >= 0 ? hoje : lista.length - 1, trTocando: false });
+  }
+  const atual = lista[Math.min(S.trIdx, lista.length - 1)];
+  const aoVivo = atual.dia === hojeISO() && emAndamento(t);
+  const rotulo = x => { const d = dt(x.dia); return `${DIA_CURTO[d.getDay()]} ${d.getDate()}${x.titulo ? ' · ' + x.titulo : ''}`; };
+  return `<section class="transmissao">
+    <div class="tr-cab"><span class="tr-olho">${aoVivo ? '<i></i>AO VIVO' : 'GRAVAÇÃO'}</span><span class="tr-credito">Transmissão ${logoParceiro('horsepix', 16)}</span></div>
+    <div class="tr-player">${S.trTocando
+      ? `<iframe src="https://www.youtube-nocookie.com/embed/${atual.yt}?autoplay=1&rel=0&playsinline=1" title="Transmissão HorsePix" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
+      : `<button class="tr-capa" data-acao="tocarTransmissao" aria-label="Assistir transmissão">
+          <img src="https://i.ytimg.com/vi/${atual.yt}/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+          <span class="tr-play"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        </button>`}</div>
+    ${lista.length > 1 ? `<div class="chips clara tr-dias" role="group" aria-label="Escolher transmissão">${lista.map((x, i) =>
+      `<button class="chip" data-tr="${i}" aria-pressed="${i === S.trIdx}">${esc(rotulo(x))}</button>`).join('')}</div>` : ''}
+    <a class="tr-yt" href="https://www.youtube.com/watch?v=${atual.yt}" target="_blank" rel="noopener">Assistir no YouTube ↗</a>
+  </section>`;
+}
 const vendidoDe = nomeCavalo => (S.vendidos && S.vendidos.get(chave(nomeCavalo))) || null;
 const seloOpp = nomeCavalo => vendidoDe(nomeCavalo) ? `<span class="selo-opp" title="Vendido pela Opportunity Leilões">Opportunity</span>` : '';
 const numProva = p => String(p.numero).replace(/^0+(?=\d)/, '');
@@ -579,6 +641,7 @@ function cartaoTorneio(t, comVencedor) {
       <span class="meta">${esc(titulo(t.local || 'Local a confirmar'))}</span>
       <span class="tag">${t.cat.toUpperCase()}${t.alturas.length ? ' · ' + fmtAlt(t.alturas[0]) + (t.alturas.length > 1 ? ' a ' + fmtAlt(t.alturas[t.alturas.length - 1]) : '') : ''}${venc ? '' : (t.provas.length ? ` · ${t.provas.length} PROVAS` : ' · PROGRAMAÇÃO EM BREVE')}</span>
       ${venc ? `<span class="meta">Venceu a ${fmtAlt(venc.altura)}: <strong>${esc(titulo(venc.v.c))}</strong> com ${esc(titulo(venc.v.h))}</span>` : ''}
+      ${aoVivoHoje(t) ? `<span class="selo-tr"><i></i>Transmissão ao vivo</span>` : ''}
       ${destaqueDe(t) ? `<span class="selo-dest">${esc(destaqueDe(t).selo || 'Leilão durante o torneio')}</span>` : ''}
     </span>
     <span class="estrela" role="img" aria-hidden="true" ${salvos.includes(t.id) ? 'aria-pressed="true"' : ''}>${estrelaSvg}</span>
@@ -679,6 +742,7 @@ function telaTorneio() {
         <a class="btn fantasma" href="${esc(t.url)}" target="_blank" rel="noopener">Site da FPH ↗</a>
       </div>
     </header>`;
+  corpo += blocoTransmissao(t);
   const dest = destaqueDe(t);
   if (dest) {
     corpo += `<div class="destaque-aviso">
@@ -745,6 +809,7 @@ function telaProva() {
   const faltam = ordem.length ? ordem.filter(o => !linhas.some(l => chave(l.h) === chave(o.h))).length : 0;
   const emAndamentoProva = faltam > 0 && p.dia >= hojeISO();
   let corpo = cab + `<span class="sub">${emAndamentoProva ? `${ordem.length - faltam} de ${ordem.length} já saltaram` : `${linhas.length} conjuntos`}${temDesempate ? ' · com desempate' : ''}</span>
+    ${aoVivoHoje(t) && p.dia === hojeISO() ? `<button class="btn-fino" data-acao="verTransmissao" style="align-self:flex-start">▶ Assistir à transmissão</button>` : ''}
     <div class="acoes">
       <button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar campeão'}</button>
     </div></header><main class="fade">`;
@@ -935,6 +1000,10 @@ function telaSobre() {
     </div>
     <div class="painel"><h3>Seus dados</h3>
       <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">O que você salva e segue fica guardado só neste aparelho, no seu navegador. Nada é enviado para lugar nenhum e não existe cadastro.</p>
+    </div>
+    <div class="painel"><h3>Parceiros</h3>
+      <div class="parceiro">${logoParceiro('horsepix', 26)}
+        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Transmissões ao vivo das provas de salto, exibidas no Salta com autorização da HorsePix.</p></div>
     </div>
     <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
@@ -1223,7 +1292,7 @@ function render() {
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova]');
+  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
@@ -1252,6 +1321,14 @@ document.addEventListener('click', e => {
   if (d.dia) { S.dia = d.dia; return render(); }
   if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
+  if (d.tr) { S.trIdx = +d.tr; S.trTocando = false; return render(); }
+  if (d.acao === 'tocarTransmissao') { S.trTocando = true; return render(); }
+  if (d.acao === 'verTransmissao') {
+    const lista = transmissoesDe(achar(S.torneio));
+    const hoje = lista.findIndex(x => x.dia === hojeISO());
+    Object.assign(S, { trTorneio: S.torneio, trIdx: hoje >= 0 ? hoje : 0, trTocando: true });
+    return irPara('torneio', { prova: null, filtro: '' });
+  }
   if (d.abrirProva) {
     const [ti, pid] = d.abrirProva.split(':').map(Number);
     S.origem = 'opp';
