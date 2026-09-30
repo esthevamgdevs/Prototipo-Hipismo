@@ -1,6 +1,4 @@
 {
-  "_sobre": "Transmissões da HorsePix por torneio. A chave é o número do torneio na FPH. Para cada dia, cole o link do YouTube; o título é opcional (por exemplo, Pista A).",
-  "3485": [
-    { "dia": "2026-09-29", "titulo": "", "url": "https://www.youtube.com/watch?v=k8P14UohTvE" }
-  ]
+  "_sobre": "Ajustes manuais das transmissões da HorsePix. O coletor já encontra as transmissões sozinho; use este arquivo só para corrigir ou acrescentar algum vídeo. A chave é o número do torneio na FPH.",
+  "_exemplo": { "3485": [ { "dia": "2026-09-30", "titulo": "Pista 1", "url": "https://www.youtube.com/watch?v=k8P14UohTvE" } ] }
 }
