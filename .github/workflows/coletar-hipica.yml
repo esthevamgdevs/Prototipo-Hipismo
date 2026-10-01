@@ -4,7 +4,7 @@ on:
   schedule:
     # Horários em UTC (Brasília = UTC-3).
     - cron: "17 12,17,21,0 * * *"               # coleta completa: 9h, 14h, 18h e 21h em Brasília
-    - cron: "17 1-11,13-16,18-20,22,23 * * *"   # coleta rápida nas demais horas: só torneios em andamento
+    - cron: "17,47 1-11,13-16,18-20,22,23 * * *"   # coleta rápida nas demais horas, de meia em meia hora: só torneios em andamento
   workflow_dispatch:          # botão "Run workflow" pra rodar na hora
 
 permissions:
@@ -40,6 +40,15 @@ jobs:
           VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
           MODO: ${{ (github.event_name == 'workflow_dispatch' || github.event.schedule == '17 12,17,21,0 * * *') && 'completo' || 'rapido' }}
         run: node coletar.mjs
+
+      - name: Gerar rascunhos de post (vendidos que pontuaram)
+        working-directory: scripts/hipica
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '17 12,17,21,0 * * *'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          POSTS_EMAIL_DESTINO: ${{ secrets.POSTS_EMAIL_DESTINO }}
+        run: node posts.mjs
 
       - name: Salvar dados no repositório
         id: salvar
