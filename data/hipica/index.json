@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-01T00:38:19.120Z",
+ "atualizadoEm": "2026-10-01T12:22:34.919Z",
  "torneios": [
   {
    "id": 3404,
@@ -10433,8 +10433,14 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 71
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "GABRIEL KAYAN SOARES MAGALHAES"
+     },
+     "oe": 71,
+     "n": 30
     },
     {
      "id": 14622,
