@@ -27,7 +27,7 @@ const UA = 'SaltaApp/0.2 (app de hipismo; +https://github.com/esthevamgdevs/Prot
 const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 // Coleta completa (descobre torneios novos) quatro vezes por dia; nas outras horas, só os torneios em andamento.
 const MODO = process.env.MODO || ([12, 17, 21, 0].includes(new Date().getUTCHours()) ? 'completo' : 'rapido'); // 9h, 14h, 18h e 21h em Brasília
-const MIN_ENTRE_REVISOES = 50 * 60e3; // uma prova de hoje ou de ontem é revista no máximo a cada ~50 min
+const MIN_ENTRE_REVISOES = 25 * 60e3; // uma prova de hoje ou de ontem é revista no máximo a cada ~25 min
 const somarDias = (d, n) => { const x = new Date(d + 'T12:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
 const dormir = ms => new Promise(r => setTimeout(r, ms));
 
