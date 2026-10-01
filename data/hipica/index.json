@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-09-30T20:49:44.268Z",
+ "atualizadoEm": "2026-10-01T00:38:19.120Z",
  "torneios": [
   {
    "id": 3404,
@@ -10398,11 +10398,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "RAFAELA KUHL ANTUNES"
+      "c": "HELENA CHRISTINA SCHMIDT",
+      "h": "HST CHAILA (IA)"
      },
      "oe": 37,
-     "n": 16
+     "n": 37
     },
     {
      "id": 14615,
@@ -10414,11 +10414,17 @@
      "hora": "17:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 17
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JOAO MARCELO MONTE SANTOS",
+      "h": "LAUDA"
+     },
+     "oe": 17,
+     "n": 18
     },
     {
-     "id": null,
+     "id": 14634,
      "numero": "08",
      "nome": "1,20M",
      "desc": "1,20M - JR/ SR/ U25 - 1,20M - JR/SR/U25",
@@ -10427,10 +10433,11 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 71
     },
     {
-     "id": null,
+     "id": 14622,
      "numero": "09",
      "nome": "1,20M",
      "desc": "1,20M - MR/JC - AM/M - PJR - 1,20M - AM/JC/M/MR/PJR",
@@ -10439,10 +10446,11 @@
      "hora": "11:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 36
     },
     {
-     "id": null,
+     "id": 14616,
      "numero": "10",
      "nome": "1,30M",
      "desc": "1,30M - JCT/PJR - AMT/MT - 1,30M - AMT/JCT/MT/PJR",
@@ -10451,10 +10459,11 @@
      "hora": "13:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 20
     },
     {
-     "id": null,
+     "id": 14623,
      "numero": "11",
      "nome": "1,00M",
      "desc": "1,00M - MMR/JCB - MB/AMB - 1,00M - AMB/JCB/MB/MMR",
@@ -10463,10 +10472,11 @@
      "hora": "15:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 43
     },
     {
-     "id": null,
+     "id": 14618,
      "numero": "12",
      "nome": "1,10M",
      "desc": "1,10M - AMA/MA - JCA - 1,10M - AMA/JCA/MA",
@@ -10475,10 +10485,11 @@
      "hora": "17:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 41
     },
     {
-     "id": null,
+     "id": 14628,
      "numero": "12A",
      "nome": "1,10M",
      "desc": "1,10M - PMR - 1,10M - PMR",
@@ -10487,7 +10498,8 @@
      "hora": null,
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 7
     },
     {
      "id": null,
@@ -11866,6 +11878,114 @@
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3493"
+  },
+  {
+   "id": 3494,
+   "nome": "TEMPORADA OFICAL TEAM NIJHOF HARAS COOPER 2026",
+   "modalidade": "SALTO",
+   "local": "HARAS COOPER",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-10-30",
+   "fim": "2026-10-31",
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "1,00M",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/CN4",
+     "altura": 1,
+     "dia": "2026-10-30",
+     "hora": "09:00",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "02",
+     "nome": "1,10M",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/CN5",
+     "altura": 1.1,
+     "dia": "2026-10-30",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "03",
+     "nome": "1,20M",
+     "desc": "1,20M - 1,20M - JC/JR/MR/PJR/SRE/CN6",
+     "altura": 1.2,
+     "dia": "2026-10-30",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "04",
+     "nome": "1,30M",
+     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
+     "altura": 1.3,
+     "dia": "2026-10-30",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "05",
+     "nome": "1,00M",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/CN4",
+     "altura": 1,
+     "dia": "2026-10-31",
+     "hora": "09:00",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "06",
+     "nome": "1,10M",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/CN5",
+     "altura": 1.1,
+     "dia": "2026-10-31",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "07",
+     "nome": "1,20M",
+     "desc": "1,20M - 1,20M - JC/JR/MR/PJR/SRE/CN6",
+     "altura": 1.2,
+     "dia": "2026-10-31",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "08",
+     "nome": "1,30M",
+     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
+     "altura": 1.3,
+     "dia": "2026-10-31",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3494"
   },
   {
    "id": 3449,
