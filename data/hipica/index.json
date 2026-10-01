@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-01T18:30:13.136Z",
+ "atualizadoEm": "2026-10-01T21:49:22.173Z",
  "torneios": [
   {
    "id": 3404,
@@ -10493,11 +10493,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA FERNANDA RIBEIRO FERREIRA",
-      "h": "S R MOULIN ROUGE"
+      "c": "AFONSO BENTO DE FIGUEIREDO",
+      "h": "HSF AGILE"
      },
      "oe": 43,
-     "n": 60
+     "n": 43
     },
     {
      "id": 14618,
@@ -10509,8 +10509,14 @@
      "hora": "17:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 40
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "BEATRIZ BONON ANTUNES",
+      "h": "MAHARAJA DEL JUNCAL"
+     },
+     "oe": 40,
+     "n": 39
     },
     {
      "id": 14628,
@@ -10522,8 +10528,14 @@
      "hora": null,
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 7
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "MIGUEL DE ALMEIDA PRADO P DE CAMPOS"
+     },
+     "oe": 7,
+     "n": 4
     },
     {
      "id": null,
@@ -10538,7 +10550,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14624,
      "numero": "14",
      "nome": "1,00M",
      "desc": "1,00M - MMR/JCB - MB/AMB - 1,00M - AMB/JCB/MB/MMR",
@@ -10547,7 +10559,8 @@
      "hora": "11:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 41
     },
     {
      "id": null,
