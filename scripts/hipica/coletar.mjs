@@ -27,7 +27,14 @@ const UA = 'SaltaApp/0.2 (app de hipismo; +https://github.com/esthevamgdevs/Prot
 const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 // Coleta completa (descobre torneios novos) quatro vezes por dia; nas outras horas, só os torneios em andamento.
 const MODO = process.env.MODO || ([12, 17, 21, 0].includes(new Date().getUTCHours()) ? 'completo' : 'rapido'); // 9h, 14h, 18h e 21h em Brasília
-const MIN_ENTRE_REVISOES = 25 * 60e3; // uma prova de hoje ou de ontem é revista no máximo a cada ~25 min
+const MIN_ENTRE_REVISOES = 50 * 60e3;      // prova de ontem, ou de hoje que ainda não começou
+const REVISAO_PROVA_NO_AR = 8 * 60e3;        // prova de hoje em andamento: quase a cada coleta de 10 min
+const REVISAO_PROVA_COMPLETA = 30 * 60e3;    // prova de hoje que já tem todos os conjuntos: só correções
+const RELER_TORNEIO_NO_AR = 30 * 60e3;       // lista de provas de torneio em andamento (novas provas, status)
+const RELER_TORNEIO_PROXIMO = 60 * 60e3;     // lista de provas de torneio que começa nos próximos dias
+// minutos desde a meia-noite, no horário de Brasília
+const minutosAgoraBR = () => { const [h, m] = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':').map(Number); return h * 60 + m; };
+const minutosDe = hora => { const m = String(hora || '').match(/(\d{1,2})[:h](\d{2})/); return m ? +m[1] * 60 + +m[2] : null; };
 const somarDias = (d, n) => { const x = new Date(d + 'T12:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
 const dormir = ms => new Promise(r => setTimeout(r, ms));
 
@@ -48,7 +55,14 @@ function precisaRever(p, ultima, refazerAte) {
   const recente = p.dia && p.dia >= somarDias(hoje, -1); // prova de hoje ou de ontem
   if (recente) {
     const quando = Date.parse(ultima.length > 10 ? ultima : ultima + 'T12:00:00Z');
-    return Date.now() - quando > MIN_ENTRE_REVISOES;
+    let intervalo = MIN_ENTRE_REVISOES;
+    if (p.dia === hoje) {
+      const inicio = minutosDe(p.hora);
+      const jaComecou = inicio === null || minutosAgoraBR() >= inicio - 10;
+      const completa = p.n && p.oe && p.n >= p.oe;
+      if (jaComecou) intervalo = completa ? REVISAO_PROVA_COMPLETA : REVISAO_PROVA_NO_AR;
+    }
+    return Date.now() - quando > intervalo;
   }
   return ultima.slice(0, 10) < hoje;                     // provas mais antigas: uma revisão por dia
 }
@@ -145,9 +159,13 @@ async function main() {
       }
     } else {
       // só o que está acontecendo ou começa nos próximos dias (programação e resultados)
+      estado.listaLida = estado.listaLida || {};
       for (const t of torneios.values()) {
         if (/cancel/i.test(t.status || '')) continue;
-        if (t.inicio && t.fim && t.inicio <= somarDias(hoje, 3) && t.fim >= somarDias(hoje, -2)) candidatos.add(t.id);
+        if (!(t.inicio && t.fim && t.inicio <= somarDias(hoje, 3) && t.fim >= somarDias(hoje, -2))) continue;
+        const noAr = t.inicio <= hoje && t.fim >= hoje;
+        const ultima = estado.listaLida[t.id] ? Date.parse(estado.listaLida[t.id]) : 0;
+        if (Date.now() - ultima >= (noAr ? RELER_TORNEIO_NO_AR : RELER_TORNEIO_PROXIMO)) candidatos.add(t.id);
       }
     }
 
@@ -158,6 +176,7 @@ async function main() {
       if (++n % 20 === 0) console.log(`  … ${n}/${lista.length} verificados`);
       const html = await baixar(`/calendario/ListaProvas.aspx?ID=${id}`);
       if (!html) continue;
+      (estado.listaLida = estado.listaLida || {})[id] = new Date().toISOString();
       const t = parseTorneio(html, id);
       if (!t) {
         naoReconhecidos++;
@@ -228,7 +247,7 @@ async function main() {
       for (const p of t.provas) {
         if (!querOrdem(p)) continue;
         const ultima = estado.ordem[p.id];
-        const intervalo = p.dia === hoje ? MIN_ENTRE_REVISOES : 3 * 3600e3; // no dia, de hora em hora; antes, a cada 3 h
+        const intervalo = p.dia === hoje ? 30 * 60e3 : 3 * 3600e3; // no dia, a cada 30 min; antes, a cada 3 h
         if (ultima && Date.now() - Date.parse(ultima) < intervalo) continue;
         const html = await baixar(`/calendario/OrdemEntrada.aspx?ID=${p.id}`);
         if (!html) continue;
