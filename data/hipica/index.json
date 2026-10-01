@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-01T13:37:28.954Z",
+ "atualizadoEm": "2026-10-01T18:30:13.136Z",
  "torneios": [
   {
    "id": 3404,
@@ -10436,11 +10436,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO"
+      "c": "PEDRO EDUARDO TEIXEIRA DE LUCENA LIRA",
+      "h": "TXT 2N PROMESSE"
      },
      "oe": 71,
-     "n": 68
+     "n": 71
     },
     {
      "id": 14622,
@@ -10452,8 +10452,14 @@
      "hora": "11:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 36
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "GUILHERME FERNANDES",
+      "h": "LUDAM DO LIBERTE (IA)"
+     },
+     "oe": 36,
+     "n": 33
     },
     {
      "id": 14616,
@@ -10465,8 +10471,14 @@
      "hora": "13:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 20
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JOAO MARCELO MONTE SANTOS",
+      "h": "LAUDA"
+     },
+     "oe": 20,
+     "n": 18
     },
     {
      "id": 14623,
@@ -10478,8 +10490,14 @@
      "hora": "15:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 43
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "LUIZA BECKER"
+     },
+     "oe": 43,
+     "n": 31
     },
     {
      "id": 14618,
@@ -10678,8 +10696,8 @@
     {
      "id": null,
      "numero": "02A",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR/JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
+     "nome": "MMR-JCB",
+     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-07",
      "hora": null,
@@ -10726,8 +10744,8 @@
     {
      "id": null,
      "numero": "05A",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR/JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
+     "nome": "MMR-JCB",
+     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-08",
      "hora": null,
@@ -10786,8 +10804,8 @@
     {
      "id": null,
      "numero": "09A",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR/JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
+     "nome": "MMR-JCB",
+     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-10",
      "hora": null,
@@ -11590,7 +11608,7 @@
    "nome": "CONCURSO DE SALTO ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
@@ -11734,7 +11752,7 @@
    "nome": "CONCURSO DE SALTO INICIANTE ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
@@ -11890,7 +11908,7 @@
    "nome": "TEMPORADA OFICAL TEAM NIJHOF HARAS COOPER 2026",
    "modalidade": "SALTO",
    "local": "HARAS COOPER",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-30",
    "fim": "2026-10-31",
    "provas": [
