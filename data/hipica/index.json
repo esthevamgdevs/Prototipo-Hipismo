@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-02T15:36:03.173Z",
+ "atualizadoEm": "2026-10-02T17:56:25.350Z",
  "torneios": [
   {
    "id": 3404,
@@ -10585,8 +10585,14 @@
      "hora": "13:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 42
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LORENZO STRELOW PERNICONE",
+      "h": "LISA LOMA COOPER (IA)"
+     },
+     "oe": 42,
+     "n": 39
     },
     {
      "id": 14629,
@@ -10598,8 +10604,14 @@
      "hora": null,
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 9
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JULIA FORREST SOUZA DA COSTA RIBEIRO",
+      "h": "YDALINA QUIGGRAAF"
+     },
+     "oe": 9,
+     "n": 8
     },
     {
      "id": 14627,
