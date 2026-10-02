@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-02T17:56:25.350Z",
+ "atualizadoEm": "2026-10-02T20:40:36.613Z",
  "torneios": [
   {
    "id": 3404,
@@ -10623,11 +10623,17 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 46
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "SARA FORTES ROCHA CAVALCANTE GOMES"
+     },
+     "oe": 46,
+     "n": 34
     },
     {
-     "id": null,
+     "id": 14625,
      "numero": "17",
      "nome": "1,00M",
      "desc": "1,00M - MMR/JCB - MB/AMB - 1,00M - AMB/JCB/MB/MMR",
@@ -10636,7 +10642,8 @@
      "hora": "08:30",
      "pista": "AREA-2",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 44
     },
     {
      "id": null,
@@ -10651,7 +10658,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14620,
      "numero": "18",
      "nome": "1,10M",
      "desc": "1,10M - AMA/MA - JCA - 1,10M - AMA/JCA/MA",
@@ -10660,11 +10667,12 @@
      "hora": "10:30",
      "pista": "AREA-2",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 45
     },
     {
      "id": null,
-     "numero": "19A",
+     "numero": "18A",
      "nome": "1,10M",
      "desc": "1,10M - PMR - 1,10M - PMR",
      "altura": 1.1,
