@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-01T23:01:29.141Z",
+ "atualizadoEm": "2026-10-02T13:52:13.041Z",
  "torneios": [
   {
    "id": 3404,
@@ -10547,8 +10547,14 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 37
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MARIANA VICENTE MOREIRA FERREIRA",
+      "h": "LADY FLORES"
+     },
+     "oe": 37,
+     "n": 37
     },
     {
      "id": 14624,
@@ -10574,7 +10580,7 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false,
-     "oe": 41
+     "oe": 40
     },
     {
      "id": 14629,
