@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-02T13:52:13.041Z",
+ "atualizadoEm": "2026-10-02T14:19:17.604Z",
  "torneios": [
   {
    "id": 3404,
@@ -10566,8 +10566,14 @@
      "hora": "11:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 41
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "HELOISA DE LEMOS LINS FERREIRA"
+     },
+     "oe": 41,
+     "n": 25
     },
     {
      "id": 14619,
@@ -10596,7 +10602,7 @@
      "oe": 9
     },
     {
-     "id": null,
+     "id": 14627,
      "numero": "16",
      "nome": "CLÁSSICO",
      "desc": "CLÁSSICO - 1,45M - 1,45M - JR/SR/U25/AST",
@@ -10605,7 +10611,8 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 46
     },
     {
      "id": null,
