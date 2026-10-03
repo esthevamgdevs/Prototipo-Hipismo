@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T13:37:05.427Z",
+ "atualizadoEm": "2026-10-03T13:47:55.229Z",
  "torneios": [
   {
    "id": 3404,
@@ -1624,7 +1624,8 @@
      "v": {
       "c": "JULIA LACOMBE RECHE",
       "h": "CHAMBERLAIN JMEN II"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13706,
@@ -1641,7 +1642,8 @@
      "v": {
       "c": "Sofia Negrao M.",
       "h": "ZAHARA DAS CATARATAS (IA)"
-     }
+     },
+     "oe": 5
     },
     {
      "id": 13672,
@@ -1658,7 +1660,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "PRIMADONNA FLORES (TE)"
-     }
+     },
+     "oe": 27
     },
     {
      "id": 13674,
@@ -1675,7 +1678,8 @@
      "v": {
       "c": "FELIPE JUARES DE LIMA",
       "h": "ELISA DES FLANDRES IMPÉRIO EGÍPCIO"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13676,
@@ -1692,7 +1696,8 @@
      "v": {
       "c": "ANA PAULA CASELANI MATTE",
       "h": "COLT"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13683,
@@ -1709,7 +1714,8 @@
      "v": {
       "c": "EDUARDO DA SILVA RAMOS",
       "h": "MSC CARTIER (IA)"
-     }
+     },
+     "oe": 55
     },
     {
      "id": 13702,
@@ -1726,7 +1732,8 @@
      "v": {
       "c": "PAULO BRASILEIRO DE MIRANDA",
       "h": "CAROLI M3 (TE)"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 13686,
@@ -1743,7 +1750,8 @@
      "v": {
       "c": "BRUNO RACA",
       "h": "HST CHOCOLATE (IA)"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 13687,
@@ -1760,7 +1768,8 @@
      "v": {
       "c": "SOFIA JUNQUEIRA RIBEIRO DE MENDONÇA",
       "h": "CORMINA JMEN I (TE)"
-     }
+     },
+     "oe": 36
     },
     {
      "id": 13680,
@@ -1777,7 +1786,8 @@
      "v": {
       "c": "LARISSA MAGAZONI ALVES",
       "h": "DEBORAH JMEN (IA)"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13707,
@@ -1794,7 +1804,8 @@
      "v": {
       "c": "Lara Liberto L.",
       "h": "YES DO ANPAR"
-     }
+     },
+     "oe": 5
     },
     {
      "id": 13690,
@@ -1811,7 +1822,8 @@
      "v": {
       "c": "LAILA BORIN EL ALAM",
       "h": "FRODO C"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13677,
@@ -1828,7 +1840,8 @@
      "v": {
       "c": "ANA PAULA CASELANI MATTE",
       "h": "COLT"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13700,
@@ -1845,7 +1858,8 @@
      "v": {
       "c": "MARCELO TOSI",
       "h": "KATE AGROMIX (IA)"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13684,
@@ -1862,7 +1876,8 @@
      "v": {
       "c": "RICHARD LYON THORP BILTON",
       "h": "HFB ECCO II (IA)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 13704,
@@ -1879,7 +1894,8 @@
      "v": {
       "c": "STEPHAN DE FREITAS BARCHA",
       "h": "CHANTILY JMEN"
-     }
+     },
+     "oe": 42
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3409"
@@ -1908,7 +1924,8 @@
      "v": {
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "SPARTBOY TASSONI (IA)"
-     }
+     },
+     "oe": 72
     },
     {
      "id": 13728,
@@ -1925,7 +1942,8 @@
      "v": {
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "SHY BOY"
-     }
+     },
+     "oe": 79
     },
     {
      "id": 13730,
@@ -1942,7 +1960,8 @@
      "v": {
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "ROCCADERO JMEN DE MOR"
-     }
+     },
+     "oe": 57
     },
     {
      "id": 13737,
@@ -1959,7 +1978,8 @@
      "v": {
       "c": "GIOVANNA SANTANA DANGELO MAZARA",
       "h": "CAROLI M3 (TE)"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13731,
@@ -1976,7 +1996,8 @@
      "v": {
       "c": "SHANNA HARROUCHE GARCIA",
       "h": "MSC WINBISHI BOND"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 13757,
@@ -1993,7 +2014,8 @@
      "v": {
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "SPARTBOY TASSONI (IA)"
-     }
+     },
+     "oe": 72
     },
     {
      "id": 13729,
@@ -2010,7 +2032,8 @@
      "v": {
       "c": "FELIPE JUARES DE LIMA",
       "h": "DURAS DE HUS IMPERIO EGIPCIO"
-     }
+     },
+     "oe": 84
     },
     {
      "id": 13752,
@@ -2027,7 +2050,8 @@
      "v": {
       "c": "3° SGT PASSAMANI",
       "h": "LIKA JT PB"
-     }
+     },
+     "oe": 58
     },
     {
      "id": 13738,
@@ -2044,7 +2068,8 @@
      "v": {
       "c": "HELENA CHRISTINA SCHMIDT",
       "h": "HST CHAILA (IA)"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13732,
@@ -2061,7 +2086,8 @@
      "v": {
       "c": "DANIELA MIRO DE CAMPOS",
       "h": "DALIVIA Z"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 13753,
@@ -2078,7 +2104,8 @@
      "v": {
       "c": "Alice Falcao M. C.",
       "h": "CARDENHO DO LIBERTE (IA)"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 13749,
@@ -2095,7 +2122,8 @@
      "v": {
       "c": "MARIANA VILLELA ROSA",
       "h": "CALVADHUS JMEN"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13740,
@@ -2112,7 +2140,8 @@
      "v": {
       "c": "DANIELA RIBEIRO",
       "h": "UEGOND XANGO"
-     }
+     },
+     "oe": 18
     },
     {
      "id": 13734,
@@ -2129,7 +2158,8 @@
      "v": {
       "c": "HELENA CHRISTINA SCHMIDT",
       "h": "EQUICENTER GRANDGRAAF (IA)"
-     }
+     },
+     "oe": 59
     },
     {
      "id": 13745,
@@ -2146,7 +2176,8 @@
      "v": {
       "c": "Julia Nascimento S. D. L.",
       "h": "SOLAR-DO-ENGENHO LANCELOT (IA)"
-     }
+     },
+     "oe": 9
     },
     {
      "id": 13758,
@@ -2163,7 +2194,8 @@
      "v": {
       "c": "MICHEL MASCIOLI LIDDLE",
       "h": "ELVIA BR (TE)"
-     }
+     },
+     "oe": 67
     },
     {
      "id": 13754,
@@ -2180,7 +2212,8 @@
      "v": {
       "c": "Laura Junqueira R. D. M.",
       "h": "CONCHITA-C JMEN (TE)"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 13750,
@@ -2197,7 +2230,8 @@
      "v": {
       "c": "MARIA LUIZA CAMARGO BRUSCATO",
       "h": "ORITE TER ELZEN"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13741,
@@ -2214,7 +2248,8 @@
      "v": {
       "c": "AFONSO BENTO DE FIGUEIREDO",
       "h": "HSF AGILE"
-     }
+     },
+     "oe": 18
     },
     {
      "id": 13735,
@@ -2231,7 +2266,8 @@
      "v": {
       "c": "HELENA CHRISTINA SCHMIDT",
       "h": "EQUICENTER GRANDGRAAF (IA)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 13746,
@@ -2248,7 +2284,8 @@
      "v": {
       "c": "Julia Nascimento S. D. L.",
       "h": "SOLAR-DO-ENGENHO LANCELOT (IA)"
-     }
+     },
+     "oe": 9
     },
     {
      "id": 13743,
@@ -2265,7 +2302,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "GALILEO JMEN"
-     }
+     },
+     "oe": 60
     },
     {
      "id": 13755,
@@ -2282,7 +2320,8 @@
      "v": {
       "c": "Sarah Pepino D.",
       "h": "PSH PLATOON"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 13751,
@@ -2299,7 +2338,8 @@
      "v": {
       "c": "NATALIA CIAMARRO DE LA RUE",
       "h": "HEART"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13742,
@@ -10743,10 +10783,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "MICHEL MASCIOLI LIDDLE"
+      "h": "LEANDRO JOSE ABRAHAO"
      },
      "oe": 65,
-     "n": 45
+     "n": 50
     },
     {
      "id": 14620,
