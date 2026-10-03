@@ -4747,7 +4747,8 @@
      "v": {
       "c": "Maria Vitoria V. B.",
       "h": "ROCKY BALBOA"
-     }
+     },
+     "oe": 72
     },
     {
      "id": 13940,
@@ -4764,7 +4765,8 @@
      "v": {
       "c": "Catharina Suarez C. I.",
       "h": "INDIRA REC"
-     }
+     },
+     "oe": 78
     },
     {
      "id": 13936,
@@ -4781,7 +4783,8 @@
      "v": {
       "c": "Laura Fragoso S.",
       "h": "INDIO HVR"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 13938,
@@ -4798,7 +4801,8 @@
      "v": {
       "c": "Laura Jarcew",
       "h": "CORBELLA GOOD SPIRIT"
-     }
+     },
+     "oe": 72
     },
     {
      "id": 13942,
@@ -4815,7 +4819,8 @@
      "v": {
       "c": "Victoria Pereira R.",
       "h": "MAUI DE CHANTEBLED"
-     }
+     },
+     "oe": 47
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3426"
@@ -4855,7 +4860,8 @@
      "v": {
       "c": "Laura Aparecida M.",
       "h": "CECI"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 14150,
@@ -4872,7 +4878,8 @@
      "v": {
       "c": "Catharina Cristina S. E.",
       "h": "RAMONA RI"
-     }
+     },
+     "oe": 23
     },
     {
      "id": 14151,
@@ -4889,7 +4896,8 @@
      "v": {
       "c": "Lucas Henrique F.",
       "h": "IMPERIO"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 14152,
@@ -4906,7 +4914,8 @@
      "v": {
       "c": "Larissa Costa C.",
       "h": "HAVANA"
-     }
+     },
+     "oe": 16
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3451"
@@ -4935,7 +4944,8 @@
      "v": {
       "c": "Bianca Kaori T. T.",
       "h": "DEXTER"
-     }
+     },
+     "oe": 51
     },
     {
      "id": 14146,
@@ -4952,7 +4962,8 @@
      "v": {
       "c": "Davi De L. F.",
       "h": "LUA"
-     }
+     },
+     "oe": 90
     },
     {
      "id": 14147,
@@ -4969,7 +4980,8 @@
      "v": {
       "c": "Mariana Mota S.",
       "h": "RUBI ALBAR"
-     }
+     },
+     "oe": 43
     },
     {
      "id": 14148,
@@ -4986,7 +4998,8 @@
      "v": {
       "c": "Maria Helena Y. P.",
       "h": "JAZZ FLY"
-     }
+     },
+     "oe": 26
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3445"
@@ -5015,7 +5028,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "VIP JCR PRINCE EMERALD"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 13952,
@@ -5032,7 +5046,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "MYLORD TRV (TE)"
-     }
+     },
+     "oe": 51
     },
     {
      "id": 13954,
@@ -5049,7 +5064,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "PRIMADONNA FLORES (TE)"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13956,
@@ -5066,7 +5082,8 @@
      "v": {
       "c": "MAIQUE WILLIAN VENANCIO",
       "h": "EVOLET TW BR"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13966,
@@ -5083,7 +5100,8 @@
      "v": {
       "c": "LUISA LOPES BERGAMASCHI",
       "h": "CHILENA DO ADONAI (IA)"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13969,
@@ -5100,7 +5118,8 @@
      "v": {
       "c": "BERNARDO KRAUS GUERRA",
       "h": "SINDY LAND ALR"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13950,
@@ -5117,7 +5136,8 @@
      "v": {
       "c": "ALYSSON KALEB BERNARDINO DE SOUZA",
       "h": "CELERINA II JMEN (TE)"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 13958,
@@ -5134,7 +5154,8 @@
      "v": {
       "c": "Julia Diener F.",
       "h": "LOKI TB (IA)"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 13953,
@@ -5151,7 +5172,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "FJ ANUNÁKI"
-     }
+     },
+     "oe": 51
     },
     {
      "id": 13964,
@@ -5168,7 +5190,8 @@
      "v": {
       "c": "GABRIELA NAGY KOVALSKI SHOEL",
       "h": "CHIYA Z"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13955,
@@ -5185,7 +5208,8 @@
      "v": {
       "c": "IVO ROZA FILHO",
       "h": "UMBURANAS TIP TOP TER SPELONCK"
-     }
+     },
+     "oe": 30
     },
     {
      "id": 13957,
@@ -5202,7 +5226,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "CORNETINO JMEN (TE)"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13970,
@@ -5219,7 +5244,8 @@
      "v": {
       "c": "BERNARDO KRAUS GUERRA",
       "h": "CEHJUR DIAMOON (IA)"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13959,
@@ -5236,7 +5262,8 @@
      "v": {
       "c": "Gabriella Rossi H. D. C. M.",
       "h": "RHL ETNA CARAVELA"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 13962,
@@ -5253,7 +5280,8 @@
      "v": {
       "c": "MARIANA VICENTE MOREIRA FERREIRA",
       "h": "CALIXTO FLORES"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13967,
@@ -5270,7 +5298,8 @@
      "v": {
       "c": "ANA LIVIA ANTONIO",
       "h": "CALLOUETTE BR"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13960,
@@ -5287,7 +5316,8 @@
      "v": {
       "c": "Joao Pedro G. F.",
       "h": "HEARTSTAR JM (IA)"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 13963,
@@ -5304,7 +5334,8 @@
      "v": {
       "c": "ALICE TEDESCO GUTIERREZ",
       "h": "HPH CORADA (IA)"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13968,
@@ -5321,7 +5352,8 @@
      "v": {
       "c": "ANA RUTH RAMOS MANSUR",
       "h": "BLUE BELL ZA (TE)"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13971,
@@ -5338,7 +5370,8 @@
      "v": {
       "c": "VALENTINA ESMAIL SANDOVAL SAFADDINE",
       "h": "HERO"
-     }
+     },
+     "oe": 10
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3433"
@@ -5378,7 +5411,8 @@
      "v": {
       "c": "RODRIGO CHAVES NUNES",
       "h": "KANNADIA REC DAS UMBURANAS (IA)"
-     }
+     },
+     "oe": 76
     },
     {
      "id": 14113,
@@ -5395,7 +5429,8 @@
      "v": {
       "c": "ANDREA MACEDO CUNHA CAMARA",
       "h": "JLP XERETA DAS CATARATAS (IA)"
-     }
+     },
+     "oe": 45
     },
     {
      "id": 14116,
@@ -5412,7 +5447,8 @@
      "v": {
       "c": "Manuela Vilela G.",
       "h": "CHARLOTTE DA CECILIANA (IA)"
-     }
+     },
+     "oe": 5
     },
     {
      "id": 14143,
@@ -5429,7 +5465,8 @@
      "v": {
       "c": "GABRIELA SANCHES PEIXOTO",
       "h": "ZIRADA TRV (IA)"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 14128,
@@ -5446,7 +5483,8 @@
      "v": {
       "c": "ANNA KATHARINA LAUREANO BRUKHNOVA",
       "h": "SENNA KM"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 14136,
@@ -5463,7 +5501,8 @@
      "v": {
       "c": "PEDRO HENRIQUE ARANTES TAVORA DE MATOS",
       "h": "GR JAVA"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 14122,
@@ -5480,7 +5519,8 @@
      "v": {
       "c": "BERNARDO KRAUS GUERRA",
       "h": "EMPIRE IPIRANGA (IA)"
-     }
+     },
+     "oe": 39
     },
     {
      "id": 14131,
