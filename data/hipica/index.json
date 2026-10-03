@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T14:29:42.813Z",
+ "atualizadoEm": "2026-10-03T16:26:28.773Z",
  "torneios": [
   {
    "id": 3404,
@@ -2356,7 +2356,8 @@
      "v": {
       "c": "ISABEL ALMEIDA BIAGI",
       "h": "TAORMINA TW (IA)"
-     }
+     },
+     "oe": 19
     },
     {
      "id": 13736,
@@ -2373,7 +2374,8 @@
      "v": {
       "c": "PRISCILLA ASTEN CATERINE BLATT",
       "h": "BERLINDA DAS UMBURANAS (IA)"
-     }
+     },
+     "oe": 55
     },
     {
      "id": 13747,
@@ -2390,7 +2392,8 @@
      "v": {
       "c": "Sofia Negrao M.",
       "h": "ZAHARA DAS CATARATAS (IA)"
-     }
+     },
+     "oe": 9
     },
     {
      "id": 13744,
@@ -2407,7 +2410,8 @@
      "v": {
       "c": "VITOR ALVES TEIXEIRA",
       "h": "KANNANS BREAKER BR (IA)"
-     }
+     },
+     "oe": 48
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3412"
@@ -2458,7 +2462,8 @@
      "v": {
       "c": "Stella Tortorelli F. D. R.",
       "h": "SHARON STONE"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 13764,
@@ -2475,7 +2480,8 @@
      "v": {
       "c": "Manuela Gibin M.",
       "h": "GOLDLIFE CHCP"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 13765,
@@ -2492,7 +2498,8 @@
      "v": {
       "c": "Stella Tortorelli F. D. R.",
       "h": "SHARON STONE"
-     }
+     },
+     "oe": 10
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3413"
@@ -2521,7 +2528,8 @@
      "v": {
       "c": "Mariana Cerezer G.",
       "h": "NEBRASKA JMEN (IA)"
-     }
+     },
+     "oe": 120
     },
     {
      "id": 13773,
@@ -2538,7 +2546,8 @@
      "v": {
       "c": "Yasmin Nascimento",
       "h": "LE MESSAGE DU PERE"
-     }
+     },
+     "oe": 95
     },
     {
      "id": 13767,
@@ -2555,7 +2564,8 @@
      "v": {
       "c": "Julia Medeiros S. S.",
       "h": "HTC LILIAN"
-     }
+     },
+     "oe": 78
     },
     {
      "id": 13772,
@@ -2572,7 +2582,8 @@
      "v": {
       "c": "Maria Luiza S. D. O. M.",
       "h": "DINA"
-     }
+     },
+     "oe": 120
     },
     {
      "id": 13769,
@@ -2589,7 +2600,8 @@
      "v": {
       "c": "Gustavo Condomi A. T.",
       "h": "LANCELOT (HBF)"
-     }
+     },
+     "oe": 148
     },
     {
      "id": 13768,
@@ -2606,7 +2618,8 @@
      "v": {
       "c": "Maria Alice M. B.",
       "h": "APACHE SHB"
-     }
+     },
+     "oe": 77
     },
     {
      "id": 13774,
@@ -2623,7 +2636,8 @@
      "v": {
       "c": "Laura Kraft D. F.",
       "h": "DUM DUM"
-     }
+     },
+     "oe": 94
     },
     {
      "id": 13770,
@@ -2640,7 +2654,8 @@
      "v": {
       "c": "Gabriel Ramos D. O.",
       "h": "LUCKY BOY BL"
-     }
+     },
+     "oe": 142
     },
     {
      "id": 13777,
@@ -2657,7 +2672,8 @@
      "v": {
       "c": "Laura Errante P.",
       "h": "TRAMA SANTA ROSA"
-     }
+     },
+     "oe": 63
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3414"
@@ -2697,7 +2713,8 @@
      "v": {
       "c": "Carina Rodrigues G.",
       "h": "RG BLACKOUT"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13785,
@@ -2714,7 +2731,8 @@
      "v": {
       "c": "Pedro Blanes D. C.",
       "h": "CAMBUI DO PATEO"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 13786,
@@ -2731,7 +2749,8 @@
      "v": {
       "c": "Alice Jurado G. P.",
       "h": "ESPARTANO"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 13787,
@@ -2748,7 +2767,8 @@
      "v": {
       "c": "Almir De A.",
       "h": "KING DA PAINEIRAS"
-     }
+     },
+     "oe": 25
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3415"
@@ -2777,7 +2797,8 @@
      "v": {
       "c": "BERNARDO BRAGA DE ALBUQUERQUE PEREIRA",
       "h": "ROXY IHB (TE)"
-     }
+     },
+     "oe": 4
     },
     {
      "id": 13887,
@@ -2794,7 +2815,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "MYLORD TRV (TE)"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13889,
@@ -2811,7 +2833,8 @@
      "v": {
       "c": "KITARO FIORAVANTE BALDAIA",
       "h": "HPH YANKO TOK (TE)"
-     }
+     },
+     "oe": 12
     },
     {
      "id": 13891,
@@ -2828,7 +2851,8 @@
      "v": {
       "c": "REMO TELLINI",
       "h": "XAYANA TOK (TE)"
-     }
+     },
+     "oe": 8
     },
     {
      "id": 13853,
@@ -2845,7 +2869,8 @@
      "v": {
       "c": "CAPITAO THALES AUGUSTO DE FARIA FERREIRA",
       "h": "CASTILIO C JMEN III (TE)"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 13884,
@@ -2862,7 +2887,8 @@
      "v": {
       "c": "BERNARDO BRAGA DE ALBUQUERQUE PEREIRA",
       "h": "ROXY IHB (TE)"
-     }
+     },
+     "oe": 4
     },
     {
      "id": 13885,
@@ -2879,7 +2905,8 @@
      "v": {
       "c": "EDUARDO FERREIRA SILVA MACHADO",
       "h": "ZARA L.I. (TE)"
-     }
+     },
+     "oe": 31
     },
     {
      "id": 13843,
@@ -2896,7 +2923,8 @@
      "v": {
       "c": "DANIELA RIBEIRO",
       "h": "UEGOND XANGO"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 13888,
@@ -2913,7 +2941,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "MYLORD TRV (TE)"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13855,
@@ -2930,7 +2959,8 @@
      "v": {
       "c": "ARIE CARNEIRO",
       "h": "GIOVANA METODO (IA)"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 13847,
@@ -2947,7 +2977,8 @@
      "v": {
       "c": "NAZEH CAROLINA CHEDICK",
       "h": "JAGUAR DA MATA"
-     }
+     },
+     "oe": 45
     },
     {
      "id": 13886,
@@ -2964,7 +2995,8 @@
      "v": {
       "c": "DANIEL DE MELLO GOBBO",
       "h": "FAIRMONT MYSTIC ROSE (IA)"
-     }
+     },
+     "oe": 30
     },
     {
      "id": 13844,
@@ -2981,7 +3013,8 @@
      "v": {
       "c": "NILSE RAPHAELLE VALVERDE",
       "h": "HFB DIARATHA (IA)"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 13890,
@@ -2998,7 +3031,8 @@
      "v": {
       "c": "KITARO FIORAVANTE BALDAIA",
       "h": "HPH YANKO TOK (TE)"
-     }
+     },
+     "oe": 12
     },
     {
      "id": 13892,
@@ -3015,7 +3049,8 @@
      "v": {
       "c": "REMO TELLINI",
       "h": "XAYANA TOK (TE)"
-     }
+     },
+     "oe": 8
     },
     {
      "id": 13848,
@@ -3032,7 +3067,8 @@
      "v": {
       "c": "LINA CARNEIRO MELO",
       "h": "HMP WALESKA FLORES"
-     }
+     },
+     "oe": 45
     },
     {
      "id": 13859,
@@ -3049,7 +3085,8 @@
      "v": {
       "c": "RIMANTAS SIPAS",
       "h": "UMBURANAS MESO BLUE PS"
-     }
+     },
+     "oe": 5
     },
     {
      "id": 13851,
@@ -3066,7 +3103,8 @@
      "v": {
       "c": "LUIS RICARDO MAÇÃES COUTINHO",
       "h": "DIN DA LAGOA (IA)"
-     }
+     },
+     "oe": 49
     },
     {
      "id": 13881,
@@ -3083,7 +3121,8 @@
      "v": {
       "c": "RUY JACINTO DE CAMARGO PACHECO",
       "h": "CHRISTMAS C JMEN"
-     }
+     },
+     "oe": 13
     },
     {
      "id": 13857,
@@ -3100,7 +3139,8 @@
      "v": {
       "c": "CAROLINA AULICINO MACIEL",
       "h": "MSC CARTIER (IA)"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 13845,
@@ -10801,11 +10841,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "LUCAS MOREIRA ARANHA"
+      "c": "LUCAS MOREIRA ARANHA",
+      "h": "ILUNA"
      },
      "oe": 46,
-     "n": 13
+     "n": 37
     },
     {
      "id": 14630,
@@ -10817,8 +10857,14 @@
      "hora": null,
      "pista": "AREA-2",
      "gp": false,
-     "linkResultado": false,
-     "oe": 9
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Lara Munhoz P.",
+      "h": "ABSOLUT JMEN"
+     },
+     "oe": 9,
+     "n": 8
     },
     {
      "id": 14626,
@@ -10830,11 +10876,17 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 55
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "FELIPE JACINTO DE CAMARGO PACHECO"
+     },
+     "oe": 55,
+     "n": 29
     },
     {
-     "id": null,
+     "id": 14636,
      "numero": "21",
      "nome": "GRANDE PREMIO",
      "desc": "GRANDE PREMIO - 1,50M - JR/SR/U25",
@@ -10843,7 +10895,8 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": true,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 35
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3485"
