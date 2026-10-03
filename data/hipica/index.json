@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T11:46:10.057Z",
+ "atualizadoEm": "2026-10-03T12:33:24.702Z",
  "torneios": [
   {
    "id": 3404,
@@ -10646,23 +10646,29 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "MARIA FERNANDA RIBEIRO FERREIRA"
+      "h": "ANTONIO MANUEL LOPES SANCHES"
      },
      "oe": 44,
-     "n": 25
+     "n": 85
     },
     {
      "id": 14631,
      "numero": "19",
      "nome": "COPA PRATA",
-     "desc": "1,25M - COPA PRATA - 1,25M - AM/JC/JR/M/MR/PJR/SR",
+     "desc": "1,25M - COPA PRATA - 1,25M - AM/JC/JR/M/MR/PJR/SR/U25",
      "altura": 1.25,
      "dia": "2026-10-03",
      "hora": "09:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 65
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "JOAO PEDRO SILVA BATAL"
+     },
+     "oe": 65,
+     "n": 16
     },
     {
      "id": 14620,
