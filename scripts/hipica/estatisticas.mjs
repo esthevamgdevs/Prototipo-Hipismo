@@ -38,7 +38,11 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   const guardaFicha = o => {
     if (!o || !(o.pai || o.mae || o.nasc || o.criador)) return;
     const k = chave(o.h), atual = fichas.get(k) || {};
-    for (const c of ['pai', 'mae', 'nasc', 'raca', 'criador']) if (o[c] && !atual[c]) atual[c] = o[c];
+    for (const c of ['pai', 'mae', 'nasc', 'raca', 'criador']) {
+      if (!o[c] || atual[c]) continue;
+      if (c === 'criador' && /^[A-Z]{2,4}\s+-\s+|BRASILEIRO DE HIPISMO/i.test(o[c])) continue; // raça escrita por extenso, não é criador
+      atual[c] = o[c];
+    }
     fichas.set(k, atual);
   };
   const novo = (nome) => ({ nome, largadas: 0, vitorias: 0, podios: 0, zerados: 0, parceiros: new Map(), hist: [], fed: null, infantil: 0 });
@@ -157,6 +161,16 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     .sort((a, b) => b.v - a.v || b.po - a.po || b.z - a.z)
     .slice(0, 50)
     .map(({ k, nome, fed, l, v, po, z }) => ({ k, nome, fed, l, v, po, z }));
+
+  // Filiação de todos os cavalos da temporada, num arquivo compacto: [pai, mãe, avô materno]
+  // (o avô materno sai da ficha da mãe, quando ela também aparece nos dados)
+  const filiacao = {};
+  for (const [k, f] of fichas) {
+    if (!f.pai && !f.mae) continue;
+    const avo = f.mae ? (fichas.get(chave(f.mae)) || {}).pai : null;
+    filiacao[k] = avo ? [f.pai || '', f.mae || '', avo] : [f.pai || '', f.mae || ''];
+  }
+  await fs.writeFile(path.join(saida, 'filiacao.json'), JSON.stringify(filiacao) + '\n');
 
   // Visão Opportunity: vai para um arquivo próprio, que o app só baixa quando a aba é aberta
   let opp = null;
