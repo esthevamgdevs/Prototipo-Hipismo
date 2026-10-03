@@ -72,7 +72,8 @@ export function parseTorneio(html, id) {
 
   // Cabeçalho: modalidade, período, local e situação logo abaixo do nome
   let modalidade = '', status = '', local = '', periodo = null;
-  const i0 = ls.findIndex(l => semLinks(l).toUpperCase() === nome.toUpperCase());
+  let i0 = ls.findIndex(l => semLinks(l).toUpperCase() === nome.toUpperCase());
+  if (i0 < 0) i0 = ls.findIndex(l => semLinks(l).toUpperCase().endsWith(nome.toUpperCase()));
   if (i0 >= 0) {
     for (let i = i0 + 1; i < Math.min(ls.length, i0 + 12); i++) {
       let t = semLinks(ls[i]);
@@ -202,6 +203,28 @@ export function parseResultados(html) {
 function num(s) { return +String(s).replace(',', '.'); }
 
 // Página "Ordem de Entrada" de uma prova: quem está inscrito, na ordem em que entra na pista
+// Abaixo do nome do cavalo a FPH mostra: "19/09/2011 | BH | HARAS COOPER | PROPRIETÁRIO | PAI - MÃE".
+// Guardamos nascimento, raça, criador, pai e mãe. O proprietário (muitas vezes uma pessoa física) fica de fora.
+export function fichaDoCavalo($, td) {
+  const copia = $(td).clone();
+  copia.find('strong,b').first().remove();
+  const texto = limpar(copia.text().replace(/\s*\n\s*/g, ' '));
+  if (!texto.includes('|')) return null;
+  const partes = texto.split('|').map(x => limpar(x)).filter(Boolean);
+  const ficha = {};
+  const nasc = partes.find(x => /^\d{2}\/\d{2}\/\d{4}$/.test(x));
+  if (nasc) { const [d, m, a] = nasc.split('/'); ficha.nasc = `${a}-${m}-${d}`; }
+  const raca = partes.find(x => /^[A-Z]{2,4}$/.test(x));
+  if (raca) ficha.raca = raca;
+  const filiacao = partes[partes.length - 1];
+  const m = filiacao && filiacao.match(/^(.+?)\s+-\s+(.+)$/);
+  if (m) { ficha.pai = m[1].replace(/\.$/, '').trim(); ficha.mae = m[2].replace(/\.$/, '').trim(); }
+  const idxNasc = nasc ? partes.indexOf(nasc) : -1;
+  const criador = partes.find((x, i) => i > idxNasc && x !== raca && x !== filiacao && !/^\d/.test(x));
+  if (criador) ficha.criador = criador;
+  return Object.keys(ficha).length ? ficha : null;
+}
+
 export function parseOrdemEntrada(html) {
   const $ = load(html);
   const linhas = [];
@@ -214,7 +237,59 @@ export function parseOrdemEntrada(html) {
     const cavalo = limpar($(tds[2]).find('strong,b').first().text());
     const categoria = limpar($(tds[3]).find('strong,b').first().text()).replace(/\s*-\s*$/, '');
     if (!cavaleiro || !cavalo) return;
-    linhas.push({ o: +ordem[1], c: cavaleiro, h: cavalo, cat: categoria || null });
+    const linha = { o: +ordem[1], c: cavaleiro, h: cavalo, cat: categoria || null };
+    const ficha = fichaDoCavalo($, tds[2]);
+    if (ficha) Object.assign(linha, ficha);
+    linhas.push(linha);
   });
   return linhas;
+}
+
+// Campos escondidos que o ASP.NET exige para "clicar" num botão da página (postback)
+export function camposOcultos(html) {
+  const $ = load(html);
+  const campos = {};
+  $('input[type="hidden"]').each((_, el) => {
+    const nome = $(el).attr('name');
+    if (nome) campos[nome] = $(el).attr('value') || '';
+  });
+  return campos;
+}
+// Nome interno do botão "Lista de Inscritos" no menu do torneio
+export function alvoListaInscritos(html) {
+  const m = html.match(/__doPostBack\(\s*['"]([^'"]*btnListInsc[^'"]*)['"]/i);
+  return m ? m[1] : null;
+}
+
+// Lista de Inscritos do torneio. Formato não confirmado: o leitor é tolerante e,
+// se a página tiver cabeçalhos "PR. 01 - ...", separa os inscritos por prova.
+export function parseInscritos(html) {
+  const corpo = html.replace(/<script[\s\S]*?<\/script>/gi, ' ');
+  const cortes = [...corpo.matchAll(/PR\.?\s*(\d+[A-Z]?)\s*-/gi)];
+  const trechos = cortes.length
+    ? cortes.map((m, i) => ({ numero: m[1].toUpperCase(), html: corpo.slice(m.index, cortes[i + 1] ? cortes[i + 1].index : undefined) }))
+    : [{ numero: '*', html: corpo }];
+  const porProva = {};
+  const vistos = new Set();
+  for (const t of trechos) {
+    const $ = load(t.html);
+    $('tr').each((_, tr) => {
+      const tds = $(tr).children('td');
+      if (tds.length < 2) return;
+      const negritos = $(tr).find('strong,b').toArray().map(e => limpar($(e).text()))
+        .filter(x => x && x !== '-' && !/^\d+\s*[ºo°]?$/i.test(x));
+      const textoOrdem = limpar($(tds[0]).text()).match(/^(\d+)/);
+      const cat = negritos.find(x => /^[A-Z]{2,4}$/.test(x) && x !== negritos[0] && x !== negritos[1]) || null;
+      const nomes = negritos.filter(x => x !== cat);
+      if (nomes.length < 2) return;
+      const chave = `${t.numero}|${nomes[1]}`;
+      if (vistos.has(chave)) return; // a página costuma repetir o conteúdo (computador e celular)
+      vistos.add(chave);
+      (porProva[t.numero] = porProva[t.numero] || []).push({
+        o: textoOrdem ? +textoOrdem[1] : null, c: nomes[0], h: nomes[1], cat,
+      });
+    });
+  }
+  const total = Object.values(porProva).reduce((s, l) => s + l.length, 0);
+  return { porProva, total };
 }

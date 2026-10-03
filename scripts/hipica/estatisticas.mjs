@@ -34,6 +34,13 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   try { vendidos = new Map((JSON.parse(await fs.readFile(path.join(saida, 'vendidos.json'), 'utf8')).cavalos || []).map(x => [x.k, x])); } catch {}
   const hojeBR = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
   const participacoes = [], proximas = [];
+  const fichas = new Map(); // chave do cavalo -> { pai, mae, nasc, raca, criador }
+  const guardaFicha = o => {
+    if (!o || !(o.pai || o.mae || o.nasc || o.criador)) return;
+    const k = chave(o.h), atual = fichas.get(k) || {};
+    for (const c of ['pai', 'mae', 'nasc', 'raca', 'criador']) if (o[c] && !atual[c]) atual[c] = o[c];
+    fichas.set(k, atual);
+  };
   const novo = (nome) => ({ nome, largadas: 0, vitorias: 0, podios: 0, zerados: 0, parceiros: new Map(), hist: [], fed: null, infantil: 0 });
   const pega = (mapa, nome) => { const k = chave(nome); if (!mapa.has(k)) mapa.set(k, novo(nome)); return mapa.get(k); };
 
@@ -42,7 +49,18 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     let dados;
     try { dados = JSON.parse(await fs.readFile(path.join(saida, 't', `${t.id}.json`), 'utf8')); } catch { continue; }
     const provas = new Map(t.provas.map(p => [String(p.id), p]));
+    for (const ordem of Object.values(dados.ordem || {})) for (const o of ordem) guardaFicha(o);
     if (vendidos) {
+      // inscritos de provas futuras que ainda não têm ordem de entrada
+      for (const [numero, lista] of Object.entries(dados.inscritos || {})) {
+        const p = t.provas.find(x => String(x.numero).toUpperCase() === numero);
+        if (!p || p.res || !p.dia || p.dia < hojeBR || (p.id && dados.ordem && dados.ordem[p.id])) continue;
+        for (const o of lista) {
+          if (!vendidos.has(chave(o.h))) continue;
+          proximas.push({ d: p.dia, hora: p.hora || null, ti: t.id, t: t.nome, pid: p.id ? Number(p.id) : null, pn: p.numero, a: p.altura ?? null,
+            k: chave(o.h), h: o.h, c: o.c, o: null, n: lista.length, inscrito: true });
+        }
+      }
       for (const [pid, ordem] of Object.entries(dados.ordem || {})) {
         const p = provas.get(pid);
         if (!p || p.res || !p.dia || p.dia < hojeBR) continue;
@@ -115,6 +133,7 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   for (const [tipo, mapa, pessoa] of [['cavaleiros', cavaleiros, true], ['cavalos', cavalos, false]]) {
     for (const [k, x] of mapa) {
       const perfil = arruma(x, pessoa);
+      if (!pessoa && fichas.has(k)) perfil.ficha = fichas.get(k);
       const f = fatia(k);
       (perfis[tipo][f] = perfis[tipo][f] || {})[k] = perfil;
       busca.push([tipo === 'cavaleiros' ? 'c' : 'h', k, perfil.nome, perfil.l, perfil.v]);
@@ -151,8 +170,22 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     }).filter(Boolean).sort((a, b) => b.v - a.v || b.po - a.po || b.l - a.l);
     const totais = { cavalos: lista.length, largadas: lista.reduce((s, x) => s + x.l, 0), vitorias: lista.reduce((s, x) => s + x.v, 0), podios: lista.reduce((s, x) => s + x.po, 0), proximas: proximas.length };
     participacoes.sort((a, b) => b.d.localeCompare(a.d) || b.ti - a.ti || String(a.pn).localeCompare(String(b.pn)) || a.p - b.p);
-    proximas.sort((a, b) => a.d.localeCompare(b.d) || String(a.hora || '').localeCompare(String(b.hora || '')) || a.o - b.o);
-    await fs.writeFile(path.join(saida, 'opp.json'), JSON.stringify({ atualizadoEm: new Date().toISOString(), totais, cavalos: lista, participacoes, proximas }) + '\n');
+    proximas.sort((a, b) => a.d.localeCompare(b.d) || String(a.hora || '').localeCompare(String(b.hora || '')) || (a.o ?? 999) - (b.o ?? 999));
+    const filhos = [];
+    for (const [k, f] of fichas) {
+      const h = cavalos.get(k);
+      if (!h) continue;
+      for (const lado of ['pai', 'mae']) {
+        const v = f[lado] && vendidos.get(chave(f[lado]));
+        if (!v) continue;
+        const perfil = arruma(h, false);
+        const alts = Object.keys(perfil.alt || {}).map(Number);
+        filhos.push({ k, nome: perfil.nome, lado, genitor: f[lado], leilao: v.leilao, ano: v.ano, l: perfil.l, v: perfil.v, po: perfil.po, max: alts.length ? Math.max(...alts) : null });
+      }
+    }
+    filhos.sort((a, b) => b.v - a.v || b.po - a.po || b.l - a.l);
+    totais.filhos = filhos.length;
+    await fs.writeFile(path.join(saida, 'opp.json'), JSON.stringify({ atualizadoEm: new Date().toISOString(), totais, cavalos: lista, participacoes, proximas, filhos }) + '\n');
     opp = { totais };
   }
 

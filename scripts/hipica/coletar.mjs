@@ -8,7 +8,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseTorneio, parseResultados, parseOrdemEntrada, idsDoCalendario } from './parsers.mjs';
+import { parseTorneio, parseResultados, parseOrdemEntrada, idsDoCalendario, camposOcultos, alvoListaInscritos, parseInscritos } from './parsers.mjs';
 import { gerarEstatisticas, CAT_INFANTIL, abreviar } from './estatisticas.mjs';
 import { enviarAvisos } from './avisos.mjs';
 import { atualizarTransmissoes } from './transmissoes.mjs';
@@ -27,6 +27,7 @@ const UA = 'SaltaApp/0.2 (app de hipismo; +https://github.com/esthevamgdevs/Prot
 const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
 // Coleta completa (descobre torneios novos) quatro vezes por dia; nas outras horas, só os torneios em andamento.
 const MODO = process.env.MODO || ([12, 17, 21, 0].includes(new Date().getUTCHours()) ? 'completo' : 'rapido'); // 9h, 14h, 18h e 21h em Brasília
+const FILIACAO_POR_RODADA = 40;            // ordens de entrada de provas já disputadas lidas por coleta completa
 const MIN_ENTRE_REVISOES = 50 * 60e3;      // prova de ontem, ou de hoje que ainda não começou
 const REVISAO_PROVA_NO_AR = 8 * 60e3;        // prova de hoje em andamento: quase a cada coleta de 10 min
 const REVISAO_PROVA_COMPLETA = 30 * 60e3;    // prova de hoje que já tem todos os conjuntos: só correções
@@ -96,6 +97,39 @@ async function baixar(caminho) {
       if (tentativa === 3) { console.warn(`  ! falhou ${caminho}: ${e.message}`); return null; }
       await dormir(8000 * tentativa);
     }
+  }
+}
+
+// Abre a Lista de Inscritos do torneio. Ela não tem endereço próprio: é preciso abrir a página
+// do torneio e "clicar" no botão, repetindo o que o navegador envia (postback do ASP.NET).
+async function baixarInscritos(id) {
+  if (paginas + 2 > MAX_PAGINAS) throw new LimiteAtingido();
+  const url = `${BASE}/calendario/ListaProvas.aspx?ID=${id}`;
+  try {
+    paginas++; await dormir(INTERVALO_MS);
+    const r1 = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'pt-BR,pt;q=0.9' }, signal: AbortSignal.timeout(30000) });
+    if (!r1.ok) return null;
+    const cookie = (r1.headers.getSetCookie ? r1.headers.getSetCookie() : []).map(c => c.split(';')[0]).join('; ');
+    const pagina = await r1.text();
+    const alvo = alvoListaInscritos(pagina);
+    if (!alvo) return null;
+    const campos = { ...camposOcultos(pagina), __EVENTTARGET: alvo, __EVENTARGUMENT: '' };
+    paginas++; await dormir(INTERVALO_MS);
+    const r2 = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'User-Agent': UA, 'Accept-Language': 'pt-BR,pt;q=0.9', Referer: url,
+        'Content-Type': 'application/x-www-form-urlencoded', ...(cookie ? { Cookie: cookie } : {}),
+      },
+      body: new URLSearchParams(campos).toString(),
+      redirect: 'follow',
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!r2.ok) { console.warn(`  ! lista de inscritos ${id}: HTTP ${r2.status}`); return null; }
+    return { html: await r2.text(), endereco: r2.url };
+  } catch (e) {
+    console.warn(`  ! lista de inscritos ${id}: ${e.message}`);
+    return null;
   }
 }
 
@@ -190,9 +224,10 @@ async function main() {
       // mantém o que já sabíamos sobre resultados de cada prova
       if (antes) for (const p of t.provas) {
         const velha = antes.provas.find(x => x.id === p.id);
-        if (velha) { p.res = velha.res; p.v = velha.v; if (velha.oe) p.oe = velha.oe; if (velha.n) p.n = velha.n; }
+        if (velha) { p.res = velha.res; p.v = velha.v; if (velha.oe) p.oe = velha.oe; if (velha.n) p.n = velha.n; if (velha.ni) p.ni = velha.ni; }
       }
       t.url = `${BASE}/calendario/ListaProvas.aspx?ID=${id}`;
+      if (antes && antes.insc) t.insc = antes.insc;
       torneios.set(id, t);
       console.log(`  ✓ ${id} ${t.nome} (${t.provas.length} provas)`);
     }
@@ -213,6 +248,8 @@ async function main() {
         if (!html) continue;
         const linhas = parseResultados(html);
         if (linhas.length) {
+          const provaInfantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
+          if (provaInfantil) for (const l of linhas) l.cavaleiro = abreviar(l.cavaleiro);
           dados.provas[p.id] = linhas.map(l => {
             let f = -1;
             if (l.federacao) { f = dados.fed.indexOf(l.federacao); if (f < 0) { dados.fed.push(l.federacao); f = dados.fed.length - 1; } }
@@ -258,11 +295,81 @@ async function main() {
           const protegido = provaInfantil || CAT_INFANTIL.test(l.cat || '');
           const linha = { o: l.o, c: protegido ? abreviar(l.c) : l.c, h: l.h };
           if (l.cat) linha.cat = l.cat;
+          for (const k of ['nasc', 'raca', 'criador', 'pai', 'mae']) if (l[k]) linha[k] = l[k];
           return linha;
         });
         p.oe = linhas.length;
       }
       console.log(`  ✓ ordem de entrada ${t.id} ${t.nome}`);
+    }
+
+    // 4) Pai e mãe dos cavalos das provas já disputadas: a ordem de entrada continua no site depois da prova.
+    //    Algumas por coleta completa, para não pesar no site da FPH; em poucos dias cobre a temporada.
+    if (MODO === 'completo') {
+      estado.filiacao = estado.filiacao || {};
+      let feitas = 0;
+      for (const t of torneios.values()) {
+        if (feitas >= FILIACAO_POR_RODADA) break;
+        if (!t.fim || t.fim < A_PARTIR || /cancel/i.test(t.status || '')) continue;
+        const arq = path.join(SAIDA, 't', `${t.id}.json`);
+        let dados = null;
+        for (const p of t.provas) {
+          if (feitas >= FILIACAO_POR_RODADA) break;
+          if (!p.id || !p.res || estado.filiacao[p.id]) continue;
+          dados = dados || arquivosTorneio.get(t.id) || await lerJSON(arq, { id: t.id, fed: [], provas: {} });
+          arquivosTorneio.set(t.id, dados);
+          dados.ordem = dados.ordem || {};
+          if (dados.ordem[p.id] && dados.ordem[p.id].some(l => l.pai)) { estado.filiacao[p.id] = 'ok'; continue; }
+          const html = await baixar(`/calendario/OrdemEntrada.aspx?ID=${p.id}`);
+          feitas++;
+          const linhas = html ? parseOrdemEntrada(html) : [];
+          if (!linhas.length) { estado.filiacao[p.id] = 'vazio'; continue; }
+          const provaInfantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
+          dados.ordem[p.id] = linhas.map(l => {
+            const protegido = provaInfantil || CAT_INFANTIL.test(l.cat || '');
+            const linha = { o: l.o, c: protegido ? abreviar(l.c) : l.c, h: l.h };
+            if (l.cat) linha.cat = l.cat;
+          for (const k of ['nasc', 'raca', 'criador', 'pai', 'mae']) if (l[k]) linha[k] = l[k];
+            return linha;
+          });
+          p.oe = linhas.length;
+          estado.filiacao[p.id] = linhas.some(l => l.pai) ? 'ok' : 'sem-ficha';
+          if (!linhas.some(l => l.pai) && amostras < AMOSTRAS) { amostras++; await guardarAmostra(`ordem-sem-ficha-${p.id}.html`, html); }
+        }
+      }
+      if (feitas) console.log(`  ✓ pai e mãe: ${feitas} provas já disputadas lidas nesta coleta`);
+    }
+
+    // 5) Lista de Inscritos do torneio inteiro, antes de sair a ordem de entrada de cada prova
+    if (MODO === 'completo') {
+      estado.inscritos = estado.inscritos || {};
+      const proximos = [...torneios.values()].filter(t => !/cancel|adiad/i.test(t.status || '') &&
+        t.inicio && t.fim && t.inicio <= somarDias(hoje, 10) && t.fim >= hoje);
+      for (const t of proximos) {
+        const r = await baixarInscritos(t.id);
+        if (!r) continue;
+        const lido = parseInscritos(r.html);
+        const primeiraVez = !estado.inscritos[t.id];
+        estado.inscritos[t.id] = new Date().toISOString();
+        if (primeiraVez || !lido.total) await guardarAmostra(`inscritos-${t.id}.html`, `<!-- ${r.endereco} -->\n` + r.html);
+        if (!lido.total) { console.log(`  ? lista de inscritos ${t.id}: nenhum inscrito reconhecido`); continue; }
+        const arq = path.join(SAIDA, 't', `${t.id}.json`);
+        const dados = arquivosTorneio.get(t.id) || await lerJSON(arq, { id: t.id, fed: [], provas: {} });
+        arquivosTorneio.set(t.id, dados);
+        dados.inscritos = {};
+        for (const [numero, lista] of Object.entries(lido.porProva)) {
+          const prova = t.provas.find(p => String(p.numero).toUpperCase() === numero);
+          const provaInfantil = prova && CAT_INFANTIL.test(`${prova.nome || ''} ${prova.desc || ''}`);
+          dados.inscritos[numero] = lista.map(l => {
+            const x = { c: (provaInfantil || CAT_INFANTIL.test(l.cat || '')) ? abreviar(l.c) : l.c, h: l.h };
+            if (l.cat) x.cat = l.cat;
+            return x;
+          });
+          if (prova) prova.ni = lista.length;
+        }
+        t.insc = lido.total;
+        console.log(`  ✓ lista de inscritos ${t.id} ${t.nome}: ${lido.total} inscrições`);
+      }
     }
   } catch (e) {
     if (e instanceof LimiteAtingido) {
@@ -271,9 +378,25 @@ async function main() {
     } else throw e;
   }
 
+  // Proteção de menores nos dados já gravados antes desta versão (resultados e vencedor da prova)
+  for (const t of torneios.values()) {
+    const infantis = t.provas.filter(p => p.id && CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`));
+    if (!infantis.length) continue;
+    for (const p of infantis) if (p.v && p.v.c) p.v.c = abreviar(p.v.c);
+    const arq = path.join(SAIDA, 't', `${t.id}.json`);
+    const dados = arquivosTorneio.get(t.id) || await lerJSON(arq, null);
+    if (!dados) continue;
+    let mudou = false;
+    for (const p of infantis) for (const l of (dados.provas && dados.provas[p.id]) || []) {
+      const novo = abreviar(l.c);
+      if (novo !== l.c) { l.c = novo; mudou = true; }
+    }
+    if (mudou) arquivosTorneio.set(t.id, dados);
+  }
+
   // 3) Gravar
   for (const [id, dados] of arquivosTorneio) {
-    if (Object.keys(dados.provas).length || Object.keys(dados.ordem || {}).length) await gravarJSON(path.join(SAIDA, 't', `${id}.json`), dados);
+    if (Object.keys(dados.provas).length || Object.keys(dados.ordem || {}).length || Object.keys(dados.inscritos || {}).length) await gravarJSON(path.join(SAIDA, 't', `${id}.json`), dados);
   }
   const listaTorneios = [...torneios.values()].filter(t => !t.fim || t.fim >= A_PARTIR).sort((a, b) => (a.inicio || '').localeCompare(b.inicio || ''));
   const mudou = JSON.stringify(listaTorneios) !== JSON.stringify(indice.torneios);
