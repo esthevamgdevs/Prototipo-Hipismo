@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T13:47:55.229Z",
+ "atualizadoEm": "2026-10-03T14:29:42.813Z",
  "torneios": [
   {
    "id": 3404,
@@ -10782,11 +10782,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "LEANDRO JOSE ABRAHAO"
+      "c": "TIAGO MESQUITA",
+      "h": "QH CHICO DO SANTO ANTONIO"
      },
      "oe": 65,
-     "n": 50
+     "n": 58
     },
     {
      "id": 14620,
@@ -10798,8 +10798,14 @@
      "hora": "10:30",
      "pista": "AREA-2",
      "gp": false,
-     "linkResultado": false,
-     "oe": 46
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "LUCAS MOREIRA ARANHA"
+     },
+     "oe": 46,
+     "n": 13
     },
     {
      "id": 14630,
