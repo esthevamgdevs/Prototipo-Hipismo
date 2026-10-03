@@ -259,6 +259,43 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 .parceiro{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .sub.atualizado{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;opacity:.85}
 .sub.atualizado i{width:7px;height:7px;border-radius:50%;background:#5FB37E;display:block;box-shadow:0 0 0 3px rgba(95,179,126,.25)}
+/* boas-vindas */
+#boas-vindas{position:fixed;inset:0;z-index:50;display:flex;justify-content:center;background:rgba(10,15,13,.45)}
+.bv{width:100%;max-width:520px;height:100%;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 40px) 26px calc(env(safe-area-inset-bottom,0px) + 28px);overflow-y:auto}
+.bv-verde{background:var(--verde);color:#F4F1EA}
+.bv-corpo{display:flex;flex-direction:column;gap:16px}
+.bv-centro{align-items:center;text-align:center;padding-top:8vh}
+.bv h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7vw,36px);line-height:1.12;margin:6px 0 0}
+.bv p{margin:0;font-size:16px;line-height:1.55;color:var(--muted)}
+.bv-verde p{color:#C9D6CF}
+.bv-marca{display:flex;align-items:baseline;gap:10px}
+.bv-marca b{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1}
+.bv-marca small{font-size:13px;font-weight:600;color:#C9D6CF}
+.bv-pe{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.bv-pe .btn{flex:none;width:100%;height:52px;min-height:52px;justify-content:center}
+.bv-pular{background:none;border:0;font:inherit;font-size:14.5px;font-weight:600;color:var(--muted);padding:8px;cursor:pointer}
+.bv-verde .bv-pular{color:#C9D6CF}
+.bv-pontos{display:flex;justify-content:center;gap:6px;margin-bottom:6px}
+.bv-pontos i{width:7px;height:7px;border-radius:999px;background:var(--linha);display:block;transition:width .2s}
+.bv-pontos i.on{width:22px;background:var(--ouro)}
+.bv-verde .bv-pontos i{background:#3E6558}.bv-verde .bv-pontos i.on{background:var(--ouro)}
+.bv-ilustra{background:var(--verde);border-radius:6px;padding:20px 16px;display:flex;flex-direction:column;gap:10px}
+.bv-olho{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ouro)}
+.bv-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--surface);color:var(--ink);border:1px solid var(--linha);border-radius:4px;padding:11px 13px;color:var(--muted-2)}
+.bv-item span{display:flex;flex-direction:column;gap:1px}
+.bv-item b{font-family:var(--serif);font-weight:400;font-size:16.5px;color:var(--ink)}
+.bv-item small{font-size:12.5px;color:var(--muted)}
+.bv-item.on{border-color:var(--ouro);color:var(--ouro)}
+.bv-item.on svg{fill:var(--ouro)}
+.bv-aviso{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--linha);border-radius:16px;padding:12px 14px;box-shadow:0 10px 26px rgba(18,61,48,.16)}
+.bv-aviso>svg{flex:none;background:var(--verde);border-radius:9px;padding:4px}
+.bv-aviso span{display:flex;flex-direction:column;gap:2px}
+.bv-aviso b{font-size:14px}
+.bv-aviso small{font-size:13.5px;color:var(--muted);line-height:1.4}
+.bv-passos{margin:4px 0 0;padding:16px 16px 16px 40px;background:var(--surface);border:1px solid var(--linha);border-radius:6px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.bv-ic{display:inline-flex;vertical-align:-3px;color:#2F6FED;margin-left:2px}
+.sub.ficha{font-size:13.5px;opacity:.9}
+@media (prefers-reduced-motion:reduce){.bv-pontos i{transition:none}}
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -323,7 +360,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '01/10/2026 · atualização a cada 10 min';
+const VERSAO_APP = '03/10/2026 · boas-vindas, ficha do cavalo e inscritos';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -784,10 +821,10 @@ function telaTorneio() {
     const corpoProva = p.res && p.v
       ? `<span class="tag">${parcial ? `LIDERANDO · ${p.n} DE ${p.oe} JÁ SALTARAM` : 'VENCEDOR'}${dest ? ' · MAIOR PROVA DO DIA' : ''}</span><span class="venc">${esc(titulo(p.v.c))}</span><span class="meta">${esc(titulo(p.v.h))}${info ? ' · ' + esc(info) : ''}</span>`
       : `<span class="tag">${esc(titulo(p.nome || 'A realizar'))}${dest ? ' · MAIOR PROVA DO DIA' : ''}</span><span class="venc">${
-          p.oe ? `${p.oe} conjunto${p.oe > 1 ? 's' : ''} inscrito${p.oe > 1 ? 's' : ''}` : (p.dia && p.dia < hojeISO() ? 'Resultado ainda não publicado' : 'Ainda não disputada')
-        }</span><span class="meta">${esc(info || 'Horário a confirmar')}${p.oe ? ' · ver ordem de entrada' : ''}</span>`;
-    const abre = p.res || p.oe;
-    return `<button class="prova${dest ? ' destaque' : ''}" ${abre ? `data-prova="${p.id}"` : 'disabled aria-disabled="true"'}>
+          p.oe ? `${p.oe} conjunto${p.oe > 1 ? 's' : ''} inscrito${p.oe > 1 ? 's' : ''}` : (p.ni ? `${p.ni} conjunto${p.ni > 1 ? 's' : ''} inscrito${p.ni > 1 ? 's' : ''}` : (p.dia && p.dia < hojeISO() ? 'Resultado ainda não publicado' : 'Ainda não disputada'))
+        }</span><span class="meta">${esc(info || 'Horário a confirmar')}${p.oe ? ' · ver ordem de entrada' : (p.ni ? ' · ver inscritos' : '')}</span>`;
+    const abre = p.res || p.oe || p.ni;
+    return `<button class="prova${dest ? ' destaque' : ''}" ${abre ? `data-prova="${p.id || 'n' + p.numero}"` : 'disabled aria-disabled="true"'}>
       <span class="alt"><b>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') : '–'}</b><span>PROVA ${numProva(p)}</span></span>
       <span class="corpo">${corpoProva}</span>
       ${abre ? seta : ''}
@@ -798,7 +835,7 @@ function telaTorneio() {
 }
 
 function telaProva() {
-  const t = achar(S.torneio), p = t?.provas.find(x => x.id === +S.prova) || t?.todasProvas?.find(x => x.id === +S.prova);
+  const t = achar(S.torneio), p = acharProva(t, S.prova);
   if (!p) return telaTorneio();
   const x = p.dia ? dt(p.dia) : null;
   const cab = `<header class="capa">
@@ -809,7 +846,11 @@ function telaProva() {
   const dados = S.torneios[t.id];
   if (!dados || dados === 'carregando') { carregarTorneio(t.id); return cab + '</header><main><div class="vazio">Carregando resultado…</div></main>'; }
   if (dados === 'erro') return cab + `</header><main><div class="vazio"><b>Não deu para carregar</b><button class="btn clara" style="margin-top:12px;flex:none" data-acao="recarregarProva">Tentar de novo</button></div></main>`;
-  if (!p.res) return cab + '</header>' + telaOrdem(p, (dados.ordem || {})[String(p.id)] || []);
+  if (!p.res) {
+    const ordem = (p.id && (dados.ordem || {})[String(p.id)]) || [];
+    const inscritos = ((dados.inscritos || {})[String(p.numero).toUpperCase()]) || [];
+    return cab + '</header>' + (ordem.length || !inscritos.length ? telaOrdem(p, ordem) : telaInscritos(p, inscritos));
+  }
   const linhas = dados.provas[String(p.id)] || [];
   const fed = i => i != null ? dados.fed[i] : null;
   const q = S.filtro.trim().toLowerCase();
@@ -895,6 +936,23 @@ function linhasCruzadas(lista, resultadoDo, proximo, p) {
       <span class="f" style="width:92px">${res}</span>
     </button>`;
   }).join('');
+}
+// a prova pode ser aberta pelo número na FPH ou, antes de ele existir, por "n" + número da prova no torneio
+function acharProva(t, ref) {
+  if (!t) return null;
+  const alvo = String(ref);
+  const todas = [...(t.provas || []), ...(t.todasProvas || [])];
+  return todas.find(x => String(x.id) === alvo) || todas.find(x => 'n' + x.numero === alvo) || null;
+}
+function telaInscritos(p, lista) {
+  return `<main class="fade">
+    <div class="secao"><h2>Inscritos</h2><span class="risco"></span><span class="aux">${lista.length} conjuntos</span></div>
+    <p class="fonte" style="padding-top:0">A ordem de entrada ainda não saiu. Esta é a lista de inscritos do torneio para esta prova, sem ordem definida.</p>
+    <div class="tabela"><div class="cab"><span class="c">CONJUNTO</span><span class="f" style="width:70px">CATEG.</span></div>
+      ${lista.map(l => `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+        <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span></span>
+        <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span></button>`).join('')}</div>
+  </main>`;
 }
 function telaOrdem(p, ordem) {
   if (!ordem.length) return `<main><div class="vazio"><b>Ordem de entrada ainda não publicada</b>Ela costuma sair na véspera da prova.</div></main>`;
@@ -1020,6 +1078,7 @@ function telaSobre() {
       <div class="parceiro">${logoParceiro('horsepix', 26)}
         <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Transmissões ao vivo das provas de salto, exibidas no Salta com autorização da HorsePix.</p></div>
     </div>
+    <p style="text-align:center;margin:8px 0 0"><button class="btn-fino" data-bv-rever="1">Ver a apresentação de novo</button></p>
     <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
 }
@@ -1092,13 +1151,27 @@ function telaVendidosOpp() {
     <div class="chips clara" role="group" aria-label="Visão dos vendidos" style="padding:16px 20px 0">
       <button class="chip" data-opp-vista="provas" aria-pressed="${vista === 'provas'}">Por prova</button>
       <button class="chip" data-opp-vista="cavalos" aria-pressed="${vista === 'cavalos'}">Por cavalo</button>
+      ${o.filhos?.length ? `<button class="chip" data-opp-vista="filhos" aria-pressed="${vista === 'filhos'}">Filhos de vendidos</button>` : ''}
     </div>
     <div class="barra-filtros"><label class="sr" for="filtroOpp">Buscar cavalo</label>
       <input class="busca" id="filtroOpp" type="search" placeholder="Buscar cavalo vendido" value="${esc(S.filtroOpp || '')}"></div>
-    <div id="corpoOpp">${vista === 'cavalos' ? oppPorCavalo(o, q) : oppPorProva(o, q)}</div>
+    <div id="corpoOpp">${corpoOpp(o, vista, q)}</div>
     <p class="fonte">Cavalos vendidos em leilões da Opportunity que competem nesta temporada nos torneios do sistema da FPH. A identificação é feita pelo nome do animal.</p>
   </main>`;
   return html;
+}
+const corpoOpp = (o, vista, q) => vista === 'cavalos' ? oppPorCavalo(o, q) : (vista === 'filhos' ? oppFilhos(o, q) : oppPorProva(o, q));
+// cavalos em pista cujo pai ou mãe foi vendido pela Opportunity
+function oppFilhos(o, q) {
+  const lista = (o.filhos || []).filter(r => !q || r.nome.toLowerCase().includes(q) || r.genitor.toLowerCase().includes(q));
+  if (!lista.length) return `<div class="vazio">Nenhum filho de cavalo vendido encontrado${q ? ' com esse nome' : ''}.</div>`;
+  return `<p class="fonte" style="padding-top:12px">Cavalos que competem nesta temporada e são filhos de animais vendidos em leilões da Opportunity.</p>
+    <div class="podio">${lista.map(r => `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(r.k)}">
+      <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+        <span class="nome">${esc(titulo(r.nome))}</span>
+        <span class="meta">${r.lado === 'pai' ? 'Filho de' : 'Mãe:'} ${esc(titulo(r.genitor))} · vendido em ${esc(titulo(r.leilao))}${r.ano ? ', ' + r.ano : ''}</span>
+        <span class="meta">${r.l} largadas${r.max ? ' · até ' + fmtAlt(r.max) : ''}</span></span>
+      <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`).join('')}</div>`;
 }
 function oppPorCavalo(o, q) {
   const lista = q ? o.cavalos.filter(r => r.nome.toLowerCase().includes(q)) : o.cavalos;
@@ -1118,7 +1191,7 @@ function oppPorCavalo(o, q) {
 function agruparPorProva(itens) {
   const grupos = [], porChave = new Map();
   for (const x of itens) {
-    const g = `${x.ti}:${x.pid}`;
+    const g = `${x.ti}:${x.pid || 'n' + x.pn}`;
     if (!porChave.has(g)) { const novo = { ...x, cavalos: [] }; porChave.set(g, novo); grupos.push(novo); }
     porChave.get(g).cavalos.push(x);
   }
@@ -1126,13 +1199,13 @@ function agruparPorProva(itens) {
 }
 function cartaoProvaOpp(g, futuro) {
   const x = dt(g.d);
-  return `<button class="cartao-opp" data-abrir-prova="${g.ti}:${g.pid}">
+  return `<button class="cartao-opp" data-abrir-prova="${g.ti}:${g.pid || 'n' + g.pn}">
     <span class="topo-opp"><b>${futuro ? (g.hora ? g.hora + ' · ' : '') : ''}${x.getDate()} ${MES[x.getMonth()]}</b> · Prova ${esc(String(g.pn || '').replace(/^0+(?=\d)/, ''))} · ${fmtAlt(g.a)}</span>
     <span class="torneio-opp">${esc(titulo(g.t))}</span>
     ${g.cavalos.map(c => {
       const perc = c.r && c.r[0];
       const res = futuro
-        ? `<span class="res-opp">entra em ${c.o}º de ${c.n}</span>`
+        ? `<span class="res-opp">${c.o ? `entra em ${c.o}º de ${c.n}` : `inscrito · ${c.n} na prova`}</span>`
         : (c.s ? `<span class="res-opp">${esc(c.s)}</span>`
                : `<span class="res-opp"><b style="color:${c.p === 1 ? 'var(--ouro-escuro)' : (c.p <= 3 ? 'var(--bronze)' : 'var(--ink)')}">${c.p}º</b> de ${c.n}${perc ? ' · ' + fmtN(perc[0]) + ' flt' : ''}</span>`);
       return `<span class="linha-opp"><span class="cav-opp"><b>${esc(titulo(c.h))}</b><span>${esc(titulo(c.c))}</span></span>${res}</span>`;
@@ -1174,6 +1247,11 @@ function telaPerfil() {
   const venda = !pessoa && vendidoDe(p.nome);
   let corpo = cab(p.nome) + `<span class="sub">${p.fed ? esc(p.fed) + ' · ' : ''}${p.par?.length ? (pessoa ? 'Monta ' : 'Montado por ') + esc(titulo(p.par[0].n)) : ''}</span>
     ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
+    ${!pessoa && p.ficha ? `<span class="sub ficha">${[
+      p.ficha.pai || p.ficha.mae ? `${p.ficha.pai ? 'Filho de ' + esc(titulo(p.ficha.pai)) : ''}${p.ficha.pai && p.ficha.mae ? ' e ' : ''}${p.ficha.mae ? (p.ficha.pai ? '' : 'Mãe: ') + esc(titulo(p.ficha.mae)) : ''}` : '',
+      p.ficha.nasc ? 'nascido em ' + p.ficha.nasc.slice(0, 4) : '',
+      p.ficha.raca ? esc(p.ficha.raca) : '',
+      p.ficha.criador ? 'criado por ' + esc(titulo(p.ficha.criador)) : ''].filter(Boolean).join(' · ')}</span>` : ''}
     <div class="acoes"><button class="btn ouro" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">★ ${seguido ? 'Seguindo' : (pessoa ? 'Seguir cavaleiro' : 'Seguir cavalo')}</button></div>
     </header><main class="fade">
     <div class="stats">
@@ -1307,7 +1385,7 @@ function render() {
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr]');
+  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
@@ -1331,6 +1409,7 @@ document.addEventListener('click', e => {
   if (d.acao === 'baixarCard') return baixarCard();
   if (d.aviso) { avisos[d.aviso] = !avisos[d.aviso]; guarda.gravar('pista-avisos', avisos); sincronizarAvisos(); return render(); }
   if (d.acao === 'ativarAvisos') return ativarAvisos();
+  if (d.bvRever) return mostrarBoasVindas(0);
   if (d.acao === 'desativarAvisos') return desativarAvisos();
   if (d.cat) { S.cat = d.cat; return render(); }
   if (d.dia) { S.dia = d.dia; return render(); }
@@ -1345,12 +1424,12 @@ document.addEventListener('click', e => {
     return irPara('torneio', { prova: null, filtro: '' });
   }
   if (d.abrirProva) {
-    const [ti, pid] = d.abrirProva.split(':').map(Number);
+    const [ti, ref] = d.abrirProva.split(':');
     S.origem = 'opp';
-    return irPara('prova', { torneio: ti, prova: pid, dia: null, filtro: '', abaProva: 'classificacao' });
+    return irPara('prova', { torneio: +ti, prova: /^\d+$/.test(ref) ? +ref : ref, dia: null, filtro: '', abaProva: 'classificacao' });
   }
   if (d.abaProva) { S.abaProva = d.abaProva; S.filtro = ''; return render(); }
-  if (d.prova) return irPara('prova', { prova: +d.prova, filtro: '', abaProva: 'classificacao' });
+  if (d.prova) return irPara('prova', { prova: /^\d+$/.test(d.prova) ? +d.prova : d.prova, filtro: '', abaProva: 'classificacao' });
   if (d.perfil) { carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k }); }
   if (d.torneio) return irPara('torneio', { torneio: +d.torneio, dia: null, prova: null });
 });
@@ -1360,7 +1439,7 @@ document.addEventListener('input', e => {
     S.filtroOpp = e.target.value;
     const alvo = document.getElementById('corpoOpp');
     const q = S.filtroOpp.trim().toLowerCase();
-    if (alvo && S.opp && typeof S.opp === 'object') alvo.innerHTML = (S.oppVista || 'provas') === 'cavalos' ? oppPorCavalo(S.opp, q) : oppPorProva(S.opp, q);
+    if (alvo && S.opp && typeof S.opp === 'object') alvo.innerHTML = corpoOpp(S.opp, S.oppVista || 'provas', q);
     return;
   }
   if (e.target.id === 'filtroCruzado') {
@@ -1436,7 +1515,77 @@ function abrirPeloEndereco() {
 window.addEventListener('hashchange', abrirPeloEndereco);
 
 render();
-carregar().then(abrirPeloEndereco);
+// ---------- boas-vindas: três telas na primeira abertura ----------
+const CHAVE_BV = 'salta-boas-vindas-v1';
+let bvPasso = 0;
+function telaBoasVindas() {
+  const pontos = `<div class="bv-pontos">${[0, 1, 2].map(i => `<i class="${i === bvPasso ? 'on' : ''}"></i>`).join('')}</div>`;
+  if (bvPasso === 0) return `<div class="bv bv-verde" role="dialog" aria-modal="true" aria-labelledby="bv-t">
+    <div class="bv-corpo bv-centro">${marcaSvg(88)}
+      <div class="bv-marca"><b>Salta</b><small>by Opportunity</small></div>
+      <h2 id="bv-t">A temporada de salto,<br>prova a prova</h2>
+      <p>Calendário, resultados, ordem de entrada e ranking dos torneios de salto, sempre atualizados.</p></div>
+    <div class="bv-pe">${pontos}<button class="btn ouro" data-bv="proximo">Começar</button><button class="bv-pular" data-bv="fechar">Pular apresentação</button></div></div>`;
+  if (bvPasso === 1) return `<div class="bv" role="dialog" aria-modal="true" aria-labelledby="bv-t">
+    <div class="bv-corpo">
+      <div class="bv-ilustra">
+        <span class="bv-olho">SEGUINDO</span>
+        <span class="bv-item on"><span><b>Seu cavalo</b><small>Cavalo · resultados e próximas provas</small></span>${svg(ICONES.seguindo, 20)}</span>
+        <span class="bv-item on"><span><b>Seu cavaleiro</b><small>Cavaleiro · todas as largadas</small></span>${svg(ICONES.seguindo, 20)}</span>
+        <span class="bv-item"><span><b>Um torneio</b><small>Torneio · programação e resultados</small></span>${svg(ICONES.seguindo, 20)}</span>
+      </div>
+      <h2 id="bv-t">Siga quem você acompanha</h2>
+      <p>Toque na estrela de um cavaleiro, de um cavalo ou de um torneio. Tudo o que você segue fica reunido na aba Seguindo.</p></div>
+    <div class="bv-pe">${pontos}<button class="btn ouro" data-bv="proximo">Continuar</button><button class="bv-pular" data-bv="fechar">Pular apresentação</button></div></div>`;
+  // terceira tela: no iPhone fora da tela de início, ensina a instalar; nos outros casos, oferece ativar os avisos
+  const precisaInstalar = ehIOS && !naTelaDeInicio();
+  const semSuporte = !precisaInstalar && !('Notification' in window && 'serviceWorker' in navigator && 'PushManager' in window);
+  return `<div class="bv" role="dialog" aria-modal="true" aria-labelledby="bv-t">
+    <div class="bv-corpo">
+      <div class="bv-aviso">${marcaSvg(30)}<span><b>Vitória de quem você segue</b><small>Seu cavaleiro ficou em 1º com o seu cavalo, na prova de 1,20m</small></span></div>
+      <h2 id="bv-t">Saiba na hora quem subiu no pódio</h2>
+      ${precisaInstalar ? `<p>No iPhone, os avisos só funcionam com o Salta na tela de início:</p>
+      <ol class="bv-passos">
+        <li>No Safari, toque em <b>Compartilhar</b> <span class="bv-ic">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>', 18)}</span></li>
+        <li>Escolha <b>Adicionar à Tela de Início</b></li>
+        <li>Abra o Salta pelo ícone e ative os avisos</li>
+      </ol>` : (semSuporte ? `<p>Este navegador não recebe avisos. Você pode seguir cavaleiros e cavalos do mesmo jeito e acompanhar tudo na aba Seguindo.</p>`
+        : `<p>Os avisos chegam logo depois de cada resultado publicado, para quem você segue.</p>`)}
+    </div>
+    <div class="bv-pe">${pontos}${precisaInstalar || semSuporte ? `<button class="btn ouro" data-bv="fechar">Entendi</button>`
+      : `<button class="btn ouro" data-bv="avisos">Ativar avisos</button><button class="bv-pular" data-bv="fechar">Agora não</button>`}</div></div>`;
+}
+function mostrarBoasVindas(passo = 0) {
+  bvPasso = passo;
+  let el = document.getElementById('boas-vindas');
+  if (!el) { el = document.createElement('div'); el.id = 'boas-vindas'; document.body.appendChild(el); }
+  el.innerHTML = telaBoasVindas();
+  document.body.style.overflow = 'hidden';
+  const foco = el.querySelector('[data-bv="proximo"],[data-bv="avisos"],[data-bv="fechar"]');
+  if (foco) foco.focus();
+}
+function fecharBoasVindas() {
+  try { localStorage.setItem(CHAVE_BV, '1'); } catch {}
+  const el = document.getElementById('boas-vindas');
+  if (el) el.remove();
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-bv]');
+  if (!b) return;
+  const acao = b.dataset.bv;
+  if (acao === 'proximo') return mostrarBoasVindas(bvPasso + 1);
+  if (acao === 'fechar') return fecharBoasVindas();
+  if (acao === 'avisos') { fecharBoasVindas(); return ativarAvisos(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('boas-vindas')) fecharBoasVindas(); });
+function talvezBoasVindas() {
+  let visto = false;
+  try { visto = localStorage.getItem(CHAVE_BV) === '1'; } catch {}
+  if (!visto) mostrarBoasVindas(0);
+}
+
+carregar().then(abrirPeloEndereco).then(talvezBoasVindas);
 iniciarPush();
 </script>
 </body>
