@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T18:07:36.901Z",
+ "atualizadoEm": "2026-10-03T19:57:34.707Z",
  "torneios": [
   {
    "id": 3404,
@@ -3922,7 +3922,8 @@
      "v": {
       "c": "Beatriz Barata R.",
       "h": "QUEENIE A F"
-     }
+     },
+     "oe": 9
     },
     {
      "id": 13795,
@@ -3939,7 +3940,8 @@
      "v": {
       "c": "PEDRO HADDAD ONCINS",
       "h": "FRANK COSTELLO LJR"
-     }
+     },
+     "oe": 77
     },
     {
      "id": 13839,
@@ -3968,7 +3970,8 @@
      "v": {
       "c": "GABRIEL KAYAN SOARES MAGALHAES",
       "h": "CAREZZO DO FEROLETO (IA)"
-     }
+     },
+     "oe": 28
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3416"
@@ -3997,7 +4000,8 @@
      "v": {
       "c": "Manuela Fernandes V.",
       "h": "FADA MADRINHA"
-     }
+     },
+     "oe": 45
     },
     {
      "id": 13944,
@@ -4014,7 +4018,8 @@
      "v": {
       "c": "Laura Jarcew",
       "h": "CORBELLA GOOD SPIRIT"
-     }
+     },
+     "oe": 90
     },
     {
      "id": 13945,
@@ -4031,7 +4036,8 @@
      "v": {
       "c": "Ana Luiza F. S.",
       "h": "CANCELIER VAN DE BOSSWINNING"
-     }
+     },
+     "oe": 55
     },
     {
      "id": 13946,
@@ -4048,7 +4054,8 @@
      "v": {
       "c": "Maria Clara P. D. A. L.",
       "h": "ACLANDINO JOTER"
-     }
+     },
+     "oe": 32
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3427"
@@ -4077,7 +4084,8 @@
      "v": {
       "c": "Livia Sakashita B.",
       "h": "SABIA"
-     }
+     },
+     "oe": 16
     },
     {
      "id": 13973,
@@ -4094,7 +4102,8 @@
      "v": {
       "c": "Nathalia Carvalho D.",
       "h": "E3I DON JUAN"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13974,
@@ -4111,7 +4120,8 @@
      "v": {
       "c": "Julia Ferro C.",
       "h": "ALDEBARAN"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 13975,
@@ -4128,7 +4138,8 @@
      "v": {
       "c": "Rafaela Angulo M.",
       "h": "CARTIER"
-     }
+     },
+     "oe": 11
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3434"
@@ -4157,7 +4168,8 @@
      "v": {
       "c": "JULIA TREVISAN RODRIGUES",
       "h": "CARLO FLORES (IA)"
-     }
+     },
+     "oe": 30
     },
     {
      "id": 13902,
@@ -4174,7 +4186,8 @@
      "v": {
       "c": "ANNA KATHARINA LAUREANO BRUKHNOVA",
       "h": "SENNA KM"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13905,
@@ -4191,7 +4204,8 @@
      "v": {
       "c": "THEO SEEBACHER BRANCO JORDAO",
       "h": "FANTASTIC H2O"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13912,
@@ -4208,7 +4222,8 @@
      "v": {
       "c": "BRUNO CHAVES PESSANHA",
       "h": "FIDO TW"
-     }
+     },
+     "oe": 20
     },
     {
      "id": 13898,
@@ -4225,7 +4240,8 @@
      "v": {
       "c": "Miguel Fernandes B.",
       "h": "SERRA NEGRA BÁRBARA"
-     }
+     },
+     "oe": 39
     },
     {
      "id": 13903,
@@ -4242,7 +4258,8 @@
      "v": {
       "c": "GABRIELA DE OLIVEIRA KUBA",
       "h": "RATINA TRV (TE)"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13906,
@@ -4259,7 +4276,8 @@
      "v": {
       "c": "BRUNO DIAS CAMBRAIA HENRIQUES COSTA",
       "h": "A3R NOTTING HILL M (IA)"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13915,
@@ -4276,7 +4294,8 @@
      "v": {
       "c": "CAIO CARVALHO FILHO",
       "h": "CASSIARA C JMEN (TE)"
-     }
+     },
+     "oe": 18
     },
     {
      "id": 13899,
@@ -4293,7 +4312,8 @@
      "v": {
       "c": "Gabriel Guerra B.",
       "h": "SL OPIO"
-     }
+     },
+     "oe": 39
     },
     {
      "id": 13909,
@@ -4310,7 +4330,8 @@
      "v": {
       "c": "SOFIA NEGRAO MOREIRA",
       "h": "HFG DIVA (IA)"
-     }
+     },
+     "oe": 30
     },
     {
      "id": 13900,
@@ -4327,7 +4348,8 @@
      "v": {
       "c": "Maria Eduarda N. G.",
       "h": "EC OTELO (IA)"
-     }
+     },
+     "oe": 39
     },
     {
      "id": 13904,
@@ -4344,7 +4366,8 @@
      "v": {
       "c": "LUISA LOPES BERGAMASCHI",
       "h": "CHILENA DO ADONAI (IA)"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13907,
@@ -4361,7 +4384,8 @@
      "v": {
       "c": "THEO SEEBACHER BRANCO JORDAO",
       "h": "FANTASTIC H2O"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13910,
@@ -4378,7 +4402,8 @@
      "v": {
       "c": "HELENA ESTELLITA FERRAZ DE SIQUEIRA",
       "h": "VALENTINA DES FLANDRES (IA)"
-     }
+     },
+     "oe": 30
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3425"
@@ -4440,7 +4465,8 @@
      "v": {
       "c": "GUILHERME FRATA CINTRA",
       "h": "TATABRA DEMIAN"
-     }
+     },
+     "oe": 2
     },
     {
      "id": 14013,
@@ -4457,7 +4483,8 @@
      "v": {
       "c": "SOPHIE FROHLICH ARCHANGELO",
       "h": "CHALISE JMEN (TE)"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 14009,
@@ -4474,7 +4501,8 @@
      "v": {
       "c": "RICARDO MASSAITI KOSHIBA DO AMARAL",
       "h": "CARTHEZINA JMEN I (TE)"
-     }
+     },
+     "oe": 18
     },
     {
      "id": 14018,
@@ -4491,7 +4519,8 @@
      "v": {
       "c": "GUILHERME FRATA CINTRA",
       "h": "CEREZO DE RIVERLAND"
-     }
+     },
+     "oe": 2
     },
     {
      "id": 14014,
@@ -4508,7 +4537,8 @@
      "v": {
       "c": "GIULIA RAMOS GARCIA",
       "h": "LG REVERIE"
-     }
+     },
+     "oe": 6
     },
     {
      "id": 14027,
@@ -4525,7 +4555,8 @@
      "v": {
       "c": "JULIA BORMANN FAVARETTO",
       "h": "EC PRESLEY (IA)"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 14028,
@@ -4542,7 +4573,8 @@
      "v": {
       "c": "MARIA PASTORI SOARES",
       "h": "ERNEST RJ"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 14010,
@@ -4559,7 +4591,8 @@
      "v": {
       "c": "SOPHIA LAURA LIMA DO VALE",
       "h": "BAILARINA"
-     }
+     },
+     "oe": 18
     },
     {
      "id": 14019,
@@ -4576,7 +4609,8 @@
      "v": {
       "c": "GUILHERME FRATA CINTRA",
       "h": "TATABRA DEMIAN"
-     }
+     },
+     "oe": 2
     },
     {
      "id": 14029,
@@ -4593,7 +4627,8 @@
      "v": {
       "c": "VALENTINA IDENAGA NAVARRO",
       "h": "UL MANNEKEN PIS"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 14011,
@@ -4610,7 +4645,8 @@
      "v": {
       "c": "FIORELLA RAMOS GONZAGA",
       "h": "RI OLIMPIA"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 14015,
@@ -4627,7 +4663,8 @@
      "v": {
       "c": "GIULIA RAMOS GARCIA",
       "h": "LG REVERIE"
-     }
+     },
+     "oe": 5
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3436"
@@ -4656,7 +4693,8 @@
      "v": {
       "c": "Valentina Clemente M. D. C. E. S.",
       "h": "LUA."
-     }
+     },
+     "oe": 78
     },
     {
      "id": 13941,
@@ -4673,7 +4711,8 @@
      "v": {
       "c": "Mateus Silva O.",
       "h": "SM PIC DONALD"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 13935,
@@ -4690,7 +4729,8 @@
      "v": {
       "c": "Maria Antonia C. C.",
       "h": "INDIO HVR"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 13937,
@@ -10934,8 +10974,14 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": true,
-     "linkResultado": false,
-     "oe": 34
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "GUILHERME DUTRA FORONI"
+     },
+     "oe": 34,
+     "n": 13
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3485"
