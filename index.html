@@ -316,6 +316,49 @@ nav.abas.cinco button{font-size:10.5px;letter-spacing:-.01em}
 #cartaoArea{width:100%;aspect-ratio:9/16;border-radius:6px;overflow:hidden;background:var(--verde)}
 #cartaoArea svg{width:100%;height:100%;display:block}
 @media (prefers-reduced-motion:no-preference){.fade{animation:f .18s ease-out}@keyframes f{from{opacity:0;transform:translateY(4px)}to{opacity:1}}}
+
+/* ===================== responsivo: tablet e computador =====================
+   O celular continua igual. A partir de 760px a coluna se alarga e as listas viram grade;
+   a partir de 1100px a barra de baixo vira um menu lateral fixo à esquerda. */
+@media (min-width:760px){
+  .app{max-width:900px}
+  nav.abas .inner{max-width:900px}
+  .lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .lista>*{min-width:0}
+  .cartao{height:100%}
+  .capa{padding:24px 28px 26px}
+  .capa h1{font-size:44px}
+  .lista,.barra-filtros,.chips.clara,.secao{padding-left:28px;padding-right:28px}
+  .cartao:hover,.cartao-opp:hover,button.prova:hover{border-color:var(--ouro)}
+  .chips.clara{padding-left:28px!important;padding-right:28px!important}
+  .capa .acoes{max-width:440px}
+}
+@media (min-width:1100px){
+  :root{--lateral:236px}
+  body{padding-left:var(--lateral)}
+  .app{max-width:1180px;padding-bottom:48px}
+  /* menu lateral */
+  nav.abas{top:0;right:auto;bottom:0;width:var(--lateral);border-top:0;border-right:1px solid var(--linha);padding:28px 14px calc(env(safe-area-inset-bottom,0px) + 20px);display:flex;flex-direction:column}
+  nav.abas::before{content:'Salta';order:-2;display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--ink);padding:0 12px 6px}
+  nav.abas::after{content:'by Opportunity';display:block;order:-1;font-size:12px;font-weight:600;color:var(--muted);padding:0 12px 26px;margin-top:-2px}
+  nav.abas .inner{max-width:none;margin:0;flex-direction:column;gap:4px}
+  nav.abas button,nav.abas.cinco button{flex:none;min-height:48px;flex-direction:row;justify-content:flex-start;gap:12px;padding:0 14px;border-radius:6px;font-size:15px;letter-spacing:0;position:relative}
+  nav.abas button b{position:absolute;left:0;top:12px;bottom:12px;width:3px;height:auto;border-radius:2px}
+  nav.abas button:hover{background:rgba(127,127,127,.08)}
+  nav.abas button[aria-current="page"]{background:rgba(217,180,90,.14)}
+  /* grade de cartões mais larga */
+  .lista{grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+  .capa{padding:30px 36px 32px}
+  .capa h1{font-size:52px}
+  .lista,.barra-filtros,.chips.clara,.secao{padding-left:36px;padding-right:36px}
+  /* tabelas e textos longos não precisam ocupar a tela inteira */
+  .tabela,.podio{max-width:880px;padding-left:36px;padding-right:36px}
+  .fonte{max-width:880px;padding-left:36px;padding-right:36px}
+  .painel,.destaque-aviso,.transmissao{max-width:808px;margin-left:36px;margin-right:36px}
+  .chips.clara{padding-left:36px!important;padding-right:36px!important}
+  /* a marca já está no menu lateral */
+  .capa .topo-linha .marca{visibility:hidden}
+}
 </style>
 </head>
 <body>
@@ -361,7 +404,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '03/10/2026 · filiação em todas as telas';
+const VERSAO_APP = '03/10/2026 · layout para computador e tablet';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
