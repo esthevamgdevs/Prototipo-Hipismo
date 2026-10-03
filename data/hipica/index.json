@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T17:37:04.495Z",
+ "atualizadoEm": "2026-10-03T18:07:36.901Z",
  "torneios": [
   {
    "id": 3404,
@@ -10918,11 +10918,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "CAMILA JUNQUEIRA RIBEIRO DE MENDONCA"
+      "c": "THIAGO MATTOS",
+      "h": "DON JUAN JMEN STº ANTONIO (IA) (*)"
      },
      "oe": 55,
-     "n": 55
+     "n": 54
     },
     {
      "id": 14636,
@@ -10935,7 +10935,7 @@
      "pista": "AREIA-1",
      "gp": true,
      "linkResultado": false,
-     "oe": 35
+     "oe": 34
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3485"
