@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T12:33:24.702Z",
+ "atualizadoEm": "2026-10-03T13:26:52.714Z",
  "torneios": [
   {
    "id": 3404,
@@ -92,7 +92,8 @@
      "v": {
       "c": "CARLOS FABIO FARIA VARGAS",
       "h": "JADE 3K"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13602,
@@ -109,7 +110,8 @@
      "v": {
       "c": "OSMAR SOARES DE ARRUDA",
       "h": "EMERA D OURO D AIEX"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 13604,
@@ -126,7 +128,8 @@
      "v": {
       "c": "ARTHEMUS DE ALMEIDA",
       "h": "CASARETTO JMEN"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13606,
@@ -143,7 +146,8 @@
      "v": {
       "c": "CHARLIE BAYS",
       "h": "KANNANTHUS JMEN (TE)"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13646,
@@ -160,7 +164,8 @@
      "v": {
       "c": "LUIZ EDUARDO REQUIAO STRUTZ",
       "h": "DARK LADY JMEN II"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13633,
@@ -177,7 +182,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "VIP JCR ZIMBABWE (IA)"
-     }
+     },
+     "oe": 79
     },
     {
      "id": 13645,
@@ -194,7 +200,8 @@
      "v": {
       "c": "CARLOS FABIO FARIA VARGAS",
       "h": "JADE 3K"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13603,
@@ -211,7 +218,8 @@
      "v": {
       "c": "OSMAR SOARES DE ARRUDA",
       "h": "EMERA D OURO D AIEX"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13605,
@@ -228,7 +236,8 @@
      "v": {
       "c": "ARTHEMUS DE ALMEIDA",
       "h": "CASARETTO JMEN"
-     }
+     },
+     "oe": 33
     },
     {
      "id": 13607,
@@ -245,7 +254,8 @@
      "v": {
       "c": "RODRIGO CHAVES NUNES",
       "h": "CARANTINA JMEN (TE)"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13647,
@@ -262,7 +272,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "CORNETINO JMEN (TE)"
-     }
+     },
+     "oe": 9
     },
     {
      "id": 13634,
@@ -279,7 +290,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "VIP JCR ZIMBABWE (IA)"
-     }
+     },
+     "oe": 82
     },
     {
      "id": 13624,
@@ -296,7 +308,8 @@
      "v": {
       "c": "GIULIA RAMOS GARCIA",
       "h": "LG REVERIE"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 13621,
@@ -313,7 +326,8 @@
      "v": {
       "c": "RODRIGO ANDRE LEIRAS CARNEIRO",
       "h": "CASSINO JMEN"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 13627,
@@ -330,7 +344,8 @@
      "v": {
       "c": "DANIEL ABBUD SARQUIS AIEX",
       "h": "C-TULIPA JMEN II (IA)"
-     }
+     },
+     "oe": 25
     },
     {
      "id": 13614,
@@ -347,7 +362,8 @@
      "v": {
       "c": "LUANA BERNARDES GERMANO",
       "h": "JL WINTAGE"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 13640,
@@ -364,7 +380,8 @@
      "v": {
       "c": "FERNANDO JOSE DE ASSIS COSTA",
       "h": "FANDANGO DE SEMILY"
-     }
+     },
+     "oe": 59
     },
     {
      "id": 13617,
@@ -379,9 +396,10 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAVINIA EID SUDANO RODRIGUES",
+      "c": "Lavinia Eid S. R.",
       "h": "GREAT FOR FUN VILA FAL"
-     }
+     },
+     "oe": 13
     },
     {
      "id": 13641,
@@ -398,7 +416,8 @@
      "v": {
       "c": "HELENA DITT MARTELETO",
       "h": "NOBU PULLMAN (TE)"
-     }
+     },
+     "oe": 70
     },
     {
      "id": 13630,
@@ -415,7 +434,8 @@
      "v": {
       "c": "ARTHUR HENRIQUE PINTO GONCALVES",
       "h": "X-DEBORA TOK (TE)"
-     }
+     },
+     "oe": 27
     },
     {
      "id": 13628,
@@ -432,7 +452,8 @@
      "v": {
       "c": "DANIEL ABBUD SARQUIS AIEX",
       "h": "C-TULIPA JMEN II (IA)"
-     }
+     },
+     "oe": 25
     },
     {
      "id": 13611,
@@ -449,7 +470,8 @@
      "v": {
       "c": "DANIELA RIBEIRO",
       "h": "JOLIE CZ"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13608,
@@ -466,7 +488,8 @@
      "v": {
       "c": "MARIA EDUARDA ZERBINATTI PAULUSSI",
       "h": "HARRY POTTER LJR (IA)"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 13637,
@@ -483,7 +506,8 @@
      "v": {
       "c": "FERNANDO SAMPAIO FERREIRA FILHO",
       "h": "GABALOU DE RUEIRE"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13648,
@@ -498,9 +522,10 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA JUNQUEIRA RIBEIRO DE MENDONÇA",
+      "c": "Laura Junqueira R. D. M.",
       "h": "CASHUA-C JMEN II"
-     }
+     },
+     "oe": 11
     },
     {
      "id": 13609,
@@ -517,7 +542,8 @@
      "v": {
       "c": "RAFAELLA WOLFF FERES",
       "h": "CATALINA HARAS TRES BARRAS (IA)"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 13625,
@@ -534,7 +560,8 @@
      "v": {
       "c": "GIOVANA CICCI FARINHA MOURA",
       "h": "GALILEO JMEN"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 13649,
@@ -549,9 +576,10 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA GIBIN MENDES",
+      "c": "Manuela Gibin M.",
       "h": "CALI V BAREELHOF Z"
-     }
+     },
+     "oe": 11
     },
     {
      "id": 13622,
@@ -568,7 +596,8 @@
      "v": {
       "c": "DANIEL ABBUD SARQUIS AIEX",
       "h": "CORNET CHIN D'OLYMPO (TE)"
-     }
+     },
+     "oe": 43
     },
     {
      "id": 13612,
@@ -585,7 +614,8 @@
      "v": {
       "c": "DANIELA RIBEIRO",
       "h": "UEGOND XANGO"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 13631,
@@ -602,7 +632,8 @@
      "v": {
       "c": "THEO SEEBACHER BRANCO JORDAO",
       "h": "SL ONIX"
-     }
+     },
+     "oe": 28
     },
     {
      "id": 13615,
@@ -619,7 +650,8 @@
      "v": {
       "c": "LUANA BERNARDES GERMANO",
       "h": "JL WINTAGE"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 13638,
@@ -636,7 +668,8 @@
      "v": {
       "c": "ROBERTO PODVAL",
       "h": "FAVALL"
-     }
+     },
+     "oe": 13
     },
     {
      "id": 13618,
@@ -651,9 +684,10 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAVINIA EID SUDANO RODRIGUES",
+      "c": "Lavinia Eid S. R.",
       "h": "BEST BLACK"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13642,
@@ -670,7 +704,8 @@
      "v": {
       "c": "LUISA BOECHAT CASTILHO",
       "h": "TCHALI DUKE (IA)"
-     }
+     },
+     "oe": 69
     },
     {
      "id": 13635,
@@ -687,7 +722,8 @@
      "v": {
       "c": "IVO ROZA FILHO",
       "h": "NIGHT STAR VD"
-     }
+     },
+     "oe": 55
     },
     {
      "id": 13717,
@@ -702,9 +738,10 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "HELENA CARVALHO SANTOCHI",
+      "c": "Helena Carvalho S.",
       "h": "CANTEL JOTER (IA)"
-     }
+     },
+     "oe": 8
     },
     {
      "id": 13715,
@@ -721,7 +758,8 @@
      "v": {
       "c": "RAYSSA ROSSI PRATES",
       "h": "HAPPYNESS 3K (IA)"
-     }
+     },
+     "oe": 12
     },
     {
      "id": 13716,
@@ -738,7 +776,8 @@
      "v": {
       "c": "LUCAS MOREIRA ARANHA",
       "h": "ILUNA"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 13721,
@@ -755,7 +794,8 @@
      "v": {
       "c": "FABIANO DUARTE",
       "h": "BROMÉLIA JMEN (TE)"
-     }
+     },
+     "oe": 19
     },
     {
      "id": 13722,
@@ -855,7 +895,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LARA MUNHOZ PACHECO",
+      "c": "Lara Munhoz P.",
       "h": "CH BIG BOY"
      }
     },
@@ -958,7 +998,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BIANCA POSTAL DE OLIVEIRA",
+      "c": "Bianca Postal D. O.",
       "h": "OURO FINO"
      }
     },
@@ -975,7 +1015,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA VITORIA VEZZANI BRANDAO",
+      "c": "Maria Vitoria V. B.",
       "h": "MAUI"
      }
     },
@@ -992,7 +1032,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA CAROLINA CASTELO FERRI",
+      "c": "Maria Carolina C. F.",
       "h": "MC QUEEN"
      }
     },
@@ -1009,7 +1049,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA ERRANTE PEROBELLI",
+      "c": "Laura Errante P.",
       "h": "SM PIC DONALD"
      }
     },
@@ -1026,7 +1066,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "RENATA MARY MATUIAMA PEYSER",
+      "c": "Renata Mary M. P.",
       "h": "RI BLUE BOY"
      }
     },
@@ -1043,7 +1083,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ALESSANDRA FERNANDEZ CRUZ",
+      "c": "Alessandra Fernandez C.",
       "h": "GARFIELD"
      }
     },
@@ -1060,7 +1100,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DIAS LOPES",
+      "c": "Julia Dias L.",
       "h": "THE BEST SHINE RCH"
      }
     },
@@ -1077,7 +1117,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SOFIA SCHETTY FERRAZ DE ARRUDA",
+      "c": "Sofia Schetty F. D. A.",
       "h": "TRAMA SANTA ROSA"
      }
     }
@@ -1141,7 +1181,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MAX LUCIEFER HOFFMAN BUENO",
+      "c": "Max Luciefer H. B.",
       "h": "MARIA BONITA"
      }
     },
@@ -1158,7 +1198,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "OLIVIA DUCA KARA JOSE",
+      "c": "Olivia Duca K. J.",
       "h": "FLASH (HFS)"
      }
     },
@@ -1175,7 +1215,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "HELENA DA SILVA MERCADO ARIGHI",
+      "c": "Helena Da S. M. A.",
       "h": "CANARINHO"
      }
     },
@@ -1192,7 +1232,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BEATRIZ BIDUTTE DA SILVA",
+      "c": "Beatriz Bidutte D. S.",
       "h": "EIVE"
      }
     }
@@ -1340,7 +1380,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA JULIA BERNARDES FREIRE",
+      "c": "Maria Julia B. F.",
       "h": "SALAMANDRA MARGOT TOK"
      }
     },
@@ -1561,7 +1601,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SOFIA NEGRAO MOREIRA",
+      "c": "Sofia Negrao M.",
       "h": "ZAHARA DAS CATARATAS (IA)"
      }
     },
@@ -1714,7 +1754,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LARA LIBERTO LEVEGHIN",
+      "c": "Lara Liberto L.",
       "h": "YES DO ANPAR"
      }
     },
@@ -1998,7 +2038,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ALICE FALCAO MORAES CAPOVILA",
+      "c": "Alice Falcao M. C.",
       "h": "CARDENHO DO LIBERTE (IA)"
      }
     },
@@ -2066,7 +2106,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA NASCIMENTO SENNA DE LIMA",
+      "c": "Julia Nascimento S. D. L.",
       "h": "SOLAR-DO-ENGENHO LANCELOT (IA)"
      }
     },
@@ -2100,7 +2140,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA JUNQUEIRA RIBEIRO DE MENDONÇA",
+      "c": "Laura Junqueira R. D. M.",
       "h": "CONCHITA-C JMEN (TE)"
      }
     },
@@ -2168,7 +2208,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA NASCIMENTO SENNA DE LIMA",
+      "c": "Julia Nascimento S. D. L.",
       "h": "SOLAR-DO-ENGENHO LANCELOT (IA)"
      }
     },
@@ -2202,7 +2242,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SARAH PEPINO DONATO",
+      "c": "Sarah Pepino D.",
       "h": "PSH PLATOON"
      }
     },
@@ -2270,7 +2310,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SOFIA NEGRAO MOREIRA",
+      "c": "Sofia Negrao M.",
       "h": "ZAHARA DAS CATARATAS (IA)"
      }
     },
@@ -2338,7 +2378,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "STELLA TORTORELLI FOLLA DE RENZIS",
+      "c": "Stella Tortorelli F. D. R.",
       "h": "SHARON STONE"
      }
     },
@@ -2355,7 +2395,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA GIBIN MENDES",
+      "c": "Manuela Gibin M.",
       "h": "GOLDLIFE CHCP"
      }
     },
@@ -2372,7 +2412,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "STELLA TORTORELLI FOLLA DE RENZIS",
+      "c": "Stella Tortorelli F. D. R.",
       "h": "SHARON STONE"
      }
     }
@@ -2401,7 +2441,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIANA CEREZER GUARIZZO",
+      "c": "Mariana Cerezer G.",
       "h": "NEBRASKA JMEN (IA)"
      }
     },
@@ -2418,7 +2458,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "YASMIN NASCIMENTO",
+      "c": "Yasmin Nascimento",
       "h": "LE MESSAGE DU PERE"
      }
     },
@@ -2435,7 +2475,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA MEDEIROS SILVA SALLES",
+      "c": "Julia Medeiros S. S.",
       "h": "HTC LILIAN"
      }
     },
@@ -2452,7 +2492,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA LUIZA SEQUEIRA DE OLIVEIRA MAGALHAES",
+      "c": "Maria Luiza S. D. O. M.",
       "h": "DINA"
      }
     },
@@ -2469,7 +2509,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GUSTAVO CONDOMI ALCORTA TSUGAWA",
+      "c": "Gustavo Condomi A. T.",
       "h": "LANCELOT (HBF)"
      }
     },
@@ -2486,7 +2526,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA ALICE MELO BARONI",
+      "c": "Maria Alice M. B.",
       "h": "APACHE SHB"
      }
     },
@@ -2503,7 +2543,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA KRAFT DE FREITAS",
+      "c": "Laura Kraft D. F.",
       "h": "DUM DUM"
      }
     },
@@ -2520,7 +2560,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GABRIEL RAMOS DE OLIVEIRA",
+      "c": "Gabriel Ramos D. O.",
       "h": "LUCKY BOY BL"
      }
     },
@@ -2537,7 +2577,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA ERRANTE PEROBELLI",
+      "c": "Laura Errante P.",
       "h": "TRAMA SANTA ROSA"
      }
     }
@@ -2577,7 +2617,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CARINA RODRIGUES GARBI",
+      "c": "Carina Rodrigues G.",
       "h": "RG BLACKOUT"
      }
     },
@@ -2594,7 +2634,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "PEDRO BLANES DE CARVALHO",
+      "c": "Pedro Blanes D. C.",
       "h": "CAMBUI DO PATEO"
      }
     },
@@ -2611,7 +2651,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ALICE JURADO GOMES PINHO",
+      "c": "Alice Jurado G. P.",
       "h": "ESPARTANO"
      }
     },
@@ -2628,7 +2668,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ALMIR DE ANDRADE",
+      "c": "Almir De A.",
       "h": "KING DA PAINEIRAS"
      }
     }
@@ -3405,7 +3445,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BEATRIZ ANDRADE GARCEZ DE SOUZA",
+      "c": "Beatriz Andrade G. D. S.",
       "h": "VHV HFG DARINA"
      }
     },
@@ -3558,7 +3598,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANOELA MULLER MICHAELIS",
+      "c": "Manoela Muller M.",
       "h": "CHANDRON JMEN (TE)"
      }
     },
@@ -3626,7 +3666,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SARAH PEPINO DONATO",
+      "c": "Sarah Pepino D.",
       "h": "PSH PLATOON"
      }
     },
@@ -3723,7 +3763,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BEATRIZ BARATA ROTHIER",
+      "c": "Beatriz Barata R.",
       "h": "QUEENIE A F"
      }
     },
@@ -3798,7 +3838,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA FERNANDES VARELLA",
+      "c": "Manuela Fernandes V.",
       "h": "FADA MADRINHA"
      }
     },
@@ -3815,7 +3855,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA JARCEW",
+      "c": "Laura Jarcew",
       "h": "CORBELLA GOOD SPIRIT"
      }
     },
@@ -3832,7 +3872,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ANA LUIZA FIGUEIREDO SOUZA",
+      "c": "Ana Luiza F. S.",
       "h": "CANCELIER VAN DE BOSSWINNING"
      }
     },
@@ -3849,7 +3889,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA CLARA PIRES DE ANDRADE LIMA",
+      "c": "Maria Clara P. D. A. L.",
       "h": "ACLANDINO JOTER"
      }
     }
@@ -3878,7 +3918,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LIVIA SAKASHITA BRAGA",
+      "c": "Livia Sakashita B.",
       "h": "SABIA"
      }
     },
@@ -3895,7 +3935,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "NATHALIA CARVALHO DUTRA",
+      "c": "Nathalia Carvalho D.",
       "h": "E3I DON JUAN"
      }
     },
@@ -3912,7 +3952,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA FERRO CAVALCANTE",
+      "c": "Julia Ferro C.",
       "h": "ALDEBARAN"
      }
     },
@@ -3929,7 +3969,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "RAFAELA ANGULO MARQUES",
+      "c": "Rafaela Angulo M.",
       "h": "CARTIER"
      }
     }
@@ -4026,7 +4066,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MIGUEL FERNANDES BRÊDA",
+      "c": "Miguel Fernandes B.",
       "h": "SERRA NEGRA BÁRBARA"
      }
     },
@@ -4094,7 +4134,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GABRIEL GUERRA BRAGA",
+      "c": "Gabriel Guerra B.",
       "h": "SL OPIO"
      }
     },
@@ -4128,7 +4168,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA EDUARDA NONES GALVAO",
+      "c": "Maria Eduarda N. G.",
       "h": "EC OTELO (IA)"
      }
     },
@@ -4457,7 +4497,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VALENTINA CLEMENTE MARTIN DE CASTRO E SILVA",
+      "c": "Valentina Clemente M. D. C. E. S.",
       "h": "LUA."
      }
     },
@@ -4474,7 +4514,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MATEUS SILVA OLIVEIRA",
+      "c": "Mateus Silva O.",
       "h": "SM PIC DONALD"
      }
     },
@@ -4491,7 +4531,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA ANTONIA CARDOSO CANCADO",
+      "c": "Maria Antonia C. C.",
       "h": "INDIO HVR"
      }
     },
@@ -4508,7 +4548,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA VITORIA VEZZANI BRANDAO",
+      "c": "Maria Vitoria V. B.",
       "h": "ROCKY BALBOA"
      }
     },
@@ -4525,7 +4565,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CATHARINA SUAREZ CONDE IATAURO",
+      "c": "Catharina Suarez C. I.",
       "h": "INDIRA REC"
      }
     },
@@ -4542,7 +4582,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA FRAGOSO SIMONETTI",
+      "c": "Laura Fragoso S.",
       "h": "INDIO HVR"
      }
     },
@@ -4559,7 +4599,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA JARCEW",
+      "c": "Laura Jarcew",
       "h": "CORBELLA GOOD SPIRIT"
      }
     },
@@ -4576,7 +4616,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VICTORIA PEREIRA RIBEIRO",
+      "c": "Victoria Pereira R.",
       "h": "MAUI DE CHANTEBLED"
      }
     }
@@ -4616,7 +4656,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA APARECIDA MONTEIRO",
+      "c": "Laura Aparecida M.",
       "h": "CECI"
      }
     },
@@ -4633,7 +4673,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CATHARINA CRISTINA SILVA EMERICK",
+      "c": "Catharina Cristina S. E.",
       "h": "RAMONA RI"
      }
     },
@@ -4650,7 +4690,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LUCAS HENRIQUE FRIGIERI",
+      "c": "Lucas Henrique F.",
       "h": "IMPERIO"
      }
     },
@@ -4667,7 +4707,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LARISSA COSTA CAVALLARI",
+      "c": "Larissa Costa C.",
       "h": "HAVANA"
      }
     }
@@ -4696,7 +4736,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BIANCA KAORI TSUKUDA TAKEDA",
+      "c": "Bianca Kaori T. T.",
       "h": "DEXTER"
      }
     },
@@ -4713,7 +4753,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "DAVI DE LIMA FERREIRA",
+      "c": "Davi De L. F.",
       "h": "LUA"
      }
     },
@@ -4730,7 +4770,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIANA MOTA SILVEIRA",
+      "c": "Mariana Mota S.",
       "h": "RUBI ALBAR"
      }
     },
@@ -4747,7 +4787,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA HELENA YANG PEREIRA",
+      "c": "Maria Helena Y. P.",
       "h": "JAZZ FLY"
      }
     }
@@ -4895,7 +4935,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DIENER FREIRE",
+      "c": "Julia Diener F.",
       "h": "LOKI TB (IA)"
      }
     },
@@ -4997,7 +5037,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GABRIELLA ROSSI HYPOLITO DA COSTA MARQUES",
+      "c": "Gabriella Rossi H. D. C. M.",
       "h": "RHL ETNA CARAVELA"
      }
     },
@@ -5048,7 +5088,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JOAO PEDRO GOMIERI FRANGE",
+      "c": "Joao Pedro G. F.",
       "h": "HEARTSTAR JM (IA)"
      }
     },
@@ -5173,7 +5213,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA VILELA GUERRA",
+      "c": "Manuela Vilela G.",
       "h": "CHARLOTTE DA CECILIANA (IA)"
      }
     },
@@ -5360,7 +5400,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA VILELA GUERRA",
+      "c": "Manuela Vilela G.",
       "h": "CHARLOTTE DA CECILIANA (IA)"
      }
     },
@@ -5547,7 +5587,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GABRIELA NAGY KOVALSKI SHOEL",
+      "c": "Gabriela Nagy K. S.",
       "h": "A K NO LIMIT FLORES"
      }
     },
@@ -6025,7 +6065,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "STELLA TORTORELLI FOLLA DE RENZIS",
+      "c": "Stella Tortorelli F. D. R.",
       "h": "SHARON STONE"
      }
     },
@@ -6110,7 +6150,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA JUNQUEIRA RIBEIRO DE MENDONÇA",
+      "c": "Laura Junqueira R. D. M.",
       "h": "CASHUA-C JMEN II"
      }
     },
@@ -6144,7 +6184,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LUIS EDUARDO DOS SANTOS DE SOUTO",
+      "c": "Luis Eduardo D. S. D. S.",
       "h": "CUPCAKE JMEN (TE)"
      }
     },
@@ -6178,7 +6218,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "FELIPE TADEU DA SILVA MARTHA MANDALITI",
+      "c": "Felipe Tadeu D. S. M. M.",
       "h": "LF JOLLY GIRL (IA)"
      }
     },
@@ -6241,7 +6281,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "EMILY DOS SANTOS CABRAL",
+      "c": "Emily Dos S. C.",
       "h": "TRAMA SANTA ROSA"
      }
     },
@@ -6258,7 +6298,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "RAFAELLA CATAPANO SONDA",
+      "c": "Rafaella Catapano S.",
       "h": "RI ASHELEY"
      }
     },
@@ -6275,7 +6315,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ALEXANDRA GERNER DE ALBUQUERQUE FELIZOLA",
+      "c": "Alexandra Gerner D. A. F.",
       "h": "MADDOX"
      }
     },
@@ -6292,7 +6332,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA FRAGOSO SIMONETTI",
+      "c": "Laura Fragoso S.",
       "h": "DIAMANTE HVR"
      }
     },
@@ -6309,7 +6349,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BARBARA NOGUEIRA",
+      "c": "Barbara Nogueira",
       "h": "ACLANDINO JOTER"
      }
     },
@@ -6326,7 +6366,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VALENTINA DE LUCA E SOUZA",
+      "c": "Valentina De L. E. S.",
       "h": "NEGRO OCHO"
      }
     },
@@ -6343,7 +6383,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "PIETRA BRAGA FEITOSA CARRETERO",
+      "c": "Pietra Braga F. C.",
       "h": "INDIO HVR"
      }
     },
@@ -6360,7 +6400,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SIMONE GALLAO",
+      "c": "Simone Gallao",
       "h": "LADY TABLITA CHANTEBLED"
      }
     }
@@ -6389,7 +6429,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VIVIANI FEFIM DE VASCONCELOS",
+      "c": "Viviani Fefim D. V.",
       "h": "HTC LILIAN"
      }
     },
@@ -6406,7 +6446,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "EMILY DOS SANTOS CABRAL",
+      "c": "Emily Dos S. C.",
       "h": "EVEREST SI HRG"
      }
     },
@@ -6423,7 +6463,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "PEDRO BLANES DE CARVALHO",
+      "c": "Pedro Blanes D. C.",
       "h": "ALPHA CAMILA"
      }
     },
@@ -6440,7 +6480,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MANUELA GENNARI PIMENTEL TAINO",
+      "c": "Manuela Gennari P. T.",
       "h": "ACLANDINO JOTER"
      }
     }
@@ -6772,7 +6812,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LEAH OREL",
+      "c": "Leah Orel",
       "h": "CIRANDA"
      }
     },
@@ -6789,7 +6829,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CHIARA PERRELLA",
+      "c": "Chiara Perrella",
       "h": "CARTHER"
      }
     },
@@ -6806,7 +6846,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CHIARA PERRELLA",
+      "c": "Chiara Perrella",
       "h": "CARTHER"
      }
     },
@@ -6823,7 +6863,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VALENTINA MARQUES FILIPPELLI CLÁ ANTONIO",
+      "c": "Valentina Marques F. C. A.",
       "h": "PARÁGRAFO VR"
      }
     }
@@ -7624,7 +7664,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SOPHIA LAURA LIMA DO VALE",
+      "c": "Sophia Laura L. D. V.",
       "h": "BAILARINA"
      }
     },
@@ -7675,7 +7715,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JOSE RICARDO FLORA",
+      "c": "Jose Ricardo F.",
       "h": "QUIBELLE TW"
      }
     },
@@ -7692,7 +7732,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "BEATRIZ BONON ANTUNES",
+      "c": "Beatriz Bonon A.",
       "h": "MAHARAJA DEL JUNCAL"
      }
     },
@@ -7726,7 +7766,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JOSE RICARDO FLORA",
+      "c": "Jose Ricardo F.",
       "h": "QUIBELLE TW"
      }
     },
@@ -7743,7 +7783,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIANA VICENTE MOREIRA FERREIRA",
+      "c": "Mariana Vicente M. F.",
       "h": "LADY FLORES"
      }
     },
@@ -7777,7 +7817,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "VANESSA GEMENTE BICUDO",
+      "c": "Vanessa Gemente B.",
       "h": "JCR AREOLA (IA)"
      }
     },
@@ -7840,7 +7880,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA MEDEI NOBREGA",
+      "c": "Julia Medei N.",
       "h": "JJ INDIANO"
      }
     },
@@ -7857,7 +7897,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "RAFAELLA CATAPANO SONDA",
+      "c": "Rafaella Catapano S.",
       "h": "RI ASHELEY"
      }
     },
@@ -7874,7 +7914,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "FELIPE OLIVEIRA DALLA VECCHIA",
+      "c": "Felipe Oliveira D. V.",
       "h": "CAVALIER"
      }
     },
@@ -7891,7 +7931,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "GABRIELLA DE OLIVEIRA MENDES",
+      "c": "Gabriella De O. M.",
       "h": "STEVE"
      }
     },
@@ -7908,7 +7948,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DALFRE VENTURINI DE BARROS",
+      "c": "Julia Dalfre V. D. B.",
       "h": "RI PARCHE MALACARA"
      }
     },
@@ -7925,7 +7965,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CATARINA FERRAZ FARIAS DA SILVA",
+      "c": "Catarina Ferraz F. D. S.",
       "h": "TOP GUN FLORES (IA)"
      }
     },
@@ -7942,7 +7982,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LAURA FRAGOSO SIMONETTI",
+      "c": "Laura Fragoso S.",
       "h": "INDIO HVR"
      }
     },
@@ -7959,7 +7999,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA LUIZA FRATA CINTRA",
+      "c": "Maria Luiza F. C.",
       "h": "WODESSA VD LINDEHOEVE Z"
      }
     }
@@ -8663,7 +8703,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DIENER FREIRE",
+      "c": "Julia Diener F.",
       "h": "DONATELLO"
      }
     },
@@ -8765,7 +8805,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SARAH PEPINO DONATO",
+      "c": "Sarah Pepino D.",
       "h": "PSH PLATOON"
      }
     },
@@ -8925,7 +8965,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIANA MENDES DE MENDONCA MONTEIRO",
+      "c": "Mariana Mendes D. M. M.",
       "h": "WILLENA DAS UMBURANAS"
      }
     },
@@ -9010,7 +9050,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DIENER FREIRE",
+      "c": "Julia Diener F.",
       "h": "DONATELLO"
      }
     },
@@ -9572,7 +9612,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIAM BILAL RAMEZ BAKRI",
+      "c": "Mariam Bilal R. B.",
       "h": "RG BLACKOUT"
      }
     },
@@ -9589,7 +9629,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA DIAS CORREA",
+      "c": "Julia Dias C.",
       "h": "CONAN DO JACARE"
      }
     },
@@ -9606,7 +9646,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MELISSA PARTIKA KIYOMOTO",
+      "c": "Melissa Partika K.",
       "h": "LENNON"
      }
     },
@@ -9623,7 +9663,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LUISA MOLLO GUZZARDI",
+      "c": "Luisa Mollo G.",
       "h": "THOR BP"
      }
     }
@@ -9720,7 +9760,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA JULIA BERNARDES FREIRE",
+      "c": "Maria Julia B. F.",
       "h": "X-DEBORA TOK (TE)"
      }
     },
@@ -9890,7 +9930,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MIGUEL FERNANDES BRÊDA",
+      "c": "Miguel Fernandes B.",
       "h": "LARINKA SOLAGUAYRE"
      }
     },
@@ -10117,7 +10157,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "HELOISA DE ALMEIDA RUIZ",
+      "c": "Heloisa De A. R.",
       "h": "DELTA"
      },
      "oe": 102,
@@ -10136,7 +10176,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ISABELA VEREISKI LANDOLT",
+      "c": "Isabela Vereiski L.",
       "h": "TEXAS"
      },
      "oe": 97,
@@ -10155,7 +10195,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA ANTONIA IASI CUNHA",
+      "c": "Maria Antonia I. C.",
       "h": "BRIGADEIRO"
      },
      "oe": 57,
@@ -10174,7 +10214,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "YARA CURY",
+      "c": "Yara Cury",
       "h": "NIKOLAS APOLO"
      },
      "oe": 140,
@@ -10193,7 +10233,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CAMILA BOSCHI COMENALE",
+      "c": "Camila Boschi C.",
       "h": "ATLAS SHIRO"
      },
      "oe": 102,
@@ -10212,7 +10252,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ANA CAROLINA BRAZ NEVES MOISES",
+      "c": "Ana Carolina B. N. M.",
       "h": "UCHA LADY STOCK"
      },
      "oe": 97,
@@ -10231,7 +10271,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ISADORA ABUKATER KARAN",
+      "c": "Isadora Abukater K.",
       "h": "INDIO HVR"
      },
      "oe": 57,
@@ -10250,7 +10290,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ANA LUIZA CARLINI ESPER",
+      "c": "Ana Luiza C. E.",
       "h": "TRIDIMENSIONAL"
      },
      "oe": 138,
@@ -10493,7 +10533,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "AFONSO BENTO DE FIGUEIREDO",
+      "c": "Afonso Bento D. F.",
       "h": "HSF AGILE"
      },
      "oe": 43,
@@ -10531,7 +10571,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA FORREST SOUZA DA COSTA RIBEIRO",
+      "c": "Julia Forrest S. D. C. R.",
       "h": "CLINTACORD MC BRASIL (IA)"
      },
      "oe": 7,
@@ -10569,7 +10609,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "AFONSO BENTO DE FIGUEIREDO",
+      "c": "Afonso Bento D. F.",
       "h": "HSF AGILE"
      },
      "oe": 41,
@@ -10607,7 +10647,7 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JULIA FORREST SOUZA DA COSTA RIBEIRO",
+      "c": "Julia Forrest S. D. C. R.",
       "h": "YDALINA QUIGGRAAF"
      },
      "oe": 9,
@@ -10645,11 +10685,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "ANTONIO MANUEL LOPES SANCHES"
+      "c": "Beatriz De L. M.",
+      "h": "RIVIERA JMEN II (TE)"
      },
      "oe": 44,
-     "n": 85
+     "n": 34
     },
     {
      "id": 14631,
@@ -10665,10 +10705,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "JOAO PEDRO SILVA BATAL"
+      "h": "CICERO FAUSTINO BARROS"
      },
      "oe": 65,
-     "n": 16
+     "n": 39
     },
     {
      "id": 14620,
