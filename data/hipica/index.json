@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-03T13:26:52.714Z",
+ "atualizadoEm": "2026-10-03T13:37:05.427Z",
  "torneios": [
   {
    "id": 3404,
@@ -829,7 +829,8 @@
      "v": {
       "c": "DANIEL ABBUD SARQUIS AIEX",
       "h": "C-TULIPA JMEN II (IA)"
-     }
+     },
+     "oe": 15
     },
     {
      "id": 13639,
@@ -846,7 +847,8 @@
      "v": {
       "c": "ROBERTO PODVAL",
       "h": "FAVALL"
-     }
+     },
+     "oe": 13
     },
     {
      "id": 13718,
@@ -863,7 +865,8 @@
      "v": {
       "c": "RENAN LAURINO DE ARAUJO",
       "h": "LA BLANCHE JMEN"
-     }
+     },
+     "oe": 19
     },
     {
      "id": 13719,
@@ -880,7 +883,8 @@
      "v": {
       "c": "JULIA REYNOSO FERNANDEZ BORGES GOMES",
       "h": "CBC CELECONA Z"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 13720,
@@ -897,7 +901,8 @@
      "v": {
       "c": "Lara Munhoz P.",
       "h": "CH BIG BOY"
-     }
+     },
+     "oe": 7
     },
     {
      "id": 13636,
@@ -914,7 +919,8 @@
      "v": {
       "c": "FERNANDO JOSE DE ASSIS COSTA",
       "h": "FANDANGO DE SEMILY"
-     }
+     },
+     "oe": 46
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3371"
@@ -954,7 +960,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "CORNET SHOT JMEN"
-     }
+     },
+     "oe": 10
     },
     {
      "id": 13661,
@@ -971,7 +978,8 @@
      "v": {
       "c": "JOSE LUIZ GUIMARAES DE CARVALHO",
       "h": "BARBARELA JMEN"
-     }
+     },
+     "oe": 10
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3407"
@@ -1000,7 +1008,8 @@
      "v": {
       "c": "Bianca Postal D. O.",
       "h": "OURO FINO"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 13663,
@@ -1017,7 +1026,8 @@
      "v": {
       "c": "Maria Vitoria V. B.",
       "h": "MAUI"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 13665,
@@ -1034,7 +1044,8 @@
      "v": {
       "c": "Maria Carolina C. F.",
       "h": "MC QUEEN"
-     }
+     },
+     "oe": 80
     },
     {
      "id": 13667,
@@ -1051,7 +1062,8 @@
      "v": {
       "c": "Laura Errante P.",
       "h": "SM PIC DONALD"
-     }
+     },
+     "oe": 76
     },
     {
      "id": 13670,
@@ -1068,7 +1080,8 @@
      "v": {
       "c": "Renata Mary M. P.",
       "h": "RI BLUE BOY"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 13664,
@@ -1085,7 +1098,8 @@
      "v": {
       "c": "Alessandra Fernandez C.",
       "h": "GARFIELD"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 13666,
@@ -1102,7 +1116,8 @@
      "v": {
       "c": "Julia Dias L.",
       "h": "THE BEST SHINE RCH"
-     }
+     },
+     "oe": 79
     },
     {
      "id": 13668,
@@ -1119,7 +1134,8 @@
      "v": {
       "c": "Sofia Schetty F. D. A.",
       "h": "TRAMA SANTA ROSA"
-     }
+     },
+     "oe": 76
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3408"
@@ -1183,7 +1199,8 @@
      "v": {
       "c": "Max Luciefer H. B.",
       "h": "MARIA BONITA"
-     }
+     },
+     "oe": 58
     },
     {
      "id": 13710,
@@ -1200,7 +1217,8 @@
      "v": {
       "c": "Olivia Duca K. J.",
       "h": "FLASH (HFS)"
-     }
+     },
+     "oe": 78
     },
     {
      "id": 13711,
@@ -1217,7 +1235,8 @@
      "v": {
       "c": "Helena Da S. M. A.",
       "h": "CANARINHO"
-     }
+     },
+     "oe": 46
     },
     {
      "id": 13712,
@@ -1234,7 +1253,8 @@
      "v": {
       "c": "Beatriz Bidutte D. S.",
       "h": "EIVE"
-     }
+     },
+     "oe": 29
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3410"
@@ -1263,7 +1283,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "PRIMADONNA FLORES (TE)"
-     }
+     },
+     "oe": 27
     },
     {
      "id": 13673,
@@ -1280,7 +1301,8 @@
      "v": {
       "c": "RODRIGO LEMOS DE MORAES SARMENTO",
       "h": "COMTESSE DW"
-     }
+     },
+     "oe": 33
     },
     {
      "id": 13694,
@@ -1297,7 +1319,8 @@
      "v": {
       "c": "IVO ROZA FILHO",
       "h": "HFB CALEDONIA"
-     }
+     },
+     "oe": 67
     },
     {
      "id": 13696,
@@ -1314,7 +1337,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "VIP JCR ZIMBABWE (IA)"
-     }
+     },
+     "oe": 66
     },
     {
      "id": 13675,
@@ -1331,7 +1355,8 @@
      "v": {
       "c": "GABRIELLA MIGUEL",
       "h": "LAND YANNI DO FEROLETO"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13698,
@@ -1365,7 +1390,8 @@
      "v": {
       "c": "RAPHAEL MACHADO LEITE",
       "h": "EXPLOIT D’ELLE"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 13705,
@@ -1382,7 +1408,8 @@
      "v": {
       "c": "Maria Julia B. F.",
       "h": "SALAMANDRA MARGOT TOK"
-     }
+     },
+     "oe": 5
     },
     {
      "id": 13678,
@@ -1399,7 +1426,8 @@
      "v": {
       "c": "ANNA LUIZA ARRUDA BOARI",
       "h": "VIOLETA DES FLANDRES (IA)"
-     }
+     },
+     "oe": 25
     },
     {
      "id": 13691,
@@ -1416,7 +1444,8 @@
      "v": {
       "c": "JULIA DE ATAIDE DINIZ PASSAMANI",
       "h": "JUST IN LOVE POLANA"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 13688,
@@ -1433,7 +1462,8 @@
      "v": {
       "c": "VICTORIA JUNQUEIRA RIBEIRO DE MENDONCA",
       "h": "CELESTINO JMEN (TE)"
-     }
+     },
+     "oe": 54
     },
     {
      "id": 13695,
@@ -1450,7 +1480,8 @@
      "v": {
       "c": "JOSE LUIZ GUIMARAES DE CARVALHO",
       "h": "CASSIARA C JMEN (TE)"
-     }
+     },
+     "oe": 43
     },
     {
      "id": 13699,
@@ -1467,7 +1498,8 @@
      "v": {
       "c": "DANIEL ABBUD SARQUIS AIEX",
       "h": "C-TULIPA JMEN II (IA)"
-     }
+     },
+     "oe": 22
     },
     {
      "id": 13685,
@@ -1484,7 +1516,8 @@
      "v": {
       "c": "MANUELLA CONDEZ ALAGIA",
       "h": "GRETA JB (TE)"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 13689,
@@ -1501,7 +1534,8 @@
      "v": {
       "c": "GUILHERME FERNANDES",
       "h": "HPH BALOU SON TRV (TE)"
-     }
+     },
+     "oe": 53
     },
     {
      "id": 13682,
@@ -1518,7 +1552,8 @@
      "v": {
       "c": "LUIS RENATO FLORA",
       "h": "BRIDGIT DO REFUGIO"
-     }
+     },
+     "oe": 55
     },
     {
      "id": 13703,
@@ -1535,7 +1570,8 @@
      "v": {
       "c": "STEPHAN DE FREITAS BARCHA",
       "h": "CHANTILY JMEN"
-     }
+     },
+     "oe": 51
     },
     {
      "id": 13692,
@@ -1552,7 +1588,8 @@
      "v": {
       "c": "PEDRO HENRIQUE BRUNHEROTO",
       "h": "CALBREAKER BR"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 13701,
@@ -1569,7 +1606,8 @@
      "v": {
       "c": "FILIPPO COLLI",
       "h": "CONRAD C JMEN (TE)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 13679,
@@ -10705,10 +10743,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "CICERO FAUSTINO BARROS"
+      "h": "MICHEL MASCIOLI LIDDLE"
      },
      "oe": 65,
-     "n": 39
+     "n": 45
     },
     {
      "id": 14620,
