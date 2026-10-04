@@ -1,0 +1,2182 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no initial-scale=1" " />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge " /><meta property="og:image:width" content="500" /><meta property="og:image:height" content="500" /><meta property="og:type" content="website" /><meta property="og:locale" content="pt_BR" /><meta name="og:title" content="Ordem de Entrada" /><meta name="og:description" /><meta name="og:image" content="https://www.fph.com.br/assets/theme/fph//img/icone-512x512.png" /><meta name="og:url" content="https://www.fph.com.br" /><meta name="og:site_name" content="FEDERAÇÃO PAULISTA DE HIPISMO" /><meta name="article:publisher" content="https://www.facebook.com/federacaopaulistadehipismo?fref=ts" /><link href="/bundles/GlobalCSS?v=LQECxEYzmSunyb4xanbZ3arnhUKfPwFc3n9crK9HRQc1" rel="stylesheet"/>
+<link href="/bundles/TemaCSS?v=" rel="stylesheet"/>
+<link href="/bundles/ScreenMediaTemaCSS?v=wkY2jjX-_jzyVBMeuEXI3mvA9wCSuaCyLLqEf96lnmA1" rel="stylesheet" media="screen" />
+<link href='../assets/theme/fph/css/global.min.css' rel='stylesheet' type='text/css' media='screen' />
+    <link href="../assets/theme/fph/css/artigo.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/theme/fph/css/listaProvas.css" rel="stylesheet" type="text/css" />
+
+
+
+    <script src="../assets/js/acessibilidade.js" type="text/javascript"></script>
+    <link href="../assets/css/acessibilidade.css" rel="stylesheet" type="text/css" /><script src="/bundles/GlobalJS?v=V2eybfW4rJGQ5N4U9Yxx0haIGqmfmyQPb7FmeuAwbQk1"></script>
+
+    <style>
+        @media only screen and (max-width: 460px) {
+            .input_txt {
+                width: 100% !important;
+            }
+
+            .input_mobile {
+                height: 37px;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            .naologado {
+                text-align: right;
+            }
+        }
+
+        .minha_conta {
+            margin: 0 30px;
+        }
+
+        .icon .glyphicon {
+            font-size: xx-large !important;
+        }
+
+        /* CSS Menu Mobli*/
+        .tem-subMenu {
+            float: left;
+        }
+
+        [vp] .vpw-settings-btn {
+            width: 90% !important;
+        }
+
+        .textos-video {
+            color: #fff;
+            padding: 0;
+            overflow: hidden;
+            height: 73px;
+            margin-left: 0;
+            margin-top: 0;
+            width: 204px;
+            padding: 0 8px;
+            font-size: 19px;
+        }
+
+        @media only screen and (max-width: 399px) {
+            .div-menu1 .uppercase {
+                margin-bottom: -8px !important;
+                width: 84% !important;
+            }
+
+        }
+    </style>
+
+    <link rel='shortcut icon' href='/assets/theme/fph/img/icone-16x16.png' /><link rel='apple-touch-icon' href='/assets/theme/fph/img/icone-180x180.png' />
+    <script src="https://www.google.com/recaptcha/api.js?render="></script>
+
+    <script>
+
+        function montaMenuMobli(menuNumero) {
+            var x = document.getElementById("menu_mobli_n1");
+            var menu_icon = document.getElementById("menu_icon");
+            var icon_open = menuNumero == 1 ? 'glyphicon-menu-hamburger' : 'glyphicon-plus';
+            var icon_close = menuNumero == 1 ? 'glyphicon-remove' : 'glyphicon-minus';
+            //menu_icon.style.color = "white";
+
+            if (menuNumero != 1) {
+                x = document.getElementById("menu_mobli_n" + menuNumero);
+                menu_icon = document.getElementById("subMenu_icon" + menuNumero);
+            }
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                menu_icon.classList.add(icon_open)
+                menu_icon.classList.remove(icon_close)
+                document.body.style.overflow = "";
+
+            } else {
+                x.style.display = "block";
+                menu_icon.classList.remove(icon_open);
+                menu_icon.classList.add(icon_close);
+                document.body.style.overflow = "hidden";
+                //menu_icon.style.color = "black";
+            }
+        }
+
+        function buscaNome() {
+
+        }
+
+        function alteraTipoPesquisa(_this) {
+            var valor = $(_this).val();
+            if (valor == 3) {
+                $('#PesCavaleiro').removeClass('hide');
+                $('#PesAnimal').addClass('hide');
+                $('#PesNoSite').addClass('hide');
+            }
+            else if (valor == 2) {
+                $('#PesCavaleiro').addClass('hide');
+                $('#PesNoSite').addClass('hide');
+                $('#PesAnimal').removeClass('hide');
+            } else {
+                $('#PesCavaleiro').addClass('hide');
+                $('#PesAnimal').addClass('hide');
+                $('#PesNoSite').removeClass('hide');
+            }
+        }
+
+        function cavaleiroSelecionado(source, eventArgs) {
+            window.location.href = "../studbook/Default.aspx?IdPess=" + eventArgs.get_value();
+        }
+
+        function AnimalSelecionado(source, eventArgs) {
+            window.location.href = "../studbook/Default.aspx?IdCav=" + eventArgs.get_value();
+        }
+
+        function Context_Key_Cavaleiro_master(source, e) {
+            source.set_contextKey($get("ctl00_txtbuscarCavaleiro").value);
+        }
+
+        function Context_Key_Cavalo_master(source, e) {
+            source.set_contextKey($get("ctl00_txtbuscarAnimal").value);
+        }
+
+        $(window).load(function () {
+
+            $(document).ready(function () {
+                //DEFINE O ID DO TORNEIO NO BREADCRUMB
+                var title = $('#breadcrumb').find("*[title='Lista de Provas']").attr('href')
+
+                if (title !== null && title !== undefined && title.indexOf('?ID=') === -1)
+                    $('#breadcrumb').find("*[title='Lista de Provas']").attr('href', $('#breadcrumb').find("*[title='Lista de Provas']").attr('href') + "?ID=" + $('*[id*=hfCodTorneio]').val());
+            });
+
+            // The slider being synced must be initialized first
+            $('#carousel').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: true,
+                slideshow: false,
+                itemWidth: 104,
+                //itemHeight: 326,
+                itemMargin: 5,
+                asNavFor: '#slider'
+            });
+
+            $('#slider').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: true,
+                slideshow: true,
+                itemWidth: 620,
+                //itemHeight: 326,
+                sync: "#carousel"
+            });
+
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: false
+            });
+
+            //Ativação  automática  do  Vlivras
+            const atualLibras = localStorage.getItem("libras");
+
+            setTimeout(function () {
+
+                if (atualLibras == "ativado")
+                    $(".access-button").click();
+
+                $('.access-button').click(function () {
+                    var libras = "ativado";
+                    localStorage.setItem("libras", libras);
+                    $(".access-button").click();
+                });
+
+            }, 2000);
+
+            var myInterval = setInterval(function () {
+                verificaStatusVlibras();
+            }, 1000);
+
+            function verificaStatusVlibras() {
+
+                var elm = $(".vpw-header-btn-close");
+                var elmI = $(".vpw-header-btn-about");
+
+                if (elm.length == 1) {
+                    elm.remove();
+                    elmI.remove();
+                    $("<img data-src='assets/close.svg' src='https://vlibras.gov.br/app/assets/close.svg' style='float: right;cursor:pointer;' onclick='habilitarLibras();'>").insertAfter('.vpw-settings-btn');
+                    clearInterval(myInterval);
+                }
+            }
+
+            //if (screen.width < 428) {
+            //    var posheader_mobile = document.getElementById("posheader_mobile");
+            //    posheader_mobile.classList.remove('hide');
+            //}
+
+        });
+
+        function pageLoadInner() {
+            $('.backModalInformativo').click(function () {
+                $('#pnModalInformativo').hide();
+                $('.backModalInformativo').hide();
+            })
+
+            $('.carregando').addClass('hide');
+            $('.noticias .tab-pane .span8:nth-child(2n+1)').addClass('nomarginl');
+            $('.click_right, .click_left').click(function () {
+                if (!$(this).hasClass('opacity')) {
+                    $('.noticia_carregando').css('display', 'block');
+                    $('.noticias #myTab li.active, .noticias .tab-content .tab-pane.active').fadeOut(400);
+                }
+            });
+            $('a.botao_direito, a.botao_esquerdo').click(function () {
+                $('.content ul li.active').fadeOut(400);
+            });
+            $('#calendario .nextprev:first-child a').html('<span class="seta-esquerda"></span>').attr('title', 'Mês anterior');
+            $('#calendario .nextprev:last-child a').html('<span class="seta-direita"></span>').attr('title', 'Próximo mês');
+            $('#calendario .nextprev a').click(function () {
+                $('#main_box .eventos ul').fadeOut(400);
+                $('.carregando-calendario').show();
+            });
+
+
+            var campoAdestramentoSarchTorn = document.getElementsByClassName('search-input');
+
+            if (campoAdestramentoSarchTorn.length > 0) {
+                document.getElementsByClassName('search-input')[0].addEventListener("keydown", function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault(); // Evita o comportamento padrão
+                    }
+                });
+            }
+
+            var campoAdestramentoSarch = document.getElementsByClassName('CampoSerchMobileAdestramento');
+
+            if (campoAdestramentoSarch.length > 0) {
+                document.getElementsByClassName('CampoSerchMobileAdestramento')[0].addEventListener("keydown", function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault(); // Evita o comportamento padrão
+                    }
+                });
+            }
+        }
+
+        function onClickCaptcha(btnForSubmit) {
+
+            if ('' == "") {
+                document.querySelector('.' + btnForSubmit).click()
+            } else {
+                grecaptcha.ready(function () {
+                    grecaptcha.execute('', { action: 'lbSalvar' }).then(function (token) {
+                        $('#hfGRecaptchaResponse').val(token)
+                        document.querySelector('.' + btnForSubmit).click()
+                    });
+                });
+            }
+        }
+
+        var onLoadCallBackReCaptcha = function () {
+            grecaptcha.render('reCaptcha', {
+                'sitekey': ''
+            });
+        }
+
+        var copyLink = function (insta = false) {
+            if (typeof (navigator.clipboard) == 'undefined') {
+                var textArea = document.createElement("textarea");
+                textArea.value = window.location.href;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea)
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+            }
+
+            $("#linkCopiado").fadeIn("slow");
+            $("#linkCopiado").fadeOut("slow");
+
+            event.preventDefault();
+
+            if (insta) {
+                setTimeout(() => {
+                    window.open('https://instagram.com.br/accounts/login', '_blank');
+                }, 2000);
+            }
+        }
+
+        const shareFacebook = () => window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`, '_blank')
+
+        const shareWhatsapp = () => window.open(`https://api.whatsapp.com/send?text=${window.location.href}`, '_blank')
+
+    </script>
+    
+    <script src="../assets/js/listaProvas.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //DEFINE O ID DO TORNEIO NO BREADCRUMB
+            var title = $('#breadcrumb').find("*[title='Lista de Provas']").attr('href')
+
+            if (title !== null && title !== undefined && title.indexOf('?ID=') === -1)
+                $('#breadcrumb').find("*[title='Lista de Provas']").attr('href', $('#breadcrumb').find("*[title='Lista de Provas']").attr('href') + "?ID=" + $('*[id*=hfCodTorneio]').val());
+
+            enableDetalhe();
+
+            //Defini o alinhamento da label e do logo da entidade do competidor 
+            var spanEquipe = $('#spanEquipe')
+            if (spanEquipe.length > 0) {
+                var csslabelLogo = $('.labelLogo')
+                for (var i = 0; i < csslabelLogo.length; i++) {
+                    var idLabelLogo = $(csslabelLogo[i]).attr('id');
+                    $('#' + idLabelLogo).removeClass("labelLogo");
+                    $('#' + idLabelLogo).addClass("labelLogo2");
+                }
+            }
+
+            var logoInter = $(".imageLogotipo").attr('internacional');
+            if (logoInter) {
+                var imgLogo = $(".imageLogotipo");
+                for (var i = 0; i < imgLogo.length; i++) {
+                    var idImgLogo = $(imgLogo[i]).attr('id');
+                    $('#' + idImgLogo).removeClass("imageLogotipo");
+                    $('#' + idImgLogo).addClass("imageLogotipo2");
+                }
+            }
+
+            bordaNasLinhas();
+
+        });
+
+        // Função para colocar borda arredondada no inicio e no fim de cada linha da tabela.
+        function bordaNasLinhas() {
+            Array.from(document.getElementsByTagName('table')).forEach(tabela => {
+                for (let j = 0; j < tabela.lastElementChild.childElementCount; j++) {
+                    tabela.lastElementChild.children[j].firstElementChild.classList.add('radius-inicial')
+                    tabela.lastElementChild.children[j].classList.add('radius-total', 'sombra-fundo')
+                    if (tabela.lastElementChild.children[j].lastElementChild.classList.contains('btnHidden2Volta')) {
+                        if (tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.tagName == 'INPUT') {
+                            tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.previousElementSibling.previousElementSibling.classList.add('radius-final')
+                        }
+                        else {
+                            tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.classList.add('radius-final')
+                        }
+
+
+                        if (tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.classList.contains('is-mobile')) {
+                            tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.previousElementSibling.classList.add('radius-final')
+                        }
+                    }
+                    else {
+                        if (tabela.lastElementChild.children[j].lastElementChild.classList.contains('is-mobile')) {
+                            tabela.lastElementChild.children[j].lastElementChild.previousElementSibling.classList.add('radius-final')
+                        }
+                        tabela.lastElementChild.children[j].lastElementChild.classList.add('radius-final')
+                    }
+                }
+            });
+
+        }
+    </script>
+    <!--[if lte IE 8]>
+    <style type="text/css">
+      #conteudo_artigo .btn-default
+      {
+        height: 26px;
+        margin-top: 7px;
+      }
+    </style>
+  <![endif]-->
+    <!--[if IE]>
+    <style type="text/css">
+      #conteudo_artigo .hold_table
+      {
+        display: block;
+        box-shadow: 0 1px 5px 0 #CCCCCC;
+      }
+    </style>
+  <![endif]-->
+
+    <!--[if gte IE 9]>
+    <style>
+      .container-fluid #main #container #menu > .navbar li.dropdown ul.dropdown-menu { filter: false; }
+    </style>
+  <![endif]-->
+    <!--[if lte IE 8]>
+    <style type="text/css">
+      .row input[class*="span"], .row select[class*="col-md"]{ min-height: 20px; }
+      #header_out { border: 1px solid #000000; }
+      .btn-default { border: 1px solid #bbbbbb; }
+    </style>
+  <![endif]-->
+
+<title>
+	Ordem de Entrada
+</title></head>
+<body>
+    <form method="post" action="./OrdemEntrada?ID=14217" id="aspnetForm" novalidate="novalidate" class="light ">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/ScriptResource.axd?d=6HoUccW956F0fKMU0WcTqk99jwZNrM7Uigc9hJkzIvAPIS9PjonhRk6DPoUFIeI1Lvv8rmhWbfjw6j4jHx6zK3cLOP-qK5bMklpRYCZOeWCx4CxWYxWl5YgnhNMJ-Z_J0&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=v6Or_FQ6LHL7U8Z1X71RoTLlJEOwA080ER4wTHqe7AHpSF05w4NcTQKqBDnUekagcf9wkAl7hXO62v-le-8zO7Z_USo4_TRKSVfuOXIJl7Mod1CWoHKfWeCWlllAD-Aa0&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=88mJmj6mbMiYy8kFMHqrj0aNcLST31jj4YZ8bygRztku09uyJcbxvHCStb1Z5l4mvEqV8UccnnpF9sbK1UTO0yIlCbAQDqGzvAFDPt0gyrwa-_YeEfzBMEHOgvLRCurt1hEIeD5L3Leczxq5AR9AfA2&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=kU0K1gza0uVFOu-yy0BFOUlAHxLkr5zcnD3LSBpFyKG4iVaoPXiwT5aiQejEYu1qc_-2bsPYnrOmXDQvM-HT2CrdkLUISRTtwirlsnJ1491_la7xlcUbb3z0eUtE6RoMKFe4IEGCp6i9OkoVJkJf1-wScd6kNeuh4NzR6yoDiIM1&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=X6lO-WKlUxYfWNj0aSwXeSLBpmzSI5zX6Nk2lvtRDazcGfiZODy3tCocEXdeg_gf_yW6zh6Kwt6GI0dLdNb7gvTTdBktmEW9W4TTbmGXC5pNCOKcjLZAyuFtznZhOvQI9nihFqtwbb3PdkXbDZ1iIA2&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ULRpnRjUS0c5LbsRD3gu9L6vwGKIRSbj4pYLx67jZCQe4sUSe38O_wN78UamRqtIwcOLv3cnplEwAl56ztCOBJwn1IYAbH31WitKB1owcpRq8Clb__JkULcZkfERmwP763Mhs9hCUheCvdHv9r661A2&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vDOyR2gFU005_fJRe73WouZAohkEW2teA9hMEAro440Gi-Vaj3w7cKvg_f5h0vDM2vu3zldJsIY_8qAVgJ6sH57LdkR0BjlgRAdYJoSyRGV1O4UBngK0AuQ0pGsZGby-vpB1UwgdKQGxdnb1zs6f8g2&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=3qCQU7cQMa2NimaendY2VzZYH47EVeTW0-p1E-baPaNPQJvZxHSxQ_yLF7VBu51KPfMC2nftZqU47n23mSIE6hfMrtQ1o0LUH4IygMt0vDjt1gXI9oQO2tK0FVFZTvaPz1eYv4ZPHFwZVjNZXYGESQ2&amp;t=254cc609" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9AssPcysvAh7HBTV4SPLaUT2impwhJcMymjgtWwXxujF1uFd7wYZkmlFMUNtM673DTY69gqL0Z0eUVyTlYMZJGPDXSZNwcwxM43JUy1I8uH-jWeLE3Yqj6NniiYYHWLXxJPfFrsS1pf-rSf-YFsCYbh1Ii1-ZHzRCuYA3t9frUY1&amp;t=254cc609" type="text/javascript"></script>
+        
+        <div class="reset">
+            <div id="ctl00_uplogin">
+	
+
+                    
+                        
+                            <div id="preheader">
+
+                                
+                                <div id="logoMobile" class="header_mobile hide " style="">
+                                    <img src='../assets/theme/fph/img/logoCavaloCabecalho_mobile.png' alt="gsgs" class="img-responsive ajusteimagem" />
+                                </div>
+                                
+
+                                
+                                <div id="menuHamburguer" class="menu hide">
+                                    <div class="mobile-container">
+                                        <div class="topnav">
+                                            <a href="javascript:void(0);" class="icon" onclick="montaMenuMobli(1)">
+                                                <i id="menu_icon" class="glyphicon glyphicon-menu-hamburger"></i>
+                                            </a>
+                                            <div id="menu_mobli_n1" class="responsiveMenu" style="display: none">
+                                                <span class="div-menu1" style="padding: 10px;">
+                                                    <span class="glyphicon glyphicon-user top-14 circulo" style="font-size: 20px;"></span>
+                                                    <a  class="uppercase" style="margin-bottom: -16px;/* margin-top: 19px;*/" href="../restrita/Login.aspx" title="Acessar sua conta">
+                                                        Minha conta
+                                                       <literal style="color: gray; display: flex; font-size: 15px; margin-top: -14px;">Mantenha seus dados atualizados</literal>
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                                
+                                <div class="container preheader_container">
+
+                                    
+                                    
+                                        <div id="naologado" class="col-md-4 col-sm-6 col-lg-5 col-xs-12 naologado pull-right">
+                                            <button id="btnAcessarConta" class="acessar_conta contorno-minha-conta" onclick="location.href='../restrita/Login.aspx'">
+                                                <span class="glyphicon glyphicon-user"></span>
+                                                Minha Conta
+                                            </button>
+                                        </div>
+                                    
+                                    
+
+                                    
+                                    <div class="acessibilidade color-fah" style="justify-self: center;">
+                                        <a title="Página de Acessibilidade" href="../acessibilidade/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="42" fill="currentColor" class="bi bi-universal-access-circle" viewBox="-8 6 24 4">
+                                                <path d="M8 4.143A1.071 1.071 0 1 0 8 2a1.071 1.071 0 0 0 0 2.143Zm-4.668 1.47 3.24.316v2.5l-.323 4.585A.383.383 0 0 0 7 13.14l.826-4.017c.045-.18.301-.18.346 0L9 13.139a.383.383 0 0 0 .752-.125L9.43 8.43v-2.5l3.239-.316a.38.38 0 0 0-.047-.756H3.379a.38.38 0 0 0-.047.756Z"></path>
+                                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Z"></path>
+                                            </svg>
+                                        </a>
+                                        <a onclick="aumentaFonte();" title="Aumentar fonte">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42.999" viewBox="0 0 73.221 42.999">
+                                                <path id="Path_8" data-name="Path 8" d="M42.527,28.995H31.972l-3.058-9.565H13.621l-3.028,9.565H.1L15.75-14H27.234Zm-15.832-17L22.077-2.46a18.834,18.834,0,0,1-.72-3.868h-.24a16.4,16.4,0,0,1-.75,3.748L15.69,11.993Zm46.624-.541H61.774V23H55.717V11.452h-11.6V5.365h11.6v-11.6h6.057v11.6H73.318Z" transform="translate(-0.098 14.004)"></path>
+                                            </svg>
+                                        </a>
+                                        <a onclick="diminuiFonte();" title="Diminuir fonte">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="42.999" viewBox="0 0 59.568 42.999">
+                                                <path id="Path_9" data-name="Path 9" d="M42.527,28.995H31.972l-3.058-9.565H13.621l-3.028,9.565H.1L15.75-14H27.234Zm-15.832-17L22.077-2.46a18.834,18.834,0,0,1-.72-3.868h-.24a16.4,16.4,0,0,1-.75,3.748L15.69,11.993Zm32.972.928h-16.4V6.294h16.4Z" transform="translate(-0.098 14.004)"></path>
+                                            </svg>
+                                        </a>
+                                        <a onclick="seletorContraste();" class="btn-contraste" title="Contraste preto e branco">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="35" viewBox="-2 0 44 55">
+                                                <g id="Group_1" data-name="Group 1" transform="translate(-368 -163)">
+                                                    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(368 163)" fill="none" stroke-width="3">
+                                                        <circle cx="20.5" cy="20.5" r="20.5" stroke="var(--circle-stroke)"></circle>
+                                                        <circle cx="20.5" cy="20.5" r="19" fill="none"></circle>
+                                                    </g>
+                                                    <g id="Intersection_1" data-name="Intersection 1" transform="translate(375 167)">
+                                                        <path d="M 12.50040054321289 35.47431564331055 C 10.28780937194824 35.36066055297852 8.140918731689453 34.86863708496094 6.104700088500977 34.00738906860352 C 3.842350244522095 33.05049896240234 1.810230135917664 31.68031120300293 0.0648101344704628 29.93489074707031 C -1.680609822273254 28.1894702911377 -3.05079984664917 26.15735054016113 -4.007689952850342 23.89500045776367 C -4.998049736022949 21.55352020263672 -5.500199794769287 19.06539154052734 -5.500199794769287 16.49970054626465 C -5.500199794769287 13.93424034118652 -4.998049736022949 11.44628047943115 -4.007699966430664 9.104950904846191 C -3.050809860229492 6.842710494995117 -1.680629849433899 4.810680866241455 0.06479013711214066 3.065310716629028 C 1.810230135917664 1.319930672645569 3.842350244522095 -0.05022931843996048 6.104690074920654 -1.007099270820618 C 8.140774726867676 -1.868275880813599 10.28797912597656 -2.360312223434448 12.50040054321289 -2.474013090133667 L 12.50040054321289 35.47431564331055 Z" stroke="none"></path>
+                                                        <path d="M 11.00040054321289 -0.8235855102539062 C 7.27427339553833 -0.2939262390136719 3.834068536758423 1.417444229125977 1.125440120697021 4.12598991394043 C -2.179880142211914 7.431211471557617 -4.000200271606445 11.82561111450195 -4.000200271606445 16.49970054626465 C -4.000200271606445 21.17420196533203 -2.179869651794434 25.56888961791992 1.125470161437988 28.87423133850098 C 3.834057569503784 31.58281707763672 7.274260997772217 33.29421997070312 11.00040054321289 33.82388687133789 L 11.00040054321289 -0.8235855102539062 M 13.5 -3.999599456787109 C 13.6672306060791 -3.999599456787109 13.83413028717041 -3.997520446777344 14.00040054321289 -3.993537902832031 L 14.00040054321289 36.99383926391602 C 13.83413028717041 36.99782180786133 13.6672306060791 36.99990081787109 13.5 36.99990081787109 C 2.177999973297119 36.99990081787109 -7.000200271606445 27.82170104980469 -7.000200271606445 16.49970054626465 C -7.000200271606445 5.178600311279297 2.177999973297119 -3.999599456787109 13.5 -3.999599456787109 Z" stroke="none"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <a onclick="habilitarLibras();" title="Habilitar / Desabilitar Libras">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="39.04" viewBox="0 0 42.736 42">
+                                                <g id="Camada_1" data-name="Camada 1" transform="translate(-275.81 -398.578)">
+                                                    <path id="Path_5" data-name="Path 5" d="M296.172,412.62l-1.874-.761-.056-.019a4.762,4.762,0,0,0-2.366-.288,1.628,1.628,0,0,1,2.969-1.234Z" transform="translate(-1.158 -0.793)"></path>
+                                                    <path id="Path_6" data-name="Path 6" d="M314.91,427.553l-.909.529a11.835,11.835,0,0,1-1.735.826,13.256,13.256,0,0,0,.111-1.726v-1.039c0-6.772-3.3-9.082-6.874-10.585l-7-2.848-4.3-7.468a1.67,1.67,0,0,1,.649-2.254c.009-.009.009-.009.019-.009a1.624,1.624,0,0,1,2.236.52l5.641,9.769a.009.009,0,0,0,.009.009.714.714,0,0,0,.983.25.743.743,0,0,0,.241-1l-6.68-11.559a1.632,1.632,0,0,1,2.83-1.624l6.68,11.578a.009.009,0,0,1,.009.009.716.716,0,0,0,.983.25.735.735,0,0,0,.241-1l-5.112-8.85v-.009a1.614,1.614,0,0,1,.687-2.189,1.68,1.68,0,0,1,2.3.482l7.644,13.248a.46.46,0,0,0,.854-.269l-.417-6.114v-.083a2.059,2.059,0,0,1,2-2.106,2.158,2.158,0,0,1,2.087,2.078l1.633,11.782C320.152,421.55,319.874,424.686,314.91,427.553Z" transform="translate(-1.314)"></path>
+                                                    <path id="Path_7" data-name="Path 7" d="M309.208,427.233v1.039a12.082,12.082,0,0,1-.213,2.264c-.891,4.666-4.648,8.173-11.263,8.173H283.64a1.629,1.629,0,0,1,0-3.256h8.155a.713.713,0,0,0,.714-.733.731.731,0,0,0-.742-.705H279.53a1.68,1.68,0,0,1-1.633-1.7,1.626,1.626,0,0,1,1.568-1.7h11.281a.693.693,0,0,0,.51-.213.724.724,0,0,0,.213-.51.737.737,0,0,0-.742-.705h-13.35a1.578,1.578,0,0,1-1.568-1.642,1.562,1.562,0,0,1,1.568-1.624h13.369a.693.693,0,0,0,.51-.213.709.709,0,0,0-.529-1.215H280.5a1.619,1.619,0,0,1-1.559-1.7,1.667,1.667,0,0,1,1.559-1.744h15.3a.548.548,0,0,0,.13-.019.5.5,0,0,0,.3-.269.459.459,0,0,0-.232-.584l-.77-.38-4.731-2.319a2.062,2.062,0,0,1-.891-2.83,1.93,1.93,0,0,1,2.087-.956,3.415,3.415,0,0,1,.751.186l4.082,1.661,2.171.881,4.769,1.939C306.629,419.682,309.208,421.491,309.208,427.233Z" transform="translate(0 -1.091)"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <a href="/mapa/" title="Mapa do Site">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="41" viewBox="0 0 43.733 41">
+                                                <g id="Group_2" data-name="Group 2" transform="translate(-481.267 -163)">
+                                                    <g id="flow-chart-solid" transform="translate(479.267 160)">
+                                                        <path id="Path_1" data-name="Path 1" d="M10.387,20.56H32.8v4.209h2.187v-6.4h-12.3V14H20.5v4.373H8.2v6.4h2.187V20.56Z" transform="translate(2.273 4.033)"></path>
+                                                        <path id="Path_2" data-name="Path 2" d="M4.733,23H18.4a2.733,2.733,0,0,1,2.733,2.733v8.2A2.733,2.733,0,0,1,18.4,36.667H4.733A2.733,2.733,0,0,1,2,33.933v-8.2A2.733,2.733,0,0,1,4.733,23Z" transform="translate(0 7.333)"></path>
+                                                        <path id="Path_3" data-name="Path 3" d="M22.733,23H36.4a2.733,2.733,0,0,1,2.733,2.733v8.2A2.733,2.733,0,0,1,36.4,36.667H22.733A2.733,2.733,0,0,1,20,33.933v-8.2A2.733,2.733,0,0,1,22.733,23Z" transform="translate(6.6 7.333)"></path>
+                                                        <path id="Path_4" data-name="Path 4" d="M13.733,3H27.4a2.733,2.733,0,0,1,2.733,2.733v8.2A2.733,2.733,0,0,1,27.4,16.667H13.733A2.733,2.733,0,0,1,11,13.933v-8.2A2.733,2.733,0,0,1,13.733,3Z" transform="translate(3.3)"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                           </div>
+
+
+                            <div class="posheader">
+                                <div class="preheader_content container"></div>
+                                <div id="logoFPH" class="logoFPH container">
+                                    <div id="containerLogoFPH">
+                                        <a href="../home" class="logoH" title="Ir para Página Inicial">
+                                            <div class="cavaleiro hidden-print hidden-sm hidden-xs"></div>
+                                        </a>
+                                        <h1>
+                                            <a href="../home" title="Ir para Página Inicial">
+                                                
+                                            </a>
+                                        </h1>
+                                    </div>
+                                    
+                                        <div class="parceiros">
+                                            <div class="banner-parceiros">
+                                                <div class="clear">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                            <div id="ctl00_pdefault" class="menu-container hidden-print hidden-xs">
+		
+                                    
+
+                            <div id="menu" class="menu">
+                                <button class="navbar-toggler custom" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
+                                    <span class="navbar-toggler-icon text-light"></span>
+                                </button>
+                                <nav class="navbar navbar-default hidden-xs hidden-sm">
+                                    <div class="navbar-inner">
+                                        <div class="container-fluid no-padding menu-no-padding">
+                                            
+                                            <div class="collapse navbar-collapse no-padding" id="bs-example-navbar-collapse-1">
+                                                <ul class="nav navbar-nav float-nav">
+                                                    
+                                                            <li class='dropdown '><a href="/links/home" title='Home' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl00$hfCodMenu" id="ctl00_rpMenu_ctl00_hfCodMenu" value="363" />
+                                                                
+                                                            </li>
+                                                        
+                                                            <li class='dropdown menufph'><a href="/menus/a_fph" title='A FPH' target='_parent' class="dropdown-toggle" data-toggle="dropdown">A FPH</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl01$hfCodMenu" id="ctl00_rpMenu_ctl01_hfCodMenu" value="323" />
+                                                                
+                                                                        <ul class="navbar-collapse dropdown-menu">
+                                                                            
+                                                                        <li class="nav-header"><a href="/artigos/o_hipismo" class="sub_menu"
+                                                                            title='O Hipismo' target='_parent'>
+                                                                            O Hipismo</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl0$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl0_hfCodInnerMenu" value="371" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/dirigentes" class="sub_menu"
+                                                                            title='Dirigentes' target='_parent'>
+                                                                            Dirigentes</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl1$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl1_hfCodInnerMenu" value="329" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/regulamentos" class="sub_menu"
+                                                                            title='Regulamentos' target='_parent'>
+                                                                            Regulamentos</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl2$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl2_hfCodInnerMenu" value="364" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/taxas" class="sub_menu"
+                                                                            title='Taxas' target='_parent'>
+                                                                            Taxas</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl3$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl3_hfCodInnerMenu" value="358" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/passaporte" class="sub_menu"
+                                                                            title='Passaporte' target='_parent'>
+                                                                            Passaporte</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl4$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl4_hfCodInnerMenu" value="352" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/cartoes_advertencia" class="sub_menu"
+                                                                            title='' target='_parent'>
+                                                                            Cartões / Advertência</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl5$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl5_hfCodInnerMenu" value="1124" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/formularios" class="sub_menu"
+                                                                            title='Formulários' target='_parent'>
+                                                                            Formulários</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl6$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl6_hfCodInnerMenu" value="976" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/política da qualidade" class="sub_menu"
+                                                                            title='' target='_parent'>
+                                                                            Política da Qualidade</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl7$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl7_hfCodInnerMenu" value="999" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/quadro de oficias cbh" class="sub_menu"
+                                                                            title='Quadro de Oficiais' target='_parent'>
+                                                                            Quadro de Oficias CBH</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl8$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl8_hfCodInnerMenu" value="1041" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/tjdh-sp" class="sub_menu"
+                                                                            title='' target='_parent'>
+                                                                            TJDH-SP</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl01$lvSubMenu$ctrl9$hfCodInnerMenu" id="ctl00_rpMenu_ctl01_lvSubMenu_ctrl9_hfCodInnerMenu" value="1127" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        </ul>
+                                                                    
+                                                            </li>
+                                                        
+                                                            <li class='dropdown menumodalidade'><a href="/menus/modalidades" title='Modalidades' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Modalidades</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl02$hfCodMenu" id="ctl00_rpMenu_ctl02_hfCodMenu" value="324" />
+                                                                
+                                                                        <ul class="navbar-collapse dropdown-menu">
+                                                                            
+                                                                        <li class="nav-header"><a href="/links/salto" class="sub_menu"
+                                                                            title='Salto' target='_parent'>
+                                                                            Salto</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl0$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl0_hfCodInnerMenu" value="335" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/links/ranking" class="inner_menu"
+                                                                                        title='Ranking FPH' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/calendario_salto" class="inner_menu"
+                                                                                        title='Calendário Atualizado 2017' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/circuito fph cavalos novos" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Circuito FPH Cavalos Novos
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento_201711111" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/salto_iniciantes" class="sub_menu"
+                                                                            title='Iniciante' target='_parent'>
+                                                                            Iniciante</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl1$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl1_hfCodInnerMenu" value="343" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendario_salto_ini" class="inner_menu"
+                                                                                        title='Calendário' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/julgamento técnico" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Julgamento Técnico
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking metropolitan cup" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Metropolitan e Central Cup
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/links/ranking fph" class="inner_menu"
+                                                                                        title='Ranking FPH' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking formação equipes cbs" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking Formação Equipes CBS
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento-201701111" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/taça são paulo" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Taça FPH
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/adestramento" class="sub_menu"
+                                                                            title='Adestramento' target='_parent'>
+                                                                            Adestramento</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl2$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl2_hfCodInnerMenu" value="336" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendário adestramento" class="inner_menu"
+                                                                                        title='Calendário Adestramento' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking_adestramento_" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento_201711" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/cce" class="sub_menu"
+                                                                            title='CCE' target='_parent'>
+                                                                            Hipismo Completo</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl3$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl3_hfCodInnerMenu" value="337" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendario_20170" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking_cce" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento_20170" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/volteio" class="sub_menu"
+                                                                            title='Volteio' target='_parent'>
+                                                                            Volteio</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl4$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl4_hfCodInnerMenu" value="341" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendario volteio" class="inner_menu"
+                                                                                        title='Calendario Volteio' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking_2017" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento-2017" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/paraequestre" class="sub_menu"
+                                                                            title='Paraequestre' target='_parent'>
+                                                                            Paraequestre</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl5$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl5_hfCodInnerMenu" value="342" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendario paraequestre" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking paraequestre" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento paraequestre" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamento
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/reprises paraequestre" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Reprises
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/enduro" class="sub_menu"
+                                                                            title='Enduro' target='_parent'>
+                                                                            Enduro</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl6$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl6_hfCodInnerMenu" value="338" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/artigos/calendário enduro" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Calendário
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/ranking enduro" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Ranking
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/artigos/regulamento_2017" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Regulamentos
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/atrelagem" class="sub_menu"
+                                                                            title='Atrelagem' target='_parent'>
+                                                                            Atrelagem</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl7$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl7_hfCodInnerMenu" value="426" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/rédeas" class="sub_menu"
+                                                                            title='Rédeas' target='_parent'>
+                                                                            Rédeas</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl02$lvSubMenu$ctrl8$hfCodInnerMenu" id="ctl00_rpMenu_ctl02_lvSubMenu_ctrl8_hfCodInnerMenu" value="974" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        </ul>
+                                                                    
+                                                            </li>
+                                                        
+                                                            <li class='dropdown menuentidade'><a href="/menus/entidades_e_federados" title='Entidades e Federados' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Entidades e Federados</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl03$hfCodMenu" id="ctl00_rpMenu_ctl03_hfCodMenu" value="325" />
+                                                                
+                                                                        <ul class="navbar-collapse dropdown-menu">
+                                                                            
+                                                                        <li class="nav-header"><a href="/links/entidades" class="sub_menu"
+                                                                            title='Entidades' target='_parent'>
+                                                                            Entidades</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl03$lvSubMenu$ctrl0$hfCodInnerMenu" id="ctl00_rpMenu_ctl03_lvSubMenu_ctrl0_hfCodInnerMenu" value="344" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/cadastro on-line" class="sub_menu"
+                                                                            title='' target='_parent'>
+                                                                            Cadastro On-Line</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl03$lvSubMenu$ctrl1$hfCodInnerMenu" id="ctl00_rpMenu_ctl03_lvSubMenu_ctrl1_hfCodInnerMenu" value="1090" />
+                                                                            
+                                                                                    <ul class="sub-dwop-down hide">
+                                                                                        
+                                                                                    <li><a href="/links/animal" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Animal
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/links/competidor" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Competidor
+                                                                                    </a></li>
+                                                                                
+                                                                                    <li><a href="/links/proprietário" class="inner_menu"
+                                                                                        title='' target='_parent'>
+                                                                                        Proprietário
+                                                                                    </a></li>
+                                                                                
+                                                                                    </ul>
+                                                                                
+                                                                        </li>
+                                                                    
+                                                                        </ul>
+                                                                    
+                                                            </li>
+                                                        
+                                                            <li class='dropdown menucomunicacao'><a href="/menus/comunicacao" title='Comunicação' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Comunicação</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl04$hfCodMenu" id="ctl00_rpMenu_ctl04_hfCodMenu" value="326" />
+                                                                
+                                                                        <ul class="navbar-collapse dropdown-menu">
+                                                                            
+                                                                        <li class="nav-header"><a href="/links/calendario_eventos" class="sub_menu"
+                                                                            title='Calendário de Eventos' target='_parent'>
+                                                                            Calendário de Eventos</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl04$lvSubMenu$ctrl0$hfCodInnerMenu" id="ctl00_rpMenu_ctl04_lvSubMenu_ctrl0_hfCodInnerMenu" value="327" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/noticias" class="sub_menu"
+                                                                            title='Notícias' target='_parent'>
+                                                                            Notícias</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl04$lvSubMenu$ctrl1$hfCodInnerMenu" id="ctl00_rpMenu_ctl04_lvSubMenu_ctrl1_hfCodInnerMenu" value="348" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/links/comunicados" class="sub_menu"
+                                                                            title='Comunicados Oficiais' target='_parent'>
+                                                                            Comunicados Oficiais</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl04$lvSubMenu$ctrl2$hfCodInnerMenu" id="ctl00_rpMenu_ctl04_lvSubMenu_ctrl2_hfCodInnerMenu" value="350" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        <li class="nav-header"><a href="/artigos/links_uteis" class="sub_menu"
+                                                                            title='Links Úteis' target='_parent'>
+                                                                            Links Úteis</a>
+                                                                            <input type="hidden" name="ctl00$rpMenu$ctl04$lvSubMenu$ctrl3$hfCodInnerMenu" id="ctl00_rpMenu_ctl04_lvSubMenu_ctrl3_hfCodInnerMenu" value="351" />
+                                                                            
+                                                                        </li>
+                                                                    
+                                                                        </ul>
+                                                                    
+                                                            </li>
+                                                        
+                                                            <li class='dropdown '><a href="/links/contato" title='Contato' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Contato</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl05$hfCodMenu" id="ctl00_rpMenu_ctl05_hfCodMenu" value="328" />
+                                                                
+                                                            </li>
+                                                        
+                                                            <li class='dropdown '><a href="/links/loja fph" title='' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Loja FPH</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl06$hfCodMenu" id="ctl00_rpMenu_ctl06_hfCodMenu" value="1131" />
+                                                                
+                                                            </li>
+                                                        
+                                                            <li class='dropdown '><a href="/artigos/esalq" title='fphtv' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Estudo FPH/ESALQ</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl07$hfCodMenu" id="ctl00_rpMenu_ctl07_hfCodMenu" value="966" />
+                                                                
+                                                            </li>
+                                                        
+                                                            <li class='dropdown '><a href="/links/studbook" title='' target='_parent' class="dropdown-toggle" data-toggle="dropdown">Studbook</a>
+                                                                <span class="caret"></span>
+                                                                <input type="hidden" name="ctl00$rpMenu$ctl08$hfCodMenu" id="ctl00_rpMenu_ctl08_hfCodMenu" value="970" />
+                                                                
+                                                            </li>
+                                                        
+                                                    <li>
+                                                        <div class="col-lg-10 col-md-10 barra-pesquisa pull-left" id="PesquisaSite">
+                                                            <a id="btnBusca" class="btn btn-danger busca" onclick="$('#pnModalBusca').modal('show');" href="#">Busca</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        
+	</div><div id="ctl00_pnUltimasNoticias" class="ultimas-noticias container-fluid hidden-xs">
+		
+                            <div class="container cont-noticias">
+                                <div class="isNeedFix" style="width: 200px; height: 3px;"></div>
+                                <div class="sessao col-lg-2 col-md-2 pull-left">
+                                    <div class="pull-right noticias-left">Últimas Notícias</div>
+                                </div>
+                                <div class="noticias col-lg-7 col-md-6 col-sm-9 pull-left">
+                                    <ul>
+                                        
+                                                    <li><a href="../Detalhe/os_vencedores_do_campeonato_paulista_master_2026">Os vencedores do Campeonato Paulista Master 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/conheca_os_campeoes_paulistas_senior_especial_2026">Conheça os campeões paulistas Sênior Especial 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/campeonato_paulista_da_juventude_2026_apresenta_seus_campeoes">Campeonato Paulista da Juventude 2026 apresenta seus campeões</a></li>
+                                            
+                                                    <li><a href="../Detalhe/confira_os_campeoes_paulistas_de_jovens_cavaleiros_2026">Confira os campeões paulistas de Jovens Cavaleiros 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/veja_quem_sao_os_campeoes_paulistas_amadores_2026">Veja quem são os campeões paulistas amadores 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/confira_quem_foram_os_campeoes_paulistas_de_salto_iniciante_2026">Confira quem foram os campeões paulistas de Salto Iniciante 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/theo_foresto_e_o_campeao_paulista_mini_mirim_2026">Theo Foresto é o campeão paulista Mini Mirim 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/jose_">José Luiz Guimarães de Carvalho é ouro no Paulista de Sênior Top 2026</a></li>
+                                            
+                                                    <li><a href="../Detalhe/trofeu_eficiencia_2025_premia_seus_campeoes">Troféu Eficiência 2025 premia seus campeões</a></li>
+                                            
+                                                    <li><a href="../Detalhe/studbook_|_voce_sabe_o_que_e_e_como_utilizar">Studbook FPH | Você sabe o que é e como utilizar?</a></li>
+                                            
+                                    </ul>
+                                </div>
+                                <div class="ultimas-noticias-nav pull-right">
+                                    <a href="javascript:void(0)" class="pull-left prev"><span class="glyphicon glyphicon-triangle-left"></span></a>
+                                    <a href="javascript:void(0)" class="pull-right next"><span class="glyphicon glyphicon-triangle-right"></span></a>
+                                </div>
+                            </div>
+                        
+	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    
+                    <div id="main" class="container-content-ok">
+                        <div id="header">
+                        </div>
+                        <div>
+                            <div id="container" class="containerFPH" style="margin-top: 0;">
+                                <div id="ctl00_pnBreadcrumb" class="container">
+		
+                                    <input type="hidden" name="ctl00$hfErro" id="ctl00_hfErro" />
+                                    
+                                    <div id="breadcrumb hide ">
+                                        <ul class="nostyle hide ">
+                                            <li><a href="/home/Default.aspx" title="Home">Home</a><span class="divider">/</span></li><li><a href="/calendario/Default" title="Calendário Geral">Calendário Geral</a><span class="divider">/</span></li><li><a href="/calendario/ListaProvas.aspx" title="Lista de Provas">Lista de Provas</a><span class="divider">/</span></li><li><span>Ordem de Entrada</span></li>
+                                        </ul>
+                                    </div>
+
+                                
+	</div>
+                                <div class="page_content container">
+                                    
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hfCodTorneio" id="ctl00_ContentPlaceHolder1_hfCodTorneio" value="3466" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$hfErro" id="ctl00_ContentPlaceHolder1_hfErro" />
+    <div class="quadroHorario w-100">
+        <div class="row-fluid">
+            <div id="top">
+                <div class="hold_h2 img_head_content">
+                    <h2 class="ft-black font-torneio">
+                        3ª ETAPA CENTRAL CUP 2026
+                    </h2>
+                    <div class="d-flex justify-content-between w-100 ">
+                        <span class="data-prova">
+                            12 de julho
+                        </span>
+                        <div style="margin-top: 10px;">
+                            
+                            <div class="icones-compartilhamento">
+                                <input type="image" name="ctl00$ContentPlaceHolder1$imgWhatsapp" id="ctl00_ContentPlaceHolder1_imgWhatsapp" class="mr-2" src="../assets/sharedIcons/Resultado-WhatsApp.png" onclick="shareWhatsapp();" />
+                                <input type="image" name="ctl00$ContentPlaceHolder1$imgInsta" id="ctl00_ContentPlaceHolder1_imgInsta" class="mr-2" src="../assets/sharedIcons/Resultado-Instagram.png" onclick="copyLink(insta=true);" />
+                                <input type="image" name="ctl00$ContentPlaceHolder1$imgFacebook" id="ctl00_ContentPlaceHolder1_imgFacebook" class="mr-2" src="../assets/sharedIcons/Resultado-Facebook.png" onclick="shareFacebook();" />
+                                <input type="image" name="ctl00$ContentPlaceHolder1$imgCopyLink" id="ctl00_ContentPlaceHolder1_imgCopyLink" class="mr-2" src="../assets/sharedIcons/Resultado-Copy.png" onclick="copyLink();" />
+                                <label id="linkCopiado">Link Copiado!</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 10px; margin-bottom: 10px;"/>
+
+                    <span class="dadosProva">
+                        PR. 03 - 0,80M (MMR/JC/AM) 0,80m - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M - TEMPO OCULTO A seguir da prova PR. 02 - 0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M
+                    </span>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="conteudo_artigo" class="box">
+
+        <div class="row-fluid">
+            <div class="span4">
+                
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="hold_table">
+                <div class="header-table ">
+                    <span class="prova-titulo-ordem">ORDEM DE ENTRADA</span>
+                </div>
+                <div class="new-center-tableOrder">
+                    
+                                <table class="spacing-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="span1 table-head-result head-mobile wid-col-10"><span class="font-15 head-mobile" style="font-weight:bold !important;">OR.</span></th>
+                                            <th class="span6 table-head-result head-mobile wid-col-25">
+                                                <span class="font-15 head-mobile" style="font-weight:bold !important;">COMPETIDOR</span> 
+                                                <br /> 
+                                                <span class="detail-header-font">
+                                                    INSTRUTOR
+                                                </span>
+                                            </th>
+                                            <th class="span6 table-head-result head-mobile"><span class="font-15 head-mobile" style="font-weight:bold !important;">CAVALO</span> <br />
+                                                <span class="detail-header-font d-flex justify-content-center">
+                                                     NASC. / SEXO / RAÇA / CRIADOR / PROPRIETÁRIO / FILIAÇÃO 
+                                                </span>
+                                            </th>
+                                            
+                                            <th class="table-head-result head-mobile wid-col-10 is-desktop">
+                                                <span class="font-15 head-mobile " style="font-weight:bold !important;">
+                                                    CATEG.
+                                                </span>
+                                            </th>
+                                            <th class="table-head-result head-mobile wid-col-10 is-mobile">
+                                                <span class="font-15 head-mobile" style="font-weight:bold !important;">
+                                                    CAT.
+                                                    <br />
+                                                    EQUIPE
+                                                </span>
+                                            </th>
+                                            
+                                                <th class="span2 table-head-result head-mobile is-desktop wid-col-10" style="font-weight:bold !important;">
+                                                        PONTUAÇÃO
+                                                        FINAL
+                                                </th>
+                                                <th class="span2 table-head-result head-mobile is-mobile wid-col-10" style="font-weight:bold !important;">
+                                                    PONT.
+                                                    FINAL
+                                                </th>
+
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            1 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl0_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/45783.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl0$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl0_hfIDCavaleiro" value="45783" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>MARIA CLARA MASCARENHAS</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl0_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/45783.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>FR WALENKA  </strong>
+                                            </span>
+                                            25/11/2010 | BH | WALDIR VALADES | FR PINOCHIO
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    4
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            2 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl1_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/45765.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl1$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl1_hfIDCavaleiro" value="45765" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>VALENTINA PASCALE CATALANI</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl1_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/45765.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>EVEREST ROYAL TITAN  </strong>
+                                            </span>
+                                            24/12/2017 | Sem Registro no Stud Book | VALENTINA PASCALE CATALANI
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    5
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            4 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl2_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/45860.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl2$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl2_hfIDCavaleiro" value="45860" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>LUCAS HENRIQUE FRIGIERI</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl2_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/45860.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>IMPERIO  </strong>
+                                            </span>
+                                            28/10/2018 | SRD | LUCAS HENRIQUE FRIGIERI
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            AM INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    3
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            5 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl3_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/31017.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl3$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl3_hfIDCavaleiro" value="31017" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>MARCELLA BLUM DE MORAES</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl3_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/31017.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>NIKITA IMPERIAL  </strong>
+                                            </span>
+                                            25/12/2016 | LUSO BR | MARCELLA BLUM DE MORAES
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            AM INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    1
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            6 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl4_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/42246.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl4$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl4_hfIDCavaleiro" value="42246" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>VICTORIA RIBEIRO MARTINS</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl4_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/42246.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>ZORRO VJ  </strong>
+                                            </span>
+                                            14/10/2016 | SRD | POLYANA VELLOSO JULIANO
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    0
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            7 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl5_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/45816.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl5$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl5_hfIDCavaleiro" value="45816" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>AMANDA CARDOSO</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl5_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/45816.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>HAVANA  </strong>
+                                            </span>
+                                            10/01/2013 | SRD | FABIO MOREIRA FERREIRA
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    0
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            8 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl6_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/45782.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl6$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl6_hfIDCavaleiro" value="45782" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>CHIARA PERRELLA</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl6_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/45782.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>CARTHER  </strong>
+                                            </span>
+                                            15/05/2019 | SRD   - SEM RACA DEFINIDA | WALDIR VALADES
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    7
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                
+                                    <td class="align_center ordem-font-classific">
+                                        <b>
+                                            9 °
+                                        </b>
+                                        <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl7_imgLogoMobile" class="mini-image-entrada is-mobile" src="../uploads/pessoa/46344.jpg" />
+                                    </td>
+                                     <td class="colunaCavaleiro text-center ordem-font-data">
+                                        <div class="d-flex mobile-center">
+                                            <input type="hidden" name="ctl00$ContentPlaceHolder1$lvListagem$ctrl7$hfIDCavaleiro" id="ctl00_ContentPlaceHolder1_lvListagem_ctrl7_hfIDCavaleiro" value="46344" />
+                                            <div class="orderm-coluna-cavaleiro">
+                                                <span class=""><strong>AVI STERN</strong></span>
+                                                
+                                            </div>
+                                            <div style="align-self:center;">
+                                                
+                                            </div>
+                                            <img id="ctl00_ContentPlaceHolder1_lvListagem_ctrl7_imgLogo" class="mini-image float-right margin-mobile is-desktop" src="../uploads/pessoa/46344.jpg" />
+                                        </div>
+                                    </td>
+                                    <td class="colunaCavalo ordem-font-sub-data">
+                                        <div class="margin-auto-width-50 text-uppercase">
+                                            <span class="ordem-font-data block">
+                                                <strong>LUNATICA (HPA)  </strong>
+                                            </span>
+                                            11/08/2001 | BH | HIPICA PARQUE ATIBAIA - ESTANCIA PARQUE ATIBAIA | LANDRITTER
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="align_center">
+                                        <b>
+                                            JC INTER - 0,80M
+                                        </b>
+                                        <b class="is-mobile-block">
+                                            <br />
+                                             -  
+                                        </b>
+                                    </td>
+                                    
+                                        <td class="align_center">
+                                            <span class="block">
+                                                <strong>
+                                                    3
+                                                </strong>
+                                            </span>
+                                        </td>
+                                    
+                                
+                            </tr>
+                            <tr class="detalhe-conjunto hide">
+                                <td colspan="7">
+                                    <hr />
+                                </td>
+                            </tr>
+                        
+                                    </tbody>
+                                </table>
+                        
+                </div>
+                <div class="table-bottom-decorator">
+
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            
+
+        </div>
+        <div class="row-fluid margin-top-buttons">
+            <div class="span2">
+                <a id="ctl00_ContentPlaceHolder1_hplListaProva" title="Voltar" class="btn btn-danger alterado btn-ahundred corBtn" href="ListaProvas.aspx?ID=3466&amp;Prova=14217#div_14217">
+          <span class="icone-voltar"></span>
+          Voltar
+                </a>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div id="box-login" class="modal fade">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="ctl00_ploagar">
+		
+                                        <fieldset class="acessarLogin">
+                                            <legend>Acesso a sua conta</legend>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <div>
+                                                        
+                                                        E-mail
+                                                    </div>
+                                                    <input name="ctl00$txtemail" type="email" id="ctl00_txtemail" class="form-control" />
+                                                    
+                                                    <input type="hidden" name="ctl00$wmemail_ClientState" id="ctl00_wmemail_ClientState" />
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <span>
+                                                        
+                                                        Senha
+                                                    </span>
+                                                    <input name="ctl00$txtsenha" type="password" id="ctl00_txtsenha" class="form-control" />
+                                                    <input type="hidden" name="ctl00$wmsenha_ClientState" id="ctl00_wmsenha_ClientState" />
+                                                </div>
+                                                <div class="col-sm-12 label-preencha hide">Preencha o e-mail acima para recuperar sua senha</div>
+                                                <div class="clearfix"></div>
+                                                <br />
+                                                <div class="col-sm-8">
+                                                    <a href="javascript:void(0)" class="esqueci-senha" title="Esqueci a senha"
+                                                        onclick="esqueciSenha(); return false">Esqueci a senha</a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <a onclick="showload(&quot;login&quot;);" id="ctl00_lkentrar" class="btn btn-danger pull-right" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lkentrar&quot;, &quot;&quot;, true, &quot;login&quot;, &quot;&quot;, false, true))">Entrar</a>
+                                                    <span class="carregando login hide">
+                                                        <img src="../assets/etc/ajax-loader.gif" alt="Carregando" /></span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </fieldset>
+                                    
+	</div>
+                                    <div id="ctl00_predefine">
+		
+                                        <fieldset class="hide redefineSenha">
+                                            <legend>Redefinição de Senha</legend>
+                                            <div class="form-group">
+                                                <label class="col-sm-12">
+                                                    <span>
+                                                        
+                                                        Nova Senha
+                                                    </span>
+                                                    <input name="ctl00$txtnovasenha" type="password" id="ctl00_txtnovasenha" class="form-control" />
+                                                </label>
+                                                <label class="label-senha  col-sm-12">
+                                                    <span>
+                                                        
+                                                        Confirmar Senha
+                                                    </span>
+                                                    <input name="ctl00$txtconfsenha" type="password" id="ctl00_txtconfsenha" class="form-control" />
+                                                </label>
+                                            </div>
+                                            <div class="btn-link">
+                                                <div class="row">
+                                                    <div class="col-sm-6 nolink">Redefinir Senha</div>
+                                                    <div class="col-sm-6">
+                                                        <a onclick="showload(&quot;redsenha&quot;);" id="ctl00_lbredefinir" class="col-sm-6 pull-right btn btn-danger" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbredefinir&quot;, &quot;&quot;, true, &quot;redsenha&quot;, &quot;&quot;, false, true))">Redefinir</a>
+                                                        <span class="carregando login hide">
+                                                            <img src="../assets/etc/ajax-loader.gif" alt="Carregando" /></span>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </fieldset>
+                                    
+	</div>
+                                    <div id="ctl00_esquicisenha">
+		
+                                        <fieldset class="esqueciSenha hide">
+                                            <legend>Esqueci a senha</legend>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    
+                                                    E-mail
+                                                <input name="ctl00$txtesquecisenha" type="email" id="ctl00_txtesquecisenha" class="form-control" />
+                                                    
+                                                    <input type="hidden" name="ctl00$wmesquecisenha_ClientState" id="ctl00_wmesquecisenha_ClientState" />
+                                                </div>
+
+                                                <div class="label-preencha">
+                                                    <div class="col-md-12"><sub>Preencha o e-mail acima para recuperar sua senha</sub></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <br />
+                                                <div class="col-sm-6"><a href="javascript:void(0)" class="esqueci-senha voltar" title="Voltar" onclick="voltar()">Voltar</a></div>
+                                                <div class="col-sm-6">
+                                                    <a onclick="showload(&quot;esqsenha&quot;);" id="ctl00_lbesqucisenha" class="pull-right btn btn-danger btn-enviar" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbesqucisenha&quot;, &quot;&quot;, true, &quot;esqsenha&quot;, &quot;&quot;, false, true))">Enviar</a>
+                                                </div>
+                                                <span class="carregando login hide">
+                                                    <img src="../assets/etc/ajax-loader.gif" alt="Carregando" /></span>
+
+                                            </div>
+                                        </fieldset>
+                                    
+	</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+</div>
+
+            
+                <div id="footer" class="hidden-print">
+                    <div id="ctl00_Newsletter_upnews">
+	
+    <div id="ctl00_Newsletter_pnNewsletter" class="container-fluid newsletter-container hidden-xs hidden-print">
+		
+      <div class="container newsletter">
+        <div class="col-md-12 col-sm-12">
+          <span id="ctl00_Newsletter_lbTitleNewsletter" class="title_newsletter">Receba nossas novidades</span>
+          <input name="ctl00$Newsletter$txtnewsnome" type="text" id="ctl00_Newsletter_txtnewsnome" />
+          <input type="hidden" name="ctl00$Newsletter$wmnewsnome_ClientState" id="ctl00_Newsletter_wmnewsnome_ClientState" />
+
+          <input name="ctl00$Newsletter$txtnewsemail" type="text" id="ctl00_Newsletter_txtnewsemail" />
+          <input type="hidden" name="ctl00$Newsletter$wmnewseamil_ClientState" id="ctl00_Newsletter_wmnewseamil_ClientState" />
+          
+
+          <input type="submit" name="ctl00$Newsletter$btnassinar" value=">" onclick="showLoad();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Newsletter$btnassinar&quot;, &quot;&quot;, true, &quot;email&quot;, &quot;&quot;, false, false))" id="ctl00_Newsletter_btnassinar" class="btn btn-danger assinar_newsletter" />
+          <img src="../assets/etc/ajax-loader.gif" alt="Carregando" class="carregando hide"/>
+
+          
+          
+        </div>
+      </div>
+    
+	</div>
+  
+</div>
+
+                    <div class="container-fluid cfooter">
+                        <div class="container content-footer">
+                            <div class="col-md-12 display-footer">
+                                <div class="blocos_footer col-md-2 col-xs-12 col-sm-4">
+                                    <h4><a href="../menus/a_fph" title="A Federação">A Federação</a></h4>
+                                    <ul class="nostyle">
+                                        
+                                                <li><a href="/artigos/o_hipismo" title='O Hipismo' target='_parent'>O Hipismo</a></li>
+                                            
+                                                <li><a href="/artigos/dirigentes" title='Dirigentes' target='_parent'>Dirigentes</a></li>
+                                            
+                                                <li><a href="/artigos/regulamentos" title='Regulamentos' target='_parent'>Regulamentos</a></li>
+                                            
+                                                <li><a href="/artigos/taxas" title='Taxas' target='_parent'>Taxas</a></li>
+                                            
+                                                <li><a href="/artigos/passaporte" title='Passaporte' target='_parent'>Passaporte</a></li>
+                                            
+                                                <li><a href="/artigos/cartoes_advertencia" title='' target='_parent'>Cartões / Advertência</a></li>
+                                            
+                                                <li><a href="/links/formularios" title='Formulários' target='_parent'>Formulários</a></li>
+                                            
+                                                <li><a href="/artigos/política da qualidade" title='' target='_parent'>Política da Qualidade</a></li>
+                                            
+                                                <li><a href="/artigos/quadro de oficias cbh" title='Quadro de Oficiais' target='_parent'>Quadro de Oficias CBH</a></li>
+                                            
+                                                <li><a href="/artigos/tjdh-sp" title='' target='_parent'>TJDH-SP</a></li>
+                                            
+                                    </ul>
+                                </div>
+                                <div class="blocos_footer col-md-2 col-xs-12 col-sm-4">
+                                    <h4><a href="../menus/modalidades" title="Modalidades">Modalidades</a></h4>
+                                    <ul class="nostyle">
+                                        
+                                                <li>
+                                                    <a href="/links/salto"
+                                                        title='Salto' target='_parent'>
+                                                        Salto
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/salto_iniciantes"
+                                                        title='Iniciante' target='_parent'>
+                                                        Iniciante
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/adestramento"
+                                                        title='Adestramento' target='_parent'>
+                                                        Adestramento
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/cce"
+                                                        title='CCE' target='_parent'>
+                                                        Hipismo Completo
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/volteio"
+                                                        title='Volteio' target='_parent'>
+                                                        Volteio
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/paraequestre"
+                                                        title='Paraequestre' target='_parent'>
+                                                        Paraequestre
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/enduro"
+                                                        title='Enduro' target='_parent'>
+                                                        Enduro
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/atrelagem"
+                                                        title='Atrelagem' target='_parent'>
+                                                        Atrelagem
+                                                    </a>
+                                                </li>
+                                            
+                                                <li>
+                                                    <a href="/links/rédeas"
+                                                        title='Rédeas' target='_parent'>
+                                                        Rédeas
+                                                    </a>
+                                                </li>
+                                            
+                                    </ul>
+                                </div>
+                                <div class="blocos_footer col-md-2 col-xs-12 col-sm-4">
+                                    <h4><a href="../menus/comunicacao" title="Comunicação">Comunicação</a></h4>
+                                    <ul class="nostyle">
+                                        
+                                                <li><a href="/links/calendario_eventos"
+                                                    title='Calendário de Eventos' target='_parent'>
+                                                    Calendário de Eventos
+                                                </a></li>
+                                            
+                                                <li><a href="/links/noticias"
+                                                    title='Notícias' target='_parent'>
+                                                    Notícias
+                                                </a></li>
+                                            
+                                                <li><a href="/links/comunicados"
+                                                    title='Comunicados Oficiais' target='_parent'>
+                                                    Comunicados Oficiais
+                                                </a></li>
+                                            
+                                                <li><a href="/artigos/links_uteis"
+                                                    title='Links Úteis' target='_parent'>
+                                                    Links Úteis
+                                                </a></li>
+                                            
+                                    </ul>
+                                </div>
+                                <div class="blocos_footer col-md-3 col-xs-12 col-sm-4">
+                                    <h4><a href="../menus/entidades_e_federados" title="Entidades e Federados"><strong>Entidades e Federados</strong></a></h4>
+                                    <h4></h4>
+                                    <h4><a href='../artigos/fphtv' title='FPH TV'><strong>FPH TV</strong></a></h4>
+                                    <h4><a href="../artigos/extrato bancário" title="Portal da Transparência"><strong>Portal da Transparência</strong></a></h4>
+                                    
+                                    <h4><a href="../links/contato" title="Contato"><strong>Contato</strong></a></h4>
+                                    <h4>
+                                        <a id="ctl00_hlFacebook" title="Facebook" class="alinhamento-redes-social" href="https://www.facebook.com/federacaopaulistadehipismo?fref=ts" target="_blank"><span class="socialIcons icon-facebook"></span><strong> Facebook</strong></a></h4>
+                                    <h4>
+                                        <a id="ctl00_hlInstagram" title="Instagram" class="alinhamento-redes-social" href="https://www.instagram.com/fph_oficial/" target="_blank"><span class="socialIcons icon-instagram"></span><strong> Instagram</strong></a></h4>
+                                </div>
+                                <div class="blocos_footer col-md-3 col-xs-12 col-sm-5 endereco">
+                                    <h4>Localização:</h4>
+                                    <span id="ctl00_lblEndereco">AV. ADOLFO PINHEIRO, 2054 - SALA 612 – 6º ANDAR<br />CEP: 04734-003 · SANTO AMARO<br />SÃO PAULO - SP</span>
+                                    <br />
+                                    <h4>Tel: <span id="ctl00_lblTelefone" style="font-weight:normal;">11 56423350</span></h4>
+                                    <span id="ctl00_lblEmail"><strong class='email-text-color'>E-mail: </strong> <a href='mailto: faleconosco@fph.com.br'>faleconosco@fph.com.br</a></span>
+                                    <br />
+                                    <span id="ctl00_lblCNPJ"><strong class='cnpj-text-color'>CNPJ: </strong> 43.638.543/0001-41</span>
+                                    <br />
+                                    <br />
+                                    <span class="horarioAtend">
+                                        <strong>
+                                            Horário de atendimento:
+                                        </strong>
+                                        <br />
+                                        De Segunda a Sexta-feira das 09h00 às 18h00<br/>Não há atendimento no horário de almoço: 12h00 às 13h00
+                                    </span>
+                                </div>
+                                
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="posfooter">
+                    <div class="container">
+                        <div class="content-posfooter visible-desktop hidden-tablet hidden-phone">
+                            <div class="col-md-6 col-sm-6 hidden-xs"><span>FEDERAÇÃO PAULISTA DE HIPISMO &copy; Todos os direitos reservados.</span></div>
+                            <div class="col-md-5 col-sm-4 hidden-sm hidden-md hidden-lg"><span>Federação &copy; Todos os direitos reservados.</span></div>
+                            <div class="col-md-4 col-sm-4 hidden-xs">
+                                <span>
+                                    Banco: 5.4.9764.20701 | Site: 5.4.9764.20837</span>
+                            </div>
+                            <div class="col-md-2 col-sm-3 logo-footer">
+                                <a href="http://www.macronetwork.com.br" title="Macronetwork" target="_blank">
+                                    <span class="logo logo-footer">
+                                        <img src="../assets/layout/nlogo.png" alt="Macronetwork" /></span>
+                                    <span class="logo_print">
+                                        <img src="../assets/layout/nlogo_print.png" alt="Macronetwork" /></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+        </div>
+
+
+        <div id="modalDados" class="modal fade">
+	
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id="ctl00_upModalDados">
+		
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3>Alterar Dados</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        
+                                        <label>Senha Atual:</label>
+                                        <input name="ctl00$txtSenhaAntiga" type="password" id="ctl00_txtSenhaAntiga" class="senha-antiga" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        
+                                        <label>Nova senha:</label>
+                                        <input name="ctl00$txtSenhaNova" type="password" id="ctl00_txtSenhaNova" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        
+                                        <label>Confirmação da nova senha:</label>
+                                        <input name="ctl00$txtSenhaConf" type="password" id="ctl00_txtSenhaConf" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a id="ctl00_btnSalvarDados" class="btn btn-success" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnSalvarDados&quot;, &quot;&quot;, true, &quot;rfvSenha&quot;, &quot;&quot;, false, true))"><i class="icon-ok-circle icon-white"></i> Salvar</a>
+                                <a href="javascript:void(0)" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle icon-white"></i>Cancelar</a>
+                            </div>
+                        
+	</div>
+                </div>
+            </div>
+        
+</div>
+
+        <!-- Modal Busca -->
+        <div id="pnModalBusca" class="modal fade">
+	
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="height: 80px;">
+                        
+                        <div class="search justify-content-md-center">
+                            <div class="input-group col-xs-12 col-md-4 teste pull-left" id="TipoPes">
+                                <select name="ctl00$ddlTipoPesquisa" id="ctl00_ddlTipoPesquisa" title="Tipo de pesquisa" class="form-control TipoPesquisa" onChange="alteraTipoPesquisa(this)">
+		<option value="1">No Site</option>
+		<option value="2">Animal</option>
+		<option value="3">Cavaleiro</option>
+
+	</select>
+                            </div>
+
+                            <div id="PesNoSite" class="input-group col-md-8 barra-pesquisa pull-left">
+		
+                                <input name="ctl00$txtbuscar" type="text" id="ctl00_txtbuscar" class="form-control" />
+                                <input type="hidden" name="ctl00$wmbusca_ClientState" id="ctl00_wmbusca_ClientState" />
+                                <a id="ctl00_lbbusca" class="btn btn-danger input-group-addon" href="javascript:__doPostBack(&#39;ctl00$lbbusca&#39;,&#39;&#39;)">Buscar</a>
+                            
+	</div>
+
+                            <div class="input-group col-xs-12 col-md-7 barra-pesquisa pull-left hide" id="PesCavaleiro">
+                                <input name="ctl00$txtbuscarCavaleiro" type="text" id="ctl00_txtbuscarCavaleiro" class="form-control" />
+                                <div class="row">
+                                    <div id="ajaxcontroltoolkitplaceholder">
+                                        
+                                    </div>
+                                    <input type="hidden" name="ctl00$wmbuscaCavaleiro_ClientState" id="ctl00_wmbuscaCavaleiro_ClientState" />
+                                </div>
+                            </div>
+
+                            <div class="input-group col-xs-12 col-md-7 barra-pesquisa pull-left hide" id="PesAnimal">
+                                <input name="ctl00$txtbuscarAnimal" type="text" id="ctl00_txtbuscarAnimal" class="form-control" />
+                                <div class="row">
+                                    <div id="ajaxcontroltoolkitplaceholder2">
+                                        
+                                    </div>
+                                    <input type="hidden" name="ctl00$wmbuscaAnimal_ClientState" id="ctl00_wmbuscaAnimal_ClientState" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:void(0)" class="btn btn-danger" data-dismiss="modal"><i class="icon-ban-circle icon-white cancel"></i>Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        
+</div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmemail_ClientState","WatermarkText":"E-mail","id":"ctl00_wmemail"}, null, null, $get("ctl00_txtemail"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmsenha_ClientState","WatermarkText":"Senha","id":"ctl00_wmsenha"}, null, null, $get("ctl00_txtsenha"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmesquecisenha_ClientState","WatermarkText":"E-mail","id":"ctl00_wmesquecisenha"}, null, null, $get("ctl00_txtesquecisenha"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_Newsletter_wmnewsnome_ClientState","WatermarkText":"Digite seu nome","id":"ctl00_Newsletter_wmnewsnome"}, null, null, $get("ctl00_Newsletter_txtnewsnome"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_Newsletter_wmnewseamil_ClientState","WatermarkText":"Digite seu email","id":"ctl00_Newsletter_wmnewseamil"}, null, null, $get("ctl00_Newsletter_txtnewsemail"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmbusca_ClientState","WatermarkText":"Pesquise no site","id":"ctl00_wmbusca"}, null, null, $get("ctl00_txtbuscar"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.AutoCompleteBehavior, {"completionListCssClass":"CompletionList","completionListItemCssClass":"CompletionListItem","completionSetCount":3,"delimiterCharacters":", ","firstRowSelected":true,"highlightedItemCssClass":"CompletionListHighlightedItem","id":"ctl00_AutoCompleteExtender1","minimumPrefixLength":1,"serviceMethod":"GetCavaleiros","servicePath":"../webservice/Busca_CompetidorCavalo.asmx","showOnlyCurrentWordInCompletionListItem":true,"useContextKey":true}, {"itemSelected":cavaleiroSelecionado,"populating":Context_Key_Cavaleiro_master}, null, $get("ctl00_txtbuscarCavaleiro"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmbuscaCavaleiro_ClientState","WatermarkText":"Studbook do competidor","id":"ctl00_wmbuscaCavaleiro"}, null, null, $get("ctl00_txtbuscarCavaleiro"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.AutoCompleteBehavior, {"completionListCssClass":"CompletionList","completionListItemCssClass":"CompletionListItem","completionSetCount":3,"delimiterCharacters":", ","firstRowSelected":true,"highlightedItemCssClass":"CompletionListHighlightedItem","id":"ctl00_AutoCompleteExtender2","minimumPrefixLength":1,"serviceMethod":"GetAnimais","servicePath":"../webservice/Busca_CompetidorCavalo.asmx","showOnlyCurrentWordInCompletionListItem":true,"useContextKey":true}, {"itemSelected":AnimalSelecionado,"populating":Context_Key_Cavalo_master}, null, $get("ctl00_txtbuscarAnimal"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_wmbuscaAnimal_ClientState","WatermarkText":"Studbook do animal","id":"ctl00_wmbuscaAnimal"}, null, null, $get("ctl00_txtbuscarAnimal"));
+});
+//]]>
+</script>
+</form>
+    <div id="divVlibras" vw class="enabled">
+        <div vw-access-button class="active" id="vw-access-button"></div>
+        <div vw-plugin-wrapper id="vw-plugin-wrapper">
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script>
+        function appl_init() {
+            try {
+                var pgRegMgr = Sys.WebForms.PageRequestManager.getInstance();
+                pgRegMgr.add_beginRequest(BeginHandler);
+                pgRegMgr.add_endRequest(EndHandler);
+
+            } catch (e) {
+            }
+        }
+
+        function BeginHandler() {
+        }
+
+        function EndHandler() {
+            var patternVersion = new RegExp(/(Version|OPR)/);
+            var patternNeedFix = new RegExp(/(Safari)/);
+
+            var isNeedFix = (patternVersion.test(navigator.userAgent) && patternNeedFix.test(navigator.userAgent));
+            if (!isNeedFix || $(window).innerWidth() < 1024)
+                $('.isNeedFix').remove();
+        }
+
+        $(function () {
+            Sys.Application.add_init(appl_init);
+            EndHandler();
+        });
+    </script>
+
+    
+
+</body>
+</html>
