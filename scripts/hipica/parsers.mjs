@@ -214,12 +214,12 @@ export function fichaDoCavalo($, td) {
   const ficha = {};
   const nasc = partes.find(x => /^\d{2}\/\d{2}\/\d{4}$/.test(x));
   if (nasc) { const [d, m, a] = nasc.split('/'); ficha.nasc = `${a}-${m}-${d}`; }
-  const campoRaca = partes.find(x => /^[A-Z]{2,4}(\s+-\s+.+)?$/.test(x) && !/\s+-\s+.+\s+-\s+/.test(x));
+  const campoRaca = partes.find(x => /^[A-Z]{1,4}(\s+-\s+.+)?$/.test(x) && !/\s+-\s+.+\s+-\s+/.test(x));
   const raca = campoRaca ? campoRaca.split(/\s+-\s+/)[0] : null;
   if (raca) ficha.raca = raca;
   const filiacao = partes[partes.length - 1];
   const m = filiacao && filiacao.match(/^(.+?)\s+-\s+(.+)$/);
-  if (m) { ficha.pai = m[1].replace(/\.$/, '').trim(); ficha.mae = m[2].replace(/\.$/, '').trim(); }
+  if (m) { ficha.pai = m[1].replace(/[.\s]+$/, '').trim(); ficha.mae = m[2].replace(/[.\s]+$/, '').trim(); }
   const idxNasc = nasc ? partes.indexOf(nasc) : -1;
   const criador = partes.find((x, i) => i > idxNasc && x !== campoRaca && x !== filiacao && !/^\d/.test(x));
   if (criador) ficha.criador = criador;

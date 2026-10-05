@@ -34,13 +34,15 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   try { vendidos = new Map((JSON.parse(await fs.readFile(path.join(saida, 'vendidos.json'), 'utf8')).cavalos || []).map(x => [x.k, x])); } catch {}
   const hojeBR = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
   const participacoes = [], proximas = [];
+  const resumoTorneio = new Map();
   const fichas = new Map(); // chave do cavalo -> { pai, mae, nasc, raca, criador }
   const guardaFicha = o => {
     if (!o || !(o.pai || o.mae || o.nasc || o.criador)) return;
     const k = chave(o.h), atual = fichas.get(k) || {};
     for (const c of ['pai', 'mae', 'nasc', 'raca', 'criador']) {
       if (!o[c] || atual[c]) continue;
-      if (c === 'criador' && /^[A-Z]{2,4}\s+-\s+|BRASILEIRO DE HIPISMO/i.test(o[c])) continue; // raça escrita por extenso, não é criador
+      if (c === 'pai' || c === 'mae') { atual[c] = String(o[c]).replace(/[.\s]+$/, '').trim(); continue; }
+      if (c === 'criador' && (o[c].trim().length <= 4 || /^[A-Z]{1,4}(\s+-\s+.*)?$|BRASILEIRO DE HIPISMO/i.test(o[c].trim()))) continue; // raça, não criador
       atual[c] = o[c];
     }
     fichas.set(k, atual);
@@ -75,15 +77,28 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
         }
       }
     }
+    const rt = { provas: 0, largadas: 0, conjuntos: new Set(), percursos: 0, zerados: 0, alturas: [], vitCav: new Map(), vitCavalo: new Map(), maior: null, opp: { l: 0, v: 0 } };
+    resumoTorneio.set(t.id, rt);
     for (const [pid, linhas] of Object.entries(dados.provas || {})) {
       const p = provas.get(pid) || {};
       const infantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
       const total = linhas.length;
+      if (total) {
+        rt.provas++;
+        if (p.altura) rt.alturas.push(p.altura);
+        const venc = linhas.find(l => l.p === 1);
+        if (venc && p.altura && (!rt.maior || p.altura > rt.maior.a || (p.altura === rt.maior.a && (p.dia || '') > (rt.maior.d || ''))))
+          rt.maior = { a: p.altura, d: p.dia, pn: p.numero, c: venc.c, h: venc.h, empate: linhas.filter(l => l.p === 1).length };
+      }
       for (const l of linhas) {
         const zerou = !l.s && l.r && l.r[0] && l.r[0][0] === 0;
         const fed = l.f != null ? dados.fed[l.f] : null;
         const item = { d: p.dia || t.fim, t: t.nome, ti: t.id, pn: p.numero, a: p.altura, p: l.p, n: total, r: l.r || null, s: l.s || null };
 
+        rt.largadas++; rt.conjuntos.add(`${chave(l.c)}|${chave(l.h)}`);
+        if (l.r && l.r[0]) { rt.percursos++; if (zerou) rt.zerados++; }
+        if (l.p === 1) { rt.vitCav.set(l.c, (rt.vitCav.get(l.c) || 0) + 1); rt.vitCavalo.set(chave(l.h), (rt.vitCavalo.get(chave(l.h)) || 0) + 1); }
+        if (vendidos && vendidos.has(chave(l.h))) { rt.opp.l++; if (l.p === 1) rt.opp.v++; }
         const c = pega(cavaleiros, l.cavaleiro || l.c);
         c.largadas++; if (l.p === 1) c.vitorias++; if (l.p <= 3) c.podios++; if (zerou) c.zerados++;
         if (infantil) c.infantil++;
@@ -161,6 +176,60 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     .sort((a, b) => b.v - a.v || b.po - a.po || b.z - a.z)
     .slice(0, 50)
     .map(({ k, nome, fed, l, v, po, z }) => ({ k, nome, fed, l, v, po, z }));
+
+  // Criação: desempenho em pista agrupado por pai (garanhão) e por criador
+  // raça escrita por extenso ou só o código (BH, Z, KWPN…) não é criador
+  const criadorValido = c => c && String(c).replace(/[^A-Za-z]/g, '').length > 4 && !/^[A-Z]{1,4}(\s+-\s+.*)?$|BRASILEIRO DE HIPISMO/i.test(c.trim());
+  const limpaNome = n => String(n || '').replace(/[.\s]+$/, '').trim();
+  const base = {}, pais = new Map(), criadores = new Map();
+  let comFicha = 0;
+  for (const [k, h] of cavalos) {
+    const perfil = arruma(h, false);
+    const alts = Object.keys(perfil.alt || {}).map(Number);
+    const max = alts.length ? Math.max(...alts) : null;
+    const f = fichas.get(k) || {};
+    const cr = criadorValido(f.criador) ? f.criador : null;
+    if (!f.pai && !cr) continue;              // estas telas só mostram cavalos com ficha
+    comFicha++;
+    base[k] = [perfil.nome, perfil.l, perfil.v, perfil.po, max, limpaNome(f.pai), limpaNome(f.mae), cr ? chave(cr) : ''];
+    const somar = (mapa, chaveG, nome) => {
+      const g = mapa.get(chaveG) || { k: chaveG, nome, cavalos: [], l: 0, v: 0, po: 0, max: null };
+      g.cavalos.push(k); g.l += perfil.l; g.v += perfil.v; g.po += perfil.po;
+      if (max && (!g.max || max > g.max)) g.max = max;
+      mapa.set(chaveG, g);
+    };
+    if (f.pai) somar(pais, chave(f.pai), limpaNome(f.pai));
+    if (cr) somar(criadores, chave(cr), limpaNome(cr));
+  }
+  const ordenar = l => l.sort((a, b) => b.v - a.v || b.po - a.po || b.cavalos.length - a.cavalos.length || b.l - a.l);
+  const listaPais = ordenar([...pais.values()]).map(g => ({ ...g, vendido: vendidos && vendidos.has(g.k) ? vendidos.get(g.k).leilao : undefined }));
+  const listaCriadores = ordenar([...criadores.values()]);
+  await fs.writeFile(path.join(saida, 'criacao.json'), JSON.stringify({ atualizadoEm: new Date().toISOString(),
+    cobertura: { comFicha, total: cavalos.size }, pais: listaPais, criadores: listaCriadores, cavalos: base }) + '\n');
+
+  // Resumo de cada torneio com resultados, montado só com fatos dos dados
+  const resumos = {};
+  for (const t of torneios) {
+    const rt = resumoTorneio.get(t.id);
+    if (!rt || !rt.provas) continue;
+    const topCav = [...rt.vitCav.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).filter(([, v]) => v >= 2);
+    const vitCriador = new Map();
+    for (const [hk, v] of rt.vitCavalo) {
+      const cr = (fichas.get(hk) || {}).criador;
+      if (criadorValido(cr)) vitCriador.set(cr, (vitCriador.get(cr) || 0) + v);
+    }
+    const topCriador = [...vitCriador.entries()].sort((a, b) => b[1] - a[1])[0];
+    resumos[t.id] = {
+      provas: rt.provas, largadas: rt.largadas, conjuntos: rt.conjuntos.size,
+      altMin: rt.alturas.length ? Math.min(...rt.alturas) : null, altMax: rt.alturas.length ? Math.max(...rt.alturas) : null,
+      zeroPct: rt.percursos ? Math.round(rt.zerados / rt.percursos * 100) : null,
+      topCav: topCav.map(([nome, v]) => ({ nome, v })),
+      maior: rt.maior, opp: rt.opp.l ? rt.opp : null,
+      topCriador: topCriador && topCriador[1] >= 2 ? { nome: topCriador[0], v: topCriador[1] } : null,
+      parcial: !(t.fim && t.fim < hojeBR),
+    };
+  }
+  await fs.writeFile(path.join(saida, 'resumos.json'), JSON.stringify(resumos) + '\n');
 
   // Filiação de todos os cavalos da temporada, num arquivo compacto: [pai, mãe, avô materno]
   // (o avô materno sai da ficha da mãe, quando ela também aparece nos dados)
