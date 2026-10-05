@@ -1,0 +1,4 @@
+{
+  "_sobre": "Perfis de haras destacados a pedido do próprio haras. A chave é o nome do criador como aparece na ficha da FPH, sem acentos e pontuação. Campos: texto (apresentação curta) e site.",
+  "_exemplo": { "HARAS EXEMPLO": { "texto": "Criação de cavalos de salto desde 1990.", "site": "https://www.exemplo.com.br" } }
+}
