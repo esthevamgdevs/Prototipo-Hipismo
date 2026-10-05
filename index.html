@@ -443,7 +443,22 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '05/10/2026 · matrizes, WBFSH e como calculamos';
+const VERSAO_APP = '05/10/2026 · medição de uso';
+
+// ---------- medição de uso (Cloudflare Web Analytics) ----------
+// Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
+// Para ligar, cole entre as aspas a chave (token) que o Cloudflare mostra em Web Analytics > Manage site.
+// Com a chave vazia, nada é carregado.
+const CF_TOKEN = '9af19777695f47abb0f026d5843c1a35';
+(function medirUso() {
+  const local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === 'file:';
+  if (!CF_TOKEN || local) return;
+  const s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_TOKEN, spa: true }));
+  document.head.appendChild(s);
+})();
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -1171,7 +1186,8 @@ function telaSobre() {
       <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">O ranking é uma contagem própria do Salta e não substitui o ranking oficial da federação. Em provas de categorias infantis, o sobrenome do atleta aparece abreviado. Se encontrar algum erro, avise: dá para conferir na hora no link oficial de cada prova.</p>
     </div>
     <div class="painel"><h3>Seus dados</h3>
-      <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">O que você salva e segue fica guardado só neste aparelho, no seu navegador. Nada é enviado para lugar nenhum e não existe cadastro.</p>
+      <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Não existe cadastro. O que você salva e segue fica guardado neste aparelho. Se você ativar os avisos, a lista do que você segue é enviada ao nosso servidor só para sabermos o que avisar, sem nome, e-mail ou telefone.</p>
+      <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Para saber quantas pessoas usam o Salta, contamos as visitas de forma agregada com o Cloudflare Web Analytics, que não usa cookies e não identifica quem visita.</p>
     </div>
     <div class="painel"><h3>Parceiros</h3>
       <div class="parceiro">${logoParceiro('horsepix', 26)}
