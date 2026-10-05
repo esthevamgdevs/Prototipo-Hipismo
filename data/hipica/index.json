@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-04T16:57:30.577Z",
+ "atualizadoEm": "2026-10-05T00:03:08.391Z",
  "torneios": [
   {
    "id": 3404,
@@ -7921,7 +7921,8 @@
      "v": {
       "c": "BRUNA LOUISE VARGAS",
       "h": "CALL ME FOR (TE)"
-     }
+     },
+     "oe": 17
     },
     {
      "id": 14257,
@@ -7938,7 +7939,8 @@
      "v": {
       "c": "DANIELA RIBEIRO",
       "h": "UEGOND XANGO"
-     }
+     },
+     "oe": 32
     },
     {
      "id": 14260,
@@ -7955,7 +7957,8 @@
      "v": {
       "c": "LINA CARNEIRO MELO",
       "h": "HMP WALESKA FLORES"
-     }
+     },
+     "oe": 11
     },
     {
      "id": 14269,
@@ -7972,7 +7975,8 @@
      "v": {
       "c": "LUIS RICARDO MAÇÃES COUTINHO",
       "h": "DIN DA LAGOA (IA)"
-     }
+     },
+     "oe": 16
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3469"
@@ -8023,7 +8027,8 @@
      "v": {
       "c": "Sophia Laura L. D. V.",
       "h": "BAILARINA"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 14472,
@@ -8040,7 +8045,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "DOUBLE C DARKUO (IA)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 14476,
@@ -8057,7 +8063,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "CAMILLO TER WILGEN Z"
-     }
+     },
+     "oe": 41
     },
     {
      "id": 14464,
@@ -8074,7 +8081,8 @@
      "v": {
       "c": "Jose Ricardo F.",
       "h": "QUIBELLE TW"
-     }
+     },
+     "oe": 62
     },
     {
      "id": 14469,
@@ -8091,7 +8099,8 @@
      "v": {
       "c": "Beatriz Bonon A.",
       "h": "MAHARAJA DEL JUNCAL"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 14477,
@@ -8108,7 +8117,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "CEZANNA C JMEN"
-     }
+     },
+     "oe": 41
     },
     {
      "id": 14465,
@@ -8125,7 +8135,8 @@
      "v": {
       "c": "Jose Ricardo F.",
       "h": "QUIBELLE TW"
-     }
+     },
+     "oe": 62
     },
     {
      "id": 14470,
@@ -8142,7 +8153,8 @@
      "v": {
       "c": "Mariana Vicente M. F.",
       "h": "LADY FLORES"
-     }
+     },
+     "oe": 50
     },
     {
      "id": 14473,
@@ -8159,7 +8171,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "TANGERO REC (IA)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 14466,
@@ -8176,7 +8189,8 @@
      "v": {
       "c": "Vanessa Gemente B.",
       "h": "JCR AREOLA (IA)"
-     }
+     },
+     "oe": 56
     },
     {
      "id": 14474,
@@ -8193,7 +8207,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "DOUBLE C DARKUO (IA)"
-     }
+     },
+     "oe": 52
     },
     {
      "id": 14478,
@@ -8210,7 +8225,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "CEZANNA C JMEN"
-     }
+     },
+     "oe": 38
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3477"
@@ -8239,7 +8255,8 @@
      "v": {
       "c": "Julia Medei N.",
       "h": "JJ INDIANO"
-     }
+     },
+     "oe": 106
     },
     {
      "id": 14487,
@@ -8256,7 +8273,8 @@
      "v": {
       "c": "Rafaella Catapano S.",
       "h": "RI ASHELEY"
-     }
+     },
+     "oe": 84
     },
     {
      "id": 14489,
@@ -8273,7 +8291,8 @@
      "v": {
       "c": "Felipe Oliveira D. V.",
       "h": "CAVALIER"
-     }
+     },
+     "oe": 69
     },
     {
      "id": 14483,
@@ -8290,7 +8309,8 @@
      "v": {
       "c": "Gabriella De O. M.",
       "h": "STEVE"
-     }
+     },
+     "oe": 66
     },
     {
      "id": 14486,
@@ -8307,7 +8327,8 @@
      "v": {
       "c": "Julia Dalfre V. D. B.",
       "h": "RI PARCHE MALACARA"
-     }
+     },
+     "oe": 106
     },
     {
      "id": 14490,
@@ -8324,7 +8345,8 @@
      "v": {
       "c": "Catarina Ferraz F. D. S.",
       "h": "TOP GUN FLORES (IA)"
-     }
+     },
+     "oe": 69
     },
     {
      "id": 14484,
@@ -8341,7 +8363,8 @@
      "v": {
       "c": "Laura Fragoso S.",
       "h": "INDIO HVR"
-     }
+     },
+     "oe": 66
     },
     {
      "id": 14488,
@@ -8358,7 +8381,8 @@
      "v": {
       "c": "Maria Luiza F. C.",
       "h": "WODESSA VD LINDEHOEVE Z"
-     }
+     },
+     "oe": 84
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3479"
@@ -8387,7 +8411,8 @@
      "v": {
       "c": "ANDRE LUIZ MARTINS DOS SANTOS",
       "h": "EGO OF PICOBELLO Z"
-     }
+     },
+     "oe": 12
     },
     {
      "id": 14519,
@@ -8404,7 +8429,8 @@
      "v": {
       "c": "ROBENILSON JOSE DO NASCIMENTO",
       "h": "ÚNICO BR"
-     }
+     },
+     "oe": 4
     },
     {
      "id": 14522,
@@ -8421,7 +8447,8 @@
      "v": {
       "c": "RUAN PEDRO PEREIRA",
       "h": "TORONTO PULLMAN (TE)"
-     }
+     },
+     "oe": 4
     },
     {
      "id": 14517,
@@ -8438,7 +8465,8 @@
      "v": {
       "c": "LUCAS DE NARDI VENANCIO",
       "h": "ROLANDIA II JMEN"
-     }
+     },
+     "oe": 11
     },
     {
      "id": 14520,
@@ -8455,7 +8483,8 @@
      "v": {
       "c": "CARLOS EDUARDO MASSENZI FILHO",
       "h": "RT CHIARA BLUE (TE)"
-     }
+     },
+     "oe": 4
     },
     {
      "id": 14523,
@@ -8472,7 +8501,8 @@
      "v": {
       "c": "ANDRE LUIZ MARTINS DOS SANTOS",
       "h": "OCATO DA CABANA (IA)"
-     }
+     },
+     "oe": 4
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3480"
@@ -8605,7 +8635,8 @@
      "v": {
       "c": "LUIZ FELIPE PIMENTA ALVES",
       "h": "BANDOLEIRO DARCO DO QUIRIRI"
-     }
+     },
+     "oe": 36
     },
     {
      "id": 14272,
@@ -8622,7 +8653,8 @@
      "v": {
       "c": "FELIPE JUARES DE LIMA",
       "h": "(W) EL MILAGRO IMPÉRIO EGÍPCIO"
-     }
+     },
+     "oe": 27
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3470"
@@ -9011,7 +9043,8 @@
      "v": {
       "c": "CRISTIANO QUADROS DE CASTRO",
       "h": "QUARTER DOLLAR RI"
-     }
+     },
+     "oe": 28
     },
     {
      "id": 14392,
@@ -9028,7 +9061,8 @@
      "v": {
       "c": "3º SARGENTO THIAGO RHAVY DE SA E SILVA",
       "h": "QORDULA DE MUZE BR"
-     }
+     },
+     "oe": 64
     },
     {
      "id": 14380,
@@ -9045,7 +9079,8 @@
      "v": {
       "c": "GABRIEL DURO STEINSTRASSER ROCHA",
       "h": "CS ANITA (IA)"
-     }
+     },
+     "oe": 34
     },
     {
      "id": 14395,
@@ -9062,7 +9097,8 @@
      "v": {
       "c": "Julia Diener F.",
       "h": "DONATELLO"
-     }
+     },
+     "oe": 24
     },
     {
      "id": 14401,
@@ -9079,7 +9115,8 @@
      "v": {
       "c": "LUIS GUSTAVO GODINHO",
       "h": "HPH CHACCO STAR TRV (TE)"
-     }
+     },
+     "oe": 88
     },
     {
      "id": 14382,
@@ -9096,7 +9133,8 @@
      "v": {
       "c": "GUILHERME FERNANDES",
       "h": "LUDAM DO LIBERTE (IA)"
-     }
+     },
+     "oe": 39
     },
     {
      "id": 14403,
@@ -9113,7 +9151,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "MERANO JMEN I (TE)"
-     }
+     },
+     "oe": 65
     },
     {
      "id": 14405,
@@ -9130,7 +9169,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "PRIMADONNA FLORES (TE)"
-     }
+     },
+     "oe": 25
     },
     {
      "id": 14411,
@@ -11576,18 +11616,6 @@
     },
     {
      "id": null,
-     "numero": "28",
-     "nome": "1,35M",
-     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
-     "altura": 1.35,
-     "dia": "2026-10-16",
-     "hora": "15:30",
-     "pista": "CARBACAN",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "08",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11595,6 +11623,18 @@
      "dia": "2026-10-16",
      "hora": "15:30",
      "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "28",
+     "nome": "1,35M",
+     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
+     "altura": 1.35,
+     "dia": "2026-10-16",
+     "hora": "15:30",
+     "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false
     },
@@ -11708,18 +11748,6 @@
     },
     {
      "id": null,
-     "numero": "31",
-     "nome": "CN 07 ANOS",
-     "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
-     "altura": 1.3,
-     "dia": "2026-10-17",
-     "hora": "13:00",
-     "pista": "CARBACAN",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "11",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11727,6 +11755,18 @@
      "dia": "2026-10-17",
      "hora": "13:00",
      "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "31",
+     "nome": "CN 07 ANOS",
+     "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
+     "altura": 1.3,
+     "dia": "2026-10-17",
+     "hora": "13:00",
+     "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false
     },
