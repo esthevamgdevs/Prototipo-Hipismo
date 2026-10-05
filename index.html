@@ -311,6 +311,30 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 .capa .chips .chip{flex:none}
 .capa .chips.rola{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
 .capa .chips.rola.no-fim{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%);mask-image:linear-gradient(90deg,transparent,#000 14%)}
+.selo-wbfsh{display:inline-flex;align-items:center;margin-left:6px;padding:0 6px;border:1px solid var(--verde);border-radius:3px;font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.04em;line-height:15px;color:var(--verde);vertical-align:1px;white-space:nowrap}
+.link-fil{cursor:pointer;text-decoration:underline;text-decoration-color:rgba(217,180,90,.7);text-underline-offset:2px}
+.link-fil:hover{color:var(--ink)}
+.dest{color:var(--ouro-escuro);font-weight:600}
+.reguas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 20px 0}
+.regua{background:var(--surface);border:1px solid var(--linha);border-radius:4px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.regua b{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1}
+.regua span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.regua a{font-size:12px;font-weight:600;color:var(--verde)}
+.olho-r{font-size:10.5px!important;font-weight:700;letter-spacing:.14em;color:var(--ouro-escuro)!important}
+.familia{display:flex;flex-direction:column;gap:8px;padding:0 20px}
+.fam{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;width:100%;background:var(--surface);border:1px solid var(--linha);border-radius:4px;padding:12px 14px;font:inherit;color:var(--ink);cursor:pointer;position:relative}
+.fam:hover{border-color:var(--ouro)}
+.fam b{font-family:var(--serif);font-weight:400;font-size:18px}
+.fam span{font-size:12.5px;color:var(--muted)}
+.fam .selo-wbfsh{position:absolute;right:12px;top:12px;margin:0}
+.bloco-geral .secao{align-items:center}
+.secao .aux.link-ficha{font-size:13px;font-weight:600;color:var(--ouro-escuro);white-space:nowrap}
+.metodo{margin:18px 20px 0}
+.metodo h2{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px}
+.metodo p{margin:0 0 10px;font-size:15px;line-height:1.6}
+@media (min-width:760px){.familia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0 28px}.reguas{margin:16px 28px 0}.metodo{margin-left:28px;margin-right:28px;max-width:760px}}
+@media (min-width:1100px){.familia{padding:0 36px;max-width:880px}.reguas{margin:16px 36px 0;max-width:808px}.metodo{margin-left:36px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .selo-wbfsh{color:#7FC4A4;border-color:#3E6558}:root:not([data-theme="light"]) .regua a{color:#7FC4A4}}
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -419,7 +443,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '05/10/2026 · garanhões, criadores e resumo do torneio';
+const VERSAO_APP = '05/10/2026 · matrizes, WBFSH e como calculamos';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -439,7 +463,7 @@ const S = {
   torneios: {}, perfis: {},
   cat: 'Todas', altura: 'todas', soSalvos: false,
   torneio: null, dia: null, prova: null, filtro: '',
-  perfilTipo: null, perfilK: null, rankTipo: 'cavaleiros',
+  perfilTipo: null, perfilK: null, rankTipo: 'geral',
   compartilhar: null,
 };
 const guarda = {
@@ -1038,8 +1062,8 @@ const filiacaoDe = (h, l) => {
   let pai = l && l.pai, mae = l && l.mae, avo = l && l.avo;
   if (!(pai || mae) && S.filiacao && h) { const f = S.filiacao[chave(h)]; if (f) [pai, mae, avo] = f; }
   if (!(pai || mae)) return '';
-  const txt = `${pai ? titulo(pai) : '?'} x ${mae ? titulo(mae) : '?'}${avo ? ` (${titulo(avo)})` : ''}`;
-  return `<span class="filiacao">${esc(txt)}</span>`;
+  const lk = (nome, tipo) => `<span class="link-fil" role="link" tabindex="0" data-${tipo}="${esc(chave(nome))}">${esc(titulo(nome))}</span>`;
+  return `<span class="filiacao">${pai ? lk(pai, 'garanhao') : '?'} x ${mae ? lk(mae, 'matriz') : '?'}${avo ? ` (${esc(titulo(avo))})` : ''}</span>`;
 };
 const filiacao = l => filiacaoDe(l && l.h, l);
 function linhasOrdem(lista) {
@@ -1153,7 +1177,7 @@ function telaSobre() {
       <div class="parceiro">${logoParceiro('horsepix', 26)}
         <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Transmissões ao vivo das provas de salto, exibidas no Salta com autorização da HorsePix.</p></div>
     </div>
-    <p style="text-align:center;margin:8px 0 0"><button class="btn-fino" data-bv-rever="1">Ver a apresentação de novo</button></p>
+    <p style="text-align:center;margin:8px 0 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn-fino" data-acao="metodo">Como calculamos</button><button class="btn-fino" data-bv-rever="1">Ver a apresentação de novo</button></p>
     <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
 }
@@ -1166,55 +1190,74 @@ async function carregarArquivo(chaveS, arquivo) {
   if (!digitando && !(S.tela === 'torneio' && S.trTocando)) { const y = window.scrollY; render(); window.scrollTo(0, y); }
 }
 const criacaoPronta = () => S.criacao && typeof S.criacao === 'object';
-const notaFonte = txt => `<p class="fonte nota-fonte"><span class="selo-fonte">Calculado pelo Salta</span>${esc(txt)}</p>`;
+// posição mundial da WBFSH, só para garanhões com ligação conferida
+function wbfshDe(k) {
+  if (S.wbfsh === undefined) carregarArquivo('wbfsh', 'wbfsh.json');
+  if (!S.wbfsh || typeof S.wbfsh !== 'object') return null;
+  if (!S.wbfshPorSalta) { S.wbfshPorSalta = new Map(); for (const v of Object.values(S.wbfsh.garanhoes || {})) if (v.salta) S.wbfshPorSalta.set(v.salta, v); }
+  return S.wbfshPorSalta.get(k) || null;
+}
+const seloWbfsh = k => { const w = wbfshDe(k); return w ? `<span class="selo-wbfsh" title="Ranking mundial WBFSH ${S.wbfsh.ano}">WBFSH ${w.pos}º</span>` : ''; };
+const posicaoEm = (lista, k) => { let pos = 0, ult = null; for (let i = 0; i < lista.length; i++) { if (lista[i].v !== ult) { pos = i + 1; ult = lista[i].v; } if (lista[i].k === k) return pos; } return null; };
+const listaCriacao = tipo => tipo === 'garanhoes' || tipo === 'garanhao' ? S.criacao.pais : (tipo === 'matrizes' || tipo === 'matriz' ? (S.criacao.maes || []) : S.criacao.criadores);
+const notaFonte = txt => `<p class="fonte nota-fonte"><span class="selo-fonte">Calculado pelo Salta</span>${esc(txt)} <button class="link-ficha" data-acao="metodo">Como calculamos</button></p>`;
 const coberturaTxt = () => criacaoPronta() ? ` Até agora, ${S.criacao.cobertura.comFicha.toLocaleString('pt-BR')} de ${S.criacao.cobertura.total.toLocaleString('pt-BR')} cavalos da temporada têm ficha; o número cresce a cada coleta.` : '';
 
 // lista de garanhões ou de criadores, ordenada pelas vitórias dos cavalos em pista
 function rankingCriacao(tipo) {
   if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return `<main><div class="vazio">${S.criacao === 'erro' ? 'Os dados de criação aparecem depois da próxima coleta.' : 'Carregando…'}</div></main>`; }
-  const lista = (tipo === 'garanhoes' ? S.criacao.pais : S.criacao.criadores).slice(0, 100);
+  const lista = listaCriacao(tipo).slice(0, 100);
   if (!lista.length) return `<main><div class="vazio">Ainda não há fichas suficientes. Os dados aparecem conforme o coletor lê as ordens de entrada.</div></main>`;
   let pos = 0, ult = null;
-  return `<main class="fade"><div class="secao"><h2>${tipo === 'garanhoes' ? 'Garanhões pelos filhos em pista' : 'Criadores pelos cavalos em pista'}</h2><span class="risco"></span></div>
+  const titulos = { garanhoes: 'Garanhões pelos filhos em pista', matrizes: 'Matrizes pelos filhos em pista', criadores: 'Criadores pelos cavalos em pista' };
+  const atr = { garanhoes: 'data-garanhao', matrizes: 'data-matriz', criadores: 'data-haras' }[tipo];
+  return `<main class="fade"><div class="secao"><h2>${titulos[tipo]}</h2><span class="risco"></span></div>
     <div class="podio">${lista.map((g, i) => {
       if (g.v !== ult) { pos = i + 1; ult = g.v; }
       const n = g.cavalos.length;
-      return `<button class="linha-podio" ${tipo === 'garanhoes' ? `data-garanhao="${esc(g.k)}"` : `data-haras="${esc(g.k)}"`}>
+      return `<button class="linha-podio" ${atr}="${esc(g.k)}">
         ${pos <= 3 && g.v > 0 ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${pos}</span>`}
         <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
-          <span class="nome">${esc(titulo(g.nome))}${g.vendido ? '<span class="selo-opp" title="Vendido pela Opportunity Leilões">Opportunity</span>' : ''}</span>
-          <span class="meta">${n} ${tipo === 'garanhoes' ? (n > 1 ? 'filhos' : 'filho') : (n > 1 ? 'cavalos' : 'cavalo')} em pista · ${g.l} largadas${g.max ? ' · até ' + fmtAlt(g.max) : ''}</span></span>
+          <span class="nome">${esc(titulo(g.nome))}${g.vendido ? '<span class="selo-opp" title="Vendido pela Opportunity Leilões">Opportunity</span>' : ''}${tipo === 'garanhoes' ? seloWbfsh(g.k) : ''}</span>
+          <span class="meta">${n} ${tipo === 'criadores' ? (n > 1 ? 'cavalos' : 'cavalo') : (n > 1 ? 'filhos' : 'filho')} em pista · ${g.l} largadas${g.max ? ' · até ' + fmtAlt(g.max) : ''}${g.destaques ? ` · ${g.destaques} no pódio a ${fmtAlt(S.criacao.alturaDestaque || 1.4)}+` : ''}</span></span>
         <span class="res"><b>${g.v}</b><span>vitórias</span></span></button>`;
     }).join('')}</div>
-    ${notaFonte(` A partir dos resultados públicos da FPH e do ${tipo === 'garanhoes' ? 'pai' : 'criador'} informado na ficha de cada cavalo.${coberturaTxt()}`)}
+    ${notaFonte(` A partir dos resultados públicos da FPH e do ${{ garanhoes: 'pai', matrizes: 'mãe', criadores: 'criador' }[tipo]} informado na ficha de cada cavalo.${coberturaTxt()}`)}
   </main>`;
 }
 // página de um garanhão ou de um haras, com os cavalos em pista
 function telaCriacao(tipo) {
-  const k = tipo === 'garanhao' ? S.garanhaoK : S.harasK;
-  const cab = nome => `<header class="capa">${voltar('voltarCriacao', 'Voltar')}<span class="olho">${tipo === 'garanhao' ? 'GARANHÃO' : 'CRIADOR'}</span><h1>${esc(titulo(nome))}</h1>`;
+  const k = { garanhao: S.garanhaoK, matriz: S.matrizK, haras: S.harasK }[tipo];
+  const cab = nome => `<header class="capa">${voltar('voltarCriacao', 'Voltar')}<span class="olho">${{ garanhao: 'GARANHÃO', matriz: 'MATRIZ', haras: 'CRIADOR' }[tipo]}</span><h1>${esc(titulo(nome))}</h1>`;
   if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</header><main><div class="vazio">Carregando…</div></main>'; }
-  const g = (tipo === 'garanhao' ? S.criacao.pais : S.criacao.criadores).find(x => x.k === k);
+  const g = listaCriacao(tipo).find(x => x.k === k);
   if (!g) return cab(k) + '</header><main><div class="vazio">Sem cavalos em pista nesta temporada.</div></main>';
   const base = S.criacao.cavalos;
   const cavs = g.cavalos.map(ck => ({ k: ck, d: base[ck] })).filter(x => x.d).sort((a, b) => b.d[2] - a.d[2] || b.d[3] - a.d[3] || b.d[1] - a.d[1]);
   const extra = tipo === 'haras' && S.haras && typeof S.haras === 'object' ? S.haras[k] : null;
-  const venda = tipo === 'garanhao' && vendidoDe(g.nome);
-  let html = cab(g.nome) + `<span class="sub">${cavs.length} ${tipo === 'garanhao' ? (cavs.length > 1 ? 'filhos' : 'filho') : (cavs.length > 1 ? 'cavalos' : 'cavalo')} em pista na temporada</span>
+  const venda = tipo !== 'haras' && vendidoDe(g.nome);
+  const filhosTxt = tipo === 'haras' ? (cavs.length > 1 ? 'cavalos' : 'cavalo') : (cavs.length > 1 ? 'filhos' : 'filho');
+  const w = tipo === 'garanhao' ? wbfshDe(k) : null;
+  const posSalta = posicaoEm(listaCriacao(tipo), k);
+  let html = cab(g.nome) + `<span class="sub">${cavs.length} ${filhosTxt} em pista na temporada</span>
     ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
     ${extra && extra.site ? `<a class="btn-fino" href="${esc(extra.site)}" target="_blank" rel="noopener" style="align-self:flex-start">Site do haras ↗</a>` : ''}
     </header><main class="fade">
     ${extra && extra.texto ? `<p class="prosa-haras">${esc(extra.texto)}</p>` : ''}
-    <div class="stats"><div><b>${cavs.length}</b><span>${tipo === 'garanhao' ? 'filhos' : 'cavalos'}</span></div><div><b>${g.l}</b><span>largadas</span></div><div><b style="color:var(--ouro-escuro)">${g.v}</b><span>vitórias</span></div><div><b>${g.po}</b><span>pódios</span></div></div>
-    <div class="secao"><h2>${tipo === 'garanhao' ? 'Filhos em pista' : 'Cavalos em pista'}</h2><span class="risco"></span></div>
+    ${tipo === 'garanhao' ? `<div class="reguas">
+      <div class="regua"><span class="olho-r">NO MUNDO</span>${w ? `<b>${w.pos}º</b><span>ranking WBFSH ${S.wbfsh.ano} · ${w.pontos.toLocaleString('pt-BR')} pontos</span><a href="${esc(S.wbfsh.fonte)}" target="_blank" rel="noopener">Fonte: WBFSH, resultados internacionais FEI ↗</a>` : `<b>–</b><span>fora do top 100 da WBFSH ${S.wbfsh && S.wbfsh.ano ? S.wbfsh.ano : ''}</span>`}</div>
+      <div class="regua"><span class="olho-r">NO SALTA</span><b>${posSalta ? posSalta + 'º' : '–'}</b><span>pelos filhos nas provas da FPH · ${g.v} vitórias</span><span class="selo-fonte">Calculado pelo Salta</span></div>
+    </div>` : ''}
+    <div class="stats"><div><b>${cavs.length}</b><span>${tipo === 'haras' ? 'cavalos' : 'filhos'}</span></div><div><b>${g.l}</b><span>largadas</span></div><div><b style="color:var(--ouro-escuro)">${g.v}</b><span>vitórias</span></div><div><b>${g.po}</b><span>pódios</span></div></div>
+    <div class="secao"><h2>${tipo === 'haras' ? 'Cavalos em pista' : 'Filhos em pista'}</h2><span class="risco"></span></div>
     <div class="podio">${cavs.map(({ k: ck, d }) => `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(ck)}">
         <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(d[0]))}${seloOpp(d[0])}</span>
-          <span class="meta">${d[1]} largadas${d[4] ? ' · até ' + fmtAlt(d[4]) : ''}</span>${filiacaoDe(d[0], { pai: d[5], mae: d[6] })}</span>
+          <span class="meta">${d[1]} largadas${d[4] ? ' · até ' + fmtAlt(d[4]) : ''}${d[8] ? ` · <span class="dest">pódio a ${fmtAlt(S.criacao.alturaDestaque || 1.4)}+</span>` : ''}</span>${filiacaoDe(d[0], { pai: d[5], mae: d[6] })}</span>
         <span class="res"><b>${d[2]}</b><span>vitórias</span></span></button>`).join('')}</div>
     ${tipo === 'haras' && !extra ? `<div class="painel convite"><h3>Este é o seu haras?</h3><p>Destaque o perfil com o logotipo, uma apresentação e o contato do haras. Fale com a Opportunity.</p>
       <a class="btn ouro" href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · destacar o perfil do ' + titulo(g.nome))}">Pedir destaque do perfil</a></div>` : ''}
-    ${notaFonte(` A partir dos resultados públicos da FPH e do ${tipo === 'garanhao' ? 'pai' : 'criador'} informado na ficha de cada cavalo.${coberturaTxt()}`)}
+    ${notaFonte(` A partir dos resultados públicos da FPH e do ${{ garanhao: 'pai', matriz: 'mãe', haras: 'criador' }[tipo]} informado na ficha de cada cavalo.${coberturaTxt()}`)}
   </main>`;
   return html;
 }
@@ -1241,11 +1284,12 @@ function telaRanking() {
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
+        ${[['geral', 'Visão geral'], ['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['matrizes', 'Matrizes'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
-  if (S.rankTipo === 'garanhoes' || S.rankTipo === 'criadores') return capa + rankingCriacao(S.rankTipo);
+  if (S.rankTipo === 'garanhoes' || S.rankTipo === 'matrizes' || S.rankTipo === 'criadores') return capa + rankingCriacao(S.rankTipo);
+  if (S.rankTipo === 'geral') return capa + visaoGeral();
   if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
   const t = S.stats.totais;
 
@@ -1269,8 +1313,31 @@ function telaRanking() {
         <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
     }).join('');
   }
-  corpo += `</div><p class="fonte">Contagem do Pista em ${t.torneios} torneios, ${t.cavaleiros.toLocaleString('pt-BR')} cavaleiros e ${t.percursos.toLocaleString('pt-BR')} percursos de ${(S.stats.desde || '').slice(0, 4)}, a partir dos resultados públicos da FPH. Não é o ranking oficial da federação.</p></main>`;
+  corpo += `</div><p class="fonte">Contagem do Salta em ${t.torneios} torneios, ${t.cavaleiros.toLocaleString('pt-BR')} cavaleiros e ${t.percursos.toLocaleString('pt-BR')} percursos de ${(S.stats.desde || '').slice(0, 4)}, a partir dos resultados públicos da FPH. Não é o ranking oficial da federação.</p></main>`;
   return capa + corpo;
+}
+
+// visão geral do Ranking: os três primeiros de cada ranking, num lugar só
+function visaoGeral() {
+  if (!S.stats) return '<main><div class="vazio">Calculando o ranking…</div></main>';
+  if (S.criacao === undefined) carregarArquivo('criacao', 'criacao.json');
+  const bloco = (tipo, titulo_, itens, linha) => `<section class="bloco-geral"><div class="secao"><h2>${titulo_}</h2><span class="risco"></span><button class="link-ficha aux" data-rank="${tipo}">Ver todos</button></div>
+    <div class="podio">${itens.slice(0, 3).map((x, i) => linha(x, i)).join('') || '<div class="vazio" style="padding:12px 0">Em breve.</div>'}</div></section>`;
+  const pessoa = tipo => (r, i) => `<button class="linha-podio" data-perfil="${tipo}" data-k="${esc(r.k)}">${roseta(i + 1, 34)}
+      <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(r.nome))}${tipo === 'cavalos' ? seloOpp(r.nome) : ''}</span>
+      <span class="meta">${r.l} largadas · ${r.po} pódios</span>${tipo === 'cavalos' ? filiacaoDe(r.nome) : ''}</span><span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
+  const cria = (atr, rot) => (g, i) => `<button class="linha-podio" ${atr}="${esc(g.k)}">${roseta(i + 1, 34)}
+      <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(g.nome))}${atr === 'data-garanhao' ? seloWbfsh(g.k) : ''}</span>
+      <span class="meta">${g.cavalos.length} ${rot} em pista · ${g.l} largadas</span></span><span class="res"><b>${g.v}</b><span>vitórias</span></span></button>`;
+  const c = criacaoPronta() ? S.criacao : { pais: [], maes: [], criadores: [] };
+  return `<main class="fade">
+    ${bloco('cavaleiros', 'Cavaleiros', S.stats.cavaleiros || [], pessoa('cavaleiros'))}
+    ${bloco('cavalos', 'Cavalos', S.stats.cavalos || [], pessoa('cavalos'))}
+    ${bloco('garanhoes', 'Garanhões pelos filhos', c.pais, cria('data-garanhao', 'filhos'))}
+    ${bloco('matrizes', 'Matrizes pelos filhos', c.maes || [], cria('data-matriz', 'filhos'))}
+    ${bloco('criadores', 'Criadores', c.criadores, cria('data-haras', 'cavalos'))}
+    ${notaFonte(' Rankings da temporada a partir dos resultados públicos da FPH.')}
+  </main>`;
 }
 
 async function carregarOpp() {
@@ -1425,14 +1492,52 @@ function telaPerfil() {
         <span class="num">${l} · ${v}</span></div>`).join('')}
       <div class="legenda"><span><i style="background:var(--ouro)"></i>vitórias</span><span><i style="background:var(--verde-3)"></i>outras largadas</span></div></div>`;
   }
+  if (!pessoa && p.ficha && (p.ficha.pai || p.ficha.mae || p.ficha.criador)) corpo += blocoFamilia(p.ficha);
   corpo += `<div class="secao"><h2>Histórico</h2><span class="risco"></span></div><div class="tabela">${(p.hist || []).map(h => {
     const x = dt(h.d);
-    return `<button class="linha" data-torneio="${h.ti}">
+    return `<button class="linha" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
       <span class="pos" style="color:${h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)')}">${h.s ? '–' : h.p + 'º'}</span>
       <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${h.s ? ' · ' + esc(h.s) : ''}</span>
       <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(titulo(h.t))} · ${h.n} conjuntos</span></span>${seta}</button>`;
   }).join('')}</div>${p.prot ? '<p class="fonte">O sobrenome está abreviado porque as provas deste atleta são de categorias infantis.</p>' : ''}</main>`;
   return corpo;
+}
+
+// família do cavalo no perfil: pai, mãe e criador, cada um levando à sua página
+function blocoFamilia(f) {
+  if (S.criacao === undefined) carregarArquivo('criacao', 'criacao.json');
+  const c = criacaoPronta() ? S.criacao : null;
+  const item = (rot, nome, tipo, atr) => {
+    if (!nome) return '';
+    const k = chave(nome), lista = c ? listaCriacao(tipo) : [];
+    const g = lista.find(x => x.k === k), pos = g ? posicaoEm(lista, k) : null;
+    const n = g ? g.cavalos.length : 0;
+    return `<button class="fam" ${atr}="${esc(k)}"><span class="olho-r">${rot}</span><b>${esc(titulo(nome))}</b>
+      <span>${g ? `${n} ${tipo === 'haras' ? (n > 1 ? 'cavalos' : 'cavalo') : (n > 1 ? 'filhos' : 'filho')} em pista · ${g.v} ${g.v === 1 ? 'vitória' : 'vitórias'}${pos && g.v > 0 ? ` · ${pos}º no Salta` : ''}` : (c ? 'sem outros filhos em pista' : '…')}</span>
+      ${tipo === 'garanhao' ? seloWbfsh(k) : ''}</button>`;
+  };
+  return `<div class="secao"><h2>Família</h2><span class="risco"></span></div><div class="familia">
+    ${item('PAI', f.pai, 'garanhao', 'data-garanhao')}${item('MÃE', f.mae, 'matriz', 'data-matriz')}${item('CRIADOR', f.criador, 'haras', 'data-haras')}</div>`;
+}
+
+// ---------- como calculamos ----------
+function telaMetodo() {
+  const a = criacaoPronta() ? fmtAlt(S.criacao.alturaDestaque || 1.4) : '1,40m';
+  const cob = criacaoPronta() ? `${S.criacao.cobertura.comFicha.toLocaleString('pt-BR')} de ${S.criacao.cobertura.total.toLocaleString('pt-BR')}` : '';
+  const sec = (t, txt) => `<section class="metodo"><h2>${t}</h2>${txt}</section>`;
+  return `<header class="capa">${voltar('voltarMetodo', 'Voltar')}<span class="olho">TRANSPARÊNCIA</span><h1>Como calculamos</h1>
+    <span class="sub">Método ${criacaoPronta() ? esc(S.criacao.metodo) : 'v1'}. Todo número do Salta pode ser refeito a partir dos resultados oficiais.</span></header>
+    <main class="fade">
+    ${sec('De onde vêm os dados', `<p>Calendário, ordens de entrada e resultados vêm das páginas públicas da Federação Paulista de Hipismo, lidas automaticamente, sem login. Pai, mãe, nascimento e criador vêm da ficha que a FPH mostra na ordem de entrada. A temporada considerada é a de 2026.</p>`)}
+    ${sec('O que conta', `<p><b>Vitória</b> é o 1º lugar numa prova; <b>pódio</b> é do 1º ao 3º. Entram todas as provas com resultado publicado, de qualquer altura. Conjuntos eliminados ou desistentes contam como largada, mas não como pódio. Empates na mesma colocação contam para todos os empatados.</p>`)}
+    ${sec('Garanhões, matrizes e criadores', `<p>Cada cavalo soma para o seu pai, para a sua mãe e para o seu criador, conforme a ficha. A ordem é pelas vitórias dos cavalos em pista; em caso de empate, pelos pódios, depois pelo número de cavalos e depois pelas largadas. ${cob ? `Hoje, ${cob} cavalos da temporada têm ficha; os demais ainda não entram nesses rankings.` : ''}</p>
+      <p>O destaque <b>pódio a ${a}+</b> marca o cavalo que ficou entre os três primeiros em pelo menos uma prova de ${a} ou mais. É um critério do Salta; o selo oficial de <i>black type</i> é da ABCCH.</p>`)}
+    ${sec('Ranking mundial WBFSH', `<p>A posição mundial é a publicada pela WBFSH${S.wbfsh && S.wbfsh.periodo ? `, com ${esc(S.wbfsh.periodo)}` : ''}. O Salta não recalcula esse ranking. Como os nomes são escritos de forma diferente, cada garanhão só recebe o selo quando a ligação é por nome igual, por nome sem o número de registro ou por grafia conhecida da FPH; casos parecidos ficam de fora até serem conferidos.</p>`)}
+    ${sec('Identificação dos cavalos', `<p>Os cavalos são identificados pelo nome, porque os resultados públicos não trazem o número de registro. Homônimos e mudanças de afixo podem causar erros, e por isso os casos duvidosos ficam fora das contagens até serem confirmados.</p>`)}
+    ${sec('Proteção de menores', `<p>Nas provas de categorias infantis, o sobrenome dos cavaleiros é abreviado já na gravação dos dados.</p>`)}
+    ${sec('Correções', `<p>Encontrou um erro? Escreva para <a href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · correção de dado')}">contato@opportunityleiloes.com.br</a>. As correções feitas ficam registradas com a data.</p>`)}
+    <p class="fonte">Rankings e resumos são calculados pelo Salta e não são rankings oficiais da FPH, da CBH, da ABCCH ou da WBFSH.</p>
+  </main>`;
 }
 
 // ---------- compartilhar ----------
@@ -1512,6 +1617,20 @@ function baixarCard() {
 
 // ---------- render ----------
 const app = document.getElementById('app');
+// caminho de navegação entre perfis, provas e páginas de criação, para o Voltar refazer o trajeto
+function guardarCaminho() {
+  const campos = ['tela', 'torneio', 'prova', 'dia', 'abaProva', 'perfilTipo', 'perfilK', 'garanhaoK', 'matrizK', 'harasK'];
+  const foto = { y: window.scrollY }; for (const c of campos) foto[c] = S[c];
+  S.pilha = [...(S.pilha || []), foto];
+}
+function voltarCaminho() {
+  const ant = (S.pilha || []).pop();
+  if (!ant) return irPara(null, { torneio: null, prova: null });
+  const { y, ...resto } = ant;
+  Object.assign(S, resto);
+  if (S.tela === 'perfil' && S.perfilTipo) carregarPerfil(S.perfilTipo, S.perfilK);
+  render(); window.scrollTo(0, y || 0);
+}
 function ajustarChips() {
   for (const fila of document.querySelectorAll('.capa .chips')) {
     const sobra = fila.scrollWidth - fila.clientWidth;
@@ -1541,6 +1660,8 @@ function render() {
   else if (S.tela === 'torneio') html = telaTorneio();
   else if (S.tela === 'garanhao') html = telaCriacao('garanhao');
   else if (S.tela === 'haras') html = telaCriacao('haras');
+  else if (S.tela === 'matriz') html = telaCriacao('matriz');
+  else if (S.tela === 'metodo') html = telaMetodo();
   else if (S.aba === 'resultados') html = telaResultados();
   else if (S.aba === 'seguindo') html = telaSeguindo();
   else if (S.aba === 'ranking') html = telaRanking();
@@ -1554,7 +1675,7 @@ function render() {
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras]');
+  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras],[data-matriz],[data-hist-prova]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
@@ -1567,16 +1688,12 @@ document.addEventListener('click', e => {
   if (d.acao === 'voltarSobre') return irPara(null);
   if (d.acao === 'voltarLista') return irPara(null, { torneio: null });
   if (d.acao === 'voltarTorneio') {
+    if (S.pilha && S.pilha.length && S.tela === 'prova') return voltarCaminho();
     if (S.origem === 'opp') { S.origem = null; return irPara(null, { torneio: null, prova: null, filtro: '' }); }
     return irPara('torneio', { prova: null, filtro: '' });
   }
   if (d.acao === 'voltarPerfil') {
-    const topo = (S.pilha || [])[S.pilha ? S.pilha.length - 1 : 0];
-    if (topo && (topo.tela === 'garanhao' || topo.tela === 'haras')) {
-      S.pilha.pop();
-      Object.assign(S, { tela: topo.tela, perfilTipo: topo.perfilTipo, perfilK: topo.perfilK, garanhaoK: topo.garanhaoK, harasK: topo.harasK });
-      render(); window.scrollTo(0, topo.y || 0); return;
-    }
+    if (S.pilha && S.pilha.length) return voltarCaminho();
     return irPara(S.prova ? 'prova' : (S.torneio ? 'torneio' : null), { perfilTipo: null, perfilK: null });
   }
   if (d.acao === 'recarregar') { S.erro = null; S.dados = null; render(); return carregar(); }
@@ -1592,17 +1709,21 @@ document.addEventListener('click', e => {
   if (d.dia) { S.dia = d.dia; return render(); }
   if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
-  if (d.garanhao || d.haras) {
-    S.pilha = [...(S.pilha || []), { tela: S.tela, perfilTipo: S.perfilTipo, perfilK: S.perfilK, garanhaoK: S.garanhaoK, harasK: S.harasK, y: window.scrollY }];
+  if (d.garanhao || d.haras || d.matriz) {
+    guardarCaminho();
     if (S.haras === undefined) carregarArquivo('haras', 'haras.json');
-    return irPara(d.garanhao ? 'garanhao' : 'haras', d.garanhao ? { garanhaoK: d.garanhao } : { harasK: d.haras });
+    if (d.garanhao) return irPara('garanhao', { garanhaoK: d.garanhao });
+    if (d.matriz) return irPara('matriz', { matrizK: d.matriz });
+    return irPara('haras', { harasK: d.haras });
   }
-  if (d.acao === 'voltarCriacao') {
-    const ant = (S.pilha || []).pop();
-    if (!ant) return irPara(null, {});
-    Object.assign(S, { tela: ant.tela, perfilTipo: ant.perfilTipo, perfilK: ant.perfilK, garanhaoK: ant.garanhaoK, harasK: ant.harasK });
-    render(); window.scrollTo(0, ant.y || 0); return;
+  if (d.histProva) {
+    const [ti, pid] = d.histProva.split(':').map(Number);
+    guardarCaminho();
+    return irPara('prova', { torneio: ti, prova: pid, dia: null, filtro: '', abaProva: 'classificacao' });
   }
+  if (d.acao === 'metodo') { guardarCaminho(); return irPara('metodo', {}); }
+  if (d.acao === 'voltarMetodo') return voltarCaminho();
+  if (d.acao === 'voltarCriacao') return voltarCaminho();
   if (d.tr) { S.trIdx = +d.tr; S.trTocando = false; return render(); }
   if (d.acao === 'tocarTransmissao') { S.trTocando = true; return render(); }
   if (d.acao === 'verTransmissao') {
@@ -1619,9 +1740,8 @@ document.addEventListener('click', e => {
   if (d.abaProva) { S.abaProva = d.abaProva; S.filtro = ''; return render(); }
   if (d.prova) return irPara('prova', { prova: /^\d+$/.test(d.prova) ? +d.prova : d.prova, filtro: '', abaProva: 'classificacao' });
   if (d.perfil) {
-    // vindo de um garanhão ou de um haras, o Voltar precisa retornar para lá
-    if (S.tela === 'garanhao' || S.tela === 'haras')
-      S.pilha = [...(S.pilha || []), { tela: S.tela, perfilTipo: S.perfilTipo, perfilK: S.perfilK, garanhaoK: S.garanhaoK, harasK: S.harasK, y: window.scrollY }];
+    // vindo de uma página de criação, de outro perfil ou de uma prova aberta pelo perfil, o Voltar retorna para lá
+    if (['garanhao', 'haras', 'matriz', 'perfil', 'metodo'].includes(S.tela) || (S.tela === 'prova' && S.pilha && S.pilha.length)) guardarCaminho();
     carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k });
   }
   if (d.torneio) return irPara('torneio', { torneio: +d.torneio, dia: null, prova: null });
@@ -1772,6 +1892,7 @@ document.addEventListener('click', e => {
   if (acao === 'avisos') { fecharBoasVindas(); return ativarAvisos(); }
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('boas-vindas')) fecharBoasVindas(); });
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('link-fil')) { e.preventDefault(); e.stopPropagation(); e.target.click(); } });
 function talvezBoasVindas() {
   let visto = false;
   try { visto = localStorage.getItem(CHAVE_BV) === '1'; } catch {}
