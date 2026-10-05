@@ -93,7 +93,7 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
       for (const l of linhas) {
         const zerou = !l.s && l.r && l.r[0] && l.r[0][0] === 0;
         const fed = l.f != null ? dados.fed[l.f] : null;
-        const item = { d: p.dia || t.fim, t: t.nome, ti: t.id, pn: p.numero, a: p.altura, p: l.p, n: total, r: l.r || null, s: l.s || null };
+        const item = { d: p.dia || t.fim, t: t.nome, ti: t.id, pid: Number(pid), pn: p.numero, a: p.altura, p: l.p, n: total, r: l.r || null, s: l.s || null };
 
         rt.largadas++; rt.conjuntos.add(`${chave(l.c)}|${chave(l.h)}`);
         if (l.r && l.r[0]) { rt.percursos++; if (zerou) rt.zerados++; }
@@ -181,7 +181,8 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   // raça escrita por extenso ou só o código (BH, Z, KWPN…) não é criador
   const criadorValido = c => c && String(c).replace(/[^A-Za-z]/g, '').length > 4 && !/^[A-Z]{1,4}(\s+-\s+.*)?$|BRASILEIRO DE HIPISMO/i.test(c.trim());
   const limpaNome = n => String(n || '').replace(/[.\s]+$/, '').trim();
-  const base = {}, pais = new Map(), criadores = new Map();
+  const base = {}, pais = new Map(), maes = new Map(), criadores = new Map();
+  const ALTURA_DESTAQUE = 1.4;
   let comFicha = 0;
   for (const [k, h] of cavalos) {
     const perfil = arruma(h, false);
@@ -191,21 +192,25 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     const cr = criadorValido(f.criador) ? f.criador : null;
     if (!f.pai && !cr) continue;              // estas telas só mostram cavalos com ficha
     comFicha++;
-    base[k] = [perfil.nome, perfil.l, perfil.v, perfil.po, max, limpaNome(f.pai), limpaNome(f.mae), cr ? chave(cr) : ''];
+    const destaque = (h.hist || []).some(x => !x.s && x.p <= 3 && (x.a || 0) >= ALTURA_DESTAQUE) ? 1 : 0;
+    base[k] = [perfil.nome, perfil.l, perfil.v, perfil.po, max, limpaNome(f.pai), limpaNome(f.mae), cr ? chave(cr) : '', destaque];
     const somar = (mapa, chaveG, nome) => {
-      const g = mapa.get(chaveG) || { k: chaveG, nome, cavalos: [], l: 0, v: 0, po: 0, max: null };
-      g.cavalos.push(k); g.l += perfil.l; g.v += perfil.v; g.po += perfil.po;
+      const g = mapa.get(chaveG) || { k: chaveG, nome, cavalos: [], l: 0, v: 0, po: 0, max: null, destaques: 0 };
+      g.cavalos.push(k); g.l += perfil.l; g.v += perfil.v; g.po += perfil.po; g.destaques += destaque;
       if (max && (!g.max || max > g.max)) g.max = max;
       mapa.set(chaveG, g);
     };
     if (f.pai) somar(pais, chave(f.pai), limpaNome(f.pai));
+    if (f.mae) somar(maes, chave(f.mae), limpaNome(f.mae));
     if (cr) somar(criadores, chave(cr), limpaNome(cr));
   }
   const ordenar = l => l.sort((a, b) => b.v - a.v || b.po - a.po || b.cavalos.length - a.cavalos.length || b.l - a.l);
   const listaPais = ordenar([...pais.values()]).map(g => ({ ...g, vendido: vendidos && vendidos.has(g.k) ? vendidos.get(g.k).leilao : undefined }));
   const listaCriadores = ordenar([...criadores.values()]);
+  const listaMaes = ordenar([...maes.values()]).map(g => ({ ...g, vendido: vendidos && vendidos.has(g.k) ? vendidos.get(g.k).leilao : undefined }));
   await fs.writeFile(path.join(saida, 'criacao.json'), JSON.stringify({ atualizadoEm: new Date().toISOString(),
-    cobertura: { comFicha, total: cavalos.size }, pais: listaPais, criadores: listaCriadores, cavalos: base }) + '\n');
+    cobertura: { comFicha, total: cavalos.size }, alturaDestaque: ALTURA_DESTAQUE, metodo: 'v1 · 05/10/2026',
+    pais: listaPais, maes: listaMaes, criadores: listaCriadores, cavalos: base }) + '\n');
 
   // Resumo de cada torneio com resultados, montado só com fatos dos dados
   const resumos = {};
