@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-05T00:03:08.391Z",
+ "atualizadoEm": "2026-10-05T16:09:50.375Z",
  "torneios": [
   {
    "id": 3404,
@@ -10085,7 +10085,8 @@
      "v": {
       "c": "Melissa Partika K.",
       "h": "LENNON"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 14607,
@@ -10102,7 +10103,8 @@
      "v": {
       "c": "Luisa Mollo G.",
       "h": "THOR BP"
-     }
+     },
+     "oe": 42
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3484"
@@ -10131,7 +10133,8 @@
      "v": {
       "c": "FRANCISCO JOSE MESQUITA MUSA",
       "h": "CHUN LI DO PANEMA"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 14451,
@@ -10148,7 +10151,8 @@
      "v": {
       "c": "JOAO PAULO MACHADO GOUVEA",
       "h": "DIAMOND MYSTIC ROSE (IA)"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 14427,
@@ -10165,7 +10169,8 @@
      "v": {
       "c": "LUIS RENATO FLORA",
       "h": "BRIDGIT DO REFUGIO"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 14431,
@@ -10182,7 +10187,8 @@
      "v": {
       "c": "MARIA EDUARDA PARMA RODRIGUES",
       "h": "LACOSTE MYSTIC ROSE (IA)"
-     }
+     },
+     "oe": 37
     },
     {
      "id": 14454,
@@ -10199,7 +10205,8 @@
      "v": {
       "c": "Maria Julia B. F.",
       "h": "X-DEBORA TOK (TE)"
-     }
+     },
+     "oe": 21
     },
     {
      "id": 14436,
@@ -10216,7 +10223,8 @@
      "v": {
       "c": "GIOVANA CICCI FARINHA MOURA",
       "h": "FORTIN KASMIR"
-     }
+     },
+     "oe": 49
     },
     {
      "id": 14433,
@@ -10233,7 +10241,8 @@
      "v": {
       "c": "ALEXANDRE DE OLIVEIRA FRANCO",
       "h": "AIR JET Z"
-     }
+     },
+     "oe": 47
     },
     {
      "id": 14425,
@@ -10250,7 +10259,8 @@
      "v": {
       "c": "FELIPE JUARES DE LIMA",
       "h": "MYLORD TRV (TE)"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 14452,
@@ -10267,7 +10277,8 @@
      "v": {
       "c": "PEDRO HENRIQUE ARANTES TAVORA DE MATOS",
       "h": "HPH CELINE TRV (TE)"
-     }
+     },
+     "oe": 28
     },
     {
      "id": 14448,
@@ -10284,7 +10295,8 @@
      "v": {
       "c": "GUSTAVO ALBERTO CORBETTA GIBELLI",
       "h": "ORAGE OPTIMUS"
-     }
+     },
+     "oe": 45
     },
     {
      "id": 14439,
@@ -10301,7 +10313,8 @@
      "v": {
       "c": "PAULO EDUARDO PIRES RANGEL CREDIDIO",
       "h": "DIAMANT SH (IA)"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 14442,
@@ -10318,7 +10331,8 @@
      "v": {
       "c": "OLIVIA PASTORE VILELA",
       "h": "COPA HARE KRISHNA"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 14428,
@@ -10335,7 +10349,8 @@
      "v": {
       "c": "LUIS RENATO FLORA",
       "h": "BRIDGIT DO REFUGIO"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 14430,
@@ -10352,7 +10367,8 @@
      "v": {
       "c": "MARIANA VICENTE MOREIRA FERREIRA",
       "h": "LADY FLORES"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 14455,
@@ -10369,7 +10385,8 @@
      "v": {
       "c": "Miguel Fernandes B.",
       "h": "LARINKA SOLAGUAYRE"
-     }
+     },
+     "oe": 21
     },
     {
      "id": 14437,
@@ -10386,7 +10403,8 @@
      "v": {
       "c": "JULIA TREVISAN RODRIGUES",
       "h": "CARLO FLORES (IA)"
-     }
+     },
+     "oe": 48
     },
     {
      "id": 14434,
@@ -10403,7 +10421,8 @@
      "v": {
       "c": "ALEXANDRE DE OLIVEIRA FRANCO",
       "h": "AIR JET Z"
-     }
+     },
+     "oe": 46
     },
     {
      "id": 14440,
@@ -10420,7 +10439,8 @@
      "v": {
       "c": "VITORIA RABELLO NOLLI GRANATO",
       "h": "CEHJUR MORO (IA)"
-     }
+     },
+     "oe": 38
     },
     {
      "id": 14443,
@@ -10437,7 +10457,8 @@
      "v": {
       "c": "OLIVIA PASTORE VILELA",
       "h": "COPA HARE KRISHNA"
-     }
+     },
+     "oe": 42
     },
     {
      "id": 14426,
@@ -10454,7 +10475,8 @@
      "v": {
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "MERANO JMEN I (TE)"
-     }
+     },
+     "oe": 29
     },
     {
      "id": 14453,
@@ -10471,7 +10493,8 @@
      "v": {
       "c": "PEDRO HENRIQUE ARANTES TAVORA DE MATOS",
       "h": "HPH CELINE TRV (TE)"
-     }
+     },
+     "oe": 28
     },
     {
      "id": 14449,
@@ -10488,7 +10511,8 @@
      "v": {
       "c": "TIAGO CLARO FIGUEIRA MELO VINHA",
       "h": "CASALL FLORES (IA)"
-     }
+     },
+     "oe": 44
     },
     {
      "id": 14429,
@@ -10505,7 +10529,8 @@
      "v": {
       "c": "BRUNA GEO VENTURA",
       "h": "CORTTEZ G (IA)"
-     }
+     },
+     "oe": 20
     },
     {
      "id": 14438,
@@ -10522,7 +10547,8 @@
      "v": {
       "c": "JULIA TREVISAN RODRIGUES",
       "h": "CARLO FLORES (IA)"
-     }
+     },
+     "oe": 20
     },
     {
      "id": 14450,
@@ -10539,7 +10565,8 @@
      "v": {
       "c": "FERNANDO AUGUSTO SPERB",
       "h": "CORNET D'ALEX FAS (IA)"
-     }
+     },
+     "oe": 46
     },
     {
      "id": 14441,
@@ -10556,7 +10583,8 @@
      "v": {
       "c": "GABRIELA MARINHO LUTZ FERREIRA",
       "h": "BAMAKO S (IA)"
-     }
+     },
+     "oe": 20
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3475"
@@ -10692,7 +10720,7 @@
       "c": "Ana Carolina B. N. M.",
       "h": "UCHA LADY STOCK"
      },
-     "oe": 97,
+     "oe": 96,
      "n": 96
     },
     {
@@ -10783,7 +10811,7 @@
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "SHY BOY"
      },
-     "oe": 76,
+     "oe": 79,
      "n": 75
     },
     {
@@ -10802,7 +10830,7 @@
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "ROCCADERO JMEN DE MOR"
      },
-     "oe": 57,
+     "oe": 61,
      "n": 53
     },
     {
@@ -10821,7 +10849,7 @@
       "c": "FRANCISCO JOSE MESQUITA MUSA",
       "h": "NOCA DA CABANA"
      },
-     "oe": 74,
+     "oe": 75,
      "n": 72
     },
     {
@@ -10840,7 +10868,7 @@
       "c": "PEDRO PAULO ONETY CORDEIRO",
       "h": "SHY BOY"
      },
-     "oe": 78,
+     "oe": 84,
      "n": 75
     },
     {
