@@ -297,6 +297,20 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 .sub.ficha{font-size:13.5px;opacity:.9}
 @media (prefers-reduced-motion:reduce){.bv-pontos i{transition:none}}
 .filiacao{display:block;font-size:12px;line-height:1.35;color:var(--muted);margin-top:1px;font-style:italic}
+.selo-fonte{display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--muted);border:1px solid var(--linha);border-radius:3px;padding:1px 6px;margin-right:6px;white-space:nowrap}
+.nota-fonte{display:block}
+.resumo-torneio{margin:16px 20px 0;background:var(--surface);border:1px solid var(--linha);border-radius:4px;padding:4px 16px 14px}
+.resumo-torneio p{margin:0 0 10px;font-size:15px;line-height:1.6}
+.link-ficha{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-decoration-color:var(--ouro);text-underline-offset:3px;cursor:pointer}
+.painel.convite h3{margin:0;font-family:var(--serif);font-weight:400;font-size:21px}
+.painel.convite p{margin:0;font-size:14.5px;color:var(--muted)}
+.painel.convite .btn{align-self:flex-start;flex:none;height:auto;min-height:44px;padding:10px 18px}
+.prosa-haras{margin:16px 20px 0;font-size:15px;line-height:1.6}
+.capa .chips{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
+.capa .chips::-webkit-scrollbar{display:none}
+.capa .chips .chip{flex:none}
+.capa .chips.rola{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.capa .chips.rola.no-fim{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%);mask-image:linear-gradient(90deg,transparent,#000 14%)}
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -354,7 +368,7 @@ nav.abas.cinco button{font-size:10.5px;letter-spacing:-.01em}
   /* tabelas e textos longos não precisam ocupar a tela inteira */
   .tabela,.podio{max-width:880px;padding-left:36px;padding-right:36px}
   .fonte{max-width:880px;padding-left:36px;padding-right:36px}
-  .painel,.destaque-aviso,.transmissao{max-width:808px;margin-left:36px;margin-right:36px}
+  .painel,.destaque-aviso,.transmissao,.resumo-torneio{max-width:808px;margin-left:36px;margin-right:36px}
   .chips.clara{padding-left:36px!important;padding-right:36px!important}
   /* a marca já está no menu lateral */
   .capa .topo-linha .marca{visibility:hidden}
@@ -392,6 +406,7 @@ function titulo(s) {
     const limpo = w.replace(/[^A-Za-zÀ-ÿ]/g, '');
     if (!limpo) return w;
     const up = limpo.toUpperCase();
+    if (/^[A-Za-zÀ-ÿ]\.$/.test(w)) return w.toUpperCase();   // inicial de nome abreviado, como "B."
     if (i > 0 && PEQ.has(limpo.toLowerCase())) return w.toLowerCase();
     if (MANTER.has(up) || /\d/.test(w)) return w;
     if (limpo === up && up.length <= 3 && !NAO_SIGLA.has(up)) return w; // sigla curta
@@ -404,7 +419,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '03/10/2026 · layout para computador e tablet';
+const VERSAO_APP = '05/10/2026 · garanhões, criadores e resumo do torneio';
 
 // ---------- notificações (push) ----------
 // Endereço e chave pública do Supabase do Salta e a chave pública VAPID: tudo aqui é público por natureza.
@@ -844,6 +859,7 @@ function telaTorneio() {
       </div>
     </header>`;
   corpo += blocoTransmissao(t);
+  corpo += blocoResumo(t);
   const dest = destaqueDe(t);
   if (dest) {
     corpo += `<div class="destaque-aviso">
@@ -1142,16 +1158,94 @@ function telaSobre() {
     ${rodape()}</main>`;
 }
 
+async function carregarArquivo(chaveS, arquivo) {
+  if (S[chaveS] !== undefined) return;
+  S[chaveS] = 'carregando';
+  try { S[chaveS] = await pegar(`${BASE}/${arquivo}`); } catch { S[chaveS] = 'erro'; }
+  const digitando = document.activeElement && document.activeElement.tagName === 'INPUT';
+  if (!digitando && !(S.tela === 'torneio' && S.trTocando)) { const y = window.scrollY; render(); window.scrollTo(0, y); }
+}
+const criacaoPronta = () => S.criacao && typeof S.criacao === 'object';
+const notaFonte = txt => `<p class="fonte nota-fonte"><span class="selo-fonte">Calculado pelo Salta</span>${esc(txt)}</p>`;
+const coberturaTxt = () => criacaoPronta() ? ` Até agora, ${S.criacao.cobertura.comFicha.toLocaleString('pt-BR')} de ${S.criacao.cobertura.total.toLocaleString('pt-BR')} cavalos da temporada têm ficha; o número cresce a cada coleta.` : '';
+
+// lista de garanhões ou de criadores, ordenada pelas vitórias dos cavalos em pista
+function rankingCriacao(tipo) {
+  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return `<main><div class="vazio">${S.criacao === 'erro' ? 'Os dados de criação aparecem depois da próxima coleta.' : 'Carregando…'}</div></main>`; }
+  const lista = (tipo === 'garanhoes' ? S.criacao.pais : S.criacao.criadores).slice(0, 100);
+  if (!lista.length) return `<main><div class="vazio">Ainda não há fichas suficientes. Os dados aparecem conforme o coletor lê as ordens de entrada.</div></main>`;
+  let pos = 0, ult = null;
+  return `<main class="fade"><div class="secao"><h2>${tipo === 'garanhoes' ? 'Garanhões pelos filhos em pista' : 'Criadores pelos cavalos em pista'}</h2><span class="risco"></span></div>
+    <div class="podio">${lista.map((g, i) => {
+      if (g.v !== ult) { pos = i + 1; ult = g.v; }
+      const n = g.cavalos.length;
+      return `<button class="linha-podio" ${tipo === 'garanhoes' ? `data-garanhao="${esc(g.k)}"` : `data-haras="${esc(g.k)}"`}>
+        ${pos <= 3 && g.v > 0 ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${pos}</span>`}
+        <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span class="nome">${esc(titulo(g.nome))}${g.vendido ? '<span class="selo-opp" title="Vendido pela Opportunity Leilões">Opportunity</span>' : ''}</span>
+          <span class="meta">${n} ${tipo === 'garanhoes' ? (n > 1 ? 'filhos' : 'filho') : (n > 1 ? 'cavalos' : 'cavalo')} em pista · ${g.l} largadas${g.max ? ' · até ' + fmtAlt(g.max) : ''}</span></span>
+        <span class="res"><b>${g.v}</b><span>vitórias</span></span></button>`;
+    }).join('')}</div>
+    ${notaFonte(` A partir dos resultados públicos da FPH e do ${tipo === 'garanhoes' ? 'pai' : 'criador'} informado na ficha de cada cavalo.${coberturaTxt()}`)}
+  </main>`;
+}
+// página de um garanhão ou de um haras, com os cavalos em pista
+function telaCriacao(tipo) {
+  const k = tipo === 'garanhao' ? S.garanhaoK : S.harasK;
+  const cab = nome => `<header class="capa">${voltar('voltarCriacao', 'Voltar')}<span class="olho">${tipo === 'garanhao' ? 'GARANHÃO' : 'CRIADOR'}</span><h1>${esc(titulo(nome))}</h1>`;
+  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</header><main><div class="vazio">Carregando…</div></main>'; }
+  const g = (tipo === 'garanhao' ? S.criacao.pais : S.criacao.criadores).find(x => x.k === k);
+  if (!g) return cab(k) + '</header><main><div class="vazio">Sem cavalos em pista nesta temporada.</div></main>';
+  const base = S.criacao.cavalos;
+  const cavs = g.cavalos.map(ck => ({ k: ck, d: base[ck] })).filter(x => x.d).sort((a, b) => b.d[2] - a.d[2] || b.d[3] - a.d[3] || b.d[1] - a.d[1]);
+  const extra = tipo === 'haras' && S.haras && typeof S.haras === 'object' ? S.haras[k] : null;
+  const venda = tipo === 'garanhao' && vendidoDe(g.nome);
+  let html = cab(g.nome) + `<span class="sub">${cavs.length} ${tipo === 'garanhao' ? (cavs.length > 1 ? 'filhos' : 'filho') : (cavs.length > 1 ? 'cavalos' : 'cavalo')} em pista na temporada</span>
+    ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
+    ${extra && extra.site ? `<a class="btn-fino" href="${esc(extra.site)}" target="_blank" rel="noopener" style="align-self:flex-start">Site do haras ↗</a>` : ''}
+    </header><main class="fade">
+    ${extra && extra.texto ? `<p class="prosa-haras">${esc(extra.texto)}</p>` : ''}
+    <div class="stats"><div><b>${cavs.length}</b><span>${tipo === 'garanhao' ? 'filhos' : 'cavalos'}</span></div><div><b>${g.l}</b><span>largadas</span></div><div><b style="color:var(--ouro-escuro)">${g.v}</b><span>vitórias</span></div><div><b>${g.po}</b><span>pódios</span></div></div>
+    <div class="secao"><h2>${tipo === 'garanhao' ? 'Filhos em pista' : 'Cavalos em pista'}</h2><span class="risco"></span></div>
+    <div class="podio">${cavs.map(({ k: ck, d }) => `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(ck)}">
+        <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span class="nome">${esc(titulo(d[0]))}${seloOpp(d[0])}</span>
+          <span class="meta">${d[1]} largadas${d[4] ? ' · até ' + fmtAlt(d[4]) : ''}</span>${filiacaoDe(d[0], { pai: d[5], mae: d[6] })}</span>
+        <span class="res"><b>${d[2]}</b><span>vitórias</span></span></button>`).join('')}</div>
+    ${tipo === 'haras' && !extra ? `<div class="painel convite"><h3>Este é o seu haras?</h3><p>Destaque o perfil com o logotipo, uma apresentação e o contato do haras. Fale com a Opportunity.</p>
+      <a class="btn ouro" href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · destacar o perfil do ' + titulo(g.nome))}">Pedir destaque do perfil</a></div>` : ''}
+    ${notaFonte(` A partir dos resultados públicos da FPH e do ${tipo === 'garanhao' ? 'pai' : 'criador'} informado na ficha de cada cavalo.${coberturaTxt()}`)}
+  </main>`;
+  return html;
+}
+// resumo do torneio, montado só com fatos dos dados
+function blocoResumo(t) {
+  if (S.resumos === undefined) carregarArquivo('resumos', 'resumos.json');
+  const r = S.resumos && typeof S.resumos === 'object' ? S.resumos[String(t.id)] : null;
+  if (!r) return '';
+  const alt = r.altMin && r.altMax ? (r.altMin === r.altMax ? ` a ${fmtAlt(r.altMax)}` : `, de ${fmtAlt(r.altMin)} a ${fmtAlt(r.altMax)}`) : '';
+  const frases = [];
+  frases.push(`${r.parcial ? 'Até agora, o torneio teve' : 'O torneio teve'} ${r.provas} ${r.provas > 1 ? 'provas com resultado' : 'prova com resultado'}${alt}, com ${r.largadas.toLocaleString('pt-BR')} largadas de ${r.conjuntos.toLocaleString('pt-BR')} conjuntos.`);
+  if (r.topCav && r.topCav.length) frases.push(`Quem mais venceu foi ${esc(titulo(r.topCav[0].nome))}, com ${r.topCav[0].v} vitórias${r.topCav[1] ? `, seguido de ${esc(titulo(r.topCav[1].nome))}, com ${r.topCav[1].v}` : ''}.`);
+  if (r.maior) frases.push(`Na prova mais alta, a ${fmtAlt(r.maior.a)}, ${r.maior.empate > 1 ? `${r.maior.empate} conjuntos dividiram o primeiro lugar, entre eles ${esc(titulo(r.maior.c))} com ${esc(titulo(r.maior.h))}` : `venceu ${esc(titulo(r.maior.c))} com ${esc(titulo(r.maior.h))}`}.`);
+  if (r.zeroPct != null) frases.push(`${r.zeroPct}% dos percursos terminaram sem faltas.`);
+  if (r.topCriador) frases.push(`Entre os criadores, ${esc(titulo(r.topCriador.nome))} somou mais vitórias, com ${r.topCriador.v}.`);
+  if (r.opp) frases.push(`Os cavalos vendidos pela Opportunity largaram ${r.opp.l} ${r.opp.l > 1 ? 'vezes' : 'vez'}${r.opp.v ? ` e venceram ${r.opp.v} ${r.opp.v > 1 ? 'provas' : 'prova'}` : ''}.`);
+  return `<section class="resumo-torneio"><div class="secao" style="padding-left:0;padding-right:0"><h2>${r.parcial ? 'O torneio até agora' : 'Resumo do torneio'}</h2><span class="risco"></span></div>
+    <p>${frases.join(' ')}</p><span class="selo-fonte">Calculado pelo Salta a partir dos resultados da FPH</span></section>`;
+}
+
 function telaRanking() {
   const capa = `<header class="capa">
       <div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['clubes', 'Federações']].map(([k, t]) =>
+        ${[['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
+  if (S.rankTipo === 'garanhoes' || S.rankTipo === 'criadores') return capa + rankingCriacao(S.rankTipo);
   if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
   const t = S.stats.totais;
 
@@ -1307,10 +1401,10 @@ function telaPerfil() {
   let corpo = cab(p.nome) + `<span class="sub">${p.fed ? esc(p.fed) + ' · ' : ''}${p.par?.length ? (pessoa ? 'Monta ' : 'Montado por ') + esc(titulo(p.par[0].n)) : ''}</span>
     ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
     ${!pessoa && p.ficha ? `<span class="sub ficha">${[
-      p.ficha.pai || p.ficha.mae ? `${p.ficha.pai ? 'Filho de ' + esc(titulo(p.ficha.pai)) : ''}${p.ficha.pai && p.ficha.mae ? ' e ' : ''}${p.ficha.mae ? (p.ficha.pai ? '' : 'Mãe: ') + esc(titulo(p.ficha.mae)) : ''}` : '',
+      p.ficha.pai || p.ficha.mae ? `${p.ficha.pai ? `Filho de <button class="link-ficha" data-garanhao="${esc(chave(p.ficha.pai))}">${esc(titulo(p.ficha.pai))}</button>` : ''}${p.ficha.pai && p.ficha.mae ? ' e ' : ''}${p.ficha.mae ? (p.ficha.pai ? '' : 'Mãe: ') + esc(titulo(p.ficha.mae)) : ''}` : '',
       p.ficha.nasc ? 'nascido em ' + p.ficha.nasc.slice(0, 4) : '',
       p.ficha.raca ? esc(p.ficha.raca) : '',
-      p.ficha.criador ? 'criado por ' + esc(titulo(p.ficha.criador)) : ''].filter(Boolean).join(' · ')}</span>` : ''}
+      p.ficha.criador ? `criado por <button class="link-ficha" data-haras="${esc(chave(p.ficha.criador))}">${esc(titulo(p.ficha.criador))}</button>` : ''].filter(Boolean).join(' · ')}</span>` : ''}
     <div class="acoes"><button class="btn ouro" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">★ ${seguido ? 'Seguindo' : (pessoa ? 'Seguir cavaleiro' : 'Seguir cavalo')}</button></div>
     </header><main class="fade">
     <div class="stats">
@@ -1418,6 +1512,19 @@ function baixarCard() {
 
 // ---------- render ----------
 const app = document.getElementById('app');
+function ajustarChips() {
+  for (const fila of document.querySelectorAll('.capa .chips')) {
+    const sobra = fila.scrollWidth - fila.clientWidth;
+    fila.classList.toggle('rola', sobra > 4);
+    const ativo = fila.querySelector('[aria-pressed="true"]');
+    if (ativo && sobra > 4) {
+      const alvo = ativo.offsetLeft - (fila.clientWidth - ativo.offsetWidth) / 2;
+      fila.scrollLeft = Math.max(0, Math.min(sobra, alvo));
+    }
+    fila.classList.toggle('no-fim', fila.scrollLeft >= sobra - 4);
+    fila.onscroll = () => fila.classList.toggle('no-fim', fila.scrollLeft >= fila.scrollWidth - fila.clientWidth - 4);
+  }
+}
 function render() {
   let html;
   if (S.erro) {
@@ -1432,6 +1539,8 @@ function render() {
   else if (S.tela === 'perfil') html = telaPerfil();
   else if (S.tela === 'prova') html = telaProva();
   else if (S.tela === 'torneio') html = telaTorneio();
+  else if (S.tela === 'garanhao') html = telaCriacao('garanhao');
+  else if (S.tela === 'haras') html = telaCriacao('haras');
   else if (S.aba === 'resultados') html = telaResultados();
   else if (S.aba === 'seguindo') html = telaSeguindo();
   else if (S.aba === 'ranking') html = telaRanking();
@@ -1439,16 +1548,17 @@ function render() {
   else html = telaCalendario();
   app.innerHTML = html + abas() + folhaCompartilhar();
   const sel = document.getElementById('altura'); if (sel) sel.value = S.altura;
+  ajustarChips();
 }
 
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever]');
+  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
-  if (d.aba) { Object.assign(S, { aba: d.aba, tela: null, torneio: null, prova: null, origem: null }); window.scrollTo(0, 0); return render(); }
+  if (d.aba) { Object.assign(S, { aba: d.aba, tela: null, torneio: null, prova: null, origem: null, pilha: [] }); window.scrollTo(0, 0); return render(); }
   if (d.acao === 'salvar') return alternar(salvos, 'pista-salvos', +d.id);
   if (d.acao === 'seguir') return seguir(d.tipo, d.k, d.nome);
   if (d.acao === 'salvos') { S.soSalvos = !S.soSalvos; return render(); }
@@ -1460,7 +1570,15 @@ document.addEventListener('click', e => {
     if (S.origem === 'opp') { S.origem = null; return irPara(null, { torneio: null, prova: null, filtro: '' }); }
     return irPara('torneio', { prova: null, filtro: '' });
   }
-  if (d.acao === 'voltarPerfil') return irPara(S.prova ? 'prova' : (S.torneio ? 'torneio' : null), { perfilTipo: null, perfilK: null });
+  if (d.acao === 'voltarPerfil') {
+    const topo = (S.pilha || [])[S.pilha ? S.pilha.length - 1 : 0];
+    if (topo && (topo.tela === 'garanhao' || topo.tela === 'haras')) {
+      S.pilha.pop();
+      Object.assign(S, { tela: topo.tela, perfilTipo: topo.perfilTipo, perfilK: topo.perfilK, garanhaoK: topo.garanhaoK, harasK: topo.harasK });
+      render(); window.scrollTo(0, topo.y || 0); return;
+    }
+    return irPara(S.prova ? 'prova' : (S.torneio ? 'torneio' : null), { perfilTipo: null, perfilK: null });
+  }
   if (d.acao === 'recarregar') { S.erro = null; S.dados = null; render(); return carregar(); }
   if (d.acao === 'recarregarProva') { delete S.torneios[S.torneio]; return render(); }
   if (d.acao === 'compartilhar') { S.compartilhar = cartaoSVG(); return render(); }
@@ -1474,6 +1592,17 @@ document.addEventListener('click', e => {
   if (d.dia) { S.dia = d.dia; return render(); }
   if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
+  if (d.garanhao || d.haras) {
+    S.pilha = [...(S.pilha || []), { tela: S.tela, perfilTipo: S.perfilTipo, perfilK: S.perfilK, garanhaoK: S.garanhaoK, harasK: S.harasK, y: window.scrollY }];
+    if (S.haras === undefined) carregarArquivo('haras', 'haras.json');
+    return irPara(d.garanhao ? 'garanhao' : 'haras', d.garanhao ? { garanhaoK: d.garanhao } : { harasK: d.haras });
+  }
+  if (d.acao === 'voltarCriacao') {
+    const ant = (S.pilha || []).pop();
+    if (!ant) return irPara(null, {});
+    Object.assign(S, { tela: ant.tela, perfilTipo: ant.perfilTipo, perfilK: ant.perfilK, garanhaoK: ant.garanhaoK, harasK: ant.harasK });
+    render(); window.scrollTo(0, ant.y || 0); return;
+  }
   if (d.tr) { S.trIdx = +d.tr; S.trTocando = false; return render(); }
   if (d.acao === 'tocarTransmissao') { S.trTocando = true; return render(); }
   if (d.acao === 'verTransmissao') {
@@ -1489,7 +1618,12 @@ document.addEventListener('click', e => {
   }
   if (d.abaProva) { S.abaProva = d.abaProva; S.filtro = ''; return render(); }
   if (d.prova) return irPara('prova', { prova: /^\d+$/.test(d.prova) ? +d.prova : d.prova, filtro: '', abaProva: 'classificacao' });
-  if (d.perfil) { carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k }); }
+  if (d.perfil) {
+    // vindo de um garanhão ou de um haras, o Voltar precisa retornar para lá
+    if (S.tela === 'garanhao' || S.tela === 'haras')
+      S.pilha = [...(S.pilha || []), { tela: S.tela, perfilTipo: S.perfilTipo, perfilK: S.perfilK, garanhaoK: S.garanhaoK, harasK: S.harasK, y: window.scrollY }];
+    carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k });
+  }
   if (d.torneio) return irPara('torneio', { torneio: +d.torneio, dia: null, prova: null });
 });
 document.addEventListener('change', e => { if (e.target.id === 'altura') { S.altura = e.target.value; render(); } });
