@@ -1,0 +1,616 @@
+{
+ "ano": 2025,
+ "periodo": "resultados FEI validados de 01/10/2024 a 30/09/2025",
+ "fonte": "https://wbfsh.com/sire-rankings/download/jumping/2025",
+ "garanhoes": {
+  "CORNET OBOLENSKY": {
+   "pos": 1,
+   "pontos": 30705,
+   "nome": "CORNET OBOLENSKY",
+   "salta": "CORNET OBOLENSKY",
+   "ligacao": "nome igual"
+  },
+  "KANNAN": {
+   "pos": 2,
+   "pontos": 30364,
+   "nome": "KANNAN",
+   "salta": "KANNAN",
+   "ligacao": "nome igual"
+  },
+  "CHACCO BLUE": {
+   "pos": 3,
+   "pontos": 25931,
+   "nome": "CHACCO-BLUE",
+   "salta": "CHACCO BLUE",
+   "ligacao": "nome igual"
+  },
+  "DIAMANT DE SEMILLY": {
+   "pos": 4,
+   "pontos": 24162,
+   "nome": "DIAMANT DE SEMILLY",
+   "salta": "DIAMANT DE SEMILLY",
+   "ligacao": "nome igual"
+  },
+  "MYLORD CARTHAGO HN": {
+   "pos": 5,
+   "pontos": 16976,
+   "nome": "MYLORD CARTHAGO HN",
+   "salta": "MYLORD CARTHAGO",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "VIGO D ARSOUILLES STX": {
+   "pos": 6,
+   "pontos": 16726,
+   "nome": "VIGO D'ARSOUILLES STX",
+   "salta": "VIGO D ARSOUILLES",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "COMME IL FAUT 5": {
+   "pos": 7,
+   "pontos": 16607,
+   "nome": "COMME IL FAUT 5",
+   "salta": "COMME IL FAUT",
+   "ligacao": "sem o número do registro"
+  },
+  "TOULON": {
+   "pos": 8,
+   "pontos": 16288,
+   "nome": "TOULON",
+   "salta": "TOULON",
+   "ligacao": "nome igual"
+  },
+  "EMERALD": {
+   "pos": 9,
+   "pontos": 14230,
+   "nome": "EMERALD",
+   "salta": "EMERALD VAN T RUYTERSHOF",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "CARDENTO 933": {
+   "pos": 10,
+   "pontos": 13213,
+   "nome": "CARDENTO 933",
+   "salta": "CARDENTO",
+   "ligacao": "sem o número do registro"
+  },
+  "ELDORADO VD ZESHOEK": {
+   "pos": 11,
+   "pontos": 10244,
+   "nome": "ELDORADO VD ZESHOEK",
+   "salta": "ELDORADO VAN DE ZESHOEK",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "VDL ZIROCCO BLUE": {
+   "pos": 12,
+   "pontos": 10129,
+   "nome": "VDL ZIROCCO BLUE",
+   "salta": "ZIROCCO BLUE VDL",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "DIARADO": {
+   "pos": 13,
+   "pontos": 9760,
+   "nome": "DIARADO",
+   "salta": "DIARADO",
+   "ligacao": "nome igual"
+  },
+  "CASALL": {
+   "pos": 14,
+   "pontos": 8730,
+   "nome": "CASALL",
+   "salta": "CASALL",
+   "ligacao": "nome igual"
+  },
+  "BALOU DU ROUET": {
+   "pos": 15,
+   "pontos": 7273,
+   "nome": "BALOU DU ROUET",
+   "salta": "BALOU DU ROUET",
+   "ligacao": "nome igual"
+  },
+  "THUNDER VD ZUUTHOEVE": {
+   "pos": 16,
+   "pontos": 7077,
+   "nome": "THUNDER VD ZUUTHOEVE",
+   "salta": "THUNDER VAN DE ZUUTHOEVE",
+   "ligacao": "grafia conhecida da FPH"
+  },
+  "CONTHARGOS": {
+   "pos": 17,
+   "pontos": 6853,
+   "nome": "CONTHARGOS",
+   "salta": "CONTHARGOS",
+   "ligacao": "nome igual"
+  },
+  "ELVIS TER PUTTE": {
+   "pos": 18,
+   "pontos": 6776,
+   "nome": "ELVIS TER PUTTE",
+   "salta": "ELVIS TER PUTTE",
+   "ligacao": "nome igual"
+  },
+  "CASCADELLO": {
+   "pos": 19,
+   "pontos": 6743,
+   "nome": "CASCADELLO"
+  },
+  "HARLEY": {
+   "pos": 20,
+   "pontos": 6193,
+   "nome": "HARLEY",
+   "para_conferir": "HARLEY VDL"
+  },
+  "CARRERA VDL": {
+   "pos": 21,
+   "pontos": 6173,
+   "nome": "CARRERA VDL",
+   "salta": "CARRERA VDL",
+   "ligacao": "nome igual"
+  },
+  "VAGABOND DE LA POMME": {
+   "pos": 22,
+   "pontos": 6129,
+   "nome": "VAGABOND DE LA POMME"
+  },
+  "VERDI TN": {
+   "pos": 23,
+   "pontos": 6114,
+   "nome": "VERDI TN",
+   "para_conferir": "VERDI"
+  },
+  "BALOUBET DU ROUET": {
+   "pos": 24,
+   "pontos": 5884,
+   "nome": "BALOUBET DU ROUET",
+   "salta": "BALOUBET DU ROUET",
+   "ligacao": "nome igual"
+  },
+  "NABAB DE REVE": {
+   "pos": 25,
+   "pontos": 5866,
+   "nome": "NABAB DE REVE",
+   "salta": "NABAB DE REVE",
+   "ligacao": "nome igual"
+  },
+  "STAKKATO GOLD": {
+   "pos": 26,
+   "pontos": 5571,
+   "nome": "STAKKATO GOLD"
+  },
+  "CASALLCO": {
+   "pos": 27,
+   "pontos": 5521,
+   "nome": "CASALLCO",
+   "salta": "CASALLCO",
+   "ligacao": "nome igual"
+  },
+  "OTANGELO": {
+   "pos": 28,
+   "pontos": 5443,
+   "nome": "OTANGELO"
+  },
+  "PLOT BLUE": {
+   "pos": 29,
+   "pontos": 4995,
+   "nome": "PLOT BLUE"
+  },
+  "ETOULON": {
+   "pos": 30,
+   "pontos": 4965,
+   "nome": "ETOULON",
+   "para_conferir": "ETOULON VDL"
+  },
+  "CATOKI": {
+   "pos": 31,
+   "pontos": 4741,
+   "nome": "CATOKI",
+   "salta": "CATOKI",
+   "ligacao": "nome igual"
+  },
+  "AREZZO VDL": {
+   "pos": 32,
+   "pontos": 4566,
+   "nome": "AREZZO VDL",
+   "salta": "AREZZO VDL",
+   "ligacao": "nome igual"
+  },
+  "CLARIMO": {
+   "pos": 33,
+   "pontos": 4502,
+   "nome": "CLARIMO",
+   "salta": "CLARIMO",
+   "ligacao": "nome igual"
+  },
+  "VIGO CECE": {
+   "pos": 34,
+   "pontos": 4426,
+   "nome": "VIGO CECE"
+  },
+  "CICERO Z VAN PAEMEL": {
+   "pos": 35,
+   "pontos": 4328,
+   "nome": "CICERO Z VAN PAEMEL",
+   "para_conferir": "CICERO Z"
+  },
+  "BAMAKO DE MUZE": {
+   "pos": 36,
+   "pontos": 4239,
+   "nome": "BAMAKO DE MUZE",
+   "salta": "BAMAKO DE MUZE",
+   "ligacao": "nome igual"
+  },
+  "JARNAC": {
+   "pos": 37,
+   "pontos": 4188,
+   "nome": "JARNAC"
+  },
+  "MESSENGER": {
+   "pos": 38,
+   "pontos": 4169,
+   "nome": "MESSENGER",
+   "salta": "MESSENGER",
+   "ligacao": "nome igual"
+  },
+  "CASALITO": {
+   "pos": 39,
+   "pontos": 4150,
+   "nome": "CASALITO"
+  },
+  "CONTENDRO I": {
+   "pos": 40,
+   "pontos": 4067,
+   "nome": "CONTENDRO I",
+   "salta": "CONTENDRO I",
+   "ligacao": "nome igual"
+  },
+  "URIKO": {
+   "pos": 41,
+   "pontos": 4039,
+   "nome": "URIKO"
+  },
+  "ACTION BREAKER": {
+   "pos": 42,
+   "pontos": 3998,
+   "nome": "ACTION-BREAKER"
+  },
+  "LUIDAM": {
+   "pos": 43,
+   "pontos": 3962,
+   "nome": "LUIDAM"
+  },
+  "COLESTUS": {
+   "pos": 44,
+   "pontos": 3928,
+   "nome": "COLESTUS"
+  },
+  "FOR PLEASURE": {
+   "pos": 45,
+   "pontos": 3814,
+   "nome": "FOR PLEASURE",
+   "salta": "FOR PLEASURE",
+   "ligacao": "nome igual"
+  },
+  "CLINTON": {
+   "pos": 46,
+   "pontos": 3618,
+   "nome": "CLINTON",
+   "salta": "CLINTON",
+   "ligacao": "nome igual"
+  },
+  "I M SPECIAL DE MUZE": {
+   "pos": 47,
+   "pontos": 3510,
+   "nome": "I M SPECIAL DE MUZE",
+   "salta": "I M SPECIAL DE MUZE",
+   "ligacao": "nome igual"
+  },
+  "NUMERO UNO": {
+   "pos": 48,
+   "pontos": 3381,
+   "nome": "NUMERO UNO",
+   "salta": "NUMERO UNO",
+   "ligacao": "nome igual"
+  },
+  "VIVANT": {
+   "pos": 49,
+   "pontos": 3213,
+   "nome": "VIVANT"
+  },
+  "LONDON": {
+   "pos": 50,
+   "pontos": 3182,
+   "nome": "LONDON"
+  },
+  "ZANDOR": {
+   "pos": 51,
+   "pontos": 3178,
+   "nome": "ZANDOR"
+  },
+  "CALVARO F C": {
+   "pos": 52,
+   "pontos": 3150,
+   "nome": "CALVARO F.C."
+  },
+  "MOSITO VAN HET HELLEHOF": {
+   "pos": 53,
+   "pontos": 3114,
+   "nome": "MOSITO VAN HET HELLEHOF",
+   "salta": "MOSITO VAN HET HELLEHOF",
+   "ligacao": "nome igual"
+  },
+  "STAKKATO": {
+   "pos": 54,
+   "pontos": 3087,
+   "nome": "STAKKATO",
+   "salta": "STAKKATO",
+   "ligacao": "nome igual"
+  },
+  "BISQUET BALOU C": {
+   "pos": 55,
+   "pontos": 3076,
+   "nome": "BISQUET BALOU C"
+  },
+  "CHRISTIAN 25": {
+   "pos": 56,
+   "pontos": 2952,
+   "nome": "CHRISTIAN 25",
+   "para_conferir": "CHRISTIAN"
+  },
+  "OBOS QUALITY 004": {
+   "pos": 57,
+   "pontos": 2942,
+   "nome": "OBOS QUALITY 004"
+  },
+  "QUAPRICE BOIS MARGOT": {
+   "pos": 58,
+   "pontos": 2940,
+   "nome": "QUAPRICE BOIS MARGOT",
+   "para_conferir": "QUAPRICE"
+  },
+  "QUALITY TIME TN": {
+   "pos": 59,
+   "pontos": 2902,
+   "nome": "QUALITY TIME TN",
+   "para_conferir": "QUALITY TIME"
+  },
+  "ARKO III": {
+   "pos": 60,
+   "pontos": 2881,
+   "nome": "ARKO III",
+   "salta": "ARKO III",
+   "ligacao": "nome igual"
+  },
+  "OGRION DES CHAMPS": {
+   "pos": 61,
+   "pontos": 2857,
+   "nome": "OGRION DES CHAMPS"
+  },
+  "BERLIN": {
+   "pos": 62,
+   "pontos": 2788,
+   "nome": "BERLIN",
+   "salta": "BERLIN",
+   "ligacao": "nome igual"
+  },
+  "DIABLO BLANCO": {
+   "pos": 63,
+   "pontos": 2785,
+   "nome": "DIABLO BLANCO"
+  },
+  "CONNOR 48": {
+   "pos": 64,
+   "pontos": 2769,
+   "nome": "CONNOR 48"
+  },
+  "COOPER VAN DE HEFFINCK": {
+   "pos": 65,
+   "pontos": 2755,
+   "nome": "COOPER VAN DE HEFFINCK"
+  },
+  "CARAMBOLE": {
+   "pos": 66,
+   "pontos": 2689,
+   "nome": "CARAMBOLE"
+  },
+  "QUASIMODO Z": {
+   "pos": 67,
+   "pontos": 2672,
+   "nome": "QUASIMODO Z",
+   "salta": "QUASIMODO Z",
+   "ligacao": "nome igual"
+  },
+  "BILLY MEXICO": {
+   "pos": 68,
+   "pontos": 2556,
+   "nome": "BILLY MEXICO"
+  },
+  "USTINOV": {
+   "pos": 69,
+   "pontos": 2540,
+   "nome": "USTINOV",
+   "salta": "USTINOV",
+   "ligacao": "nome igual"
+  },
+  "CASSINI II": {
+   "pos": 70,
+   "pontos": 2448,
+   "nome": "CASSINI II",
+   "salta": "CASSINI II",
+   "ligacao": "nome igual"
+  },
+  "AGANIX DU SEIGNEUR": {
+   "pos": 71,
+   "pontos": 2363,
+   "nome": "AGANIX DU SEIGNEUR",
+   "salta": "AGANIX DU SEIGNEUR",
+   "ligacao": "nome igual"
+  },
+  "DENZEL VT MEULENHOF": {
+   "pos": 72,
+   "pontos": 2356,
+   "nome": "DENZEL VT MEULENHOF",
+   "para_conferir": "DENZEL VT MEULENHOF E T R O"
+  },
+  "CASSINI GOLD": {
+   "pos": 73,
+   "pontos": 2260,
+   "nome": "CASSINI GOLD"
+  },
+  "GRAND SLAM": {
+   "pos": 73,
+   "pontos": 2260,
+   "nome": "GRAND SLAM",
+   "para_conferir": "GRAND SLAM VDL"
+  },
+  "AIR JORDAN": {
+   "pos": 75,
+   "pontos": 2252,
+   "nome": "AIR JORDAN"
+  },
+  "BUSTIQUE": {
+   "pos": 76,
+   "pontos": 2243,
+   "nome": "BUSTIQUE"
+  },
+  "FANTOMAS DE MUZE": {
+   "pos": 77,
+   "pontos": 2242,
+   "nome": "FANTOMAS DE MUZE",
+   "salta": "FANTOMAS DE MUZE",
+   "ligacao": "nome igual"
+  },
+  "PRESLEY BOY": {
+   "pos": 78,
+   "pontos": 2239,
+   "nome": "PRESLEY BOY",
+   "salta": "PRESLEY BOY",
+   "ligacao": "nome igual"
+  },
+  "UPSILON": {
+   "pos": 79,
+   "pontos": 2222,
+   "nome": "UPSILON",
+   "para_conferir": "UPSILON VD DE HEFFINCK"
+  },
+  "LARC DE TRIOMPHE": {
+   "pos": 80,
+   "pontos": 2198,
+   "nome": "L’ARC DE TRIOMPHE"
+  },
+  "ZINEDINE": {
+   "pos": 80,
+   "pontos": 2198,
+   "nome": "ZINEDINE"
+  },
+  "DON T TOUCH TIJI HERO": {
+   "pos": 82,
+   "pontos": 2150,
+   "nome": "DON'T TOUCH TIJI HERO"
+  },
+  "JE T AIME FLAMENCO": {
+   "pos": 83,
+   "pontos": 2144,
+   "nome": "JE T'AIME FLAMENCO"
+  },
+  "DARCO": {
+   "pos": 84,
+   "pontos": 2134,
+   "nome": "DARCO",
+   "salta": "DARCO",
+   "ligacao": "nome igual"
+  },
+  "TOBAGO Z": {
+   "pos": 85,
+   "pontos": 2133,
+   "nome": "TOBAGO Z"
+  },
+  "SAN PATRIGNANO CASSINI": {
+   "pos": 86,
+   "pontos": 2119,
+   "nome": "SAN PATRIGNANO CASSINI"
+  },
+  "KAPITOL D ARGONNE": {
+   "pos": 87,
+   "pontos": 2105,
+   "nome": "KAPITOL D'ARGONNE"
+  },
+  "ECHO VAN T SPIEVELD": {
+   "pos": 88,
+   "pontos": 2096,
+   "nome": "ECHO VAN T SPIEVELD",
+   "salta": "ECHO VAN T SPIEVELD",
+   "ligacao": "nome igual"
+  },
+  "CONRAD": {
+   "pos": 89,
+   "pontos": 2057,
+   "nome": "CONRAD"
+  },
+  "QUINTERO": {
+   "pos": 90,
+   "pontos": 2029,
+   "nome": "QUINTERO"
+  },
+  "DOMINATOR 2000 Z": {
+   "pos": 91,
+   "pontos": 1968,
+   "nome": "DOMINATOR 2000 Z",
+   "salta": "DOMINATOR 2000 Z",
+   "ligacao": "nome igual"
+  },
+  "JENSON VAN T MEULENHOF": {
+   "pos": 92,
+   "pontos": 1956,
+   "nome": "JENSON VAN T MEULENHOF"
+  },
+  "FALAISE DE MUZE": {
+   "pos": 93,
+   "pontos": 1943,
+   "nome": "FALAISE DE MUZE"
+  },
+  "SPARTACUS TN": {
+   "pos": 94,
+   "pontos": 1927,
+   "nome": "SPARTACUS TN",
+   "para_conferir": "SPARTACUS"
+  },
+  "VAN GOGH": {
+   "pos": 95,
+   "pontos": 1900,
+   "nome": "VAN GOGH"
+  },
+  "DIEU MERCI VAN T L": {
+   "pos": 96,
+   "pontos": 1826,
+   "nome": "DIEU MERCI VAN T & L"
+  },
+  "FOR FASHION": {
+   "pos": 96,
+   "pontos": 1826,
+   "nome": "FOR FASHION",
+   "salta": "FOR FASHION",
+   "ligacao": "nome igual"
+  },
+  "NON STOP": {
+   "pos": 98,
+   "pontos": 1823,
+   "nome": "NON STOP",
+   "salta": "NON STOP",
+   "ligacao": "nome igual"
+  },
+  "BALTIC VDL": {
+   "pos": 99,
+   "pontos": 1817,
+   "nome": "BALTIC VDL",
+   "salta": "BALTIC VDL",
+   "ligacao": "nome igual"
+  },
+  "DALLAS": {
+   "pos": 100,
+   "pontos": 1811,
+   "nome": "DALLAS",
+   "para_conferir": "DALLAS VDL"
+  }
+ },
+ "_como_ligar": "'salta' é a chave do garanhão no Salta, ligada por nome igual, por nome sem o número de registro ou por grafia conhecida da FPH ('ligacao' diz qual). 'para_conferir' são parecidos que só entram depois de confirmados: para confirmar, copie o valor para 'salta' e escreva 'confirmado à mão' em 'ligacao'."
+}
