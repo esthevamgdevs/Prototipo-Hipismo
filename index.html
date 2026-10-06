@@ -664,6 +664,28 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
 }
 .prova .tag{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--ouro-escuro)}
 .prova .meta{font-size:12.5px;color:var(--muted)}
+
+/* computador: em vez do menu lateral de painel, uma pílula flutuante centralizada no topo, como num app */
+@media (min-width:1100px){
+  body{padding-left:0}
+  .app{max-width:1120px;padding-top:88px;padding-bottom:56px}
+  body nav.abas{top:16px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:auto;height:auto;padding:6px;border:1px solid var(--linha);border-right:1px solid var(--linha);border-radius:999px;background:var(--surface);background:color-mix(in srgb,var(--surface) 90%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 10px 30px rgba(18,61,48,.14);display:flex;flex-direction:row;align-items:center;gap:4px;z-index:40}
+  body nav.abas::before{content:'Salta';order:-2;display:block;font-family:var(--serif);font-size:22px;line-height:1;color:var(--ink);padding:0 14px 0 16px}
+  body nav.abas::after{content:none;display:none}
+  body nav.abas .inner{max-width:none;margin:0;padding:0;flex-direction:row;gap:2px}
+  body nav.abas button,body nav.abas.cinco button{flex:none;min-height:44px;flex-direction:row;justify-content:center;gap:8px;padding:0 16px 0 12px;border-radius:999px;font-size:14px;letter-spacing:0;color:var(--muted)}
+  body nav.abas button b{display:none}
+  body nav.abas .aba-ic{width:auto;height:auto;background:none!important;display:flex}
+  body nav.abas button:hover{background:rgba(127,127,127,.08)}
+  body nav.abas button[aria-current="page"]{background:rgba(217,180,90,.24);color:var(--ink);font-weight:700}
+  body[data-arena] nav.abas{background:rgba(22,33,28,.92);border-color:#25332C;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  body[data-arena] nav.abas::before{color:#E9EDE9}
+  body[data-arena] nav.abas button[aria-current="page"]{color:#D9B45A}
+  /* o cabeçalho da aba Hoje e o das outras abas ficam abaixo da pílula, sem disputar espaço */
+  .hoje-cab{padding-top:12px}
+  .pf-capa{margin-top:-88px;height:288px}
+  .pf-capa .pf-topo{padding-top:94px}
+}
 </style>
 </head>
 <body>
@@ -710,7 +732,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '06/10/2026 · novo design em todas as telas';
+const VERSAO_APP = '06/10/2026 · navegação em pílula no computador';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
