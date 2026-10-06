@@ -412,7 +412,7 @@ nav.abas.cinco button{font-size:10.5px;letter-spacing:-.01em}
   nav.abas button b{display:none}
   nav.abas .aba-ic{width:48px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
   nav.abas button[aria-current="page"] .aba-ic{background:rgba(217,180,90,.28)}
-  .folha,.toast{bottom:96px}
+  .toast{bottom:100px}
 }
 @media (prefers-reduced-motion:reduce){nav.abas .aba-ic{transition:none}}
 
@@ -558,6 +558,112 @@ body[data-arena] .chips.clara .chip[aria-pressed="true"]{background:#D9B45A;bord
 .pf-par b{font-size:15px}.pf-par small{font-size:12.5px;color:var(--muted)}
 @media (min-width:760px){.pf-id{padding:0 28px}.pf-abas{margin:20px 28px 0}.tl{padding:14px 28px 0}.tl::before{left:34px}.pf-pares{padding:14px 28px 0}}
 @media (min-width:1100px){.pf-capa{height:200px;margin-top:0}.pf-id{padding:0 36px;max-width:880px}.pf-abas{margin:20px 36px 0;max-width:808px}.tl{padding:14px 36px 0;max-width:880px}.tl::before{left:42px}.pf-pares{padding:14px 36px 0;max-width:880px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* ===================== novo design em todas as telas ===================== */
+:root{--raio-g:22px;--raio-m:18px;--sombra:0 4px 16px rgba(18,61,48,.07)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sombra:0 4px 16px rgba(0,0,0,.25)}}
+:root[data-theme="dark"]{--sombra:0 4px 16px rgba(0,0,0,.25)}
+
+/* cabeçalhos verdes (torneio, prova, sobre): cantos arredondados e o arco do salto ao fundo */
+.capa{border-bottom:0;border-radius:0 0 30px 30px;padding:18px 20px 26px;background-color:var(--verde);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 340 230' fill='none'%3E%3Cpath d='M10 225C50 80 130 30 190 30s120 50 150 195' stroke='%23D9B45A' stroke-width='3' stroke-linecap='round' stroke-dasharray='0.1 13' opacity='.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right -70px top -36px;background-size:360px 240px;overflow:hidden;box-shadow:0 8px 24px rgba(18,61,48,.12)}
+.capa .voltar{align-self:flex-start;min-height:38px;padding:0 14px 0 8px;border-radius:999px;background:rgba(255,255,255,.12)}
+.numeros{border-top:0;gap:8px;padding-top:2px}
+.numeros div{background:rgba(255,255,255,.08);border-radius:16px;padding:10px 14px;min-width:84px}
+.capa .acoes .btn{min-height:48px}
+.btn-fino{background:rgba(255,255,255,.06)}
+
+/* cabeçalhos das abas (Resultados, Seguindo, Ranking, Opportunity): claros, como a aba Hoje */
+.capa:has(> .topo-linha){background:transparent;background-image:none;color:var(--ink);border-radius:0;box-shadow:none;padding:18px 20px 8px}
+.capa:has(> .topo-linha) .marca{color:var(--ink)}
+.capa:has(> .topo-linha) h1{font-size:40px}
+.capa:has(> .topo-linha) .sub{color:var(--muted)}
+.capa:has(> .topo-linha) .olho{color:var(--ouro-escuro)}
+.capa:has(> .topo-linha) .btn-fino{color:var(--ink);border-color:var(--linha);background:var(--surface)}
+.capa:has(> .topo-linha) .chip{border-color:var(--linha);color:var(--ink);background:var(--surface)}
+.capa:has(> .topo-linha) .chip[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#F4F1EA}
+:root[data-theme="dark"] .capa:has(> .topo-linha) .chip[aria-pressed="true"]{background:#D9B45A;border-color:#D9B45A;color:#1C231F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .capa:has(> .topo-linha) .chip[aria-pressed="true"]{background:#D9B45A;border-color:#D9B45A;color:#1C231F}}
+
+/* títulos de seção sem a linha, mais leves */
+.secao{padding:22px 20px 10px}
+.secao h2{font-size:23px}
+.secao .risco{background:transparent}
+
+/* botões e campos arredondados */
+.btn{border-radius:999px;min-height:48px;padding:0 18px}
+.chip{min-height:38px}
+select{border-radius:14px;min-height:46px;padding:0 14px}
+.busca{border-radius:16px;min-height:48px;padding:0 16px}
+
+/* cartões de torneio: cartão arredondado com a data num bloco interno */
+.lista{gap:12px;padding:0 16px}
+.cartao{border-radius:var(--raio-g);padding:8px;box-shadow:var(--sombra)}
+.cartao .data{width:74px;border-radius:16px}
+.cartao .corpo{padding:6px 6px 6px 14px}
+.cartao .nome{font-size:18.5px}
+.estrela{border-radius:50%}
+
+/* dias do torneio: blocos arredondados */
+.dias{background:transparent;border-bottom:0;gap:8px;padding:16px 20px 4px}
+.dia{min-height:64px;min-width:56px;padding:6px 10px;border-radius:18px;background:var(--surface);border:1px solid var(--linha);color:var(--muted)}
+.dia[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#C9D6CF;box-shadow:none}
+.dia[aria-pressed="true"] b{color:#D9B45A}
+
+/* boxes das provas */
+.prova{border-radius:20px;padding:12px 14px 12px 12px;box-shadow:var(--sombra)}
+.prova.destaque{border-color:#D9B45A;box-shadow:0 0 0 1px #D9B45A,var(--sombra)}
+.prova .alt{width:66px;height:66px;border-radius:18px;background:var(--bg);align-items:center;justify-content:center;text-align:center}
+.prova .alt b{font-size:22px}
+.prova .alt span{font-size:9.5px}
+.prova .venc{font-size:15px}
+.prova[disabled]{box-shadow:none;opacity:.8}
+
+/* resultado, ranking e listas em cartão */
+.podio,.tabela{margin:12px 16px 0;padding:4px 16px;background:var(--surface);border:1px solid var(--linha);border-radius:var(--raio-g);box-shadow:var(--sombra)}
+.linha-podio:last-child{border-bottom:0}
+.tabela .linha:first-of-type{border-top:0}
+.tabela .cab{border-bottom:1px solid var(--linha)}
+.tabela .cab+.linha{border-top:0}
+.linha-tempo.tabela{padding-left:16px}
+
+/* painéis, avisos e caixas */
+.painel,.aviso,.opcoes,.destaque-aviso,.resumo-torneio,.regua,.fam{border-radius:var(--raio-g)}
+.painel,.opcoes,.destaque-aviso,.resumo-torneio{box-shadow:var(--sombra)}
+.destaque-aviso{border:1px solid #D9B45A}
+.destaque-aviso .btn{align-self:flex-start}
+.stats div{border-radius:var(--raio-m);box-shadow:var(--sombra)}
+.mini{border-radius:var(--raio-m);box-shadow:var(--sombra)}
+.novidade{border-radius:var(--raio-g);box-shadow:var(--sombra)}
+.cartao-opp{border-radius:var(--raio-g);box-shadow:var(--sombra)}
+.tr-player{border-radius:var(--raio-g)}
+.tr-capa{border-radius:var(--raio-g)}
+.selo-dest,.selo-tr{border-radius:999px}
+.venda-opp{border-radius:999px;padding:6px 12px}
+.barra .trilho{border-radius:999px}
+.seguido .bolha{background:linear-gradient(140deg,#2E6B55,#123D30);border:0;box-shadow:0 0 0 3px var(--bg),0 0 0 5px #D9B45A}
+.folha .caixa{border-radius:26px}
+.vazio{margin:12px 16px 0;background:var(--surface);border:1px dashed var(--linha);border-radius:var(--raio-g)}
+
+/* telas maiores */
+@media (min-width:760px){
+  .capa{padding:24px 28px 30px}
+  .capa:has(> .topo-linha){padding:24px 28px 8px}
+  .podio,.tabela{margin:12px 28px 0}
+  .lista{padding:0 28px}
+  .vazio{margin:12px 28px 0}
+  .dias{padding:16px 28px 4px}
+}
+@media (min-width:1100px){
+  .capa{padding:30px 36px 34px;border-radius:0 0 34px 34px}
+  .capa:has(> .topo-linha){padding:30px 36px 8px}
+  .podio,.tabela{margin:12px 36px 0;max-width:808px;padding:4px 20px}
+  .lista{padding:0 36px}
+  .vazio{margin:12px 36px 0;max-width:808px}
+  .dias{padding:16px 36px 4px}
+}
+.prova .tag{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--ouro-escuro)}
+.prova .meta{font-size:12.5px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -604,7 +710,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '06/10/2026 · novo visual do app e do perfil';
+const VERSAO_APP = '06/10/2026 · novo design em todas as telas';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
