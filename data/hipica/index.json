@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-05T16:09:50.375Z",
+ "atualizadoEm": "2026-10-06T01:50:07.912Z",
  "torneios": [
   {
    "id": 3404,
@@ -10887,7 +10887,7 @@
       "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
       "h": "CORNET STAR JMEN II"
      },
-     "oe": 50,
+     "oe": 53,
      "n": 45
     },
     {
@@ -10906,7 +10906,7 @@
       "c": "HELENA CHRISTINA SCHMIDT",
       "h": "HST CHAILA (IA)"
      },
-     "oe": 37,
+     "oe": 39,
      "n": 37
     },
     {
@@ -10925,7 +10925,7 @@
       "c": "JOAO MARCELO MONTE SANTOS",
       "h": "LAUDA"
      },
-     "oe": 17,
+     "oe": 19,
      "n": 18
     },
     {
@@ -10944,7 +10944,7 @@
       "c": "PEDRO EDUARDO TEIXEIRA DE LUCENA LIRA",
       "h": "TXT 2N PROMESSE"
      },
-     "oe": 71,
+     "oe": 73,
      "n": 71
     },
     {
@@ -10963,7 +10963,7 @@
       "c": "GUILHERME FERNANDES",
       "h": "LUDAM DO LIBERTE (IA)"
      },
-     "oe": 36,
+     "oe": 37,
      "n": 33
     },
     {
@@ -10982,7 +10982,7 @@
       "c": "JOAO MARCELO MONTE SANTOS",
       "h": "LAUDA"
      },
-     "oe": 20,
+     "oe": 21,
      "n": 18
     },
     {
@@ -11020,7 +11020,7 @@
       "c": "BEATRIZ BONON ANTUNES",
       "h": "MAHARAJA DEL JUNCAL"
      },
-     "oe": 40,
+     "oe": 42,
      "n": 39
     },
     {
@@ -11039,7 +11039,7 @@
       "c": "Julia Forrest S. D. C. R.",
       "h": "CLINTACORD MC BRASIL (IA)"
      },
-     "oe": 7,
+     "oe": 8,
      "n": 7
     },
     {
@@ -11058,7 +11058,7 @@
       "c": "MARIANA VICENTE MOREIRA FERREIRA",
       "h": "LADY FLORES"
      },
-     "oe": 37,
+     "oe": 43,
      "n": 37
     },
     {
@@ -11077,7 +11077,7 @@
       "c": "Afonso Bento D. F.",
       "h": "HSF AGILE"
      },
-     "oe": 41,
+     "oe": 42,
      "n": 39
     },
     {
@@ -11096,7 +11096,7 @@
       "c": "LORENZO STRELOW PERNICONE",
       "h": "LISA LOMA COOPER (IA)"
      },
-     "oe": 42,
+     "oe": 43,
      "n": 39
     },
     {
@@ -11172,7 +11172,7 @@
       "c": "TIAGO MESQUITA",
       "h": "QH CHICO DO SANTO ANTONIO"
      },
-     "oe": 65,
+     "oe": 66,
      "n": 58
     },
     {
@@ -11486,7 +11486,7 @@
    "nome": "CSN5* AGROMEN 2026",
    "modalidade": "SALTO",
    "local": "HARAS AGROMEN.",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-14",
    "fim": "2026-10-18",
    "provas": [
@@ -12050,7 +12050,7 @@
    "nome": "TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS AGROMEN.",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-16",
    "fim": "2026-10-18",
    "provas": [
