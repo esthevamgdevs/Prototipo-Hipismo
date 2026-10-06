@@ -517,6 +517,47 @@ body[data-arena] .chips.clara .chip[aria-pressed="true"]{background:#D9B45A;bord
 @media (min-width:760px){.aneis{margin:16px 28px 0}.momentos,.stories{padding-left:28px;padding-right:28px}.ao-vivo{margin:16px 28px 0}.hoje-cab{padding:22px 28px 4px}}
 @media (min-width:1100px){.aneis{margin:16px 36px 0;max-width:808px}.momentos{padding:0 36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px}.stories{padding:14px 36px 4px}.ao-vivo{margin:16px 36px 0;max-width:808px}.hoje-cab{padding:28px 36px 4px}}
 
+
+/* perfil no padrão novo: capa com o arco, avatar sobreposto, abas e linha do tempo */
+.pf-capa{position:relative;height:calc(168px + env(safe-area-inset-top,0px));margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);overflow:hidden}
+.pf-terra{background:linear-gradient(160deg,#C97B3C 0%,#8A4A1C 55%,#5A2E10 100%)}
+.pf-verde{background:linear-gradient(160deg,#2E6B55 0%,#123D30 55%,#0B2A21 100%)}
+.pf-ouro{background:linear-gradient(160deg,#C9A34A 0%,#8A6A1F 55%,#4E3B10 100%)}
+.pf-arco{position:absolute;inset:0;width:100%;height:100%}
+.pf-topo{position:relative;padding:14px 16px}
+.pf-voltar{width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.22);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.pf-main{padding-top:0}
+.pf-id{position:relative;margin-top:-50px;padding:0 20px;display:flex;flex-direction:column}
+.pf-linha{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.pf-linha .avatar{box-shadow:0 0 0 5px var(--bg)}
+.pf-acao{height:42px;padding:0 18px;border-radius:21px;border:0;background:var(--verde);color:#F4F1EA;font:inherit;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:7px;margin-bottom:4px;cursor:pointer}
+.pf-acao svg{stroke:#D9B45A}
+.pf-acao.on{background:var(--surface);color:var(--ink);border:1px solid var(--linha)}
+.pf-acao.on svg{fill:#D9B45A}
+.pf-olho{margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--ouro-escuro)}
+.pf-nome{font-family:var(--serif);font-weight:400;font-size:clamp(30px,8vw,40px);line-height:1.05;margin:2px 0 4px}
+.pf-sub{font-size:13.5px;color:var(--muted);line-height:1.5}
+.pf-sub .link-ficha{color:var(--ink)}
+.pf-venda{margin-top:10px;align-self:flex-start}
+.pf-abas{display:flex;gap:24px;margin:20px 20px 0;border-bottom:1px solid var(--linha)}
+.pf-abas button{background:none;border:0;padding:0 0 10px;font:inherit;font-size:14.5px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-1px;cursor:pointer}
+.pf-abas button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tl{position:relative;padding:14px 18px 0}
+.tl::before{content:'';position:absolute;left:24px;top:14px;bottom:10px;width:2px;background:var(--linha)}
+.tl-card{position:relative;display:flex;align-items:center;gap:12px;width:calc(100% - 24px);margin:0 0 10px 24px;padding:13px 14px;border:1px solid var(--linha);border-radius:20px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer;box-shadow:0 3px 12px rgba(18,61,48,.05)}
+.tl-card.top{border-color:rgba(217,180,90,.55)}
+.tl-ponto{position:absolute;left:-23px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--muted-2);box-shadow:0 0 0 3px var(--bg)}
+.tl-card.top .tl-ponto{background:#D9B45A}
+.tl-corpo{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.tl-corpo small{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tl-corpo b{font-size:15px}
+.tl-corpo>span{font-size:12.5px;color:var(--muted)}
+.pf-pares{display:flex;flex-direction:column;gap:8px;padding:14px 16px 0}
+.pf-par{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border:1px solid var(--linha);border-radius:18px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.pf-par>span{display:flex;flex-direction:column;gap:1px;min-width:0}
+.pf-par b{font-size:15px}.pf-par small{font-size:12.5px;color:var(--muted)}
+@media (min-width:760px){.pf-id{padding:0 28px}.pf-abas{margin:20px 28px 0}.tl{padding:14px 28px 0}.tl::before{left:34px}.pf-pares{padding:14px 28px 0}}
+@media (min-width:1100px){.pf-capa{height:200px;margin-top:0}.pf-id{padding:0 36px;max-width:880px}.pf-abas{margin:20px 36px 0;max-width:808px}.tl{padding:14px 36px 0;max-width:880px}.tl::before{left:42px}.pf-pares{padding:14px 36px 0;max-width:880px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -563,7 +604,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '06/10/2026 · novo visual do app';
+const VERSAO_APP = '06/10/2026 · novo visual do app e do perfil';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -1458,10 +1499,10 @@ function rankingCriacao(tipo) {
 // página de um garanhão ou de um haras, com os cavalos em pista
 function telaCriacao(tipo) {
   const k = { garanhao: S.garanhaoK, matriz: S.matrizK, haras: S.harasK }[tipo];
-  const cab = nome => `<header class="capa">${voltar('voltarCriacao', 'Voltar')}<span class="olho">${{ garanhao: 'GARANHÃO', matriz: 'MATRIZ', haras: 'CRIADOR' }[tipo]}</span><h1>${esc(titulo(nome))}</h1>`;
-  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</header><main><div class="vazio">Carregando…</div></main>'; }
+  const cab = nome => capaPerfil(nome, { garanhao: 'GARANHÃO', matriz: 'MATRIZ', haras: 'CRIADOR' }[tipo], tipo === 'haras' ? 'verde' : 'ouro', 'voltarCriacao');
+  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</div><div class="vazio">Carregando…</div></main>'; }
   const g = listaCriacao(tipo).find(x => x.k === k);
-  if (!g) return cab(k) + '</header><main><div class="vazio">Sem cavalos em pista nesta temporada.</div></main>';
+  if (!g) return cab(k) + '</div><div class="vazio">Sem cavalos em pista nesta temporada.</div></main>';
   const base = S.criacao.cavalos;
   const cavs = g.cavalos.map(ck => ({ k: ck, d: base[ck] })).filter(x => x.d).sort((a, b) => b.d[2] - a.d[2] || b.d[3] - a.d[3] || b.d[1] - a.d[1]);
   const extra = tipo === 'haras' && S.haras && typeof S.haras === 'object' ? S.haras[k] : null;
@@ -1469,10 +1510,10 @@ function telaCriacao(tipo) {
   const filhosTxt = tipo === 'haras' ? (cavs.length > 1 ? 'cavalos' : 'cavalo') : (cavs.length > 1 ? 'filhos' : 'filho');
   const w = tipo === 'garanhao' ? wbfshDe(k) : null;
   const posSalta = posicaoEm(listaCriacao(tipo), k);
-  let html = cab(g.nome) + `<span class="sub">${cavs.length} ${filhosTxt} em pista na temporada</span>
-    ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
-    ${extra && extra.site ? `<a class="btn-fino" href="${esc(extra.site)}" target="_blank" rel="noopener" style="align-self:flex-start">Site do haras ↗</a>` : ''}
-    </header><main class="fade">
+  let html = cab(g.nome) + `<span class="pf-sub">${cavs.length} ${filhosTxt} em pista na temporada</span>
+    ${venda ? `<span class="venda-opp pf-venda">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
+    ${extra && extra.site ? `<a class="link-ficha pf-sub" href="${esc(extra.site)}" target="_blank" rel="noopener">Site do haras ↗</a>` : ''}
+    </div>
     ${extra && extra.texto ? `<p class="prosa-haras">${esc(extra.texto)}</p>` : ''}
     ${tipo === 'garanhao' ? `<div class="reguas">
       <div class="regua"><span class="olho-r">NO MUNDO</span>${w ? `<b>${w.pos}º</b><span>ranking WBFSH ${S.wbfsh.ano} · ${w.pontos.toLocaleString('pt-BR')} pontos</span><a href="${esc(S.wbfsh.fonte)}" target="_blank" rel="noopener">Fonte: WBFSH, resultados internacionais FEI ↗</a>` : `<b>–</b><span>fora do top 100 da WBFSH ${S.wbfsh && S.wbfsh.ano ? S.wbfsh.ano : ''}</span>`}</div>
@@ -1680,56 +1721,105 @@ function oppPorProva(o, q) {
   return html || `<div class="vazio">Nenhuma largada encontrada${q ? ' para esse nome' : ''}.</div>`;
 }
 
+// ---------- capa no padrão novo: faixa colorida com o arco do salto, avatar sobreposto e ação à direita ----------
+// devolve a capa e abre o bloco de identidade (.pf-id); quem chama completa, fecha o </div> e o </main>
+function capaPerfil(nome, rotulo, cor, acaoVoltar, acao = '') {
+  return `<header class="pf-capa pf-${cor}">
+      <svg class="pf-arco" viewBox="0 0 390 200" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-20 196C40 70 140 34 210 34s150 46 200 162" stroke="#D9B45A" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 13" opacity=".75"/></svg>
+      <div class="pf-topo"><button class="pf-voltar" data-acao="${acaoVoltar}" aria-label="Voltar">${svg('<path d="m15 5-7 7 7 7"/>', 22)}</button></div>
+    </header><main class="fade pf-main"><div class="pf-id">
+      <div class="pf-linha">${avatar(nome, 96)}${acao}</div>
+      <span class="pf-olho">${rotulo}</span>
+      <h1 class="pf-nome">${esc(titulo(nome))}</h1>`;
+}
+// um momento da temporada, em forma de cartão na linha do tempo
+function cartaoMomento(h) {
+  const x = dt(h.d), fases = h.r || [];
+  const faltas = fases.reduce((s, f) => s + (f[0] || 0), 0);
+  const tempo = fases.length ? fases[fases.length - 1][1] : null;
+  const alt = fmtAlt(h.a), zerouPrimeira = fases.length && (fases[0][0] || 0) === 0;
+  let tit;
+  if (h.s) tit = `${titulo(h.s)} na ${alt}`;
+  else if (h.p <= 3) tit = `${h.p}º lugar na ${alt}`;
+  else if (zerouPrimeira) tit = fases.length > 1 ? `Zerou a 1ª fase da ${alt}` : `Zerou a ${alt}`;
+  else tit = `${h.p}º lugar na ${alt}`;
+  const det = [
+    !h.s && fases.length ? `${fases.length > 1 ? fases.map(f => f[0] || 0).join(' + ') + ' faltas' : `${faltas} falta${faltas === 1 ? '' : 's'}`}${tempo ? ' · ' + String(tempo).replace('.', ',') + 's' : ''}` : '',
+    !h.s && h.p > 3 ? `${h.p}º de ${h.n}` : `${h.n} conjuntos`,
+    (h.h || h.c) ? 'com ' + titulo(h.h || h.c) : '',
+  ].filter(Boolean).join(' · ');
+  const top = !h.s && h.p <= 3;
+  return `<button class="tl-card${top ? ' top' : ''}" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
+      <span class="tl-ponto" aria-hidden="true"></span>
+      <span class="tl-corpo"><small>${x.getDate()} ${MES[x.getMonth()].toUpperCase()} · ${esc(titulo(h.t))}</small><b>${esc(tit)}</b><span>${esc(det)}</span></span>
+      ${top ? roseta(h.p, 30) : ''}</button>`;
+}
+
 function telaPerfil() {
   const tipo = S.perfilTipo, k = S.perfilK;
   const p = perfilDe(tipo, k);
   const pessoa = tipo === 'cavaleiros';
-  const cab = nome => `<header class="capa capa-perfil">
-      ${voltar('voltarPerfil', 'Voltar')}
-      <div class="perfil-topo">${avatar(nome, 76)}<span><span class="olho">${pessoa ? 'CAVALEIRO' : 'CAVALO'}</span>
-      <h1>${esc(titulo(nome))}</h1></span></div>`;
-  if (!p || p === 'carregando') { carregarPerfil(tipo, k); return cab(titulo(k)) + '</header><main><div class="vazio">Carregando perfil…</div></main>'; }
-  if (p === 'erro' || p === 'ausente') return cab(titulo(k)) + `</header><main><div class="vazio"><b>Sem dados por enquanto</b>Este perfil aparece assim que houver resultados coletados de 2026.</div></main>`;
+  const cor = pessoa ? 'verde' : 'terra';
+  const rot = pessoa ? 'CAVALEIRO' : 'CAVALO';
+  if (!p || p === 'carregando') { carregarPerfil(tipo, k); return capaPerfil(titulo(k), rot, cor, 'voltarPerfil') + '</div><div class="vazio">Carregando perfil…</div></main>'; }
+  if (p === 'erro' || p === 'ausente') return capaPerfil(titulo(k), rot, cor, 'voltarPerfil') + `</div><div class="vazio"><b>Sem dados por enquanto</b>Este perfil aparece assim que houver resultados coletados de 2026.</div></main>`;
   const seguido = estaSeguindo(tipo, k);
   const pct = p.l ? Math.round(p.z / p.l * 100) : 0;
   const alturas = Object.entries(p.alt || {}).sort((a, b) => b[0].localeCompare(a[0]));
   const maxL = Math.max(1, ...alturas.map(([, v]) => v[0]));
   const venda = !pessoa && vendidoDe(p.nome);
-  let corpo = cab(p.nome) + `<span class="sub">${p.fed ? esc(p.fed) + ' · ' : ''}${p.par?.length ? (pessoa ? 'Monta ' : 'Montado por ') + esc(titulo(p.par[0].n)) : ''}</span>
-    ${venda ? `<span class="venda-opp">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : ''}
-    ${!pessoa && p.ficha ? `<span class="sub ficha">${[
-      p.ficha.pai || p.ficha.mae ? `${p.ficha.pai ? `Filho de <button class="link-ficha" data-garanhao="${esc(chave(p.ficha.pai))}">${esc(titulo(p.ficha.pai))}</button>` : ''}${p.ficha.pai && p.ficha.mae ? ' e ' : ''}${p.ficha.mae ? (p.ficha.pai ? '' : 'Mãe: ') + esc(titulo(p.ficha.mae)) : ''}` : '',
-      p.ficha.nasc ? 'nascido em ' + p.ficha.nasc.slice(0, 4) : '',
-      p.ficha.raca ? esc(p.ficha.raca) : '',
-      p.ficha.criador ? `criado por <button class="link-ficha" data-haras="${esc(chave(p.ficha.criador))}">${esc(titulo(p.ficha.criador))}</button>` : ''].filter(Boolean).join(' · ')}</span>` : ''}
-    <div class="acoes"><button class="btn ouro" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">★ ${seguido ? 'Seguindo' : (pessoa ? 'Seguir cavaleiro' : 'Seguir cavalo')}</button></div>
-    </header><main class="fade">
+  const f = (!pessoa && p.ficha) || {};
+  const acao = `<button class="pf-acao${seguido ? ' on' : ''}" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">${svg('<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" stroke-linejoin="round"/>', 16)} ${seguido ? 'Seguindo' : 'Seguir'}</button>`;
+  // linha de identidade: filiação, raça, ano e criador; ou federação e parceiro
+  const sub = pessoa
+    ? [p.fed ? esc(p.fed) : '', p.par?.length ? 'Monta ' + esc(titulo(p.par[0].n)) : ''].filter(Boolean).join(' · ')
+    : [f.pai || f.mae ? `${f.pai ? `<button class="link-ficha" data-garanhao="${esc(chave(f.pai))}">${esc(titulo(f.pai))}</button>` : '?'} × ${f.mae ? `<button class="link-ficha" data-matriz="${esc(chave(f.mae))}">${esc(titulo(f.mae))}</button>` : '?'}` : '',
+       f.raca ? esc(f.raca) : '', f.nasc ? f.nasc.slice(0, 4) : ''].filter(Boolean).join(' · ');
+  const sub2 = pessoa ? '' : [p.par?.length ? 'Montado por ' + esc(titulo(p.par[0].n)) : '', f.criador ? `criado por <button class="link-ficha" data-haras="${esc(chave(f.criador))}">${esc(titulo(f.criador))}</button>` : ''].filter(Boolean).join(' · ');
+  let corpo = capaPerfil(p.nome, rot, cor, 'voltarPerfil', acao)
+    + (sub ? `<span class="pf-sub">${sub}</span>` : '') + (sub2 ? `<span class="pf-sub">${sub2}</span>` : '')
+    + (venda ? `<span class="venda-opp pf-venda">${marcaSvg(18)}<span>Vendido pela Opportunity · ${esc(titulo(venda.leilao))}${venda.ano ? ', ' + venda.ano : ''}</span></span>` : '')
+    + `</div>
     <div class="aneis">
       ${anelDesempenho(pct + '%', pct / 100, 'sem faltas')}
       ${anelDesempenho(p.v, p.l ? p.v / p.l : 0, `vitória${p.v === 1 ? '' : 's'} em ${p.l}`)}
       ${anelDesempenho(p.po, p.l ? p.po / p.l : 0, `pódio${p.po === 1 ? '' : 's'}`)}
       ${anelDesempenho(alturas.length ? fmtAlt(+alturas[0][0]).replace('m', '') : '–', alturas.length ? Math.min(1, +alturas[0][0] / 1.6) : 0, 'maior altura', true)}
     </div>`;
-  if (p.par?.length) {
-    corpo += `<div class="secao"><h2>${pessoa ? 'Cavalos na temporada' : 'Cavaleiros'}</h2><span class="risco"></span></div>
-      <div class="carrossel">${p.par.map(x => `<button class="mini" data-perfil="${pessoa ? 'cavalos' : 'cavaleiros'}" data-k="${esc(chave(x.n))}"><b>${esc(titulo(x.n))}</b><span>${x.q} largada${x.q > 1 ? 's' : ''}</span></button>`).join('')}</div>`;
+  // abas: momentos, resultados e família (ou cavalos, para cavaleiros)
+  const abas = [['momentos', 'Momentos'], ['resultados', 'Resultados'], ['familia', pessoa ? 'Cavalos' : 'Família']];
+  const aba = abas.some(([a]) => a === S.abaPerfil) ? S.abaPerfil : 'momentos';
+  corpo += `<div class="pf-abas" role="tablist">${abas.map(([a, t]) => `<button role="tab" data-aba-perfil="${a}" aria-selected="${aba === a}">${t}</button>`).join('')}</div>`;
+  const hist = p.hist || [];
+  if (aba === 'momentos') {
+    corpo += hist.length ? `<div class="tl">${hist.slice(0, 30).map(cartaoMomento).join('')}</div>${hist.length > 30 ? `<p class="fonte">Mostrando os 30 momentos mais recentes. A lista completa está em Resultados.</p>` : ''}`
+      : '<div class="vazio">Nenhuma largada registrada na temporada.</div>';
+  } else if (aba === 'resultados') {
+    if (alturas.length) {
+      corpo += `<div class="painel"><h3>Desempenho por altura</h3>
+        ${alturas.map(([a, [l, v]]) => `<div class="barra">
+          <span class="rot">${a.replace('.', ',')}</span>
+          <span class="trilho"><i class="v" style="width:${v / maxL * 100}%"></i><i class="o" style="width:${(l - v) / maxL * 100}%"></i></span>
+          <span class="num">${l} · ${v}</span></div>`).join('')}
+        <div class="legenda"><span><i style="background:var(--ouro)"></i>vitórias</span><span><i style="background:var(--verde-3)"></i>outras largadas</span></div></div>`;
+    }
+    corpo += `<div class="secao"><h2>Todas as largadas</h2><span class="risco"></span><span class="aux">${hist.length}</span></div><div class="tabela">${hist.map(h => {
+      const x = dt(h.d);
+      return `<button class="linha" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
+        <span class="pos" style="color:${h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)')}">${h.s ? '–' : h.p + 'º'}</span>
+        <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${h.s ? ' · ' + esc(h.s) : ''}</span>
+        <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(titulo(h.t))} · ${h.n} conjuntos</span></span>${seta}</button>`;
+    }).join('')}</div>`;
+  } else {
+    if (pessoa) {
+      corpo += p.par?.length ? `<div class="pf-pares">${p.par.map(x => `<button class="pf-par" data-perfil="cavalos" data-k="${esc(chave(x.n))}">${avatar(x.n, 52)}<span><b>${esc(titulo(x.n))}</b><small>${x.q} largada${x.q > 1 ? 's' : ''} juntos</small>${filiacaoDe(x.n)}</span></button>`).join('')}</div>`
+        : '<div class="vazio">Nenhum cavalo registrado na temporada.</div>';
+    } else {
+      corpo += (f.pai || f.mae || f.criador) ? blocoFamilia(f) : '<div class="vazio">A FPH ainda não informou a filiação deste cavalo.</div>';
+      if (p.par?.length) corpo += `<div class="secao"><h2>Cavaleiros</h2><span class="risco"></span></div><div class="pf-pares">${p.par.map(x => `<button class="pf-par" data-perfil="cavaleiros" data-k="${esc(chave(x.n))}">${avatar(x.n, 52)}<span><b>${esc(titulo(x.n))}</b><small>${x.q} largada${x.q > 1 ? 's' : ''} juntos</small></span></button>`).join('')}</div>`;
+    }
   }
-  if (alturas.length) {
-    corpo += `<div class="painel"><h3>Desempenho por altura</h3>
-      ${alturas.map(([a, [l, v]]) => `<div class="barra">
-        <span class="rot">${a.replace('.', ',')}</span>
-        <span class="trilho"><i class="v" style="width:${v / maxL * 100}%"></i><i class="o" style="width:${(l - v) / maxL * 100}%"></i></span>
-        <span class="num">${l} · ${v}</span></div>`).join('')}
-      <div class="legenda"><span><i style="background:var(--ouro)"></i>vitórias</span><span><i style="background:var(--verde-3)"></i>outras largadas</span></div></div>`;
-  }
-  if (!pessoa && p.ficha && (p.ficha.pai || p.ficha.mae || p.ficha.criador)) corpo += blocoFamilia(p.ficha);
-  corpo += `<div class="secao"><h2>Momentos da temporada</h2><span class="risco"></span></div><div class="tabela linha-tempo">${(p.hist || []).map(h => {
-    const x = dt(h.d);
-    return `<button class="linha${!h.s && h.p <= 3 ? ' destaque-tl' : ''}" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
-      <span class="pos" style="color:${h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)')}">${h.s ? '–' : h.p + 'º'}</span>
-      <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${h.s ? ' · ' + esc(h.s) : ''}</span>
-      <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(titulo(h.t))} · ${h.n} conjuntos</span></span>${seta}</button>`;
-  }).join('')}</div>${p.prot ? '<p class="fonte">O sobrenome está abreviado porque as provas deste atleta são de categorias infantis.</p>' : ''}</main>`;
+  corpo += `${p.prot ? '<p class="fonte">O sobrenome está abreviado porque as provas deste atleta são de categorias infantis.</p>' : ''}</main>`;
   return corpo;
 }
 
@@ -1936,7 +2026,7 @@ function render() {
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras],[data-matriz],[data-hist-prova]');
+  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras],[data-matriz],[data-hist-prova],[data-aba-perfil]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
@@ -1972,6 +2062,7 @@ document.addEventListener('click', e => {
   if (d.dia) { S.dia = d.dia; return render(); }
   if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
+  if (d.abaPerfil) { S.abaPerfil = d.abaPerfil; return render(); }
   if (d.garanhao || d.haras || d.matriz) {
     guardarCaminho();
     if (S.haras === undefined) carregarArquivo('haras', 'haras.json');
@@ -2005,7 +2096,7 @@ document.addEventListener('click', e => {
   if (d.perfil) {
     // vindo de uma página de criação, de outro perfil ou de uma prova aberta pelo perfil, o Voltar retorna para lá
     if (['garanhao', 'haras', 'matriz', 'perfil', 'metodo'].includes(S.tela) || (S.tela === 'prova' && S.pilha && S.pilha.length)) guardarCaminho();
-    carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k });
+    carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k, abaPerfil: 'momentos' });
   }
   if (d.torneio) return irPara('torneio', { torneio: +d.torneio, dia: null, prova: null });
 });
