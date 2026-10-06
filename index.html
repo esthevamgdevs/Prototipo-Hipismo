@@ -335,6 +335,7 @@ select{font:inherit;font-size:14px;min-height:40px;padding:0 10px;border-radius:
 @media (min-width:760px){.familia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0 28px}.reguas{margin:16px 28px 0}.metodo{margin-left:28px;margin-right:28px;max-width:760px}}
 @media (min-width:1100px){.familia{padding:0 36px;max-width:880px}.reguas{margin:16px 36px 0;max-width:808px}.metodo{margin-left:36px}}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .selo-wbfsh{color:#7FC4A4;border-color:#3E6558}:root:not([data-theme="light"]) .regua a{color:#7FC4A4}}
+
 /* navegação */
 nav.abas{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom,0px);z-index:20}
 nav.abas .inner{max-width:560px;margin:0 auto;display:flex}
@@ -397,6 +398,125 @@ nav.abas.cinco button{font-size:10.5px;letter-spacing:-.01em}
   /* a marca já está no menu lateral */
   .capa .topo-linha .marca{visibility:hidden}
 }
+
+/* ===================== novo visual do app ===================== */
+.avatar{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-family:var(--serif);flex:none;line-height:1;letter-spacing:.01em}
+.redondo{width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--linha);display:inline-flex;align-items:center;justify-content:center;color:var(--ink);padding:0}
+
+/* barra de navegação em pílula flutuante (celular e tablet) */
+@media (max-width:1099px){
+  .app{padding-bottom:124px}
+  nav.abas{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-bottom:0;border:1px solid var(--linha);border-radius:36px;background:var(--surface);background:color-mix(in srgb,var(--surface) 92%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 10px 30px rgba(18,61,48,.16)}
+  nav.abas .inner{max-width:none;padding:0 4px}
+  nav.abas button{min-height:68px;gap:2px}
+  nav.abas button b{display:none}
+  nav.abas .aba-ic{width:48px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  nav.abas button[aria-current="page"] .aba-ic{background:rgba(217,180,90,.28)}
+  .folha,.toast{bottom:96px}
+}
+@media (prefers-reduced-motion:reduce){nav.abas .aba-ic{transition:none}}
+
+/* aba Hoje */
+.hoje-cab{display:flex;justify-content:space-between;align-items:flex-start;padding:18px 20px 4px}
+.hoje-titulo{display:flex;flex-direction:column}
+.hoje-titulo small{font-size:13.5px;font-weight:600;color:var(--muted)}
+.hoje-titulo h1{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.02;margin:0}
+.hoje-botoes{display:flex;gap:10px;margin-top:8px}
+.stories{display:flex;gap:10px;overflow-x:auto;padding:14px 16px 4px;scrollbar-width:none}
+.stories::-webkit-scrollbar{display:none}
+.story{flex:none;width:70px;display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:0;color:var(--ink);font:inherit;font-size:11.5px;font-weight:600;line-height:1.2;text-align:center;cursor:pointer}
+.story>span:last-child{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.story-anel{width:64px;height:64px;border-radius:50%;padding:3px;background:conic-gradient(#D9B45A,#F2D58C,#D9B45A);display:flex;align-items:center;justify-content:center}
+.story-anel .avatar{box-shadow:0 0 0 3px var(--bg)}
+.story-anel.vazio{background:none;border:1.5px dashed var(--muted-2);color:var(--muted)}
+.ao-vivo{margin:16px 16px 0;border-radius:28px;background:var(--verde);color:#F4F1EA;padding:16px 0 14px;overflow:hidden}
+.ao-vivo-topo{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:0 18px;font-size:12px;font-weight:600;color:#C9D6CF}
+.ao-vivo-topo>span:last-child{text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.selo-vivo{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#FF8A7F;flex:none}
+.selo-vivo i{width:8px;height:8px;border-radius:50%;background:#E5584B;box-shadow:0 0 0 4px rgba(229,88,75,.25);display:block}
+.ao-vivo .arco{margin:4px auto 0}
+.ao-vivo-acao{display:flex;align-items:center;gap:10px;width:calc(100% - 28px);margin:0 14px;padding:10px 12px;border:0;border-radius:18px;background:rgba(255,255,255,.09);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.ao-vivo-acao>span:first-child{flex:1;display:flex;flex-direction:column;min-width:0}
+.ao-vivo-acao small{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:#D9B45A}
+.ao-vivo-acao b{font-size:14.5px}
+.btn-vivo{height:38px;padding:0 14px;border-radius:19px;background:#D9B45A;color:#1C231F;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:6px;flex:none}
+.momentos{display:flex;flex-direction:column;gap:10px;padding:0 16px}
+.momento{display:flex;align-items:stretch;width:100%;padding:0;border:1px solid var(--linha);border-radius:22px;overflow:hidden;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer;box-shadow:0 4px 16px rgba(18,61,48,.06)}
+.momento-arte{width:84px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#9A6A3C,#5E3B1C)}
+.momento-texto{flex:1;display:flex;flex-direction:column;gap:2px;padding:12px 14px;min-width:0}
+.momento-texto small{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.momento-texto b{font-size:15px;line-height:1.3}
+.momento-texto>span{font-size:12.5px;color:var(--muted)}
+
+/* arco da trajetória */
+.arco{position:relative;margin:0 auto;max-width:100%}
+.arco svg{display:block;max-width:100%}
+.arco-resto{stroke:rgba(255,255,255,.55)}
+.arco-feito{stroke:#D9B45A}
+.arco-vara{fill:#D9B45A}
+.arco-poste{fill:#F4F1EA;opacity:.75}
+.arco-cavalo{position:absolute}
+.arco-cavalo .avatar{box-shadow:0 0 0 3px #D9B45A,0 6px 16px rgba(0,0,0,.35)}
+.arco-num{position:absolute;left:0;right:0;text-align:center;color:#F4F1EA;display:flex;flex-direction:column;align-items:center}
+.arco-num b{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1}
+.arco-num small{font-size:18px;opacity:.6}
+.arco-num>span{font-size:11.5px;opacity:.8;margin-top:2px}
+.arco-capa{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:6px}
+.arco-prox{font-size:13px;color:#C9D6CF;text-align:center}
+.arco-prox b{color:#F4F1EA}
+
+/* arena: com a prova ao vivo, a tela inteira escurece */
+body[data-arena]{--bg:#0E1512;--surface:#16211C;--ink:#E9EDE9;--muted:#9AA79F;--muted-2:#8B978F;--linha:#25332C;--verde:#0B2A21;--ouro-escuro:#D9B45A;--ok:#5FBE8C;background:#0E1512}
+body[data-arena] .capa{background:radial-gradient(120% 90% at 70% 0%,#1F4D3E 0%,#0B2A21 55%,#0E1512 100%)}
+body[data-arena] .chips.clara .chip[aria-pressed="true"]{background:#D9B45A;border-color:#D9B45A;color:#1C231F}
+@media (max-width:1099px){body[data-arena] nav.abas{background:rgba(22,33,28,.94);border-color:#25332C;box-shadow:0 10px 30px rgba(0,0,0,.4)}body[data-arena] nav.abas button[aria-current="page"]{color:#D9B45A}}
+
+/* campeão em tela cheia */
+#campeao{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;color:#fff;background:linear-gradient(170deg,#1E4E3E 0%,#123D30 45%,#08110E 100%);padding:calc(env(safe-area-inset-top,0px) + 16px) 20px calc(env(safe-area-inset-bottom,0px) + 24px);overflow-y:auto}
+.campeao-arco{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.campeao-topo{position:relative;display:flex;align-items:center;gap:10px}
+.campeao-marca{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex:none}
+.campeao-topo>span:nth-child(2){flex:1;display:flex;flex-direction:column;min-width:0}
+.campeao-topo b{font-size:14px}.campeao-topo small{font-size:12px;opacity:.7}
+.campeao-fechar{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer}
+.campeao-centro{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:20px 0}
+.campeao-olho{font-size:12px;font-weight:700;letter-spacing:.2em;color:#D9B45A;margin-bottom:8px}
+.campeao-centro h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,10vw,52px);line-height:1.02;margin:10px 0 0;max-width:620px;text-wrap:balance}
+.campeao-cavalo{font-size:17px;color:#E3EAE6}
+.campeao-cavalo small{display:block;font-size:13px;opacity:.75;margin-top:4px}
+.campeao-fil{font-size:13px;color:#B9C8C1;font-style:italic}
+.campeao-nums{display:flex;gap:20px;margin-top:14px;padding:12px 20px;border-radius:18px;background:rgba(255,255,255,.1)}
+.campeao-nums span{display:flex;flex-direction:column}
+.campeao-nums b{font-family:var(--serif);font-weight:400;font-size:26px}
+.campeao-nums small{font-size:11px;opacity:.75}
+.campeao-acoes{position:relative;display:flex;gap:10px;max-width:520px;width:100%;margin:0 auto}
+.campeao-acoes .btn{flex:1;min-height:52px;border-radius:26px;justify-content:center}
+.btn.vidro{background:rgba(255,255,255,.12);color:#fff;border:0;font-weight:700}
+.btn.clara-capa{background:rgba(255,255,255,.1);color:#F4F1EA;border:1px solid rgba(255,255,255,.18);font-weight:700}
+
+/* perfil: avatar, anéis e linha do tempo */
+.perfil-topo{display:flex;align-items:center;gap:14px;margin-top:4px}
+.perfil-topo>span{display:flex;flex-direction:column;min-width:0}
+.perfil-topo .avatar{box-shadow:0 0 0 3px rgba(217,180,90,.85)}
+.capa-perfil h1{margin-top:2px}
+.aneis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 20px 0}
+.anel{background:var(--surface);border:1px solid var(--linha);border-radius:18px;padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.anel-g{position:relative;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
+.anel-g svg{position:absolute;inset:0}
+.anel-g b{font-family:var(--serif);font-weight:400;font-size:18px}
+.anel-fundo{stroke:var(--linha)}
+.anel-ouro{stroke:#D9B45A}
+.anel-verde{stroke:var(--verde)}
+:root[data-theme="dark"] .anel-verde{stroke:#5FBE8C}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .anel-verde{stroke:#5FBE8C}}
+.anel-rot{font-size:11px;color:var(--muted);text-align:center;line-height:1.25}
+.linha-tempo .linha{position:relative;padding-left:22px}
+.linha-tempo .linha::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--linha)}
+.linha-tempo .linha::after{content:'';position:absolute;left:2px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--muted-2)}
+.linha-tempo .linha.destaque-tl::after{background:#D9B45A;box-shadow:0 0 0 3px rgba(217,180,90,.25)}
+@media (min-width:760px){.aneis{margin:16px 28px 0}.momentos,.stories{padding-left:28px;padding-right:28px}.ao-vivo{margin:16px 28px 0}.hoje-cab{padding:22px 28px 4px}}
+@media (min-width:1100px){.aneis{margin:16px 36px 0;max-width:808px}.momentos{padding:0 36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px}.stories{padding:14px 36px 4px}.ao-vivo{margin:16px 36px 0;max-width:808px}.hoje-cab{padding:28px 36px 4px}}
+
 </style>
 </head>
 <body>
@@ -443,7 +563,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '05/10/2026 · medição de uso';
+const VERSAO_APP = '06/10/2026 · novo visual do app';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -689,10 +809,10 @@ function marcaSvg(t = 26) {
 const iconeOpp = `<svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M6 88C10 46 26 20 50 20s40 26 44 68" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 14"/><rect x="20" y="50" width="52" height="7" rx="3.5" fill="currentColor" opacity=".55"/><rect x="28" y="64" width="52" height="8" rx="4" fill="currentColor"/><rect x="26" y="54" width="10" height="38" rx="5" fill="currentColor"/><rect x="72" y="54" width="10" height="38" rx="5" fill="currentColor"/></svg>`;
 const temOpp = () => !!(S.vendidos?.size || S.stats?.opp?.totais?.cavalos);
 function abas() {
-  const itens = [['calendario', 'Calendário'], ['resultados', 'Resultados'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
+  const itens = [['calendario', 'Hoje'], ['resultados', 'Resultados'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
   const naAba = !S.tela;
   return `<nav class="abas${itens.length > 4 ? ' cinco' : ''}"><div class="inner">${itens.map(([k, t]) =>
-    `<button data-aba="${k}" aria-current="${naAba && S.aba === k ? 'page' : 'false'}">${k === 'opp' ? iconeOpp : svg(ICONES[k])}${t}<b></b></button>`).join('')}</div></nav>`;
+    `<button data-aba="${k}" aria-current="${naAba && S.aba === k ? 'page' : 'false'}"><span class="aba-ic">${k === 'opp' ? iconeOpp : svg(k === 'calendario' ? '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" stroke-linejoin="round"/>' : ICONES[k])}</span>${t}<b></b></button>`).join('')}</div></nav>`;
 }
 const voltar = (acao, texto) => `<button class="voltar" data-acao="${acao}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>${esc(texto)}</button>`;
 
@@ -835,18 +955,106 @@ function rodape(extra) {
 }
 
 // ---------- telas ----------
+// ---------- linguagem do app: avatares e o arco da trajetória do salto ----------
+const PALETAS = [['#2E6B55', '#123D30'], ['#9A6A3C', '#5E3B1C'], ['#C9A34A', '#8A6A1F'], ['#6B7570', '#3A423E'], ['#C97B3C', '#8A4A1C']];
+function iniciaisAv(nome) {
+  const p = String(nome || '').replace(/\([^)]*\)/g, ' ').split(/\s+/).filter(w => /[A-Za-zÀ-ÿ]/.test(w) && !PEQ.has(w.toLowerCase()));
+  return ((p[0] || '?')[0] + ((p[1] || '')[0] || '')).toUpperCase();
+}
+function avatar(nome, t = 48) {
+  let h = 0; for (const c of chave(nome)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const [a, b] = PALETAS[h % PALETAS.length];
+  return `<span class="avatar" style="width:${t}px;height:${t}px;font-size:${Math.round(t * 0.38)}px;background:linear-gradient(140deg,${a},${b})" aria-hidden="true">${esc(iniciaisAv(nome))}</span>`;
+}
+// progresso da prova desenhado como a trajetória do salto: o feito em dourado, o resto pontilhado, o cavalo da vez no ponto do arco
+function arcoTrajetoria(feito, total, nome, { larg = 320, alt = 100, rotulo = 'conjuntos já saltaram' } = {}) {
+  const cx = larg / 2, base = alt + 8, rx = larg / 2 - 14, ry = alt - 10, n = 60;
+  const pt = t => { const a = Math.PI * (1 - t); return [cx + rx * Math.cos(a), base - ry * Math.sin(a)]; };
+  const fr = total ? Math.min(1, feito / total) : 0, k = Math.round(n * fr);
+  const pts = Array.from({ length: n + 1 }, (_, i) => pt(i / n));
+  const d = arr => 'M' + arr.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L');
+  const [px, py] = pt(fr);
+  return `<div class="arco" style="width:${larg}px;height:${alt + 40}px" role="img" aria-label="${feito} de ${total} ${rotulo}">
+    <svg width="${larg}" height="${alt + 40}" viewBox="0 0 ${larg} ${alt + 40}" fill="none" aria-hidden="true">
+      ${k < n ? `<path d="${d(pts.slice(k))}" class="arco-resto" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.1 8"/>` : ''}
+      ${k > 0 ? `<path d="${d(pts.slice(0, k + 1))}" class="arco-feito" stroke-width="4" stroke-linecap="round"/>` : ''}
+      <rect x="${cx - 34}" y="${base - 2}" width="68" height="5" rx="2.5" class="arco-vara"/>
+      <rect x="${cx - 38}" y="${base - 12}" width="6" height="30" rx="3" class="arco-poste"/><rect x="${cx + 32}" y="${base - 12}" width="6" height="30" rx="3" class="arco-poste"/>
+    </svg>
+    ${nome ? `<span class="arco-cavalo" style="left:${(px - 19).toFixed(0)}px;top:${(py - 19).toFixed(0)}px">${avatar(nome, 38)}</span>` : ''}
+    <span class="arco-num" style="top:${Math.round(alt * 0.4)}px"><b>${feito}<small> / ${total}</small></b><span>${rotulo}</span></span>
+  </div>`;
+}
+const minutosDe = hora => { const m = String(hora || '').match(/(\d{1,2})[:h](\d{2})/); return m ? +m[1] * 60 + +m[2] : null; };
+const minutosAgora = () => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); };
+// começou e ainda está dentro de uma janela de quatro horas; sem horário, conta como em andamento no dia
+const comecouHaPouco = (p, agora = minutosAgora()) => { const ini = minutosDe(p.hora); return ini == null || (agora >= ini && agora - ini <= 240); };
+// a prova que está acontecendo agora: de hoje, já começada, com parte dos conjuntos ainda por saltar
+function provaAoVivo() {
+  const hoje = hojeISO(), agora = minutosAgora();
+  const cands = [];
+  for (const t of S.dados.torneios.filter(emAndamento))
+    for (const p of t.provas || [])
+      if (p.dia === hoje && p.oe && (p.n || 0) > 0 && p.oe - (p.n || 0) >= 2 && comecouHaPouco(p, agora)) cands.push({ t, p });
+  cands.sort((a, b) => (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0));
+  return cands[0] || null;
+}
+function proximoNaOrdem(tId, p) {
+  const dados = S.torneios[tId];
+  if (!dados) { carregarTorneio(tId); return null; }
+  if (typeof dados !== 'object') return null;
+  const ordem = ((dados.ordem || {})[String(p.id)] || []).slice().sort((a, b) => a.o - b.o);
+  const feitos = new Set(((dados.provas || {})[String(p.id)] || []).map(l => chave(l.h)));
+  return ordem.find(o => !feitos.has(chave(o.h))) || null;
+}
+// ---------- aba Hoje: seguidos, a prova ao vivo e os momentos do dia ----------
+function blocoHoje() {
+  let html = '';
+  // seguidos, como stories
+  const seg = seguindo.slice(0, 12);
+  html += `<div class="stories" role="list">${seg.map(x => `<button class="story" role="listitem" data-perfil="${x.tipo}" data-k="${esc(x.k)}"><span class="story-anel">${avatar(x.nome || x.k, 54)}</span><span>${esc(titulo(x.nome || x.k))}</span></button>`).join('')}
+    <button class="story" role="listitem" data-aba="seguindo"><span class="story-anel vazio">${svg('<path d="M12 5v14M5 12h14"/>', 22)}</span><span>${seg.length ? 'Seguir mais' : 'Seguir'}</span></button></div>`;
+  // a prova ao vivo, com o arco
+  const vivo = provaAoVivo();
+  if (vivo) {
+    const { t, p } = vivo;
+    const prox = proximoNaOrdem(t.id, p);
+    const feito = Math.min(p.n || 0, p.oe);
+    html += `<section class="ao-vivo">
+      <div class="ao-vivo-topo"><span class="selo-vivo"><i></i>AO VIVO</span><span>${esc(titulo(t.nome))} · ${fmtAlt(p.altura)}</span></div>
+      ${arcoTrajetoria(feito, p.oe, prox ? prox.h : '', { larg: 300, alt: 96 })}
+      <button class="ao-vivo-acao" data-hist-prova="${t.id}:${p.id}">
+        <span><small>${prox ? 'PRÓXIMO NA PISTA' : 'PROVA ' + esc(numProva(p))}</small><b>${prox ? `${esc(titulo(prox.h))} e ${esc(titulo(prox.c))}` : 'Acompanhe a prova'}</b></span>
+        <span class="btn-vivo">${svg('<path d="M8 5.5v13l11-6.5z" fill="currentColor"/>', 14)} Ver</span></button>
+    </section>`;
+  }
+  // momentos: os vencedores mais recentes
+  const recentes = [];
+  const limite = new Date(Date.now() - 3 * 864e5); const lim = `${limite.getFullYear()}-${pad(limite.getMonth() + 1)}-${pad(limite.getDate())}`;
+  for (const t of S.dados.torneios) for (const p of t.provas || []) if (p.res && p.v && p.v.h && p.dia >= lim && p.dia <= hojeISO()) recentes.push({ t, p });
+  recentes.sort((a, b) => b.p.dia.localeCompare(a.p.dia) || (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0) || (b.p.altura || 0) - (a.p.altura || 0));
+  if (recentes.length) {
+    html += `<div class="secao"><h2>Momentos</h2><span class="risco"></span></div><div class="momentos">${recentes.slice(0, 4).map(({ t, p }) => {
+      const x = dt(p.dia);
+      return `<button class="momento" data-hist-prova="${t.id}:${p.id}">
+        <span class="momento-arte">${roseta(1, 46)}</span>
+        <span class="momento-texto"><small>${x.getDate()} ${MES[x.getMonth()].toUpperCase()} · ${esc(titulo(t.nome))}</small>
+          <b>${esc(titulo(p.v.h))} venceu a ${fmtAlt(p.altura)}</b><span>com ${esc(titulo(p.v.c))}${seloOpp(p.v.h)}</span></span></button>`;
+    }).join('')}</div>`;
+  }
+  return html;
+}
+
 function telaCalendario() {
   const base = S.dados.torneios.filter(t => t.fim >= hojeISO() && torneioVisivel(t)).sort((a, b) => a.inicio.localeCompare(b.inicio));
   const vazio = `<header class="capa"><div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div><h1 class="grande">A temporada<br>de salto, prova a prova</h1></header>`;
-  const capa = `<header class="capa">
-      <div class="topo-linha">
-        <span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span>
-        <button class="btn-fino" data-acao="sobre">Sobre</button>
-      </div>
-      <h1 class="grande">A temporada<br>de salto, prova a prova</h1>
-      <span class="sub">${base.length} torneio${base.length > 1 ? 's' : ''} pela frente</span>
-      ${chipsCategoria(base)}
-    </header>`;
+  const hj = new Date();
+  const capa = `<header class="hoje-cab">
+      <span class="hoje-titulo"><small>${DIA_LONGO[hj.getDay()]}, ${hj.getDate()} de ${MES_LONGO[hj.getMonth()]}</small><h1>Hoje</h1></span>
+      <span class="hoje-botoes"><button class="redondo" data-aba="seguindo" aria-label="Buscar e seguir">${svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>', 20)}</button><button class="redondo" data-acao="sobre" aria-label="Sobre o Salta">${marcaSvg(24)}</button></span>
+    </header>${blocoHoje()}
+    <div class="secao"><h2>Calendário</h2><span class="risco"></span><span class="aux">${base.length} torneio${base.length > 1 ? 's' : ''}</span></div>
+    ${chipsCategoria(base).replace('class="chips"', 'class="chips clara" style="padding:0 20px 12px"')}`;
   if (!base.length) return vazio + `<main><div class="vazio"><b>Nenhum torneio programado</b>O calendário é atualizado automaticamente algumas vezes por dia.</div>${rodape()}</main>`;
   const lista = aplicar(base);
   let corpo = filtros();
@@ -861,7 +1069,7 @@ function telaCalendario() {
     });
     corpo += '</div>';
   }
-  return capa + `<main class="fade">${corpo}${rodape()}</main>`;
+  return `<main class="fade">${capa}${corpo}${rodape()}</main>`;
 }
 
 function telaResultados() {
@@ -968,11 +1176,17 @@ function telaProva() {
   const ordemDoCavalo = new Map(ordem.map(o => [chave(o.h), o.o]));
   const faltam = ordem.length ? ordem.filter(o => !linhas.some(l => chave(l.h) === chave(o.h))).length : 0;
   const emAndamentoProva = faltam > 0 && p.dia >= hojeISO();
+  const naArena = emAndamentoProva && p.dia === hojeISO() && comecouHaPouco(p);
+  if (naArena) S._arena = true;
+  const proxA = emAndamentoProva ? ordem.slice().sort((a, b) => a.o - b.o).find(o => !linhas.some(l => chave(l.h) === chave(o.h))) : null;
+  const campeoes = linhas.filter(l => l.p === 1);
   let corpo = cab + `<span class="sub">${emAndamentoProva ? `${ordem.length - faltam} de ${ordem.length} já saltaram` : `${linhas.length} conjuntos`}${temDesempate ? ' · com desempate' : ''}</span>
+    ${naArena ? `<div class="arco-capa">${arcoTrajetoria(ordem.length - faltam, ordem.length, proxA ? proxA.h : '', { larg: 320, alt: 96 })}${proxA ? `<span class="arco-prox">Próximo na pista: <b>${esc(titulo(proxA.h))}</b> com ${esc(titulo(proxA.c))}</span>` : ''}</div>` : ''}
     ${emAndamento(t) && horaAtualizacao() ? `<span class="sub atualizado"><i></i>Atualizado às ${horaAtualizacao()} · atualiza sozinho</span>` : ''}
     ${aoVivoHoje(t) && p.dia === hojeISO() ? `<button class="btn-fino" data-acao="verTransmissao" style="align-self:flex-start">▶ Assistir à transmissão</button>` : ''}
     <div class="acoes">
-      <button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar campeão'}</button>
+      ${!emAndamentoProva && campeoes.length ? `<button class="btn ouro" data-acao="verCampeao">${roseta(1, 18)} Ver ${campeoes.length > 1 ? 'os campeões' : 'o campeão'}</button>` : ''}
+      <button class="btn ${!emAndamentoProva && campeoes.length ? 'clara-capa' : 'ouro'}" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar'}</button>
     </div></header><main class="fade">`;
   if (ordem.length) {
     corpo += `<div class="chips clara" role="group" aria-label="Visão da prova" style="padding:16px 20px 0">
@@ -1470,10 +1684,10 @@ function telaPerfil() {
   const tipo = S.perfilTipo, k = S.perfilK;
   const p = perfilDe(tipo, k);
   const pessoa = tipo === 'cavaleiros';
-  const cab = nome => `<header class="capa">
+  const cab = nome => `<header class="capa capa-perfil">
       ${voltar('voltarPerfil', 'Voltar')}
-      <span class="olho">${pessoa ? 'CAVALEIRO' : 'CAVALO'}</span>
-      <h1>${esc(titulo(nome))}</h1>`;
+      <div class="perfil-topo">${avatar(nome, 76)}<span><span class="olho">${pessoa ? 'CAVALEIRO' : 'CAVALO'}</span>
+      <h1>${esc(titulo(nome))}</h1></span></div>`;
   if (!p || p === 'carregando') { carregarPerfil(tipo, k); return cab(titulo(k)) + '</header><main><div class="vazio">Carregando perfil…</div></main>'; }
   if (p === 'erro' || p === 'ausente') return cab(titulo(k)) + `</header><main><div class="vazio"><b>Sem dados por enquanto</b>Este perfil aparece assim que houver resultados coletados de 2026.</div></main>`;
   const seguido = estaSeguindo(tipo, k);
@@ -1490,11 +1704,11 @@ function telaPerfil() {
       p.ficha.criador ? `criado por <button class="link-ficha" data-haras="${esc(chave(p.ficha.criador))}">${esc(titulo(p.ficha.criador))}</button>` : ''].filter(Boolean).join(' · ')}</span>` : ''}
     <div class="acoes"><button class="btn ouro" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(p.nome)}">★ ${seguido ? 'Seguindo' : (pessoa ? 'Seguir cavaleiro' : 'Seguir cavalo')}</button></div>
     </header><main class="fade">
-    <div class="stats">
-      <div><b>${p.l}</b><span>largadas</span></div>
-      <div><b style="color:var(--ouro-escuro)">${p.v}</b><span>vitórias</span></div>
-      <div><b>${p.po}</b><span>pódios</span></div>
-      <div><b style="color:var(--ok)">${pct}%</b><span>sem faltas</span></div>
+    <div class="aneis">
+      ${anelDesempenho(pct + '%', pct / 100, 'sem faltas')}
+      ${anelDesempenho(p.v, p.l ? p.v / p.l : 0, `vitória${p.v === 1 ? '' : 's'} em ${p.l}`)}
+      ${anelDesempenho(p.po, p.l ? p.po / p.l : 0, `pódio${p.po === 1 ? '' : 's'}`)}
+      ${anelDesempenho(alturas.length ? fmtAlt(+alturas[0][0]).replace('m', '') : '–', alturas.length ? Math.min(1, +alturas[0][0] / 1.6) : 0, 'maior altura', true)}
     </div>`;
   if (p.par?.length) {
     corpo += `<div class="secao"><h2>${pessoa ? 'Cavalos na temporada' : 'Cavaleiros'}</h2><span class="risco"></span></div>
@@ -1509,9 +1723,9 @@ function telaPerfil() {
       <div class="legenda"><span><i style="background:var(--ouro)"></i>vitórias</span><span><i style="background:var(--verde-3)"></i>outras largadas</span></div></div>`;
   }
   if (!pessoa && p.ficha && (p.ficha.pai || p.ficha.mae || p.ficha.criador)) corpo += blocoFamilia(p.ficha);
-  corpo += `<div class="secao"><h2>Histórico</h2><span class="risco"></span></div><div class="tabela">${(p.hist || []).map(h => {
+  corpo += `<div class="secao"><h2>Momentos da temporada</h2><span class="risco"></span></div><div class="tabela linha-tempo">${(p.hist || []).map(h => {
     const x = dt(h.d);
-    return `<button class="linha" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
+    return `<button class="linha${!h.s && h.p <= 3 ? ' destaque-tl' : ''}" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
       <span class="pos" style="color:${h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)')}">${h.s ? '–' : h.p + 'º'}</span>
       <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${h.s ? ' · ' + esc(h.s) : ''}</span>
       <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(titulo(h.t))} · ${h.n} conjuntos</span></span>${seta}</button>`;
@@ -1519,6 +1733,10 @@ function telaPerfil() {
   return corpo;
 }
 
+function anelDesempenho(valor, fr, rot, verde) {
+  const r = 24, c = 2 * Math.PI * r;
+  return `<span class="anel"><span class="anel-g"><svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="${r}" class="anel-fundo" stroke-width="5" fill="none"/><circle cx="30" cy="30" r="${r}" class="${verde ? 'anel-verde' : 'anel-ouro'}" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="${(c * Math.max(0, Math.min(1, fr))).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 30 30)"/></svg><b>${esc(String(valor))}</b></span><span class="anel-rot">${esc(rot)}</span></span>`;
+}
 // família do cavalo no perfil: pai, mãe e criador, cada um levando à sua página
 function blocoFamilia(f) {
   if (S.criacao === undefined) carregarArquivo('criacao', 'criacao.json');
@@ -1554,6 +1772,31 @@ function telaMetodo() {
     ${sec('Correções', `<p>Encontrou um erro? Escreva para <a href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · correção de dado')}">contato@opportunityleiloes.com.br</a>. As correções feitas ficam registradas com a data.</p>`)}
     <p class="fonte">Rankings e resumos são calculados pelo Salta e não são rankings oficiais da FPH, da CBH, da ABCCH ou da WBFSH.</p>
   </main>`;
+}
+
+// ---------- o campeão em tela cheia, no formato de stories ----------
+function telaCampeao() {
+  const t = achar(S.torneio), p = t && acharProva(t, S.prova), dados = t && S.torneios[t.id];
+  if (!p || !dados || typeof dados !== 'object') return '';
+  const linhas = (dados.provas || {})[String(p.id)] || [];
+  const venc = linhas.filter(l => l.p === 1);
+  if (!venc.length) return '';
+  const c = venc[0], fases = c.r || [], ult = fases[fases.length - 1] || [];
+  const faltas = fases.reduce((s, f) => s + (f[0] || 0), 0);
+  const ficha = S.filiacao && S.filiacao[chave(c.h)];
+  return `<div id="campeao" role="dialog" aria-modal="true" aria-label="Campeão da prova">
+    <svg class="campeao-arco" viewBox="0 0 390 844" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-30 640C20 330 120 210 200 210s170 120 220 430" stroke="#D9B45A" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 16" opacity=".55"/></svg>
+    <div class="campeao-topo"><span class="campeao-marca">${marcaSvg(22)}</span><span><b>${esc(titulo(t.nome))}</b><small>Prova ${esc(numProva(p))}</small></span><button class="campeao-fechar" data-acao="fecharCampeao" aria-label="Fechar">${svg('<path d="M6 6l12 12M18 6L6 18"/>', 22)}</button></div>
+    <div class="campeao-centro">
+      <span class="campeao-olho">${venc.length > 1 ? 'CAMPEÕES' : 'CAMPEÃO'} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span>
+      ${roseta(1, 96)}
+      <h2>${esc(titulo(c.c))}</h2>
+      <span class="campeao-cavalo">com ${esc(titulo(c.h))}${venc.length > 1 ? ` <small>e mais ${venc.length - 1} ${venc.length > 2 ? 'conjuntos empatados' : 'conjunto empatado'}</small>` : ''}</span>
+      ${ficha && (ficha[0] || ficha[1]) ? `<span class="campeao-fil">${esc(titulo(ficha[0] || '?'))} × ${esc(titulo(ficha[1] || '?'))}</span>` : ''}
+      <div class="campeao-nums"><span><b>${faltas}</b><small>faltas</small></span>${ult[1] ? `<span><b>${String(ult[1]).replace('.', ',')}s</b><small>${fases.length > 1 ? 'desempate' : 'percurso'}</small></span>` : ''}<span><b>${linhas.length}</b><small>conjuntos</small></span></div>
+    </div>
+    <div class="campeao-acoes"><button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)} Compartilhar</button><button class="btn vidro" data-acao="fecharCampeao">Ver a classificação</button></div>
+  </div>`;
 }
 
 // ---------- compartilhar ----------
@@ -1683,7 +1926,9 @@ function render() {
   else if (S.aba === 'ranking') html = telaRanking();
   else if (S.aba === 'opp') html = telaOpp();
   else html = telaCalendario();
-  app.innerHTML = html + abas() + folhaCompartilhar();
+  const arena = !!S._arena && S.tela === 'prova'; S._arena = false;
+  document.body.toggleAttribute('data-arena', arena);
+  app.innerHTML = html + abas() + folhaCompartilhar() + (S.campeao && S.tela === 'prova' ? telaCampeao() : '');
   const sel = document.getElementById('altura'); if (sel) sel.value = S.altura;
   ajustarChips();
 }
@@ -1714,7 +1959,9 @@ document.addEventListener('click', e => {
   }
   if (d.acao === 'recarregar') { S.erro = null; S.dados = null; render(); return carregar(); }
   if (d.acao === 'recarregarProva') { delete S.torneios[S.torneio]; return render(); }
-  if (d.acao === 'compartilhar') { S.compartilhar = cartaoSVG(); return render(); }
+  if (d.acao === 'compartilhar') { S.campeao = false; S.compartilhar = cartaoSVG(); return render(); }
+  if (d.acao === 'verCampeao') { S.campeao = true; return render(); }
+  if (d.acao === 'fecharCampeao') { S.campeao = false; return render(); }
   if (d.acao === 'fecharFolha') { S.compartilhar = null; return render(); }
   if (d.acao === 'baixarCard') return baixarCard();
   if (d.aviso) { avisos[d.aviso] = !avisos[d.aviso]; guarda.gravar('pista-avisos', avisos); sincronizarAvisos(); return render(); }
