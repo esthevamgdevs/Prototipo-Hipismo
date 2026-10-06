@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-06T15:10:38.197Z",
+ "atualizadoEm": "2026-10-06T18:27:14.426Z",
  "torneios": [
   {
    "id": 3404,
@@ -11486,7 +11486,7 @@
    "nome": "CSN5* AGROMEN 2026",
    "modalidade": "SALTO",
    "local": "HARAS AGROMEN.",
-   "status": "Inscrições Encerradas",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-14",
    "fim": "2026-10-18",
    "provas": [
@@ -11684,18 +11684,6 @@
     },
     {
      "id": null,
-     "numero": "08",
-     "nome": "1,40M",
-     "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
-     "altura": 1.4,
-     "dia": "2026-10-16",
-     "hora": "15:30",
-     "pista": "POTENCIAL",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "28",
      "nome": "1,35M",
      "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
@@ -11703,6 +11691,18 @@
      "dia": "2026-10-16",
      "hora": "15:30",
      "pista": "CARBACAN",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "08",
+     "nome": "1,40M",
+     "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
+     "altura": 1.4,
+     "dia": "2026-10-16",
+     "hora": "15:30",
+     "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false
     },
@@ -11816,18 +11816,6 @@
     },
     {
      "id": null,
-     "numero": "11",
-     "nome": "1,40M",
-     "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
-     "altura": 1.4,
-     "dia": "2026-10-17",
-     "hora": "13:00",
-     "pista": "POTENCIAL",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "31",
      "nome": "CN 07 ANOS",
      "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
@@ -11840,9 +11828,21 @@
     },
     {
      "id": null,
+     "numero": "11",
+     "nome": "1,40M",
+     "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
+     "altura": 1.4,
+     "dia": "2026-10-17",
+     "hora": "13:00",
+     "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
      "numero": "32",
      "nome": "CN 08 ANOS",
-     "desc": "CN 08 ANOS - 1,40M - CN8",
+     "desc": "CN 08 ANOS - 1,40M - CN8/HC 08 ANOS",
      "altura": 1.4,
      "dia": "2026-10-17",
      "hora": null,
@@ -11998,7 +11998,7 @@
      "id": null,
      "numero": "36",
      "nome": "CN 08 ANOS",
-     "desc": "CN 08 ANOS - 1,40M - CN8",
+     "desc": "CN 08 ANOS - 1,40M - CN8/HC 08 ANOS",
      "altura": 1.4,
      "dia": "2026-10-18",
      "hora": null,
@@ -12050,7 +12050,7 @@
    "nome": "TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS AGROMEN.",
-   "status": "Inscrições Encerradas",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-16",
    "fim": "2026-10-18",
    "provas": [
