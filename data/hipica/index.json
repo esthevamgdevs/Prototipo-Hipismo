@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-07T19:00:34.208Z",
+ "atualizadoEm": "2026-10-07T21:57:33.326Z",
  "torneios": [
   {
    "id": 3404,
@@ -11295,11 +11295,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "YASMIN DE SOUSA FRANCO"
+      "c": "Rafaella Monnerat B.",
+      "h": "CHIYA Z"
      },
      "oe": 83,
-     "n": 147
+     "n": 84
     },
     {
      "id": 14663,
@@ -11328,7 +11328,7 @@
      "oe": 31
     },
     {
-     "id": null,
+     "id": 14652,
      "numero": "05",
      "nome": "1,00M",
      "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
@@ -11337,7 +11337,8 @@
      "hora": "14:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 84
     },
     {
      "id": null,
