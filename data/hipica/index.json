@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-06T18:27:14.426Z",
+ "atualizadoEm": "2026-10-07T00:37:40.120Z",
  "torneios": [
   {
    "id": 3404,
@@ -11264,7 +11264,7 @@
    "fim": "2026-10-11",
    "provas": [
     {
-     "id": null,
+     "id": 14671,
      "numero": "01",
      "nome": "1,40M",
      "desc": "1,40M - LST - 1,40M - LST",
@@ -11273,31 +11273,21 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 7
     },
     {
-     "id": null,
+     "id": 14651,
      "numero": "02",
      "nome": "1,00M",
-     "desc": "1,00M - (AMB/MB) - 1,00M - LB (B1)",
+     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-07",
      "hora": "13:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "02A",
-     "nome": "MMR-JCB",
-     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-07",
-     "hora": null,
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 76
     },
     {
      "id": null,
@@ -11327,22 +11317,10 @@
      "id": null,
      "numero": "05",
      "nome": "1,00M",
-     "desc": "1,00M - (AMB/MB) - 1,00M - LB (B1)",
+     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-08",
      "hora": "14:00",
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "05A",
-     "nome": "MMR-JCB",
-     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-08",
-     "hora": null,
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false
@@ -11366,7 +11344,7 @@
      "desc": "1,20M - MR/JC - AM/M - JR/SR - 1,20M - L (MR/JC)/L (AM/M)/L (JR/SR)",
      "altura": 1.2,
      "dia": "2026-10-09",
-     "hora": "13:00",
+     "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false
@@ -11378,7 +11356,7 @@
      "desc": "1,30M - PJR/JCT - AMT/MT - JR/SR - 1,30M - L (JR/SR) /LT (PJR/JCT)/LT (AMT/MT)",
      "altura": 1.3,
      "dia": "2026-10-09",
-     "hora": "16:00",
+     "hora": "15:30",
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false
@@ -11387,22 +11365,10 @@
      "id": null,
      "numero": "09",
      "nome": "1,00M",
-     "desc": "1,00M - (AMB/MB) - 1,00M - LB (B1)",
+     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
      "altura": 1,
      "dia": "2026-10-10",
      "hora": "08:30",
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "09A",
-     "nome": "MMR-JCB",
-     "desc": "1,00M - MMR-JCB - 1,00M - AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-10",
-     "hora": null,
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": false
