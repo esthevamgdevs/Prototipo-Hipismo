@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-07T14:30:40.413Z",
+ "atualizadoEm": "2026-10-07T17:07:50.975Z",
  "torneios": [
   {
    "id": 3404,
@@ -11273,8 +11273,14 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 7
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JULIANA DE MELLO ALMEIDA MONTEIRO",
+      "h": "DAVIS RJ"
+     },
+     "oe": 7,
+     "n": 7
     },
     {
      "id": 14651,
@@ -11286,8 +11292,14 @@
      "hora": "13:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 83
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "FERNANDA NAGY KOVALSKI GRANERO"
+     },
+     "oe": 83,
+     "n": 37
     },
     {
      "id": null,
