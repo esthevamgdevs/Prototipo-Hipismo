@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-08T15:36:27.517Z",
+ "atualizadoEm": "2026-10-08T17:06:19.442Z",
  "torneios": [
   {
    "id": 3404,
@@ -11349,8 +11349,14 @@
      "hora": "14:00",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 84
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "PAULA PASTORE"
+     },
+     "oe": 84,
+     "n": 9
     },
     {
      "id": 14659,
