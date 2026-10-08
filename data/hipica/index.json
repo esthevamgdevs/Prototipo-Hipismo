@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-08T01:05:32.460Z",
+ "atualizadoEm": "2026-10-08T15:36:27.517Z",
  "torneios": [
   {
    "id": 3404,
@@ -11311,8 +11311,14 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 58
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "HELENA CHRISTINA SCHMIDT",
+      "h": "HST CHAILA (IA)"
+     },
+     "oe": 58,
+     "n": 57
     },
     {
      "id": 14667,
@@ -11324,8 +11330,14 @@
      "hora": "11:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 31
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "OLIVIA PASTORE VILELA",
+      "h": "COPA HARE KRISHNA"
+     },
+     "oe": 31,
+     "n": 32
     },
     {
      "id": 14652,
@@ -11341,7 +11353,7 @@
      "oe": 84
     },
     {
-     "id": null,
+     "id": 14659,
      "numero": "06",
      "nome": "1,10M",
      "desc": "1,10M - JCA/PMR - AMA/MA - SR - 1,10M - LA (PMR/JCA)/LA (AMA/MA)/L (SENIOR)",
@@ -11350,10 +11362,11 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 73
     },
     {
-     "id": null,
+     "id": 14664,
      "numero": "07",
      "nome": "1,20M",
      "desc": "1,20M - MR/JC - AM/M - JR/SR - 1,20M - L (MR/JC)/L (AM/M)/L (JR/SR)",
@@ -11362,7 +11375,8 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 57
     },
     {
      "id": null,
