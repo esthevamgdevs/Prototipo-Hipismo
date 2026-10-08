@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-08T17:06:19.442Z",
+ "atualizadoEm": "2026-10-08T18:55:16.907Z",
  "torneios": [
   {
    "id": 3404,
@@ -11283,25 +11283,6 @@
      "n": 7
     },
     {
-     "id": 14651,
-     "numero": "02",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-07",
-     "hora": "13:30",
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": true,
-     "res": true,
-     "v": {
-      "c": "Rafaella Monnerat B.",
-      "h": "CHIYA Z"
-     },
-     "oe": 83,
-     "n": 84
-    },
-    {
      "id": 14663,
      "numero": "03",
      "nome": "1,20M",
@@ -11340,25 +11321,6 @@
      "n": 32
     },
     {
-     "id": 14652,
-     "numero": "05",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-08",
-     "hora": "14:00",
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": true,
-     "res": true,
-     "v": {
-      "c": "undefined",
-      "h": "PAULA PASTORE"
-     },
-     "oe": 84,
-     "n": 9
-    },
-    {
      "id": 14659,
      "numero": "06",
      "nome": "1,10M",
@@ -11385,7 +11347,7 @@
      "oe": 57
     },
     {
-     "id": null,
+     "id": 14668,
      "numero": "08",
      "nome": "1,30M",
      "desc": "1,30M - PJR/JCT - AMT/MT - JR/SR - 1,30M - L (JR/SR) /LT (PJR/JCT)/LT (AMT/MT)",
@@ -11394,19 +11356,8 @@
      "hora": "15:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "09",
-     "nome": "1,00M",
-     "desc": "1,00M - MMR - JCB - AMB/MB - 1,00M - LB (B1)/AMAZ - MMR/AMAZ - JCB",
-     "altura": 1,
-     "dia": "2026-10-10",
-     "hora": "08:30",
-     "pista": "AREIA-1",
-     "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 32
     },
     {
      "id": null,
@@ -11685,18 +11636,6 @@
     },
     {
      "id": null,
-     "numero": "28",
-     "nome": "1,35M",
-     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
-     "altura": 1.35,
-     "dia": "2026-10-16",
-     "hora": "15:30",
-     "pista": "CARBACAN",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "08",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11704,6 +11643,18 @@
      "dia": "2026-10-16",
      "hora": "15:30",
      "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "28",
+     "nome": "1,35M",
+     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
+     "altura": 1.35,
+     "dia": "2026-10-16",
+     "hora": "15:30",
+     "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false
     },
@@ -11817,18 +11768,6 @@
     },
     {
      "id": null,
-     "numero": "31",
-     "nome": "CN 07 ANOS",
-     "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
-     "altura": 1.3,
-     "dia": "2026-10-17",
-     "hora": "13:00",
-     "pista": "CARBACAN",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "11",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11836,6 +11775,18 @@
      "dia": "2026-10-17",
      "hora": "13:00",
      "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "31",
+     "nome": "CN 07 ANOS",
+     "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
+     "altura": 1.3,
+     "dia": "2026-10-17",
+     "hora": "13:00",
+     "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false
     },
@@ -12181,7 +12132,7 @@
    "nome": "7ª ETAPA METROPOLITANA CUP 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-10-24",
    "fim": "2026-10-24",
    "provas": [
@@ -12571,7 +12522,7 @@
      "id": null,
      "numero": "01",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/CN4",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
      "altura": 1,
      "dia": "2026-10-30",
      "hora": "09:00",
@@ -12583,7 +12534,7 @@
      "id": null,
      "numero": "02",
      "nome": "1,10M",
-     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/CN5",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/ABER/CN5",
      "altura": 1.1,
      "dia": "2026-10-30",
      "hora": null,
@@ -12619,7 +12570,7 @@
      "id": null,
      "numero": "05",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/CN4",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
      "altura": 1,
      "dia": "2026-10-31",
      "hora": "09:00",
@@ -12631,7 +12582,7 @@
      "id": null,
      "numero": "06",
      "nome": "1,10M",
-     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/CN5",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/ABER/CN5",
      "altura": 1.1,
      "dia": "2026-10-31",
      "hora": null,
@@ -12671,7 +12622,7 @@
    "nome": "5ª ETAPA CENTRAL CUP 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-01",
    "fim": "2026-11-01",
    "provas": [
