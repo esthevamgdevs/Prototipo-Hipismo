@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-09T18:26:12.285Z",
+ "atualizadoEm": "2026-10-09T21:20:40.057Z",
  "torneios": [
   {
    "id": 3404,
@@ -11368,8 +11368,14 @@
      "hora": "15:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 32
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "OLIVIA PASTORE VILELA",
+      "h": "COPA HARE KRISHNA"
+     },
+     "oe": 32,
+     "n": 30
     },
     {
      "id": 14660,
