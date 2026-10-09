@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-09T16:44:35.186Z",
+ "atualizadoEm": "2026-10-09T18:26:12.285Z",
  "torneios": [
   {
    "id": 3404,
@@ -11352,11 +11352,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "VALENTINA BUENO DE CAMARGO GRILO"
+      "c": "HELENA CHRISTINA SCHMIDT",
+      "h": "HST CHAILA (IA)"
      },
      "oe": 57,
-     "n": 33
+     "n": 57
     },
     {
      "id": 14668,
@@ -11372,7 +11372,7 @@
      "oe": 32
     },
     {
-     "id": null,
+     "id": 14660,
      "numero": "10",
      "nome": "1,10M",
      "desc": "1,10M - JCA/PMR - AMA/MA - SR - 1,10M - LA (PMR/JCA)/LA (AMA/MA)/L (SENIOR)",
@@ -11381,7 +11381,8 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 74
     },
     {
      "id": 14672,
