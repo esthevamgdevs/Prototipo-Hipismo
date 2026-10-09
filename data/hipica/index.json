@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-09T15:18:19.885Z",
+ "atualizadoEm": "2026-10-09T16:44:35.186Z",
  "torneios": [
   {
    "id": 3404,
@@ -11349,8 +11349,14 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "VALENTINA BUENO DE CAMARGO GRILO"
+     },
+     "oe": 57,
+     "n": 33
     },
     {
      "id": 14668,
