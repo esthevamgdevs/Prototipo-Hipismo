@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-08T18:55:16.907Z",
+ "atualizadoEm": "2026-10-09T15:18:19.885Z",
  "torneios": [
   {
    "id": 3404,
@@ -11330,8 +11330,14 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 73
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Alina Julia T. D. C.",
+      "h": "HSF AGILE"
+     },
+     "oe": 73,
+     "n": 74
     },
     {
      "id": 14664,
@@ -11372,7 +11378,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14672,
      "numero": "11",
      "nome": "1,40M",
      "desc": "1,40M - LST - 1,40M - LST",
@@ -11381,7 +11387,8 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 7
     },
     {
      "id": null,
