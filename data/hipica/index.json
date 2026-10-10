@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-09T21:20:40.057Z",
+ "atualizadoEm": "2026-10-10T13:40:54.196Z",
  "torneios": [
   {
    "id": 3404,
@@ -11400,7 +11400,7 @@
      "hora": "16:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 7
     },
     {
@@ -11416,7 +11416,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14665,
      "numero": "13",
      "nome": "1,20M",
      "desc": "1,20M - MR/JC - AM/M - JR/SR - 1,20M - L (MR/JC)/L (AM/M)/L (JR/SR)",
@@ -11425,7 +11425,8 @@
      "hora": "12:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 54
     },
     {
      "id": null,
