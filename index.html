@@ -686,6 +686,41 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
   .pf-capa{margin-top:-88px;height:288px}
   .pf-capa .pf-topo{padding-top:94px}
 }
+
+/* campeão em destaque no topo do cartão da classificação */
+.campeao-box{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"r t" "n n";align-items:center;gap:6px 16px;width:100%;margin:6px 0 4px;padding:16px;border:0;border-radius:18px;background:linear-gradient(150deg,rgba(217,180,90,.20),rgba(217,180,90,.06));color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.cb-roseta{grid-area:r;display:flex}
+.cb-texto{grid-area:t;display:flex;flex-direction:column;gap:3px;min-width:0}
+.cb-olho{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ouro-escuro)}
+.cb-nome{font-family:var(--serif);font-weight:400;font-size:clamp(24px,6vw,30px);line-height:1.08}
+.cb-cavalo{font-size:14px;color:var(--muted)}
+.cb-cavalo b{color:var(--ink);font-weight:600}
+.cb-nums{grid-area:n;display:flex;gap:10px;margin-top:6px}
+.cb-nums span{display:flex;flex-direction:column;padding:8px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--linha)}
+.cb-nums b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.1}
+.cb-nums small{font-size:11px;color:var(--muted)}
+.campeao-box+.linha-podio{border-top:0}
+@media (min-width:760px){.campeao-box{grid-template-columns:auto 1fr auto;grid-template-areas:"r t n"}.cb-nums{margin-top:0}}
+
+/* computador: uma coluna única, com todos os blocos na mesma largura e as mesmas margens */
+@media (min-width:1100px){
+  .app{max-width:1040px}
+  .podio,.tabela,.painel,.aviso,.opcoes,.destaque-aviso,.transmissao,.resumo-torneio,.reguas,.aneis,.ao-vivo,.vazio,.pf-abas,.pf-id,.tl,.pf-pares,.momentos,.familia,.fonte,.metodo,.barra-filtros,.lista,.feed{max-width:none}
+  .podio,.tabela,.painel,.aviso,.opcoes,.destaque-aviso,.transmissao,.resumo-torneio,.reguas,.aneis,.ao-vivo,.vazio,.pf-abas,.metodo{margin-left:32px;margin-right:32px}
+  .secao,.barra-filtros,.lista,.momentos,.stories,.tl,.pf-pares,.familia,.fonte,.dias,.hoje-cab,.pf-id,.feed,.seguidos,.carrossel{padding-left:32px;padding-right:32px}
+  .chips.clara{padding-left:32px!important;padding-right:32px!important}
+  .capa{padding-left:32px;padding-right:32px}
+  .capa:has(> .topo-linha){padding-left:32px;padding-right:32px}
+  .capa .acoes{max-width:520px}
+  .busca{width:100%}
+  .lista{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .tl::before{left:38px}
+}
+
+@media (min-width:1100px){
+  /* o cabeçalho verde vira um cartão com as mesmas bordas dos blocos de baixo */
+  .capa:not(:has(> .topo-linha)){margin:0 32px;border-radius:30px;padding-left:28px;padding-right:28px}
+}
 </style>
 </head>
 <body>
@@ -732,7 +767,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '06/10/2026 · navegação em pílula no computador';
+const VERSAO_APP = '10/10/2026 · campeão em destaque e espaçamentos';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -1354,8 +1389,7 @@ function telaProva() {
     ${emAndamento(t) && horaAtualizacao() ? `<span class="sub atualizado"><i></i>Atualizado às ${horaAtualizacao()} · atualiza sozinho</span>` : ''}
     ${aoVivoHoje(t) && p.dia === hojeISO() ? `<button class="btn-fino" data-acao="verTransmissao" style="align-self:flex-start">▶ Assistir à transmissão</button>` : ''}
     <div class="acoes">
-      ${!emAndamentoProva && campeoes.length ? `<button class="btn ouro" data-acao="verCampeao">${roseta(1, 18)} Ver ${campeoes.length > 1 ? 'os campeões' : 'o campeão'}</button>` : ''}
-      <button class="btn ${!emAndamentoProva && campeoes.length ? 'clara-capa' : 'ouro'}" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar'}</button>
+      <button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar campeão'}</button>
     </div></header><main class="fade">`;
   if (ordem.length) {
     corpo += `<div class="chips clara" role="group" aria-label="Visão da prova" style="padding:16px 20px 0">
@@ -1365,7 +1399,27 @@ function telaProva() {
     if (S.abaProva === 'ordem') return corpo + telaCruzada(p, ordem, linhas, fed, faltam) + '</main>';
   }
   if (podio.length) {
-    corpo += `<div class="podio">${podio.map(l => {
+    const primeiro = podio.find(l => l.p === 1);
+    const empatados = podio.filter(l => l.p === 1).length;
+    const demais = primeiro ? podio.filter(l => l !== primeiro) : podio;
+    let destaque = '';
+    if (primeiro) {
+      const f1 = fed(primeiro.f), fases = primeiro.r || [];
+      const ult = fases[fases.length - 1] || [];
+      const faltas = fases.length > 1 ? fases.map(x => fmtN(x[0])).join(' + ') : fmtN(ult[0]);
+      const rot = emAndamentoProva ? 'LIDERANDO' : (empatados > 1 ? `CAMPEÕES · ${empatados} EMPATADOS` : 'CAMPEÃO');
+      destaque = `<button class="campeao-box" data-perfil="cavaleiros" data-k="${esc(chave(primeiro.c))}">
+        <span class="cb-roseta">${roseta(1, 64)}</span>
+        <span class="cb-texto">
+          <span class="cb-olho">${rot} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span>
+          <span class="cb-nome">${esc(titulo(primeiro.c))}</span>
+          <span class="cb-cavalo">com <b>${esc(titulo(primeiro.h))}</b>${seloOpp(primeiro.h)}${f1 ? ' · ' + esc(fedCurta(f1)) : ''}</span>
+          ${filiacaoDe(primeiro.h)}
+        </span>
+        <span class="cb-nums">${primeiro.s ? `<span><b>${esc(primeiro.s)}</b></span>` : `<span><b>${faltas}</b><small>faltas</small></span>${ult[1] ? `<span><b>${fmtT(ult[1])}</b><small>${fases.length > 1 ? 'desempate' : 'percurso'}</small></span>` : ''}`}</span>
+      </button>`;
+    }
+    corpo += `<div class="podio">${destaque}${demais.map(l => {
       const f = fed(l.f), perc = l.r?.[0], des = l.r?.length > 1 ? l.r[l.r.length - 1] : null;
       return `<button class="linha-podio" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
         ${roseta(l.p, 38)}
