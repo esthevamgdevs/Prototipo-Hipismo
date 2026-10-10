@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-10T19:31:09.299Z",
+ "atualizadoEm": "2026-10-10T22:54:31.417Z",
  "torneios": [
   {
    "id": 3404,
@@ -11407,10 +11407,16 @@
      "pista": "AREIA-1",
      "gp": false,
      "linkResultado": true,
-     "oe": 7
+     "res": true,
+     "v": {
+      "c": "BIANCA MATARAZZO",
+      "h": "HEAVENLEY BLUE VAN D HOEVE"
+     },
+     "oe": 7,
+     "n": 7
     },
     {
-     "id": null,
+     "id": 14661,
      "numero": "12",
      "nome": "1,10M",
      "desc": "1,10M - JCA/PMR - AMA/MA - SR - 1,10M - LA (PMR/JCA)/LA (AMA/MA)/L (SENIOR)",
@@ -11419,7 +11425,8 @@
      "hora": "08:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 66
     },
     {
      "id": 14665,
