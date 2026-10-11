@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-11T17:45:07.659Z",
+ "atualizadoEm": "2026-10-11T20:12:24.236Z",
  "torneios": [
   {
    "id": 3404,
@@ -11463,8 +11463,14 @@
      "hora": "15:30",
      "pista": "AREIA-1",
      "gp": false,
-     "linkResultado": false,
-     "oe": 28
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "ANA LIVIA ANTONIO",
+      "h": "CALLOUETTE BR"
+     },
+     "oe": 28,
+     "n": 25
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3488"
