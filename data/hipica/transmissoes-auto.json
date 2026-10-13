@@ -97,9 +97,116 @@
     "url": "https://www.youtube.com/watch?v=50WAFzBXB2U",
     "original": "DIA 05 - 11/10 - PISTA 1 - CAMPEONATO PAULISTA DE AMAZONAS 2026 - Horsepix"
    }
+  ],
+  "3490": [
+   {
+    "yt": "VSfKORVmzuM",
+    "dia": "2026-10-13",
+    "titulo": "Pista CARBACAN",
+    "url": "https://www.youtube.com/watch?v=VSfKORVmzuM",
+    "original": "PISTA CARBACAN - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "mXBkppBMwSQ",
+    "dia": "2026-10-13",
+    "titulo": "Pista CARBACAN",
+    "url": "https://www.youtube.com/watch?v=mXBkppBMwSQ",
+    "original": "PISTA CARBACAN - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "rrMtlXmfns8",
+    "dia": "2026-10-13",
+    "titulo": "Pista CARBACAN",
+    "url": "https://www.youtube.com/watch?v=rrMtlXmfns8",
+    "original": "PISTA CARBACAN - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "hs9e6KgB-f8",
+    "dia": "2026-10-13",
+    "titulo": "Pista LORD PILOT",
+    "url": "https://www.youtube.com/watch?v=hs9e6KgB-f8",
+    "original": "PISTA LORD PILOT - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "3n8CarIwmbE",
+    "dia": "2026-10-13",
+    "titulo": "Pista LORD PILOT",
+    "url": "https://www.youtube.com/watch?v=3n8CarIwmbE",
+    "original": "PISTA LORD PILOT - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "cTSMARLnmMk",
+    "dia": "2026-10-13",
+    "titulo": "Pista LORD PILOT",
+    "url": "https://www.youtube.com/watch?v=cTSMARLnmMk",
+    "original": "PISTA LORD PILOT - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "hGuAhUEngGk",
+    "dia": "2026-10-13",
+    "titulo": "Pista POTENCIAL",
+    "url": "https://www.youtube.com/watch?v=hGuAhUEngGk",
+    "original": "PISTA POTENCIAL - CSN5* AGROMEN 2026 - Horsepix"
+   },
+   {
+    "yt": "KlPo9zqKnNA",
+    "dia": "2026-10-13",
+    "titulo": "Pista POTENCIAL",
+    "url": "https://www.youtube.com/watch?v=KlPo9zqKnNA",
+    "original": "PISTA POTENCIAL - CSN5* AGROMEN 2026 - Horsepix"
+   }
   ]
  },
  "semTorneio": [
+  {
+   "yt": "OVGxAifLGGk",
+   "dia": "2026-10-13",
+   "titulo": "Pista ALMÉ STAR",
+   "url": "https://www.youtube.com/watch?v=OVGxAifLGGk",
+   "original": "PISTA ALMÉ STAR - TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA - Horsepix"
+  },
+  {
+   "yt": "NOMkuwAUby4",
+   "dia": "2026-10-13",
+   "titulo": "Pista ALMÉ STAR",
+   "url": "https://www.youtube.com/watch?v=NOMkuwAUby4",
+   "original": "PISTA ALMÉ STAR - TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA - Horsepix"
+  },
+  {
+   "yt": "YBfhk46Nra4",
+   "dia": "2026-10-13",
+   "titulo": "Pista ALMÉ STAR",
+   "url": "https://www.youtube.com/watch?v=YBfhk46Nra4",
+   "original": "PISTA ALMÉ STAR - TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA - Horsepix"
+  },
+  {
+   "yt": "6epxvoO029U",
+   "dia": "2026-10-13",
+   "titulo": "Pista 1",
+   "url": "https://www.youtube.com/watch?v=6epxvoO029U",
+   "original": "PISTA 1 - RANKING DE SALTO SHC - ETAPA VII  - Horsepix"
+  },
+  {
+   "yt": "ZbaS09vO8TA",
+   "dia": "2026-10-13",
+   "titulo": "Pista 1",
+   "url": "https://www.youtube.com/watch?v=ZbaS09vO8TA",
+   "original": "PISTA 1 - RANKING DE SALTO SHC - ETAPA VII  - Horsepix"
+  },
+  {
+   "yt": "qhEWF3iFLxQ",
+   "dia": "2026-10-13",
+   "titulo": "Pista 1",
+   "url": "https://www.youtube.com/watch?v=qhEWF3iFLxQ",
+   "original": "PISTA 1 - RANKING DE SALTO SHC - ETAPA VII  - Horsepix"
+  },
+  {
+   "yt": "ezD9MaU4xMg",
+   "dia": "2026-10-13",
+   "titulo": "Pista 1",
+   "url": "https://www.youtube.com/watch?v=ezD9MaU4xMg",
+   "original": "PISTA 1 - RANKING DE SALTO SHC - ETAPA VII  - Horsepix"
+  },
   {
    "yt": "pxs4VcOV7Kc",
    "dia": "2026-10-09",
@@ -262,5 +369,5 @@
    "original": "DIA 01 - PISTA NECO - 8ª ETAPA RANKING DE SALTO SHP - Horsepix"
   }
  ],
- "atualizadoEm": "2026-10-13T17:16:38.713Z"
+ "atualizadoEm": "2026-10-13T19:22:09.291Z"
 }
