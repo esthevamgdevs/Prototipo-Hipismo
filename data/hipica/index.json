@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-14T18:58:46.725Z",
+ "atualizadoEm": "2026-10-14T20:47:31.576Z",
  "torneios": [
   {
    "id": 3404,
@@ -11515,7 +11515,7 @@
      "n": 28
     },
     {
-     "id": null,
+     "id": 14695,
      "numero": "02",
      "nome": "1,30M",
      "desc": "1,30M - PJR/JCT/AMT/MT - 1,30M - AMT/JCT/MT/PJR",
@@ -11524,10 +11524,11 @@
      "hora": "09:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 27
     },
     {
-     "id": null,
+     "id": 14698,
      "numero": "03",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11536,10 +11537,11 @@
      "hora": "12:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 9
     },
     {
-     "id": null,
+     "id": 14704,
      "numero": "04",
      "nome": "PREPARATÓRIA GP",
      "desc": "PREPARATÓRIA GP - 1,50M - 1,50M - JR/SRT/U25",
@@ -11548,7 +11550,8 @@
      "hora": "14:00",
      "pista": "POTENCIAL",
      "gp": true,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 39
     },
     {
      "id": null,
@@ -12809,7 +12812,7 @@
      "id": null,
      "numero": "09",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,00M - LB (MMR/JCB)",
+     "desc": "AMAZONAS B - 1,00M - LB (MMR)",
      "altura": 1,
      "dia": "2026-11-13",
      "hora": "08:00",
@@ -12821,7 +12824,7 @@
      "id": null,
      "numero": "09A",
      "nome": "AMAZONAS B1",
-     "desc": "AMAZONAS B1 - 1,00M - LB (AMB/MB)",
+     "desc": "AMAZONAS B1 - 1,00M - LB (JCB/AMB/MB)",
      "altura": 1,
      "dia": "2026-11-13",
      "hora": null,
@@ -12881,7 +12884,7 @@
      "id": null,
      "numero": "13",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,00M - LB (MMR/JCB)",
+     "desc": "AMAZONAS B - 1,00M - LB (MMR)",
      "altura": 1,
      "dia": "2026-11-14",
      "hora": "12:30",
@@ -12893,7 +12896,7 @@
      "id": null,
      "numero": "13A",
      "nome": "AMAZONAS B1",
-     "desc": "AMAZONAS B1 - 1,00M - LB (AMB/MB)",
+     "desc": "AMAZONAS B1 - 1,00M - LB (JCB/AMB/MB)",
      "altura": 1,
      "dia": "2026-11-14",
      "hora": null,
@@ -12929,7 +12932,7 @@
      "id": null,
      "numero": "18",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,05M - LB (MMR/JCB)",
+     "desc": "AMAZONAS B - 1,05M - LB (MMR)",
      "altura": 1.05,
      "dia": "2026-11-15",
      "hora": "12:30",
@@ -12941,7 +12944,7 @@
      "id": null,
      "numero": "18A",
      "nome": "AMAZONAS B1",
-     "desc": "AMAZONAS B1 - 1,05M - LB (AMB/MB)",
+     "desc": "AMAZONAS B1 - 1,05M - LB (JCB/AMB/MB)",
      "altura": 1.05,
      "dia": "2026-11-15",
      "hora": null,
