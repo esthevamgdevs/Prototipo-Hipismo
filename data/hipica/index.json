@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-14T14:48:22.834Z",
+ "atualizadoEm": "2026-10-14T17:16:28.030Z",
  "torneios": [
   {
    "id": 3404,
@@ -11496,7 +11496,7 @@
    "fim": "2026-10-18",
    "provas": [
     {
-     "id": null,
+     "id": 14718,
      "numero": "01",
      "nome": "1,45M",
      "desc": "1,45M - JR/SR/U25 - 1,45M - JR/SR/U25",
@@ -11505,7 +11505,8 @@
      "hora": "15:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 34
     },
     {
      "id": null,
@@ -12672,7 +12673,7 @@
   },
   {
    "id": 3495,
-   "nome": "5ª ETAPA CENTRAL CUP 2026",
+   "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
    "status": "Inscrições Abertas",
