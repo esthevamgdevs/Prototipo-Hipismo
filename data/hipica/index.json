@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-14T17:16:28.030Z",
+ "atualizadoEm": "2026-10-14T18:58:46.725Z",
  "torneios": [
   {
    "id": 3404,
@@ -11505,8 +11505,14 @@
      "hora": "15:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 34
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "LUIS GUSTAVO GODINHO"
+     },
+     "oe": 34,
+     "n": 28
     },
     {
      "id": null,
