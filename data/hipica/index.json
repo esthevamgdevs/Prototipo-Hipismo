@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-14T20:47:31.576Z",
+ "atualizadoEm": "2026-10-15T14:35:07.789Z",
  "torneios": [
   {
    "id": 3404,
@@ -11524,8 +11524,14 @@
      "hora": "09:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 27
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "VICTORIA JUNQUEIRA RIBEIRO DE MENDONCA",
+      "h": "CELESTINO JMEN (TE)"
+     },
+     "oe": 27,
+     "n": 25
     },
     {
      "id": 14698,
@@ -11538,7 +11544,7 @@
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false,
-     "oe": 9
+     "oe": 8
     },
     {
      "id": 14704,
