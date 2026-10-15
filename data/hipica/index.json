@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-15T20:24:52.260Z",
+ "atualizadoEm": "2026-10-15T21:45:17.589Z",
  "torneios": [
   {
    "id": 3404,
@@ -11572,7 +11572,7 @@
      "n": 42
     },
     {
-     "id": null,
+     "id": 14719,
      "numero": "25",
      "nome": "CN 04 ANOS",
      "desc": "CN 04 ANOS - 1,00M - CN4/HC 04 ANOS",
@@ -11581,10 +11581,11 @@
      "hora": "08:30",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 3
     },
     {
-     "id": null,
+     "id": 14721,
      "numero": "26",
      "nome": "CN 05 ANOS",
      "desc": "CN 05 ANOS - 1,00M - CN5/HC 05 ANOS",
@@ -11593,10 +11594,11 @@
      "hora": null,
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 28
     },
     {
-     "id": null,
+     "id": 14682,
      "numero": "16A",
      "nome": "1,00M",
      "desc": "1,00M - MMR - 1,00M - MMR",
@@ -11605,10 +11607,11 @@
      "hora": "09:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 10
     },
     {
-     "id": null,
+     "id": 14712,
      "numero": "16B",
      "nome": "1,00M",
      "desc": "1,00M - JCB - 1,00M - JCB",
@@ -11617,10 +11620,11 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 31
     },
     {
-     "id": null,
+     "id": 14715,
      "numero": "16C",
      "nome": "1,00M",
      "desc": "1,00M - AMB/MB - 1,00M - AMB/MB",
@@ -11629,10 +11633,11 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 13
     },
     {
-     "id": null,
+     "id": 14685,
      "numero": "05",
      "nome": "1,10M",
      "desc": "1,10M - AMA/ MA - 1,10M - AMA/MA",
@@ -11641,10 +11646,11 @@
      "hora": "09:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 18
     },
     {
-     "id": null,
+     "id": 14688,
      "numero": "17A",
      "nome": "1,10M",
      "desc": "1,10M - PMR - 1,10M - PMR",
@@ -11653,10 +11659,11 @@
      "hora": "11:30",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 5
     },
     {
-     "id": null,
+     "id": 14692,
      "numero": "06",
      "nome": "1,20M",
      "desc": "1,20M - AM/ M - 1,20M - AM/M",
@@ -11665,10 +11672,11 @@
      "hora": "11:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 19
     },
     {
-     "id": null,
+     "id": 14706,
      "numero": "17B",
      "nome": "1,10M",
      "desc": "1,10M - JCA - 1,10M - JCA",
@@ -11677,10 +11685,11 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 36
     },
     {
-     "id": null,
+     "id": 14723,
      "numero": "27",
      "nome": "CN 06 ANOS",
      "desc": "CN 06 ANOS - 1,20M - CN6/HC 06 ANOS",
@@ -11689,10 +11698,11 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 44
     },
     {
-     "id": null,
+     "id": 14696,
      "numero": "07",
      "nome": "1,30M",
      "desc": "1,30M - PJR/JCT/AMT/MT - 1,30M - AMT/JCT/MT/PJR",
@@ -11701,19 +11711,34 @@
      "hora": "13:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 26
     },
     {
-     "id": null,
+     "id": 14709,
      "numero": "18",
      "nome": "1,20M",
      "desc": "1,20M - MR/ JC - 1,20M - JC/MR",
      "altura": 1.2,
      "dia": "2026-10-16",
      "hora": "14:30",
-     "pista": "LORD PILOT",
+     "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 25
+    },
+    {
+     "id": 14701,
+     "numero": "28",
+     "nome": "1,35M",
+     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
+     "altura": 1.35,
+     "dia": "2026-10-16",
+     "hora": "15:30",
+     "pista": "CARBACAN",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 70
     },
     {
      "id": 14699,
@@ -11722,7 +11747,7 @@
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
      "altura": 1.4,
      "dia": "2026-10-16",
-     "hora": "15:30",
+     "hora": "16:00",
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false,
@@ -11730,13 +11755,13 @@
     },
     {
      "id": null,
-     "numero": "28",
-     "nome": "1,35M",
-     "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
-     "altura": 1.35,
-     "dia": "2026-10-16",
-     "hora": "15:30",
-     "pista": "CARBACAN",
+     "numero": "09",
+     "nome": "1,10M",
+     "desc": "1,10M - AMA/ MA - 1,10M - AMA/MA",
+     "altura": 1.1,
+     "dia": "2026-10-17",
+     "hora": "08:00",
+     "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false
     },
@@ -11778,18 +11803,6 @@
     },
     {
      "id": null,
-     "numero": "09",
-     "nome": "1,10M",
-     "desc": "1,10M - AMA/ MA - 1,10M - AMA/MA",
-     "altura": 1.1,
-     "dia": "2026-10-17",
-     "hora": "09:00",
-     "pista": "POTENCIAL",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "19B",
      "nome": "1,00M",
      "desc": "1,00M - JCB - 1,00M - JCB",
@@ -11819,7 +11832,19 @@
      "desc": "1,20M - AM/ M - 1,20M - AM/M",
      "altura": 1.2,
      "dia": "2026-10-17",
-     "hora": "11:00",
+     "hora": "09:30",
+     "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "21",
+     "nome": "1,20M",
+     "desc": "1,20M - MR/ JC - 1,20M - JC/MR",
+     "altura": 1.2,
+     "dia": "2026-10-17",
+     "hora": null,
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false
@@ -11828,11 +11853,11 @@
      "id": null,
      "numero": "20A",
      "nome": "1,10M",
-     "desc": "1,10M - PMR - 1,10M - PMR",
+     "desc": "1,10M - PMR",
      "altura": 1.1,
      "dia": "2026-10-17",
-     "hora": "11:30",
-     "pista": "LORD PILOT",
+     "hora": "A seguir",
+     "pista": null,
      "gp": false,
      "linkResultado": false
     },
@@ -11855,7 +11880,7 @@
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
      "altura": 1.4,
      "dia": "2026-10-17",
-     "hora": "13:00",
+     "hora": "12:30",
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false
@@ -11881,18 +11906,6 @@
      "dia": "2026-10-17",
      "hora": null,
      "pista": "CARBACAN",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "21",
-     "nome": "1,20M",
-     "desc": "1,20M - MR/ JC - 1,20M - JC/MR",
-     "altura": 1.2,
-     "dia": "2026-10-17",
-     "hora": "14:30",
-     "pista": "LORD PILOT",
      "gp": false,
      "linkResultado": false
     },
@@ -12089,7 +12102,7 @@
    "fim": "2026-10-18",
    "provas": [
     {
-     "id": null,
+     "id": 14731,
      "numero": "01",
      "nome": "MMR PREL",
      "desc": "0,60M - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
@@ -12098,10 +12111,11 @@
      "hora": "08:30",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 121
     },
     {
-     "id": null,
+     "id": 14733,
      "numero": "02",
      "nome": "MMR INTER",
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -12110,19 +12124,21 @@
      "hora": "12:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 119
     },
     {
-     "id": null,
+     "id": 14735,
      "numero": "03",
      "nome": "MMR PRINC",
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
      "altura": 0.9,
      "dia": "2026-10-16",
-     "hora": "15:30",
-     "pista": "ALMÉ STAR",
+     "hora": "14:30",
+     "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 89
     },
     {
      "id": null,
@@ -12155,8 +12171,8 @@
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
      "altura": 0.9,
      "dia": "2026-10-17",
-     "hora": "15:00",
-     "pista": "ALMÉ STAR",
+     "hora": "14:30",
+     "pista": "LORD PILOT",
      "gp": false,
      "linkResultado": false
     },
