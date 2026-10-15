@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-15T17:07:03.041Z",
+ "atualizadoEm": "2026-10-15T18:36:51.535Z",
  "torneios": [
   {
    "id": 3404,
@@ -11566,10 +11566,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "FLAVIO GRILLO ARAUJO"
+      "h": "SERGIO HENRIQUES NEVES MARINS"
      },
      "oe": 39,
-     "n": 4
+     "n": 40
     },
     {
      "id": null,
@@ -12085,7 +12085,7 @@
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS AGROMEN.",
    "status": "Inscrições Encerradas",
-   "inicio": "2026-10-16",
+   "inicio": "2026-10-15",
    "fim": "2026-10-18",
    "provas": [
     {
