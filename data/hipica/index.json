@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-15T14:35:07.789Z",
+ "atualizadoEm": "2026-10-15T17:07:03.041Z",
  "torneios": [
   {
    "id": 3404,
@@ -11543,8 +11543,14 @@
      "hora": "12:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 8
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LEANDRO JOSE ABRAHAO",
+      "h": "ANICETO MARIO BACON"
+     },
+     "oe": 8,
+     "n": 9
     },
     {
      "id": 14704,
@@ -11556,8 +11562,14 @@
      "hora": "14:00",
      "pista": "POTENCIAL",
      "gp": true,
-     "linkResultado": false,
-     "oe": 39
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "FLAVIO GRILLO ARAUJO"
+     },
+     "oe": 39,
+     "n": 4
     },
     {
      "id": null,
@@ -11704,7 +11716,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14699,
      "numero": "08",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11713,7 +11725,8 @@
      "hora": "15:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 9
     },
     {
      "id": null,
@@ -12907,6 +12920,18 @@
      "dia": "2026-11-14",
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "11",
+     "nome": "AMAZONAS",
+     "desc": "AMAZONAS - 1,20M - L",
+     "altura": 1.2,
+     "dia": "2026-11-14",
+     "hora": "13:30",
+     "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
      "linkResultado": false
     },
