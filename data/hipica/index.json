@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T11:24:17.994Z",
+ "atualizadoEm": "2026-10-16T14:28:06.711Z",
  "torneios": [
   {
    "id": 3404,
@@ -11581,8 +11581,14 @@
      "hora": "08:30",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 3
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LEANDRO JOSE ABRAHAO",
+      "h": "DP CON-CORDE"
+     },
+     "oe": 3,
+     "n": 1
     },
     {
      "id": 14721,
@@ -11594,8 +11600,14 @@
      "hora": null,
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 28
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "KITARO FIORAVANTE BALDAIA",
+      "h": "GRAND CHALUS BR"
+     },
+     "oe": 28,
+     "n": 21
     },
     {
      "id": 14682,
@@ -11607,8 +11619,14 @@
      "hora": "09:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 10
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Alice Falcao M. C.",
+      "h": "CARDENHO DO LIBERTE (IA)"
+     },
+     "oe": 10,
+     "n": 10
     },
     {
      "id": 14712,
@@ -11620,8 +11638,14 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 31
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MARIA EDUARDA ZERBINATTI PAULUSSI",
+      "h": "HARRY POTTER LJR (IA)"
+     },
+     "oe": 31,
+     "n": 31
     },
     {
      "id": 14715,
@@ -11633,8 +11657,8 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 13
+     "linkResultado": true,
+     "oe": 12
     },
     {
      "id": 14685,
@@ -11646,8 +11670,14 @@
      "hora": "09:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 18
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JULIANA LOPES SANTOS BRILHANTE USTRA",
+      "h": "KIVA TPR (TE)"
+     },
+     "oe": 18,
+     "n": 18
     },
     {
      "id": 14688,
@@ -11699,7 +11729,7 @@
      "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false,
-     "oe": 43
+     "oe": 47
     },
     {
      "id": 14696,
@@ -11712,7 +11742,7 @@
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false,
-     "oe": 26
+     "oe": 25
     },
     {
      "id": 14709,
@@ -11790,7 +11820,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14683,
      "numero": "19A",
      "nome": "1,00M",
      "desc": "1,00M - MMR - 1,00M - MMR",
@@ -11799,10 +11829,11 @@
      "hora": "09:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 10
     },
     {
-     "id": null,
+     "id": 14713,
      "numero": "19B",
      "nome": "1,00M",
      "desc": "1,00M - JCB - 1,00M - JCB",
@@ -11811,7 +11842,8 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 31
     },
     {
      "id": null,
@@ -12111,7 +12143,7 @@
      "hora": "08:30",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 121
     },
     {
