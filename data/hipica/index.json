@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T16:46:44.413Z",
+ "atualizadoEm": "2026-10-16T18:16:17.451Z",
  "torneios": [
   {
    "id": 3404,
@@ -11746,8 +11746,14 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 47
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "STEPHAN DE FREITAS BARCHA",
+      "h": "JIROCCOLENSKY 3K (IA)"
+     },
+     "oe": 47,
+     "n": 30
     },
     {
      "id": 14696,
@@ -11762,11 +11768,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "JOAO PEDRO KISHIBE SERVILHA LOPES"
+      "c": "VICTORIA JUNQUEIRA RIBEIRO DE MENDONCA",
+      "h": "CELESTINO JMEN (TE)"
      },
      "oe": 25,
-     "n": 21
+     "n": 25
     },
     {
      "id": 14709,
@@ -11792,7 +11798,7 @@
      "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false,
-     "oe": 70
+     "oe": 75
     },
     {
      "id": 14699,
@@ -11805,7 +11811,13 @@
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": true,
-     "oe": 9
+     "res": true,
+     "v": {
+      "c": "LUCIANA LOSSIO",
+      "h": "SL OSCAR 1501"
+     },
+     "oe": 9,
+     "n": 7
     },
     {
      "id": null,
@@ -11957,7 +11969,7 @@
      "oe": 40
     },
     {
-     "id": null,
+     "id": 14727,
      "numero": "32",
      "nome": "CN 08 ANOS",
      "desc": "CN 08 ANOS - 1,40M - CN8/HC 08 ANOS",
@@ -11966,7 +11978,8 @@
      "hora": null,
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 19
     },
     {
      "id": null,
@@ -12208,8 +12221,14 @@
      "hora": "14:30",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 89
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "CECILIA MANZOLI VASCONCELOS"
+     },
+     "oe": 89,
+     "n": 1
     },
     {
      "id": 14729,
