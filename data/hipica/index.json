@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T20:03:54.454Z",
+ "atualizadoEm": "2026-10-16T21:14:57.338Z",
  "torneios": [
   {
    "id": 3404,
@@ -11806,11 +11806,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "FRANCESCO SPINA SCHMITZ"
+      "c": "IVO ROZA FILHO",
+      "h": "UMBURANAS DORIA ONE LOAR MYSTIC ROSE"
      },
      "oe": 75,
-     "n": 43
+     "n": 63
     },
     {
      "id": 14699,
@@ -12237,11 +12237,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "LORENZO OLIVEIRA MENDES DE FARIAS"
+      "c": "Sophie Cavalcante S.",
+      "h": "GRECO DO VOUGA"
      },
      "oe": 89,
-     "n": 1
+     "n": 81
     },
     {
      "id": 14729,
@@ -12257,7 +12257,7 @@
      "oe": 63
     },
     {
-     "id": null,
+     "id": 14732,
      "numero": "05",
      "nome": "MMR PREL",
      "desc": "0,60M - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
@@ -12266,10 +12266,11 @@
      "hora": "11:30",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 121
     },
     {
-     "id": null,
+     "id": 14736,
      "numero": "06",
      "nome": "MMR PRINC",
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -12278,7 +12279,8 @@
      "hora": "14:30",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 81
     },
     {
      "id": null,
