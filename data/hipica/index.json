@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T14:28:06.711Z",
+ "atualizadoEm": "2026-10-16T16:46:44.413Z",
  "torneios": [
   {
    "id": 3404,
@@ -11689,8 +11689,14 @@
      "hora": "11:30",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 5
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Bella Adorni M.",
+      "h": "ENZO FLORES (TE)"
+     },
+     "oe": 5,
+     "n": 4
     },
     {
      "id": 14692,
@@ -11702,8 +11708,14 @@
      "hora": "11:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 19
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "NATHANA MARTINS BEDRAN CALIL",
+      "h": "CEHJUR HIGH LIGHT (IA)"
+     },
+     "oe": 19,
+     "n": 18
     },
     {
      "id": 14706,
@@ -11715,8 +11727,14 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 36
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "ANA CLARA NICOLETTI CANET KRAUSE",
+      "h": "XAREU DAS CATARATAS"
+     },
+     "oe": 36,
+     "n": 35
     },
     {
      "id": 14723,
@@ -11741,8 +11759,14 @@
      "hora": "13:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 25
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "JOAO PEDRO KISHIBE SERVILHA LOPES"
+     },
+     "oe": 25,
+     "n": 21
     },
     {
      "id": 14709,
@@ -11780,7 +11804,7 @@
      "hora": "16:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 9
     },
     {
@@ -11846,7 +11870,7 @@
      "oe": 31
     },
     {
-     "id": null,
+     "id": 14716,
      "numero": "19C",
      "nome": "1,00M",
      "desc": "1,00M - AMB/MB - 1,00M - AMB/MB",
@@ -11855,7 +11879,8 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 12
     },
     {
      "id": null,
@@ -11894,7 +11919,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14707,
      "numero": "20B",
      "nome": "1,10M",
      "desc": "1,10M - JCA - 1,10M - JCA",
@@ -11903,7 +11928,8 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 36
     },
     {
      "id": null,
@@ -11918,7 +11944,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14725,
      "numero": "31",
      "nome": "CN 07 ANOS",
      "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
@@ -11927,7 +11953,8 @@
      "hora": "13:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 40
     },
     {
      "id": null,
@@ -12144,7 +12171,13 @@
      "pista": "ALMÉ STAR",
      "gp": false,
      "linkResultado": true,
-     "oe": 121
+     "res": true,
+     "v": {
+      "c": "Bertha Mendonça B.",
+      "h": "I-MAYWIES COOPER (IA)"
+     },
+     "oe": 121,
+     "n": 113
     },
     {
      "id": 14733,
@@ -12156,8 +12189,14 @@
      "hora": "12:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false,
-     "oe": 119
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "LARA GIACCHERO RIBEIRO"
+     },
+     "oe": 119,
+     "n": 1
     },
     {
      "id": 14735,
@@ -12173,7 +12212,7 @@
      "oe": 89
     },
     {
-     "id": null,
+     "id": 14729,
      "numero": "04",
      "nome": "MMR ASP",
      "desc": "0,40M - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
@@ -12182,7 +12221,8 @@
      "hora": "08:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 63
     },
     {
      "id": null,
