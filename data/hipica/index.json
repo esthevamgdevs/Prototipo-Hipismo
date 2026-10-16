@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T21:14:57.338Z",
+ "atualizadoEm": "2026-10-16T23:43:21.648Z",
  "torneios": [
   {
    "id": 3404,
@@ -11832,7 +11832,7 @@
      "n": 7
     },
     {
-     "id": null,
+     "id": 14686,
      "numero": "09",
      "nome": "1,10M",
      "desc": "1,10M - AMA/ MA - 1,10M - AMA/MA",
@@ -11841,10 +11841,11 @@
      "hora": "08:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 19
     },
     {
-     "id": null,
+     "id": 14720,
      "numero": "29",
      "nome": "CN 04 ANOS",
      "desc": "CN 04 ANOS - 1,00M - CN4/HC 04 ANOS",
@@ -11853,10 +11854,11 @@
      "hora": "08:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 3
     },
     {
-     "id": null,
+     "id": 14722,
      "numero": "30",
      "nome": "CN 05 ANOS",
      "desc": "CN 05 ANOS - 1,10M - CN5/HC 05 ANOS",
@@ -11865,7 +11867,8 @@
      "hora": null,
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 27
     },
     {
      "id": 14683,
@@ -11907,7 +11910,7 @@
      "oe": 12
     },
     {
-     "id": null,
+     "id": 14693,
      "numero": "10",
      "nome": "1,20M",
      "desc": "1,20M - AM/ M - 1,20M - AM/M",
@@ -11916,7 +11919,8 @@
      "hora": "09:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 19
     },
     {
      "id": 14710,
@@ -11970,7 +11974,7 @@
      "oe": 36
     },
     {
-     "id": null,
+     "id": 14700,
      "numero": "11",
      "nome": "1,40M",
      "desc": "1,40M - AST/U25 - 1,40M - U25/AST",
@@ -11979,10 +11983,11 @@
      "hora": "12:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 10
     },
     {
-     "id": null,
+     "id": 14702,
      "numero": "33",
      "nome": "1,35M",
      "desc": "1,35M - SRE/JR/U25 - 1,35M - JR/SRE/U25",
@@ -11991,7 +11996,8 @@
      "hora": "13:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 75
     },
     {
      "id": 14727,
