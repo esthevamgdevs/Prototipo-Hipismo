@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T19:30:38.725Z",
+ "atualizadoEm": "2026-10-17T21:04:39.750Z",
  "torneios": [
   {
    "id": 3404,
@@ -12116,11 +12116,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "CAIO CARVALHO FILHO"
+      "c": "JOSE LUIZ GUIMARAES DE CARVALHO",
+      "h": "BARBARELA JMEN"
      },
      "oe": 29,
-     "n": 22
+     "n": 30
     },
     {
      "id": null,
@@ -12252,6 +12252,19 @@
      "oe": 19
     },
     {
+     "id": 14697,
+     "numero": "15",
+     "nome": "COPA PRATA",
+     "desc": "COPA PRATA - 1,30M - AMT/JCT/MT/PJR",
+     "altura": 1.3,
+     "dia": "2026-10-18",
+     "hora": "14:30",
+     "pista": "POTENCIAL",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 24
+    },
+    {
      "id": null,
      "numero": "37",
      "nome": "COPA OURO",
@@ -12275,19 +12288,6 @@
      "gp": false,
      "linkResultado": false,
      "oe": 20
-    },
-    {
-     "id": 14697,
-     "numero": "15",
-     "nome": "COPA PRATA",
-     "desc": "COPA PRATA - 1,30M - AMT/JCT/MT/PJR",
-     "altura": 1.3,
-     "dia": "2026-10-18",
-     "hora": "15:30",
-     "pista": "POTENCIAL",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 24
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3490"
@@ -12406,11 +12406,17 @@
      "hora": "14:30",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 81
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Lorena Palamone L.",
+      "h": "KIPP"
+     },
+     "oe": 81,
+     "n": 80
     },
     {
-     "id": null,
+     "id": 14730,
      "numero": "07",
      "nome": "MMR ASP",
      "desc": "0,40M - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
@@ -12419,10 +12425,11 @@
      "hora": "08:30",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 63
     },
     {
-     "id": null,
+     "id": 14734,
      "numero": "08",
      "nome": "MMR INTER",
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -12431,7 +12438,8 @@
      "hora": "11:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 119
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3491"
