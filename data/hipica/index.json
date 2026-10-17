@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T18:50:48.507Z",
+ "atualizadoEm": "2026-10-17T19:30:38.725Z",
  "torneios": [
   {
    "id": 3404,
@@ -12107,7 +12107,7 @@
      "id": 14705,
      "numero": "12",
      "nome": "GP AGROMEN",
-     "desc": "GP AGROMEN - 1,55M - JR/SRT/U25",
+     "desc": "GP AGROMEN - 1,55M - JR/SR/SRE/SRT/U25",
      "altura": 1.55,
      "dia": "2026-10-17",
      "hora": "15:30",
@@ -12117,10 +12117,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "JOSE LUIZ GUIMARAES DE CARVALHO"
+      "h": "CAIO CARVALHO FILHO"
      },
      "oe": 29,
-     "n": 7
+     "n": 22
     },
     {
      "id": null,
