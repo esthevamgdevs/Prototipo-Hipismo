@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T13:26:30.409Z",
+ "atualizadoEm": "2026-10-17T15:43:48.607Z",
  "torneios": [
   {
    "id": 3404,
@@ -11920,8 +11920,8 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "GIULIA SCHULZE BLANCK FIORENTINO"
+      "c": "ALICE CHECCHIA SAMPAIO",
+      "h": "MAXIMUS"
      },
      "oe": 31,
      "n": 30
@@ -11936,7 +11936,7 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 12
     },
     {
@@ -11971,11 +11971,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "MARIA FERNANDA WARMLING SUCUPIRA",
-      "h": "DOLCE VITA DO FEROLETO (IA)"
+      "c": "GIOVANA CICCI FARINHA MOURA",
+      "h": "FORTIN KASMIR"
      },
      "oe": 24,
-     "n": 7
+     "n": 19
     },
     {
      "id": 14725,
@@ -11987,8 +11987,14 @@
      "hora": "10:30",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 41
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
+      "h": "MERANO JMEN I (TE)"
+     },
+     "oe": 41,
+     "n": 35
     },
     {
      "id": 14727,
@@ -12000,20 +12006,33 @@
      "hora": "10:30",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 20
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "ARTHEMUS DE ALMEIDA",
+      "h": "CALLAS JMEN (TE)"
+     },
+     "oe": 20,
+     "n": 18
     },
     {
-     "id": null,
+     "id": 14689,
      "numero": "20A",
      "nome": "1,10M",
-     "desc": "1,10M - PMR",
+     "desc": "1,10M - PMR - 1,10M - PMR",
      "altura": 1.1,
      "dia": "2026-10-17",
-     "hora": "A seguir",
-     "pista": null,
+     "hora": "12:00",
+     "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": true,
+     "res": true,
+     "n": 4,
+     "v": {
+      "c": "Bella Adorni M.",
+      "h": "ENZO FLORES (TE)"
+     },
+     "oe": 5
     },
     {
      "id": 14707,
@@ -12025,8 +12044,14 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 36
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "GUILHERMINA VICTORYA CALDAS LIMA"
+     },
+     "oe": 36,
+     "n": 20
     },
     {
      "id": 14700,
@@ -12038,8 +12063,14 @@
      "hora": "12:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 10
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "JOAO COBBET STAEL MARKUN",
+      "h": "2CLAC JASMINE COOPER"
+     },
+     "oe": 10,
+     "n": 4
     },
     {
      "id": 14702,
@@ -12055,7 +12086,7 @@
      "oe": 75
     },
     {
-     "id": null,
+     "id": 14705,
      "numero": "12",
      "nome": "GP AGROMEN",
      "desc": "GP AGROMEN - 1,55M - JR/SRT/U25",
@@ -12064,7 +12095,8 @@
      "hora": "15:30",
      "pista": "POTENCIAL",
      "gp": true,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 29
     },
     {
      "id": null,
@@ -12079,7 +12111,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14717,
      "numero": "22C",
      "nome": "1,00M",
      "desc": "1,00M - AMB/MB - 1,00M - AMB/MB",
@@ -12088,10 +12120,11 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 12
     },
     {
-     "id": null,
+     "id": 14684,
      "numero": "22A",
      "nome": "1,00M",
      "desc": "1,00M - MMR - 1,00M - MMR",
@@ -12100,7 +12133,8 @@
      "hora": "10:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 10
     },
     {
      "id": null,
@@ -12322,8 +12356,14 @@
      "hora": "11:30",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false,
-     "oe": 121
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "JULIA DALFRE VENTURINI DE BARROS"
+     },
+     "oe": 121,
+     "n": 1
     },
     {
      "id": 14736,
