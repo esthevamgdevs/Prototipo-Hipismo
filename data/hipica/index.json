@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T21:04:39.750Z",
+ "atualizadoEm": "2026-10-17T23:12:06.423Z",
  "torneios": [
   {
    "id": 3404,
@@ -12422,7 +12422,7 @@
      "desc": "0,40M - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
      "altura": 0.4,
      "dia": "2026-10-18",
-     "hora": "08:30",
+     "hora": "10:00",
      "pista": "ALMÉ STAR",
      "gp": false,
      "linkResultado": false,
@@ -12435,7 +12435,7 @@
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
      "altura": 0.8,
      "dia": "2026-10-18",
-     "hora": "11:00",
+     "hora": "13:00",
      "pista": "ALMÉ STAR",
      "gp": false,
      "linkResultado": false,
