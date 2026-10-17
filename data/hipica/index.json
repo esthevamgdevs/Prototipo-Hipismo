@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T16:36:30.685Z",
+ "atualizadoEm": "2026-10-17T18:50:48.507Z",
  "torneios": [
   {
    "id": 3404,
@@ -11658,7 +11658,13 @@
      "pista": "LORD PILOT",
      "gp": false,
      "linkResultado": true,
-     "oe": 12
+     "res": true,
+     "v": {
+      "c": "PAULO ROBERTO BERGAMASCHI",
+      "h": "SEBASTIAN DES FLANDRES (IA)"
+     },
+     "oe": 12,
+     "n": 12
     },
     {
      "id": 14685,
@@ -11937,7 +11943,13 @@
      "pista": "LORD PILOT",
      "gp": false,
      "linkResultado": true,
-     "oe": 12
+     "res": true,
+     "v": {
+      "c": "PAULO ROBERTO BERGAMASCHI",
+      "h": "SEBASTIAN DES FLANDRES (IA)"
+     },
+     "oe": 12,
+     "n": 12
     },
     {
      "id": 14693,
@@ -12044,14 +12056,14 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "GUILHERMINA VICTORYA CALDAS LIMA"
+      "c": "BRUNA VIVEIROS IMPARATO",
+      "h": "DAENERYS MYSTIC ROSE (TE)"
      },
      "oe": 36,
-     "n": 20
+     "n": 34
     },
     {
      "id": 14700,
@@ -12085,11 +12097,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "CHARLIE BAYS",
-      "h": "CORNET ONE JMEN I (TE)"
+      "c": "FLAVIO GRILLO ARAUJO",
+      "h": "KIRK DO CACH (IA)"
      },
      "oe": 75,
-     "n": 7
+     "n": 49
     },
     {
      "id": 14705,
@@ -12101,8 +12113,14 @@
      "hora": "15:30",
      "pista": "POTENCIAL",
      "gp": true,
-     "linkResultado": false,
-     "oe": 29
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "JOSE LUIZ GUIMARAES DE CARVALHO"
+     },
+     "oe": 29,
+     "n": 7
     },
     {
      "id": null,
@@ -12143,7 +12161,7 @@
      "oe": 10
     },
     {
-     "id": null,
+     "id": 14687,
      "numero": "13",
      "nome": "1,10M",
      "desc": "1,10M - AMA/ MA - 1,10M - AMA/MA",
@@ -12152,10 +12170,11 @@
      "hora": "10:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 17
     },
     {
-     "id": null,
+     "id": 14690,
      "numero": "23A",
      "nome": "1,10M",
      "desc": "1,10M - PMR - 1,10M - PMR",
@@ -12164,7 +12183,8 @@
      "hora": "10:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 4
     },
     {
      "id": 14724,
@@ -12180,7 +12200,7 @@
      "oe": 46
     },
     {
-     "id": null,
+     "id": 14708,
      "numero": "23B",
      "nome": "1,10M",
      "desc": "1,10M - JCA - 1,10M - JCA",
@@ -12189,10 +12209,11 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 36
     },
     {
-     "id": null,
+     "id": 14726,
      "numero": "35",
      "nome": "CN 07 ANOS",
      "desc": "CN 07 ANOS - 1,30M - CN7/HC 07 ANOS",
@@ -12201,10 +12222,11 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 41
     },
     {
-     "id": null,
+     "id": 14728,
      "numero": "36",
      "nome": "CN 08 ANOS",
      "desc": "CN 08 ANOS - 1,40M - CN8/HC 08 ANOS",
@@ -12213,10 +12235,11 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 21
     },
     {
-     "id": null,
+     "id": 14694,
      "numero": "14",
      "nome": "1,20M",
      "desc": "1,20M - AM/ M - 1,20M - AM/M",
@@ -12225,7 +12248,8 @@
      "hora": "12:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 19
     },
     {
      "id": null,
@@ -12240,7 +12264,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14711,
      "numero": "24",
      "nome": "1,20M",
      "desc": "1,20M - MR/ JC - 1,20M - JC/MR",
@@ -12249,7 +12273,8 @@
      "hora": "15:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 20
     },
     {
      "id": 14697,
@@ -12365,11 +12390,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "EMILY DOS SANTOS CABRAL"
+      "c": "Cecilia Bianchini M.",
+      "h": "BARUK"
      },
      "oe": 121,
-     "n": 1
+     "n": 108
     },
     {
      "id": 14736,
