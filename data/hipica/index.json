@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-16T23:43:21.648Z",
+ "atualizadoEm": "2026-10-17T10:45:52.220Z",
  "torneios": [
   {
    "id": 3404,
@@ -11842,7 +11842,7 @@
      "pista": "POTENCIAL",
      "gp": false,
      "linkResultado": false,
-     "oe": 19
+     "oe": 17
     },
     {
      "id": 14720,
@@ -12169,7 +12169,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14697,
      "numero": "15",
      "nome": "COPA PRATA",
      "desc": "COPA PRATA - 1,30M - AMT/JCT/MT/PJR",
@@ -12178,7 +12178,8 @@
      "hora": "15:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 24
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3490"
