@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T15:43:48.607Z",
+ "atualizadoEm": "2026-10-17T16:36:30.685Z",
  "torneios": [
   {
    "id": 3404,
@@ -12027,12 +12027,12 @@
      "gp": false,
      "linkResultado": true,
      "res": true,
-     "n": 4,
      "v": {
       "c": "Bella Adorni M.",
       "h": "ENZO FLORES (TE)"
      },
-     "oe": 5
+     "oe": 5,
+     "n": 4
     },
     {
      "id": 14707,
@@ -12044,7 +12044,7 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": true,
+     "linkResultado": false,
      "res": true,
      "v": {
       "c": "",
@@ -12066,11 +12066,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "JOAO COBBET STAEL MARKUN",
-      "h": "2CLAC JASMINE COOPER"
+      "c": "LUCIANA LOSSIO",
+      "h": "SL OSCAR 1501"
      },
      "oe": 10,
-     "n": 4
+     "n": 6
     },
     {
      "id": 14702,
@@ -12082,8 +12082,14 @@
      "hora": "13:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 75
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "CHARLIE BAYS",
+      "h": "CORNET ONE JMEN I (TE)"
+     },
+     "oe": 75,
+     "n": 7
     },
     {
      "id": 14705,
@@ -12360,7 +12366,7 @@
      "res": true,
      "v": {
       "c": "undefined",
-      "h": "JULIA DALFRE VENTURINI DE BARROS"
+      "h": "EMILY DOS SANTOS CABRAL"
      },
      "oe": 121,
      "n": 1
