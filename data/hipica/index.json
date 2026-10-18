@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-18T13:44:36.448Z",
+ "atualizadoEm": "2026-10-18T16:00:56.816Z",
  "torneios": [
   {
    "id": 3404,
@@ -12123,31 +12123,6 @@
      "n": 30
     },
     {
-     "id": null,
-     "numero": "22B",
-     "nome": "1,00M",
-     "desc": "1,00M - JCB",
-     "altura": 1,
-     "dia": "2026-10-18",
-     "hora": "A seguir",
-     "pista": null,
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": 14717,
-     "numero": "22C",
-     "nome": "1,00M",
-     "desc": "1,00M - AMB/MB - 1,00M - AMB/MB",
-     "altura": 1,
-     "dia": "2026-10-18",
-     "hora": null,
-     "pista": "LORD PILOT",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 12
-    },
-    {
      "id": 14684,
      "numero": "22A",
      "nome": "1,00M",
@@ -12179,11 +12154,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "GIULIA FRAZAO RODRIGUES DA CUNHA"
+      "c": "CAMILA HORO GIL",
+      "h": "CONTINI JMEN (TE)"
      },
      "oe": 17,
-     "n": 15
+     "n": 14
     },
     {
      "id": 14724,
@@ -12198,11 +12173,49 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "BRUNO CHAVES PESSANHA"
+      "c": "LUIZ EDUARDO REQUIAO STRUTZ",
+      "h": "BRENDA JMEN"
      },
      "oe": 46,
-     "n": 22
+     "n": 37
+    },
+    {
+     "id": 14714,
+     "numero": "22B",
+     "nome": "1,00M",
+     "desc": "1,00M - JCB - 1,00M - JCB",
+     "altura": 1,
+     "dia": "2026-10-18",
+     "hora": null,
+     "pista": "LORD PILOT",
+     "gp": false,
+     "linkResultado": true,
+     "res": true,
+     "n": 27,
+     "v": {
+      "c": "ANA MARIA ASSIS MAFFEI",
+      "h": "EL MILAGRO CAMILLE"
+     },
+     "oe": 31
+    },
+    {
+     "id": 14717,
+     "numero": "22C",
+     "nome": "1,00M",
+     "desc": "1,00M - AMB/MB - 1,00M - AMB/MB",
+     "altura": 1,
+     "dia": "2026-10-18",
+     "hora": null,
+     "pista": "LORD PILOT",
+     "gp": false,
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "CAMILA PINHEIRO DE REZENDE",
+      "h": "ZANGAO 3K"
+     },
+     "oe": 12,
+     "n": 12
     },
     {
      "id": 14726,
@@ -12214,8 +12227,14 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 41
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "RENATO RODRIGUES DOS SANTOS"
+     },
+     "oe": 41,
+     "n": 22
     },
     {
      "id": 14728,
@@ -12240,8 +12259,14 @@
      "hora": "12:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 19
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "NATHANA MARTINS BEDRAN CALIL",
+      "h": "CEHJUR HIGH LIGHT (IA)"
+     },
+     "oe": 19,
+     "n": 13
     },
     {
      "id": 14690,
@@ -12283,7 +12308,7 @@
      "oe": 24
     },
     {
-     "id": null,
+     "id": 14703,
      "numero": "37",
      "nome": "COPA OURO",
      "desc": "COPA OURO - 1,35M - JR/SRE/U25",
@@ -12292,7 +12317,8 @@
      "hora": "15:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 56
     },
     {
      "id": 14711,
@@ -12444,7 +12470,13 @@
      "pista": "ALMÉ STAR",
      "gp": false,
      "linkResultado": true,
-     "oe": 63
+     "res": true,
+     "v": {
+      "c": "Mariam Bilal R. B.",
+      "h": "EVEREST SI HRG"
+     },
+     "oe": 63,
+     "n": 56
     },
     {
      "id": 14734,
