@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-17T23:12:06.423Z",
+ "atualizadoEm": "2026-10-18T13:44:36.448Z",
  "torneios": [
   {
    "id": 3404,
@@ -12157,8 +12157,14 @@
      "hora": "10:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 10
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Sarah Pepino D.",
+      "h": "PSH PLATOON"
+     },
+     "oe": 10,
+     "n": 9
     },
     {
      "id": 14687,
@@ -12170,21 +12176,14 @@
      "hora": "10:00",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 17
-    },
-    {
-     "id": 14690,
-     "numero": "23A",
-     "nome": "1,10M",
-     "desc": "1,10M - PMR - 1,10M - PMR",
-     "altura": 1.1,
-     "dia": "2026-10-18",
-     "hora": "10:00",
-     "pista": "LORD PILOT",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 4
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "GIULIA FRAZAO RODRIGUES DA CUNHA"
+     },
+     "oe": 17,
+     "n": 15
     },
     {
      "id": 14724,
@@ -12196,21 +12195,14 @@
      "hora": "10:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 46
-    },
-    {
-     "id": 14708,
-     "numero": "23B",
-     "nome": "1,10M",
-     "desc": "1,10M - JCA - 1,10M - JCA",
-     "altura": 1.1,
-     "dia": "2026-10-18",
-     "hora": null,
-     "pista": "LORD PILOT",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 36
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "BRUNO CHAVES PESSANHA"
+     },
+     "oe": 46,
+     "n": 22
     },
     {
      "id": 14726,
@@ -12250,6 +12242,32 @@
      "gp": false,
      "linkResultado": false,
      "oe": 19
+    },
+    {
+     "id": 14690,
+     "numero": "23A",
+     "nome": "1,10M",
+     "desc": "1,10M - PMR - 1,10M - PMR",
+     "altura": 1.1,
+     "dia": "2026-10-18",
+     "hora": "13:00",
+     "pista": "LORD PILOT",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 4
+    },
+    {
+     "id": 14708,
+     "numero": "23B",
+     "nome": "1,10M",
+     "desc": "1,10M - JCA - 1,10M - JCA",
+     "altura": 1.1,
+     "dia": "2026-10-18",
+     "hora": null,
+     "pista": "LORD PILOT",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 36
     },
     {
      "id": 14697,
@@ -12425,7 +12443,7 @@
      "hora": "10:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 63
     },
     {
