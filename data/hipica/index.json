@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-18T19:15:26.703Z",
+ "atualizadoEm": "2026-10-18T19:30:42.258Z",
  "torneios": [
   {
    "id": 3404,
@@ -12344,11 +12344,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "SERGIO HENRIQUES NEVES MARINS",
-      "h": "CASCA D'OR JMEN I (TE)"
+      "c": "",
+      "h": "PAULO GIL MUNIZ RODRIGUES"
      },
      "oe": 57,
-     "n": 5
+     "n": 13
     },
     {
      "id": 14711,
@@ -12527,11 +12527,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "LUIZA SOARES DI BERNADO"
+      "c": "Miguel Barbera F.",
+      "h": "NIGHT LUNA JMEN"
      },
      "oe": 119,
-     "n": 1
+     "n": 108
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3491"
