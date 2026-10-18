@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-18T16:59:55.304Z",
+ "atualizadoEm": "2026-10-18T19:15:26.703Z",
  "torneios": [
   {
    "id": 3404,
@@ -12246,8 +12246,14 @@
      "hora": "12:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 21
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "ARTHEMUS DE ALMEIDA",
+      "h": "CALLAS JMEN (TE)"
+     },
+     "oe": 21,
+     "n": 19
     },
     {
      "id": 14694,
@@ -12300,11 +12306,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "SOPHIA LAURA LIMA DO VALE"
+      "c": "SOFIA JUNQUEIRA RIBEIRO DE MENDONÇA",
+      "h": "CHAMPAGNE C JMEN (TE)"
      },
      "oe": 36,
-     "n": 29
+     "n": 34
     },
     {
      "id": 14697,
@@ -12316,8 +12322,14 @@
      "hora": "14:30",
      "pista": "POTENCIAL",
      "gp": false,
-     "linkResultado": false,
-     "oe": 24
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "GUSTAVO MOURAO",
+      "h": "BARÚ AGROMIX (TE)"
+     },
+     "oe": 24,
+     "n": 19
     },
     {
      "id": 14703,
@@ -12329,8 +12341,14 @@
      "hora": "15:00",
      "pista": "CARBACAN",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "SERGIO HENRIQUES NEVES MARINS",
+      "h": "CASCA D'OR JMEN I (TE)"
+     },
+     "oe": 57,
+     "n": 5
     },
     {
      "id": 14711,
@@ -12342,8 +12360,14 @@
      "hora": "15:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 20
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "HELENA VITAL ANDRADE CASTRO PEREIRA",
+      "h": "ZERMATT TW (IA)"
+     },
+     "oe": 20,
+     "n": 20
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3490"
