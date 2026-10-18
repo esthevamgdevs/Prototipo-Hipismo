@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-18T16:00:56.816Z",
+ "atualizadoEm": "2026-10-18T16:59:55.304Z",
  "torneios": [
   {
    "id": 3404,
@@ -12191,12 +12191,12 @@
      "gp": false,
      "linkResultado": true,
      "res": true,
-     "n": 27,
      "v": {
       "c": "ANA MARIA ASSIS MAFFEI",
       "h": "EL MILAGRO CAMILLE"
      },
-     "oe": 31
+     "oe": 31,
+     "n": 27
     },
     {
      "id": 14717,
@@ -12230,11 +12230,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "RENATO RODRIGUES DOS SANTOS"
+      "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
+      "h": "MERANO JMEN I (TE)"
      },
      "oe": 41,
-     "n": 22
+     "n": 37
     },
     {
      "id": 14728,
@@ -12266,7 +12266,7 @@
       "h": "CEHJUR HIGH LIGHT (IA)"
      },
      "oe": 19,
-     "n": 13
+     "n": 16
     },
     {
      "id": 14690,
@@ -12278,8 +12278,14 @@
      "hora": "13:00",
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 4
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Bella Adorni M.",
+      "h": "ENZO FLORES (TE)"
+     },
+     "oe": 4,
+     "n": 4
     },
     {
      "id": 14708,
@@ -12291,8 +12297,14 @@
      "hora": null,
      "pista": "LORD PILOT",
      "gp": false,
-     "linkResultado": false,
-     "oe": 36
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "SOPHIA LAURA LIMA DO VALE"
+     },
+     "oe": 36,
+     "n": 29
     },
     {
      "id": 14697,
@@ -12318,7 +12330,7 @@
      "pista": "CARBACAN",
      "gp": false,
      "linkResultado": false,
-     "oe": 56
+     "oe": 57
     },
     {
      "id": 14711,
@@ -12488,8 +12500,14 @@
      "hora": "13:00",
      "pista": "ALMÉ STAR",
      "gp": false,
-     "linkResultado": false,
-     "oe": 119
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "LUIZA SOARES DI BERNADO"
+     },
+     "oe": 119,
+     "n": 1
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3491"
