@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-18T19:30:42.258Z",
+ "atualizadoEm": "2026-10-18T21:34:18.196Z",
  "torneios": [
   {
    "id": 3404,
@@ -11491,7 +11491,7 @@
    "nome": "CSN5* AGROMEN 2026",
    "modalidade": "SALTO",
    "local": "HARAS AGROMEN.",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-10-14",
    "fim": "2026-10-18",
    "provas": [
@@ -12344,11 +12344,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "PAULO GIL MUNIZ RODRIGUES"
+      "c": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO",
+      "h": "CASILLERO JMEN"
      },
      "oe": 57,
-     "n": 13
+     "n": 55
     },
     {
      "id": 14711,
@@ -12377,7 +12377,7 @@
    "nome": "TAÇA FPH INICIANTES SASA HORSES 2026 - 6ª ETAPA",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS AGROMEN.",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-10-15",
    "fim": "2026-10-18",
    "provas": [
