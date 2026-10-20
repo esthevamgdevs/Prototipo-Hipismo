@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-20T20:40:28.852Z",
+ "atualizadoEm": "2026-10-20T23:57:44.587Z",
  "torneios": [
   {
    "id": 3404,
@@ -12645,7 +12645,7 @@
    "nome": "CONCURSO DE SALTO ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
@@ -12789,7 +12789,7 @@
    "nome": "CONCURSO DE SALTO INICIANTE ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
