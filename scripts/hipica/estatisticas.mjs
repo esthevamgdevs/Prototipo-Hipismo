@@ -5,6 +5,7 @@
 // como fazem outros apps de hipismo, porque essas provas são disputadas por crianças.
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { calcularIndice } from './indice.mjs';
 
 // Códigos de categoria da FPH que correspondem a crianças (mini mirim, pré-mirim, mirim...)
 export const CAT_INFANTIL = /\b(MMR|PMR|MRA|MRB|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]?MIRIM|INFANTIL|KIDS?)\b/i;
@@ -36,6 +37,7 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
   const participacoes = [], proximas = [];
   const resumoTorneio = new Map();
   const fichas = new Map(); // chave do cavalo -> { pai, mae, nasc, raca, criador }
+  const largadasIndice = []; // todas as largadas, para o Índice Salta
   const guardaFicha = o => {
     if (!o || !(o.pai || o.mae || o.nasc || o.criador)) return;
     const k = chave(o.h), atual = fichas.get(k) || {};
@@ -92,6 +94,7 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
       }
       for (const l of linhas) {
         const zerou = !l.s && l.r && l.r[0] && l.r[0][0] === 0;
+        largadasIndice.push({ h: chave(l.h), nome: l.h, c: chave(l.c), p: l.p, n: total, a: p.altura || null, z: zerou ? 1 : 0, s: l.s ? 1 : 0 });
         const fed = l.f != null ? dados.fed[l.f] : null;
         const item = { d: p.dia || t.fim, t: t.nome, ti: t.id, pid: Number(pid), pn: p.numero, a: p.altura, p: l.p, n: total, r: l.r || null, s: l.s || null };
 
@@ -245,6 +248,10 @@ export async function gerarEstatisticas(saida, torneios, anoDe) {
     filiacao[k] = avo ? [f.pai || '', f.mae || '', avo] : [f.pai || '', f.mae || ''];
   }
   await fs.writeFile(path.join(saida, 'filiacao.json'), JSON.stringify(filiacao) + '\n');
+
+  // Índice Salta: nota de cada cavalo em pista e de cada reprodutor (método em indice.mjs)
+  const indice = calcularIndice(largadasIndice, filiacao, chave);
+  if (indice) await fs.writeFile(path.join(saida, 'indice.json'), JSON.stringify(indice) + '\n');
 
   // Visão Opportunity: vai para um arquivo próprio, que o app só baixa quando a aba é aberta
   let opp = null;
