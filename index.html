@@ -721,6 +721,106 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
   /* o cabeçalho verde vira um cartão com as mesmas bordas dos blocos de baixo */
   .capa:not(:has(> .topo-linha)){margin:0 32px;border-radius:30px;padding-left:28px;padding-right:28px}
 }
+
+/* cartões de torneio: duas colunas largas no computador e etiquetas que não quebram */
+.cartao .vivo,.selo-tr{white-space:nowrap}
+@media (min-width:1100px){
+  .lista{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* computador: o conteúdo esmaece antes de passar por trás da pílula de navegação */
+@media (min-width:1100px){
+  body::before{content:'';position:fixed;top:0;left:0;right:0;height:92px;background:linear-gradient(to bottom,var(--bg) 0%,var(--bg) 55%,transparent 100%);z-index:35;pointer-events:none}
+}
+
+/* boas-vindas em uma tela */
+.bv-um{justify-content:flex-start;gap:0}
+.bv-um .bv-corpo{flex:1;gap:10px;min-height:0}
+.bv-topo{display:flex;align-items:center;gap:10px}
+.bv-topo .bv-marca b{font-size:32px}
+.bv-lead{font-size:14.5px!important}
+.bv-um h2{margin-top:10px!important}
+.bv-sub{font-size:14px!important;color:var(--muted)}
+.bv-busca{margin-top:6px}
+.bv-lista{display:flex;flex-direction:column;gap:8px;margin-top:4px;overflow-y:auto;padding-bottom:6px}
+.bv-rot{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--ouro-escuro);margin-top:6px}
+.bv-item{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:10px 12px;border:1px solid var(--linha);border-radius:18px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.bv-item-txt{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.bv-item-txt b{font-size:15px}
+.bv-item-txt small{font-size:12.5px;color:var(--muted)}
+.bv-estrela{width:44px;height:44px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--muted-2)}
+.bv-item.on{border-color:#D9B45A;background:linear-gradient(150deg,rgba(217,180,90,.16),rgba(217,180,90,.04))}
+.bv-item.on .bv-estrela{color:#D9B45A}
+.bv-item.on .bv-estrela svg{fill:#D9B45A}
+.bv-um .bv-pe{margin-top:12px}
+
+/* pedido de avisos depois de seguir alguém */
+#pedido-avisos{position:fixed;inset:0;z-index:70;display:flex;align-items:flex-end;justify-content:center}
+.pa-fundo{position:absolute;inset:0;background:rgba(10,20,16,.55)}
+.pa-folha{position:relative;width:100%;max-width:480px;background:var(--bg);border-radius:28px 28px 0 0;padding:10px 22px calc(env(safe-area-inset-bottom,0px) + 22px);display:flex;flex-direction:column;gap:12px;box-shadow:0 -10px 30px rgba(0,0,0,.25)}
+.pa-alca{display:block;width:40px;height:5px;border-radius:3px;background:var(--linha);margin:0 auto 6px}
+.pa-icone{width:52px;height:52px;border-radius:16px;background:rgba(217,180,90,.2);color:var(--ouro-escuro);display:flex;align-items:center;justify-content:center}
+.pa-folha h3{margin:0;font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.15}
+.pa-folha p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.pa-folha .btn{width:100%;justify-content:center;flex:none;min-height:52px}
+@media (min-width:760px){#pedido-avisos{align-items:center}.pa-folha{border-radius:28px}}
+
+/* esqueleto de carregamento */
+.esq{display:flex;flex-direction:column;gap:10px;margin:14px 16px 0}
+.esq-item{display:block;border-radius:18px;border:1px solid var(--linha);background:linear-gradient(90deg,var(--surface) 30%,rgba(127,127,127,.13) 50%,var(--surface) 70%);background-size:220% 100%;animation:esq-brilho 1.3s ease-in-out infinite}
+@keyframes esq-brilho{from{background-position:120% 0}to{background-position:-120% 0}}
+@media (prefers-reduced-motion:reduce){.esq-item{animation:none}}
+@media (min-width:760px){.esq{margin:14px 28px 0}}
+@media (min-width:1100px){.esq{margin:14px 32px 0}}
+.bv-lista .esq{margin:6px 0 0}
+
+/* áreas de toque de pelo menos 44px, sem mudar o visual */
+.link-fil{padding:10px 3px;margin:-10px -3px}
+.link-ficha{padding:10px 0;margin:-10px 0}
+.chip{min-height:40px}
+.btn-fino{min-height:40px}
+.redondo,.pf-voltar,.campeao-fechar{width:44px;height:44px}
+.capa .voltar{min-height:44px}
+
+.fonte a,.tr-yt,.pf-sub a{padding:10px 0;margin:-10px 0}
+
+.bv-item{flex:none}
+.bv-item-txt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.bv-um .bv-marca small{color:var(--muted)}
+
+/* Índice Salta */
+.nota-selo{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:56px;padding:0 10px;border-radius:18px;font-family:var(--serif);font-size:24px;line-height:1;flex:none}
+.nota-selo.peq{min-width:44px;height:30px;border-radius:10px;font-size:15px;padding:0 8px}
+.n-ouro{background:linear-gradient(150deg,#E6C877,#C9A34A);color:#1C231F}
+.n-verde{background:var(--verde);color:#F4F1EA}
+.n-cinza{background:rgba(127,127,127,.16);color:var(--ink)}
+.n-claro{background:transparent;border:1px solid var(--linha);color:var(--muted)}
+.n-vazio{background:transparent;border:1px dashed var(--muted-2);color:var(--muted)}
+.indice-card{margin:14px 20px 0;padding:16px;border:1px solid var(--linha);border-radius:var(--raio-g,22px);background:var(--surface);box-shadow:var(--sombra);display:flex;flex-direction:column;gap:10px}
+.indice-card.indice-repro{flex-direction:row;align-items:center;gap:14px}
+.ic-topo{display:flex;align-items:center;gap:14px}
+.ic-tit{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ic-tit small{font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--ouro-escuro)}
+.ic-tit b{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.2}
+.ic-conf{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.conf-pontos{display:inline-flex;gap:3px}
+.conf-pontos i{width:7px;height:7px;border-radius:50%;background:var(--linha)}
+.conf-pontos i.on{background:#D9B45A}
+.ic-linha{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) auto;align-items:center;gap:10px;font-size:13px}
+.ic-rot{display:flex;flex-direction:column;line-height:1.25}
+.ic-rot small{font-size:11px;color:var(--muted)}
+.ic-barra{height:8px;border-radius:999px;background:var(--linha);overflow:hidden}
+.ic-barra i{display:block;height:100%;border-radius:999px;background:#D9B45A}
+.ic-barra i.neutro{background:repeating-linear-gradient(90deg,var(--muted-2) 0 4px,transparent 4px 8px);opacity:.5}
+.ic-linha b{font-size:13px;min-width:62px;text-align:right}
+.ic-nota{margin:2px 0 0;font-size:12px;color:var(--muted);line-height:1.5}
+.ir-pos{width:26px;flex:none;text-align:center;font-family:var(--serif);font-size:18px;color:var(--muted)}
+.painel.teste{border-style:dashed}
+.painel.teste p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.painel.teste .btn-fino{align-self:flex-start;color:var(--ink);border-color:var(--linha)}
+@media (min-width:760px){.indice-card{margin:14px 28px 0}}
+@media (min-width:1100px){.indice-card{margin:14px 32px 0}}
 </style>
 </head>
 <body>
@@ -767,7 +867,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '10/10/2026 · campeão em destaque e espaçamentos';
+const VERSAO_APP = '20/10/2026 · Índice Salta (em teste)';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -809,6 +909,10 @@ const guarda = {
   ler(k, padrao) { try { return JSON.parse(localStorage.getItem(k)) ?? padrao; } catch { return padrao; } },
   gravar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
+// Índice Salta: começa visível só para quem liga "Recursos em teste" na tela Sobre.
+// Depois de validado, basta trocar para true para mostrar a todos.
+const INDICE_PUBLICO = false;
+const indiceAtivo = () => INDICE_PUBLICO || guarda.ler('salta-indice-beta', false) === true;
 let salvos = guarda.ler('pista-salvos', []);
 let seguindo = guarda.ler('pista-seguindo', []);
 let avisos = guarda.ler('pista-avisos', { podio: true, programa: true, aovivo: false });
@@ -873,6 +977,8 @@ function perfilDe(tipo, k) {
   if (!fatia || fatia === 'carregando' || fatia === 'erro') return fatia || null;
   return fatia[k] || 'ausente';
 }
+// esqueleto de carregamento: mostra a forma do conteúdo enquanto os dados chegam
+const esqueleto = (n = 5, alto = 68) => `<div class="esq" role="status" aria-label="Carregando">${Array.from({ length: n }, (_, i) => `<span class="esq-item" style="height:${alto}px;opacity:${(1 - i * 0.12).toFixed(2)}"></span>`).join('')}</div>`;
 async function carregarBusca() {
   if (S.busca) return;
   S.busca = 'carregando';
@@ -889,13 +995,46 @@ function alternar(lista, chaveArmazenada, valor) {
   render();
 }
 const estaSeguindo = (tipo, k) => seguindo.some(s => s.tipo === tipo && s.k === k);
-function seguir(tipo, k, nome) {
+function seguir(tipo, k, nome, semPedido) {
   const i = seguindo.findIndex(s => s.tipo === tipo && s.k === k);
+  const novo = i < 0;
   if (i >= 0) seguindo.splice(i, 1); else seguindo.push({ tipo, k, nome });
   guarda.gravar('pista-seguindo', seguindo);
   sincronizarAvisos();
   render();
+  // logo depois de seguir alguém é o momento em que o aviso faz sentido para a pessoa
+  if (novo && !semPedido && !document.getElementById('boas-vindas')) talvezPedirAvisos(nome);
 }
+const CHAVE_PEDIDO = 'salta-avisos-pedido';
+function talvezPedirAvisos(nome) {
+  if (['ativo', 'bloqueado', 'sem-suporte'].includes(push.estado)) return;
+  let ultimo = 0; try { ultimo = +localStorage.getItem(CHAVE_PEDIDO) || 0; } catch {}
+  if (Date.now() - ultimo < 14 * 864e5) return; // quem disse "agora não" só é perguntado de novo depois de duas semanas
+  const precisaInstalar = ehIOS && !naTelaDeInicio();
+  let el = document.getElementById('pedido-avisos');
+  if (!el) { el = document.createElement('div'); el.id = 'pedido-avisos'; document.body.appendChild(el); }
+  el.innerHTML = `<div class="pa-fundo" data-pa="depois"></div><div class="pa-folha" role="dialog" aria-modal="true" aria-labelledby="pa-t">
+    <span class="pa-alca" aria-hidden="true"></span>
+    <div class="pa-icone">${svg('<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4zM10 20a2 2 0 0 0 4 0"/>', 26)}</div>
+    <h3 id="pa-t">Quer saber na hora quando ${esc(titulo(nome || ''))} subir no pódio?</h3>
+    <p>O Salta avisa no celular logo depois de cada resultado de quem você segue e quando sai a programação dos torneios que você salvou.</p>
+    ${precisaInstalar ? `<p>No iPhone, os avisos só funcionam com o Salta na tela de início:</p>
+      <ol class="bv-passos"><li>No Safari, toque em <b>Compartilhar</b></li><li>Escolha <b>Adicionar à Tela de Início</b></li><li>Abra o Salta pelo ícone e ative os avisos</li></ol>
+      <button class="btn ouro" data-pa="depois">Entendi</button>`
+    : `<button class="btn ouro" data-pa="ativar">Ativar avisos</button><button class="bv-pular" data-pa="depois">Agora não</button>`}
+  </div>`;
+  const foco = el.querySelector('[data-pa="ativar"],.pa-folha .btn'); if (foco) foco.focus();
+}
+function fecharPedidoAvisos() {
+  try { localStorage.setItem(CHAVE_PEDIDO, String(Date.now())); } catch {}
+  const el = document.getElementById('pedido-avisos'); if (el) el.remove();
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-pa]'); if (!b) return;
+  fecharPedidoAvisos();
+  if (b.dataset.pa === 'ativar') ativarAvisos();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('pedido-avisos')) fecharPedidoAvisos(); });
 
 function base64ParaBytes(b) {
   const s = atob((b + '='.repeat((4 - b.length % 4) % 4)).replace(/-/g, '+').replace(/_/g, '/'));
@@ -1121,7 +1260,6 @@ function cartaoTorneio(t, comVencedor) {
       <span class="tag">${t.cat.toUpperCase()}${t.alturas.length ? ' · ' + fmtAlt(t.alturas[0]) + (t.alturas.length > 1 ? ' a ' + fmtAlt(t.alturas[t.alturas.length - 1]) : '') : ''}${venc ? '' : (t.provas.length ? ` · ${t.provas.length} PROVAS` : ' · PROGRAMAÇÃO EM BREVE')}</span>
       ${venc ? `<span class="meta">Venceu a ${fmtAlt(venc.altura)}: <strong>${esc(titulo(venc.v.c))}</strong> com ${esc(titulo(venc.v.h))}</span>` : ''}
       ${aoVivoHoje(t) ? `<span class="selo-tr"><i></i>Transmissão ao vivo</span>` : ''}
-      ${destaqueDe(t) ? `<span class="selo-dest">${esc(destaqueDe(t).selo || 'Leilão durante o torneio')}</span>` : ''}
     </span>
     <span class="estrela" role="img" aria-hidden="true" ${salvos.includes(t.id) ? 'aria-pressed="true"' : ''}>${estrelaSvg}</span>
   </button>`;
@@ -1361,7 +1499,7 @@ function telaProva() {
       <h1>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') + (p.altura === 1 ? ' metro' : ' metros') : esc(titulo(p.nome))}</h1>
       <span class="sub">${esc([/^\d[,.]\d{2}\s*M$/i.test((p.nome || '').trim()) ? '' : titulo(p.nome), p.hora, p.pista ? 'Pista ' + titulo(p.pista) : ''].filter(Boolean).join(' · '))}</span>`;
   const dados = S.torneios[t.id];
-  if (!dados || dados === 'carregando') { carregarTorneio(t.id); return cab + '</header><main><div class="vazio">Carregando resultado…</div></main>'; }
+  if (!dados || dados === 'carregando') { carregarTorneio(t.id); return cab + '</header><main>' + esqueleto(6) + '</main>'; }
   if (dados === 'erro') return cab + `</header><main><div class="vazio"><b>Não deu para carregar</b><button class="btn clara" style="margin-top:12px;flex:none" data-acao="recarregarProva">Tentar de novo</button></div></main>`;
   if (!p.res) {
     const ordem = (p.id && (dados.ordem || {})[String(p.id)]) || [];
@@ -1631,6 +1769,8 @@ function telaSobre() {
         <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Transmissões ao vivo das provas de salto, exibidas no Salta com autorização da HorsePix.</p></div>
     </div>
     <p style="text-align:center;margin:8px 0 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn-fino" data-acao="metodo">Como calculamos</button><button class="btn-fino" data-bv-rever="1">Ver a apresentação de novo</button></p>
+    ${INDICE_PUBLICO ? '' : `<div class="painel teste"><h3>Recursos em teste</h3><p>O Índice Salta dá uma nota a cada cavalo pelo desempenho próprio e da família. Ele está em validação e só aparece para quem ligar aqui.</p>
+      <button class="btn-fino" data-acao="indiceBeta" aria-pressed="${indiceAtivo()}">${indiceAtivo() ? '✓ Índice Salta ligado · desligar' : 'Ligar o Índice Salta'}</button></div>`}
     <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
 }
@@ -1658,7 +1798,7 @@ const coberturaTxt = () => criacaoPronta() ? ` Até agora, ${S.criacao.cobertura
 
 // lista de garanhões ou de criadores, ordenada pelas vitórias dos cavalos em pista
 function rankingCriacao(tipo) {
-  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return `<main><div class="vazio">${S.criacao === 'erro' ? 'Os dados de criação aparecem depois da próxima coleta.' : 'Carregando…'}</div></main>`; }
+  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return S.criacao === 'erro' ? '<main><div class="vazio">Os dados de criação aparecem depois da próxima coleta.</div></main>' : '<main>' + esqueleto(6) + '</main>'; }
   const lista = listaCriacao(tipo).slice(0, 100);
   if (!lista.length) return `<main><div class="vazio">Ainda não há fichas suficientes. Os dados aparecem conforme o coletor lê as ordens de entrada.</div></main>`;
   let pos = 0, ult = null;
@@ -1682,7 +1822,7 @@ function rankingCriacao(tipo) {
 function telaCriacao(tipo) {
   const k = { garanhao: S.garanhaoK, matriz: S.matrizK, haras: S.harasK }[tipo];
   const cab = nome => capaPerfil(nome, { garanhao: 'GARANHÃO', matriz: 'MATRIZ', haras: 'CRIADOR' }[tipo], tipo === 'haras' ? 'verde' : 'ouro', 'voltarCriacao');
-  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</div><div class="vazio">Carregando…</div></main>'; }
+  if (!criacaoPronta()) { carregarArquivo('criacao', 'criacao.json'); return cab(k) + '</div>' + esqueleto(5) + '</main>'; }
   const g = listaCriacao(tipo).find(x => x.k === k);
   if (!g) return cab(k) + '</div><div class="vazio">Sem cavalos em pista nesta temporada.</div></main>';
   const base = S.criacao.cavalos;
@@ -1701,6 +1841,7 @@ function telaCriacao(tipo) {
       <div class="regua"><span class="olho-r">NO MUNDO</span>${w ? `<b>${w.pos}º</b><span>ranking WBFSH ${S.wbfsh.ano} · ${w.pontos.toLocaleString('pt-BR')} pontos</span><a href="${esc(S.wbfsh.fonte)}" target="_blank" rel="noopener">Fonte: WBFSH, resultados internacionais FEI ↗</a>` : `<b>–</b><span>fora do top 100 da WBFSH ${S.wbfsh && S.wbfsh.ano ? S.wbfsh.ano : ''}</span>`}</div>
       <div class="regua"><span class="olho-r">NO SALTA</span><b>${posSalta ? posSalta + 'º' : '–'}</b><span>pelos filhos nas provas da FPH · ${g.v} vitórias</span><span class="selo-fonte">Calculado pelo Salta</span></div>
     </div>` : ''}
+    ${tipo !== 'haras' ? indiceReprodutor(tipo, k) : ''}
     <div class="stats"><div><b>${cavs.length}</b><span>${tipo === 'haras' ? 'cavalos' : 'filhos'}</span></div><div><b>${g.l}</b><span>largadas</span></div><div><b style="color:var(--ouro-escuro)">${g.v}</b><span>vitórias</span></div><div><b>${g.po}</b><span>pódios</span></div></div>
     <div class="secao"><h2>${tipo === 'haras' ? 'Cavalos em pista' : 'Filhos em pista'}</h2><span class="risco"></span></div>
     <div class="podio">${cavs.map(({ k: ck, d }) => `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(ck)}">
@@ -1737,13 +1878,14 @@ function telaRanking() {
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['geral', 'Visão geral'], ['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['matrizes', 'Matrizes'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
+        ${[['geral', 'Visão geral'], ...(indiceAtivo() ? [['indice', 'Índice Salta']] : []), ['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['matrizes', 'Matrizes'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
   if (S.rankTipo === 'garanhoes' || S.rankTipo === 'matrizes' || S.rankTipo === 'criadores') return capa + rankingCriacao(S.rankTipo);
   if (S.rankTipo === 'geral') return capa + visaoGeral();
-  if (!S.stats) return capa + '<main><div class="vazio">Calculando o ranking…</div></main>';
+  if (S.rankTipo === 'indice' && indiceAtivo()) return capa + rankingIndice();
+  if (!S.stats) return capa + '<main>' + esqueleto(6) + '</main>';
   const t = S.stats.totais;
 
   let corpo = `<main class="fade"><div class="secao"><h2>${S.rankTipo === 'clubes' ? 'Por federação' : 'Por vitórias'}</h2><span class="risco"></span></div><div class="podio">`;
@@ -1772,7 +1914,7 @@ function telaRanking() {
 
 // visão geral do Ranking: os três primeiros de cada ranking, num lugar só
 function visaoGeral() {
-  if (!S.stats) return '<main><div class="vazio">Calculando o ranking…</div></main>';
+  if (!S.stats) return '<main>' + esqueleto(6) + '</main>';
   if (S.criacao === undefined) carregarArquivo('criacao', 'criacao.json');
   const bloco = (tipo, titulo_, itens, linha) => `<section class="bloco-geral"><div class="secao"><h2>${titulo_}</h2><span class="risco"></span><button class="link-ficha aux" data-rank="${tipo}">Ver todos</button></div>
     <div class="podio">${itens.slice(0, 3).map((x, i) => linha(x, i)).join('') || '<div class="vazio" style="padding:12px 0">Em breve.</div>'}</div></section>`;
@@ -1810,7 +1952,7 @@ function telaOpp() {
   return capa + telaVendidosOpp();
 }
 function telaVendidosOpp() {
-  if (!S.opp || S.opp === 'carregando') { carregarOpp(); return `<main><div class="vazio">Carregando os cavalos vendidos…</div></main>`; }
+  if (!S.opp || S.opp === 'carregando') { carregarOpp(); return '<main>' + esqueleto(5, 96) + '</main>'; }
   if (S.opp === 'erro') return `<main><div class="vazio"><b>Não deu para carregar agora</b>Os dados aparecem depois da próxima atualização.</div></main>`;
   const o = S.opp, t = o.totais, vista = S.oppVista || 'provas';
   const q = (S.filtroOpp || '').trim().toLowerCase();
@@ -1943,7 +2085,7 @@ function telaPerfil() {
   const pessoa = tipo === 'cavaleiros';
   const cor = pessoa ? 'verde' : 'terra';
   const rot = pessoa ? 'CAVALEIRO' : 'CAVALO';
-  if (!p || p === 'carregando') { carregarPerfil(tipo, k); return capaPerfil(titulo(k), rot, cor, 'voltarPerfil') + '</div><div class="vazio">Carregando perfil…</div></main>'; }
+  if (!p || p === 'carregando') { carregarPerfil(tipo, k); return capaPerfil(titulo(k), rot, cor, 'voltarPerfil') + '</div>' + esqueleto(4, 84) + '</main>'; }
   if (p === 'erro' || p === 'ausente') return capaPerfil(titulo(k), rot, cor, 'voltarPerfil') + `</div><div class="vazio"><b>Sem dados por enquanto</b>Este perfil aparece assim que houver resultados coletados de 2026.</div></main>`;
   const seguido = estaSeguindo(tipo, k);
   const pct = p.l ? Math.round(p.z / p.l * 100) : 0;
@@ -1967,7 +2109,7 @@ function telaPerfil() {
       ${anelDesempenho(p.v, p.l ? p.v / p.l : 0, `vitória${p.v === 1 ? '' : 's'} em ${p.l}`)}
       ${anelDesempenho(p.po, p.l ? p.po / p.l : 0, `pódio${p.po === 1 ? '' : 's'}`)}
       ${anelDesempenho(alturas.length ? fmtAlt(+alturas[0][0]).replace('m', '') : '–', alturas.length ? Math.min(1, +alturas[0][0] / 1.6) : 0, 'maior altura', true)}
-    </div>`;
+    </div>${pessoa ? '' : blocoIndice(k)}`;
   // abas: momentos, resultados e família (ou cavalos, para cavaleiros)
   const abas = [['momentos', 'Momentos'], ['resultados', 'Resultados'], ['familia', pessoa ? 'Cavalos' : 'Família']];
   const aba = abas.some(([a]) => a === S.abaPerfil) ? S.abaPerfil : 'momentos';
@@ -2027,6 +2169,62 @@ function blocoFamilia(f) {
 }
 
 // ---------- como calculamos ----------
+// ---------- Índice Salta ----------
+const indicePronto = () => S.indice && typeof S.indice === 'object';
+const CONF_TXT = { a: 'confiança alta', m: 'confiança média', b: 'confiança baixa' };
+const classeNota = n => /^AA/.test(n) ? 'n-ouro' : /^A/.test(n) ? 'n-verde' : /^BB/.test(n) ? 'n-cinza' : 'n-claro';
+const seloNota = (nota, conf, pequeno) => conf === 'b'
+  ? `<span class="nota-selo n-vazio${pequeno ? ' peq' : ''}" title="Pouca informação para dar nota">—</span>`
+  : `<span class="nota-selo ${classeNota(nota)}${pequeno ? ' peq' : ''}">${esc(nota)}</span>`;
+const pontosConf = c => `<span class="conf-pontos" aria-label="${CONF_TXT[c]}">${[1, 2, 3].map(i => `<i class="${i <= ({ a: 3, m: 2, b: 1 })[c] ? 'on' : ''}"></i>`).join('')}</span>`;
+// cartão do índice no perfil do cavalo
+function blocoIndice(k) {
+  if (!indiceAtivo()) return '';
+  if (S.indice === undefined) carregarArquivo('indice', 'indice.json');
+  if (!indicePronto()) return S.indice === 'erro' ? '' : `<div class="indice-card">${esqueleto(1, 120)}</div>`;
+  const v = S.indice.cavalos[k];
+  if (!v) return '';
+  const [ind, nota, conf, pr, pai, mae, avo, desc, nL, nP, nM, nA, nD] = v;
+  const linha = (rot, val, qtd) => `<div class="ic-linha"><span class="ic-rot">${rot}<small>${qtd}</small></span>
+    <span class="ic-barra"><i style="width:${val == null ? 50 : val}%" class="${val == null ? 'neutro' : ''}"></i></span><b>${val == null ? 'sem dados' : val}</b></div>`;
+  return `<section class="indice-card" aria-label="Índice Salta">
+    <div class="ic-topo">${seloNota(nota, conf)}
+      <span class="ic-tit"><small>ÍNDICE SALTA · EM TESTE</small><b>${conf === 'b' ? 'Pouca informação para dar nota' : `Nota ${esc(nota)} · ${ind.toFixed(0)} de 100`}</b>
+      <span class="ic-conf">${pontosConf(conf)} ${CONF_TXT[conf]}</span></span></div>
+    ${linha('Desempenho próprio', pr, `${nL} largada${nL === 1 ? '' : 's'}`)}
+    ${linha('Irmãos paternos', pai, nP ? `${nP} em pista` : 'nenhum em pista')}
+    ${linha('Mãe e irmãos maternos', mae, nM ? `${nM} em pista` : 'nenhum em pista')}
+    ${nA ? linha('Avô materno', avo, `${nA} netos em pista`) : ''}
+    ${nD ? linha('Descendentes', desc, `${nD} em pista`) : ''}
+    <p class="ic-nota">Estimativa a partir dos resultados públicos da temporada; a família indica tendência, não garante desempenho. <button class="link-ficha" data-acao="metodo">Como calculamos</button></p>
+  </section>`;
+}
+// linha do índice nas páginas de garanhão e matriz
+function indiceReprodutor(tipo, k) {
+  if (!indiceAtivo()) return '';
+  if (S.indice === undefined) carregarArquivo('indice', 'indice.json');
+  if (!indicePronto()) return '';
+  const v = (tipo === 'garanhao' ? S.indice.garanhoes : S.indice.matrizes)[k];
+  if (!v) return '';
+  const [ind, nota, conf, n] = v;
+  return `<div class="indice-card indice-repro">${seloNota(nota, conf)}<span class="ic-tit"><small>ÍNDICE SALTA COMO ${tipo === 'garanhao' ? 'GARANHÃO' : 'MATRIZ'} · EM TESTE</small>
+    <b>${conf === 'b' ? 'Poucos filhos em pista para dar nota' : `Nota ${esc(nota)} · ${Math.round(ind)} de 100`}</b><span class="ic-conf">${pontosConf(conf)} ${CONF_TXT[conf]} · ${n} filho${n === 1 ? '' : 's'} em pista</span></span></div>`;
+}
+// ranking pelo índice: só cavalos com confiança média ou alta
+function rankingIndice() {
+  if (S.indice === undefined) carregarArquivo('indice', 'indice.json');
+  if (!indicePronto()) return '<main>' + esqueleto(6) + '</main>';
+  const I = S.indice;
+  return `<main class="fade"><div class="secao"><h2>Índice Salta</h2><span class="risco"></span><span class="aux">em teste</span></div>
+    <div class="podio">${I.ranking.map(([k, nome], i) => { const v = I.cavalos[k]; return `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(k)}">
+      <span class="ir-pos">${i + 1}</span>${seloNota(v[1], v[2], true)}
+      <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(nome))}${seloOpp(nome)}</span>
+      <span class="meta">${v[8]} largadas · ${CONF_TXT[v[2]]}</span>${filiacaoDe(nome)}</span>
+      <span class="res"><b>${Math.round(v[0])}</b><span>de 100</span></span></button>`; }).join('')}</div>
+    ${notaFonte(` Ranking pelo Índice Salta (${esc(I.versao)}), só com cavalos de confiança média ou alta, a partir de ${I.totais.largadas.toLocaleString('pt-BR')} largadas da temporada.`)}
+  </main>`;
+}
+
 function telaMetodo() {
   const a = criacaoPronta() ? fmtAlt(S.criacao.alturaDestaque || 1.4) : '1,40m';
   const cob = criacaoPronta() ? `${S.criacao.cobertura.comFicha.toLocaleString('pt-BR')} de ${S.criacao.cobertura.total.toLocaleString('pt-BR')}` : '';
@@ -2041,6 +2239,9 @@ function telaMetodo() {
     ${sec('Ranking mundial WBFSH', `<p>A posição mundial é a publicada pela WBFSH${S.wbfsh && S.wbfsh.periodo ? `, com ${esc(S.wbfsh.periodo)}` : ''}. O Salta não recalcula esse ranking. Como os nomes são escritos de forma diferente, cada garanhão só recebe o selo quando a ligação é por nome igual, por nome sem o número de registro ou por grafia conhecida da FPH; casos parecidos ficam de fora até serem conferidos.</p>`)}
     ${sec('Identificação dos cavalos', `<p>Os cavalos são identificados pelo nome, porque os resultados públicos não trazem o número de registro. Homônimos e mudanças de afixo podem causar erros, e por isso os casos duvidosos ficam fora das contagens até serem confirmados.</p>`)}
     ${sec('Proteção de menores', `<p>Nas provas de categorias infantis, o sobrenome dos cavaleiros é abreviado já na gravação dos dados.</p>`)}
+    ${indiceAtivo() ? sec('Índice Salta (em teste)', `<p>Cada largada vale de 0 a 1: 60% pela colocação na prova e 40% por zerar a primeira fase, multiplicado por um fator de altura (0,50 a 1,00m, 1,00 a 1,40m, até 1,40 a partir de 1,60m). Vencer com um cavaleiro muito forte vale um pouco menos para o cavalo.</p>
+      <p>O índice soma o <b>desempenho próprio (60%)</b>, os <b>irmãos paternos (20%)</b>, a <b>mãe e os irmãos maternos (12%)</b>, os <b>outros netos do avô materno (3%)</b> e os <b>descendentes (5%)</b>, cada parte em percentil de 0 a 100. Quem tem pouca informação é puxado para a média, e o que falta conta como média. O próprio cavalo nunca entra na conta da própria família.</p>
+      <p>A nota vem do percentil entre todos os cavalos em pista: AAA (2% melhores), AA+, AA, A+, A, BB+, BB, B e C. Com confiança baixa, a nota não é mostrada. A herdabilidade do desempenho em salto é baixa: a família indica tendência, não garante resultado. Versão ${S.indice && S.indice.versao ? esc(S.indice.versao) : 'v1'}.</p>`) : ''}
     ${sec('Correções', `<p>Encontrou um erro? Escreva para <a href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · correção de dado')}">contato@opportunityleiloes.com.br</a>. As correções feitas ficam registradas com a data.</p>`)}
     <p class="fonte">Rankings e resumos são calculados pelo Salta e não são rankings oficiais da FPH, da CBH, da ABCCH ou da WBFSH.</p>
   </main>`;
@@ -2184,7 +2385,7 @@ function render() {
         : '<b>Não deu para carregar</b><button class="btn clara" style="margin-top:12px;flex:none" data-acao="recarregar">Tentar de novo</button>'
     }</div></main>`;
   } else if (!S.dados) {
-    html = `<header class="capa"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span></header><main><div class="vazio">Carregando provas…</div></main>`;
+    html = `<header class="capa"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span></header><main>${esqueleto(5, 110)}</main>`;
   } else if (S.tela === 'sobre') html = telaSobre();
   else if (S.tela === 'perfil') html = telaPerfil();
   else if (S.tela === 'prova') html = telaProva();
@@ -2238,7 +2439,7 @@ document.addEventListener('click', e => {
   if (d.acao === 'baixarCard') return baixarCard();
   if (d.aviso) { avisos[d.aviso] = !avisos[d.aviso]; guarda.gravar('pista-avisos', avisos); sincronizarAvisos(); return render(); }
   if (d.acao === 'ativarAvisos') return ativarAvisos();
-  if (d.bvRever) return mostrarBoasVindas(0);
+  if (d.bvRever) return mostrarBoasVindas();
   if (d.acao === 'desativarAvisos') return desativarAvisos();
   if (d.cat) { S.cat = d.cat; return render(); }
   if (d.dia) { S.dia = d.dia; return render(); }
@@ -2258,6 +2459,7 @@ document.addEventListener('click', e => {
     return irPara('prova', { torneio: ti, prova: pid, dia: null, filtro: '', abaProva: 'classificacao' });
   }
   if (d.acao === 'metodo') { guardarCaminho(); return irPara('metodo', {}); }
+  if (d.acao === 'indiceBeta') { guarda.gravar('salta-indice-beta', !indiceAtivo()); if (!indiceAtivo() && S.rankTipo === 'indice') S.rankTipo = 'geral'; return render(); }
   if (d.acao === 'voltarMetodo') return voltarCaminho();
   if (d.acao === 'voltarCriacao') return voltarCaminho();
   if (d.tr) { S.trIdx = +d.tr; S.trTocando = false; return render(); }
@@ -2367,50 +2569,56 @@ render();
 // ---------- boas-vindas: três telas na primeira abertura ----------
 const CHAVE_BV = 'salta-boas-vindas-v1';
 let bvPasso = 0;
+let bvQ = '';
+// boas-vindas numa tela só: em vez de explicar, já pergunta quem a pessoa quer acompanhar
 function telaBoasVindas() {
-  const pontos = `<div class="bv-pontos">${[0, 1, 2].map(i => `<i class="${i === bvPasso ? 'on' : ''}"></i>`).join('')}</div>`;
-  if (bvPasso === 0) return `<div class="bv bv-verde" role="dialog" aria-modal="true" aria-labelledby="bv-t">
-    <div class="bv-corpo bv-centro">${marcaSvg(88)}
-      <div class="bv-marca"><b>Salta</b><small>by Opportunity</small></div>
-      <h2 id="bv-t">A temporada de salto,<br>prova a prova</h2>
-      <p>Calendário, resultados, ordem de entrada e ranking dos torneios de salto, sempre atualizados.</p></div>
-    <div class="bv-pe">${pontos}<button class="btn ouro" data-bv="proximo">Começar</button><button class="bv-pular" data-bv="fechar">Pular apresentação</button></div></div>`;
-  if (bvPasso === 1) return `<div class="bv" role="dialog" aria-modal="true" aria-labelledby="bv-t">
+  return `<div class="bv bv-um" role="dialog" aria-modal="true" aria-labelledby="bv-t">
     <div class="bv-corpo">
-      <div class="bv-ilustra">
-        <span class="bv-olho">SEGUINDO</span>
-        <span class="bv-item on"><span><b>Seu cavalo</b><small>Cavalo · resultados e próximas provas</small></span>${svg(ICONES.seguindo, 20)}</span>
-        <span class="bv-item on"><span><b>Seu cavaleiro</b><small>Cavaleiro · todas as largadas</small></span>${svg(ICONES.seguindo, 20)}</span>
-        <span class="bv-item"><span><b>Um torneio</b><small>Torneio · programação e resultados</small></span>${svg(ICONES.seguindo, 20)}</span>
-      </div>
-      <h2 id="bv-t">Siga quem você acompanha</h2>
-      <p>Toque na estrela de um cavaleiro, de um cavalo ou de um torneio. Tudo o que você segue fica reunido na aba Seguindo.</p></div>
-    <div class="bv-pe">${pontos}<button class="btn ouro" data-bv="proximo">Continuar</button><button class="bv-pular" data-bv="fechar">Pular apresentação</button></div></div>`;
-  // terceira tela: no iPhone fora da tela de início, ensina a instalar; nos outros casos, oferece ativar os avisos
-  const precisaInstalar = ehIOS && !naTelaDeInicio();
-  const semSuporte = !precisaInstalar && !('Notification' in window && 'serviceWorker' in navigator && 'PushManager' in window);
-  return `<div class="bv" role="dialog" aria-modal="true" aria-labelledby="bv-t">
-    <div class="bv-corpo">
-      <div class="bv-aviso">${marcaSvg(30)}<span><b>Vitória de quem você segue</b><small>Seu cavaleiro ficou em 1º com o seu cavalo, na prova de 1,20m</small></span></div>
-      <h2 id="bv-t">Saiba na hora quem subiu no pódio</h2>
-      ${precisaInstalar ? `<p>No iPhone, os avisos só funcionam com o Salta na tela de início:</p>
-      <ol class="bv-passos">
-        <li>No Safari, toque em <b>Compartilhar</b> <span class="bv-ic">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>', 18)}</span></li>
-        <li>Escolha <b>Adicionar à Tela de Início</b></li>
-        <li>Abra o Salta pelo ícone e ative os avisos</li>
-      </ol>` : (semSuporte ? `<p>Este navegador não recebe avisos. Você pode seguir cavaleiros e cavalos do mesmo jeito e acompanhar tudo na aba Seguindo.</p>`
-        : `<p>Os avisos chegam logo depois de cada resultado publicado, para quem você segue.</p>`)}
+      <div class="bv-topo">${marcaSvg(40)}<span class="bv-marca"><b>Salta</b><small>by Opportunity</small></span></div>
+      <p class="bv-lead">Calendário, ordem de entrada e resultados das provas de salto, atualizados durante o dia.</p>
+      <h2 id="bv-t">Quem você quer acompanhar?</h2>
+      <p class="bv-sub">Siga cavaleiros e cavalos para ver tudo deles na aba Hoje. Dá para mudar depois.</p>
+      <input class="busca bv-busca" id="bvBusca" type="search" placeholder="Buscar cavaleiro ou cavalo" autocomplete="off" value="${esc(bvQ)}">
+      <div class="bv-lista" id="bvLista">${listaBoasVindas()}</div>
     </div>
-    <div class="bv-pe">${pontos}${precisaInstalar || semSuporte ? `<button class="btn ouro" data-bv="fechar">Entendi</button>`
-      : `<button class="btn ouro" data-bv="avisos">Ativar avisos</button><button class="bv-pular" data-bv="fechar">Agora não</button>`}</div></div>`;
+    <div class="bv-pe"><button class="btn ouro" data-bv="comecar" id="bvComecar">${rotuloComecar()}</button><button class="bv-pular" data-bv="fechar">Explorar sem seguir</button></div>
+  </div>`;
 }
-function mostrarBoasVindas(passo = 0) {
-  bvPasso = passo;
+const rotuloComecar = () => seguindo.length ? `Continuar · ${seguindo.length} seguido${seguindo.length > 1 ? 's' : ''}` : 'Começar';
+function listaBoasVindas() {
+  if (!Array.isArray(S.busca)) {
+    if (S.busca !== 'carregando' && S.busca !== 'erro') {
+      S.busca = 'carregando';
+      pegar(`${BASE}/busca.json`).then(d => { S.busca = d; atualizarBoasVindas(); }).catch(() => { S.busca = 'erro'; atualizarBoasVindas(); });
+    }
+    return S.busca === 'erro' ? '<p class="bv-sub">Não foi possível carregar a lista agora. Você pode seguir depois, pela aba Seguindo.</p>' : esqueleto(3);
+  }
+  const q = chave(bvQ);
+  let itens;
+  if (q.length >= 2) itens = S.busca.filter(x => chave(x[2]).includes(q)).slice(0, 8);
+  else {
+    const top = t => S.busca.filter(x => x[0] === t).sort((a, b) => b[4] - a[4]).slice(0, 3);
+    itens = [...top('c'), ...top('h')];
+  }
+  if (!itens.length) return '<p class="bv-sub">Ninguém encontrado com esse nome.</p>';
+  return (q.length >= 2 ? '' : '<span class="bv-rot">EM DESTAQUE NA TEMPORADA</span>') + itens.map(([t, k, nome, l, v]) => {
+    const tipo = t === 'c' ? 'cavaleiros' : 'cavalos', on = estaSeguindo(tipo, k);
+    return `<button class="bv-item${on ? ' on' : ''}" data-bv-seguir="${tipo}" data-k="${esc(k)}" data-nome="${esc(nome)}" aria-pressed="${on}">
+      ${avatar(nome, 44)}<span class="bv-item-txt"><b>${esc(titulo(nome))}</b><small>${tipo === 'cavaleiros' ? 'Cavaleiro' : 'Cavalo'} · ${v ? `${v} vitória${v === 1 ? '' : 's'}` : `${l} largada${l === 1 ? '' : 's'}`}</small></span>
+      <span class="bv-estrela" aria-hidden="true">${svg('<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" stroke-linejoin="round"/>', 22)}</span></button>`;
+  }).join('');
+}
+function atualizarBoasVindas() {
+  const l = document.getElementById('bvLista'); if (l) l.innerHTML = listaBoasVindas();
+  const b = document.getElementById('bvComecar'); if (b) b.textContent = rotuloComecar();
+}
+
+function mostrarBoasVindas() {
   let el = document.getElementById('boas-vindas');
   if (!el) { el = document.createElement('div'); el.id = 'boas-vindas'; document.body.appendChild(el); }
   el.innerHTML = telaBoasVindas();
   document.body.style.overflow = 'hidden';
-  const foco = el.querySelector('[data-bv="proximo"],[data-bv="avisos"],[data-bv="fechar"]');
+  const foco = el.querySelector('#bvBusca');
   if (foco) foco.focus();
 }
 function fecharBoasVindas() {
@@ -2420,19 +2628,23 @@ function fecharBoasVindas() {
   document.body.style.overflow = '';
 }
 document.addEventListener('click', e => {
+  const s = e.target.closest('[data-bv-seguir]');
+  if (s) { seguir(s.dataset.bvSeguir, s.dataset.k, s.dataset.nome, true); return atualizarBoasVindas(); }
+});
+document.addEventListener('input', e => { if (e.target.id === 'bvBusca') { bvQ = e.target.value; const l = document.getElementById('bvLista'); if (l) l.innerHTML = listaBoasVindas(); } });
+document.addEventListener('click', e => {
   const b = e.target.closest('[data-bv]');
   if (!b) return;
   const acao = b.dataset.bv;
-  if (acao === 'proximo') return mostrarBoasVindas(bvPasso + 1);
   if (acao === 'fechar') return fecharBoasVindas();
-  if (acao === 'avisos') { fecharBoasVindas(); return ativarAvisos(); }
+  if (acao === 'comecar') { fecharBoasVindas(); if (seguindo.length) talvezPedirAvisos(seguindo[seguindo.length - 1].nome); return; }
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.getElementById('boas-vindas')) fecharBoasVindas(); });
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('link-fil')) { e.preventDefault(); e.stopPropagation(); e.target.click(); } });
 function talvezBoasVindas() {
   let visto = false;
   try { visto = localStorage.getItem(CHAVE_BV) === '1'; } catch {}
-  if (!visto) mostrarBoasVindas(0);
+  if (!visto) mostrarBoasVindas();
 }
 
 carregar().then(abrirPeloEndereco).then(talvezBoasVindas);
