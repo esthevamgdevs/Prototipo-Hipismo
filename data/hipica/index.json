@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-23T17:14:13.966Z",
+ "atualizadoEm": "2026-10-23T20:32:20.118Z",
  "torneios": [
   {
    "id": 3404,
@@ -12568,52 +12568,56 @@
    "fim": "2026-10-24",
    "provas": [
     {
-     "id": null,
+     "id": 14790,
      "numero": "01",
      "nome": "MMR ASP",
      "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
      "altura": 0.4,
      "dia": "2026-10-24",
-     "hora": "09:30",
+     "hora": "08:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 82
     },
     {
-     "id": null,
+     "id": 14791,
      "numero": "02",
      "nome": "MMR PREL",
      "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
      "altura": 0.6,
      "dia": "2026-10-24",
-     "hora": null,
+     "hora": "11:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 85
     },
     {
-     "id": null,
+     "id": 14792,
      "numero": "03",
      "nome": "MMR INTER",
      "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
      "altura": 0.8,
      "dia": "2026-10-24",
-     "hora": null,
+     "hora": "14:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 58
     },
     {
-     "id": null,
+     "id": 14793,
      "numero": "04",
      "nome": "MMR PRINC",
      "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
      "altura": 0.9,
      "dia": "2026-10-24",
-     "hora": null,
+     "hora": "16:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 40
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3496"
@@ -13478,7 +13482,7 @@
    "nome": "CSN4* JHSF 11º TOP RIDERS - 2026",
    "modalidade": "SALTO",
    "local": "SOCIEDADE HIPICA PAULISTA",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-12-02",
    "fim": "2026-12-06",
    "provas": [
