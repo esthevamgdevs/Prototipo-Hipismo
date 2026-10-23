@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-22T20:38:16.813Z",
+ "atualizadoEm": "2026-10-23T17:14:13.966Z",
  "torneios": [
   {
    "id": 3404,
@@ -12563,7 +12563,7 @@
    "nome": "7ª ETAPA METROPOLITANA CUP 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-10-24",
    "fim": "2026-10-24",
    "provas": [
@@ -12645,7 +12645,7 @@
    "nome": "CONCURSO DE SALTO ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições Abertas",
+   "status": "Cancelado",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
@@ -12801,7 +12801,7 @@
    "nome": "CONCURSO DE SALTO INICIANTE ESTADUAL - HARAS MANOEL LEÃO 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "HARAS MANOEL LEÃO",
-   "status": "Inscrições Abertas",
+   "status": "Cancelado",
    "inicio": "2026-10-29",
    "fim": "2026-11-01",
    "provas": [
