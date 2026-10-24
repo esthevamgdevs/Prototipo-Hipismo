@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-23T20:32:20.118Z",
+ "atualizadoEm": "2026-10-24T10:57:37.422Z",
  "torneios": [
   {
    "id": 3404,
@@ -12578,7 +12578,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 82
+     "oe": 86
     },
     {
      "id": 14791,
@@ -12591,7 +12591,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 85
+     "oe": 83
     },
     {
      "id": 14792,
@@ -12617,7 +12617,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 40
+     "oe": 39
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3496"
