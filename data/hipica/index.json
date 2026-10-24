@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-24T10:57:37.422Z",
+ "atualizadoEm": "2026-10-24T13:45:54.790Z",
  "torneios": [
   {
    "id": 3404,
@@ -12563,7 +12563,7 @@
    "nome": "7ª ETAPA METROPOLITANA CUP 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Encerradas",
+   "status": "Torneio em Andamento",
    "inicio": "2026-10-24",
    "fim": "2026-10-24",
    "provas": [
@@ -12577,8 +12577,14 @@
      "hora": "08:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 86
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Bruna Maria S. S.",
+      "h": "MSML ZEBRINO"
+     },
+     "oe": 86,
+     "n": 83
     },
     {
      "id": 14791,
@@ -12591,7 +12597,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 83
+     "oe": 81
     },
     {
      "id": 14792,
@@ -12604,7 +12610,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 58
+     "oe": 57
     },
     {
      "id": 14793,
