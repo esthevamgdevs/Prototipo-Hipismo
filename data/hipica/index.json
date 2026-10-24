@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-24T19:33:10.589Z",
+ "atualizadoEm": "2026-10-24T21:43:24.589Z",
  "torneios": [
   {
    "id": 3404,
@@ -12618,11 +12618,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "BEATRIZ VEIGA VELICKA"
+      "c": "Manuela Partika K.",
+      "h": "ITA NYATA"
      },
      "oe": 57,
-     "n": 1
+     "n": 64
     },
     {
      "id": 14793,
@@ -12634,8 +12634,14 @@
      "hora": "16:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 44
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "HELENA MARQUES ROSSI"
+     },
+     "oe": 44,
+     "n": 1
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3496"
