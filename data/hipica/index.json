@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-24T17:01:07.353Z",
+ "atualizadoEm": "2026-10-24T19:26:24.826Z",
  "torneios": [
   {
    "id": 3404,
@@ -12615,8 +12615,14 @@
      "hora": "14:00",
      "pista": "AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "BEATRIZ VEIGA VELICKA"
+     },
+     "oe": 57,
+     "n": 1
     },
     {
      "id": 14793,
@@ -12629,7 +12635,7 @@
      "pista": "AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 39
+     "oe": 44
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3496"
