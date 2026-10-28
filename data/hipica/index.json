@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-27T00:30:36.541Z",
+ "atualizadoEm": "2026-10-28T00:34:48.497Z",
  "torneios": [
   {
    "id": 3404,
@@ -13164,7 +13164,7 @@
    "nome": "CBS AMAZONAS 2026",
    "modalidade": "SALTO",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-11-10",
    "fim": "2026-11-15",
    "provas": [
@@ -13392,7 +13392,7 @@
    "nome": "CAMPEONATO BRASILEIRO DE AMAZONAS ASPIRANTE 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-11-10",
    "fim": "2026-11-15",
    "provas": [
