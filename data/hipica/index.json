@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-29T16:32:08.296Z",
+ "atualizadoEm": "2026-10-29T21:24:15.761Z",
  "torneios": [
   {
    "id": 3404,
@@ -13000,7 +13000,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 43
+     "oe": 42
     },
     {
      "id": 14769,
@@ -13097,7 +13097,7 @@
    "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Encerradas",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-01",
    "fim": "2026-11-01",
    "provas": [
