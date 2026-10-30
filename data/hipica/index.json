@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-30T16:24:12.292Z",
+ "atualizadoEm": "2026-10-30T18:05:18.206Z",
  "torneios": [
   {
    "id": 3404,
@@ -13002,8 +13002,8 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "Vanessa Gemente B.",
-      "h": "JCR AREOLA (IA)"
+      "c": "Lara Liberto L.",
+      "h": "RBR GEORGIA BLUE CABIDA (IA)"
      },
      "oe": 42,
      "n": 30
@@ -13021,8 +13021,8 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "Daniel De M. G.",
-      "h": "CARILONE"
+      "c": "Luiza Caires S.",
+      "h": "OHANA DG"
      },
      "oe": 31,
      "n": 23
@@ -13040,11 +13040,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "GIOVANA TARALLO LIBERTINI CERVELATI"
+      "c": "EVERALDO DUARTE MENDES",
+      "h": "KM KEANU REEVES"
      },
      "oe": 48,
-     "n": 12
+     "n": 32
     },
     {
      "id": 14777,
@@ -13056,8 +13056,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 38
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "DANIEL DE MELLO GOBBO"
+     },
+     "oe": 38,
+     "n": 12
     },
     {
      "id": null,
