@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-30T14:07:20.207Z",
+ "atualizadoEm": "2026-10-30T16:24:12.292Z",
  "torneios": [
   {
    "id": 3404,
@@ -13021,11 +13021,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "undefined",
-      "h": "LOURENCO VIEIRA DA SILVA"
+      "c": "Daniel De M. G.",
+      "h": "CARILONE"
      },
      "oe": 31,
-     "n": 27
+     "n": 23
     },
     {
      "id": 14773,
@@ -13037,8 +13037,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 48
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "GIOVANA TARALLO LIBERTINI CERVELATI"
+     },
+     "oe": 48,
+     "n": 12
     },
     {
      "id": 14777,
@@ -13109,7 +13115,7 @@
    "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-11-01",
    "fim": "2026-11-01",
    "provas": [
