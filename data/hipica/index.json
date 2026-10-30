@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-30T01:05:36.976Z",
+ "atualizadoEm": "2026-10-30T14:07:20.207Z",
  "torneios": [
   {
    "id": 3404,
@@ -12985,7 +12985,7 @@
    "nome": "TEMPORADA OFICIAL TEAM NIJHOF HARAS COOPER 2026",
    "modalidade": "SALTO",
    "local": "HARAS COOPER",
-   "status": "Inscrições Encerradas",
+   "status": "Torneio em Andamento",
    "inicio": "2026-10-30",
    "fim": "2026-10-31",
    "provas": [
@@ -12999,8 +12999,14 @@
      "hora": "09:00",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 42
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Vanessa Gemente B.",
+      "h": "JCR AREOLA (IA)"
+     },
+     "oe": 42,
+     "n": 30
     },
     {
      "id": 14769,
@@ -13012,8 +13018,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 31
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "undefined",
+      "h": "LOURENCO VIEIRA DA SILVA"
+     },
+     "oe": 31,
+     "n": 27
     },
     {
      "id": 14773,
@@ -13026,7 +13038,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 45
+     "oe": 48
     },
     {
      "id": 14777,
