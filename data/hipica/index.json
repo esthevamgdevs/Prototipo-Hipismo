@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-31T15:34:52.773Z",
+ "atualizadoEm": "2026-10-31T17:20:00.966Z",
  "torneios": [
   {
    "id": 3404,
@@ -13113,8 +13113,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 37
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "FERNANDO CAPOVILA",
+      "h": "PEGASUS CONDE"
+     },
+     "oe": 37,
+     "n": 28
     },
     {
      "id": 14778,
@@ -13126,8 +13132,8 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 29
+     "linkResultado": true,
+     "oe": 31
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3494"
@@ -13142,7 +13148,7 @@
    "fim": "2026-11-01",
    "provas": [
     {
-     "id": null,
+     "id": 14786,
      "numero": "01",
      "nome": "MMR ASP",
      "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
@@ -13151,10 +13157,11 @@
      "hora": "09:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 15
     },
     {
-     "id": null,
+     "id": 14787,
      "numero": "02",
      "nome": "MMR PREL",
      "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
@@ -13163,10 +13170,11 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 11
     },
     {
-     "id": null,
+     "id": 14788,
      "numero": "03",
      "nome": "MMR INTER",
      "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -13175,10 +13183,11 @@
      "hora": "11:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 6
     },
     {
-     "id": null,
+     "id": 14789,
      "numero": "04",
      "nome": "MMR PRINC",
      "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -13187,7 +13196,8 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 8
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3495"
@@ -13489,6 +13499,66 @@
    "fim": "2026-11-15",
    "provas": [],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3348"
+  },
+  {
+   "id": 3503,
+   "nome": "8ª ETAPA METROPOLITANA CUP 2026 - FINAL",
+   "modalidade": "SALTO PARA INICIANTES",
+   "local": "",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-11-14",
+   "fim": "2026-11-14",
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "MMR ASP",
+     "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
+     "altura": 0.4,
+     "dia": "2026-11-14",
+     "hora": "08:00",
+     "pista": "PISTA AREIA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "02",
+     "nome": "MMR PREL",
+     "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
+     "altura": 0.6,
+     "dia": "2026-11-14",
+     "hora": null,
+     "pista": "PISTA AREIA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "03",
+     "nome": "MMR INTER",
+     "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
+     "altura": 0.8,
+     "dia": "2026-11-14",
+     "hora": null,
+     "pista": "PISTA AREIA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "04",
+     "nome": "MMR PRINC",
+     "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
+     "altura": 0.9,
+     "dia": "2026-11-14",
+     "hora": null,
+     "pista": "PISTA AREIA",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
   },
   {
    "id": 3349,
