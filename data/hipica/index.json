@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-31T17:20:00.966Z",
+ "atualizadoEm": "2026-10-31T19:32:24.026Z",
  "torneios": [
   {
    "id": 3404,
@@ -13133,7 +13133,13 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": true,
-     "oe": 31
+     "res": true,
+     "v": {
+      "c": "FERNANDO CAPOVILA",
+      "h": "SOLAR-DO-ENGENHO LANCELOT (IA)"
+     },
+     "oe": 31,
+     "n": 28
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3494"
