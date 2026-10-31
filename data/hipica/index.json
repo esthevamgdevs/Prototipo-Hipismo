@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-30T20:57:39.831Z",
+ "atualizadoEm": "2026-10-31T13:39:32.248Z",
  "torneios": [
   {
    "id": 3404,
@@ -13075,8 +13075,14 @@
      "hora": "09:00",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 29
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Lara Liberto L.",
+      "h": "RBR GEORGIA BLUE CABIDA (IA)"
+     },
+     "oe": 29,
+     "n": 22
     },
     {
      "id": 14770,
@@ -13088,8 +13094,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 22
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Lara Liberto L.",
+      "h": "YES DO ANPAR"
+     },
+     "oe": 22,
+     "n": 32
     },
     {
      "id": 14774,
@@ -13102,7 +13114,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 34
+     "oe": 35
     },
     {
      "id": 14778,
@@ -13115,7 +13127,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 29
+     "oe": 28
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3494"
