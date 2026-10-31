@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-31T13:39:32.248Z",
+ "atualizadoEm": "2026-10-31T15:34:52.773Z",
  "torneios": [
   {
    "id": 3404,
@@ -13101,7 +13101,7 @@
       "h": "YES DO ANPAR"
      },
      "oe": 22,
-     "n": 32
+     "n": 26
     },
     {
      "id": 14774,
@@ -13114,7 +13114,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 35
+     "oe": 37
     },
     {
      "id": 14778,
@@ -13127,7 +13127,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 28
+     "oe": 29
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3494"
@@ -13148,7 +13148,7 @@
      "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
      "altura": 0.4,
      "dia": "2026-11-01",
-     "hora": "08:30",
+     "hora": "09:30",
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false
@@ -13172,7 +13172,7 @@
      "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
      "altura": 0.8,
      "dia": "2026-11-01",
-     "hora": null,
+     "hora": "11:30",
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false
