@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-10-31T19:32:24.026Z",
+ "atualizadoEm": "2026-11-01T15:06:44.850Z",
  "torneios": [
   {
    "id": 3404,
@@ -12985,7 +12985,7 @@
    "nome": "TEMPORADA OFICIAL TEAM NIJHOF HARAS COOPER 2026",
    "modalidade": "SALTO",
    "local": "HARAS COOPER",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-10-30",
    "fim": "2026-10-31",
    "provas": [
@@ -13149,7 +13149,7 @@
    "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Encerradas",
+   "status": "Torneio em Andamento",
    "inicio": "2026-11-01",
    "fim": "2026-11-01",
    "provas": [
@@ -13163,8 +13163,14 @@
      "hora": "09:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 15
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Alice Mendonca M.",
+      "h": "HARMONIA (AMMA)"
+     },
+     "oe": 15,
+     "n": 17
     },
     {
      "id": 14787,
@@ -13176,8 +13182,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 11
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Andre Bosshard G. C.",
+      "h": "HARMONIA (AMMA)"
+     },
+     "oe": 11,
+     "n": 11
     },
     {
      "id": 14788,
@@ -13190,7 +13202,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 6
+     "oe": 8
     },
     {
      "id": 14789,
@@ -13203,7 +13215,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 8
+     "oe": 9
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3495"
