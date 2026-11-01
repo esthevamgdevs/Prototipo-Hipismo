@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-01T15:06:44.850Z",
+ "atualizadoEm": "2026-11-01T16:32:10.240Z",
  "torneios": [
   {
    "id": 3404,
@@ -13149,7 +13149,7 @@
    "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-01",
    "fim": "2026-11-01",
    "provas": [
@@ -13201,8 +13201,14 @@
      "hora": "11:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 8
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Valentina Pascale C.",
+      "h": "EVEREST ROYAL TITAN"
+     },
+     "oe": 8,
+     "n": 7
     },
     {
      "id": 14789,
@@ -13214,8 +13220,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 9
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Manuela Marques M.",
+      "h": "RI DELFINA"
+     },
+     "oe": 9,
+     "n": 8
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3495"
