@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-03T06:54:28.988Z",
+ "atualizadoEm": "2026-11-03T19:33:44.086Z",
  "torneios": [
   {
    "id": 3404,
@@ -56,6 +56,17 @@
    "fim": null,
    "provas": [],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3471"
+  },
+  {
+   "id": 3504,
+   "nome": "6ª ETAPA CENTRAL CUP 2026 - (FINAL) HARAS COOPER",
+   "modalidade": "SALTO ESCOLA",
+   "local": "",
+   "status": "Inscrições em Breve",
+   "inicio": null,
+   "fim": null,
+   "provas": [],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3504"
   },
   {
    "id": 3411,
@@ -13606,7 +13617,7 @@
    "nome": "JOGOS EQUESTRES PAULISTA DE SALTO 2026",
    "modalidade": "SALTO",
    "local": "SOCIEDADE HIPICA PAULISTA",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-25",
    "fim": "2026-11-29",
    "provas": [
@@ -13798,7 +13809,7 @@
    "nome": "JOGOS EQUESTRES PAULISTAS INICIANTE E TAÇA FPH INICIANTES SASA HORSES 2026 - 7ª ETAPA",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "SOCIEDADE HIPICA PAULISTA",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-25",
    "fim": "2026-11-29",
    "provas": [
@@ -13950,7 +13961,7 @@
    "nome": "CSN4* JHSF 11º TOP RIDERS - 2026",
    "modalidade": "SALTO",
    "local": "SOCIEDADE HIPICA PAULISTA",
-   "status": "Inscrições Encerradas",
+   "status": "Inscrições Abertas",
    "inicio": "2026-12-02",
    "fim": "2026-12-06",
    "provas": [
