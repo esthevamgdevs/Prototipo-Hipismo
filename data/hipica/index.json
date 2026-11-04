@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-03T19:33:44.086Z",
+ "atualizadoEm": "2026-11-04T19:50:50.244Z",
  "torneios": [
   {
    "id": 3404,
@@ -13611,6 +13611,17 @@
    "fim": "2026-11-22",
    "provas": [],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3349"
+  },
+  {
+   "id": 3505,
+   "nome": "2ª ETAPA - TEMPORADA OFICIAL TEAM NIJHOF HARAS COOPER 2026",
+   "modalidade": "SALTO",
+   "local": "HARAS COOPER",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-11-20",
+   "fim": "2026-11-21",
+   "provas": [],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3505"
   },
   {
    "id": 3501,
