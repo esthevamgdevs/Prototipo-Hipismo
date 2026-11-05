@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-04T19:50:50.244Z",
+ "atualizadoEm": "2026-11-05T20:01:49.095Z",
  "torneios": [
   {
    "id": 3404,
@@ -13620,7 +13620,20 @@
    "status": "Inscrições em Breve",
    "inicio": "2026-11-20",
    "fim": "2026-11-21",
-   "provas": [],
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "TESTE",
+     "desc": "1,00M -- TESTE - 1,00M - AMB/JCB/MB/MMR/ABER",
+     "altura": 1,
+     "dia": "2026-11-21",
+     "hora": "10:00",
+     "pista": "AREIA 02",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3505"
   },
   {
@@ -14384,6 +14397,270 @@
    "fim": "2026-12-13",
    "provas": [],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3353"
+  },
+  {
+   "id": 3506,
+   "nome": "COPA DO BRASIL 2026",
+   "modalidade": "SALTO",
+   "local": "CLUBE HIPICO DE SANTO AMARO",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-12-09",
+   "fim": "2026-12-13",
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "1,10M",
+     "desc": "1,10M - AMA / JCA / MA / PMR - 1,10M - AMA/JCA/MA/PMR",
+     "altura": 1.1,
+     "dia": "2026-12-10",
+     "hora": "08:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "02",
+     "nome": "1,20M",
+     "desc": "1,20M - PRÓ - 1,20M - SR",
+     "altura": 1.2,
+     "dia": "2026-12-10",
+     "hora": "11:00",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "03",
+     "nome": "1,30M",
+     "desc": "1,30M - AMT / JCT / JR / MT / PJR - PRÓ - 1,30M - AMT/JCT/JR/MT/PJR/SR",
+     "altura": 1.3,
+     "dia": "2026-12-10",
+     "hora": "13:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "04",
+     "nome": "1,40M",
+     "desc": "1,40M - JR / SR / U25 / AST - 1,40M - JR/SR/U25/AST",
+     "altura": 1.4,
+     "dia": "2026-12-10",
+     "hora": "15:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "05",
+     "nome": "1,20M",
+     "desc": "1,20M - AM / JC / M / MR - 1,20M - AM/JC/M/MR",
+     "altura": 1.2,
+     "dia": "2026-12-11",
+     "hora": "08:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "06",
+     "nome": "1,20M",
+     "desc": "1,20M - PRÓ - 1,20M - SR",
+     "altura": 1.2,
+     "dia": "2026-12-11",
+     "hora": "11:00",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "07",
+     "nome": "1,30M",
+     "desc": "1,30M - AMT / JCT / JR / MT / PJR - PRÓ - 1,30M - AMT/JCT/JR/MT/PJR/SR",
+     "altura": 1.3,
+     "dia": "2026-12-11",
+     "hora": "13:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "11A",
+     "nome": "1,00M",
+     "desc": "1,00M - MMR/JCB - 1,00M - JCB/MMR",
+     "altura": 1,
+     "dia": "2026-12-11",
+     "hora": "15:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "11B",
+     "nome": "MB-AMB",
+     "desc": "1,00M - MB-AMB - 1,00M - AMB/MB",
+     "altura": 1,
+     "dia": "2026-12-11",
+     "hora": null,
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "08",
+     "nome": "1,40M",
+     "desc": "1,40M - JR / SR / U25 / AST - 1,40M - JR/SR/U25/AST",
+     "altura": 1.4,
+     "dia": "2026-12-11",
+     "hora": "15:30",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "12",
+     "nome": "1,10M",
+     "desc": "1,10M - AMA / JCA / MA / PMR - 1,10M - AMA/JCA/MA/PMR",
+     "altura": 1.1,
+     "dia": "2026-12-12",
+     "hora": "08:00",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "13",
+     "nome": "1,20M",
+     "desc": "1,20M - AM / JC / M / MR - 1,20M - AM/JC/M/MR",
+     "altura": 1.2,
+     "dia": "2026-12-12",
+     "hora": "12:00",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "17A",
+     "nome": "1,00M",
+     "desc": "1,00M - MMR/JCB - 1,00M - JCB/MMR",
+     "altura": 1,
+     "dia": "2026-12-12",
+     "hora": "15:00",
+     "pista": "AREIA - CEL. RENYLDO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "17B",
+     "nome": "MB-AMB",
+     "desc": "1,00M - MB-AMB - 1,00M - AMB/MB",
+     "altura": 1,
+     "dia": "2026-12-12",
+     "hora": null,
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3506"
+  },
+  {
+   "id": 3507,
+   "nome": "COPA DO BRASIL 2026 - INICIANTE",
+   "modalidade": "SALTO PARA INICIANTES",
+   "local": "CLUBE HIPICO DE SANTO AMARO",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-12-09",
+   "fim": "2026-12-13",
+   "provas": [
+    {
+     "id": null,
+     "numero": "09",
+     "nome": "0,80M",
+     "desc": "0,80M - 0,80M - 80 - CBH",
+     "altura": 0.8,
+     "dia": "2026-12-11",
+     "hora": "08:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "10",
+     "nome": "0,90M",
+     "desc": "0,90M - 0,90M - 90 - CBH",
+     "altura": 0.9,
+     "dia": "2026-12-11",
+     "hora": "11:30",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "15",
+     "nome": "0,60M",
+     "desc": "0,60M - 0,60M - 60 - CBH",
+     "altura": 0.6,
+     "dia": "2026-12-12",
+     "hora": "08:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "16",
+     "nome": "0,80M",
+     "desc": "0,80M - 0,80M - 80 - CBH",
+     "altura": 0.8,
+     "dia": "2026-12-12",
+     "hora": "11:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "22",
+     "nome": "0,60M",
+     "desc": "0,60M - 0,60M - 60 - CBH",
+     "altura": 0.6,
+     "dia": "2026-12-13",
+     "hora": "08:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "23",
+     "nome": "0,90M",
+     "desc": "0,90M - 0,90M - 90 - CBH",
+     "altura": 0.9,
+     "dia": "2026-12-13",
+     "hora": "11:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3507"
   },
   {
    "id": 3354,
