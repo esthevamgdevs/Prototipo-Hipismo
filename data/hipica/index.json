@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-05T20:01:49.095Z",
+ "atualizadoEm": "2026-11-06T19:29:37.982Z",
  "torneios": [
   {
    "id": 3404,
@@ -13546,7 +13546,7 @@
    "nome": "8ª ETAPA METROPOLITANA CUP 2026 - FINAL",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-11-14",
    "fim": "2026-11-14",
    "provas": [
@@ -14403,7 +14403,7 @@
    "nome": "COPA DO BRASIL 2026",
    "modalidade": "SALTO",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-12-09",
    "fim": "2026-12-13",
    "provas": [
@@ -14583,7 +14583,7 @@
    "nome": "COPA DO BRASIL 2026 - INICIANTE",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-12-09",
    "fim": "2026-12-13",
    "provas": [
