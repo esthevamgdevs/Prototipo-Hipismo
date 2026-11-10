@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-10T19:49:00.087Z",
+ "atualizadoEm": "2026-11-10T22:26:56.580Z",
  "torneios": [
   {
    "id": 3404,
@@ -13264,7 +13264,7 @@
    "fim": "2026-11-15",
    "provas": [
     {
-     "id": null,
+     "id": 14803,
      "numero": "01",
      "nome": "AMAZONAS A",
      "desc": "AMAZONAS A - 1,10M - 1,10M - LA",
@@ -13273,7 +13273,8 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 130
     },
     {
      "id": 14816,
