@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-10T17:01:49.942Z",
+ "atualizadoEm": "2026-11-10T19:49:00.087Z",
  "torneios": [
   {
    "id": 3404,
@@ -13276,7 +13276,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14816,
      "numero": "02",
      "nome": "AMAZONAS SUPER TOP",
      "desc": "AMAZONAS SUPER TOP - 1,40M - 1,40M - LST",
@@ -13285,7 +13285,8 @@
      "hora": "14:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 21
     },
     {
      "id": null,
@@ -13354,7 +13355,7 @@
      "desc": "AMAZONAS TOP - 1,30M - 1,30M - LT",
      "altura": 1.3,
      "dia": "2026-11-13",
-     "hora": "12:30",
+     "hora": "13:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
      "linkResultado": false
@@ -13366,7 +13367,7 @@
      "desc": "AMAZONAS SUPER TOP - 1,40M - 1,40M - LST",
      "altura": 1.4,
      "dia": "2026-11-13",
-     "hora": "15:00",
+     "hora": "16:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
      "linkResultado": false
