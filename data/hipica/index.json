@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-11T16:09:34.775Z",
+ "atualizadoEm": "2026-11-11T17:36:39.054Z",
  "torneios": [
   {
    "id": 3404,
@@ -13292,11 +13292,17 @@
      "hora": "14:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 21
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "SHANNA HARROUCHE GARCIA"
+     },
+     "oe": 21,
+     "n": 5
     },
     {
-     "id": null,
+     "id": 14804,
      "numero": "03",
      "nome": "AMAZONAS A",
      "desc": "AMAZONAS A - 1,10M - 1,10M - LA",
@@ -13305,7 +13311,8 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 127
     },
     {
      "id": null,
