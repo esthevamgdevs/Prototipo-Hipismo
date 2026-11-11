@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-11T17:36:39.054Z",
+ "atualizadoEm": "2026-11-11T19:41:11.811Z",
  "torneios": [
   {
    "id": 3404,
@@ -13157,7 +13157,7 @@
   },
   {
    "id": 3495,
-   "nome": "5ª ETAPA CENTRAL CUP 2026 - (FINAL)",
+   "nome": "5ª ETAPA CENTRAL CUP 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
    "status": "Torneio Concluído",
@@ -13295,11 +13295,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "SHANNA HARROUCHE GARCIA"
+      "c": "LUANA VAZQUEZ SILVA",
+      "h": "J&A VIVIANO 4"
      },
      "oe": 21,
-     "n": 5
+     "n": 21
     },
     {
      "id": 14804,
@@ -13650,6 +13650,174 @@
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3505"
+  },
+  {
+   "id": 3509,
+   "nome": "2ª ETAPA - TEMPORADA OFICIAL TEAM NIJHOF HARAS COOPER 2026",
+   "modalidade": "SALTO",
+   "local": "COOPER - COMERCIO IMPORTACAO E EXPORTACAO LTDA",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-11-20",
+   "fim": "2026-11-21",
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "1,00M",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
+     "altura": 1,
+     "dia": "2026-11-20",
+     "hora": "09:00",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "02",
+     "nome": "1,10M",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/ABER/CN5",
+     "altura": 1.1,
+     "dia": "2026-11-20",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "03",
+     "nome": "1,20M",
+     "desc": "1,20M - 1,20M - AM/JC/JR/M/MR/PJR/SRE/CN6",
+     "altura": 1.2,
+     "dia": "2026-11-20",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "04",
+     "nome": "1,30M",
+     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
+     "altura": 1.3,
+     "dia": "2026-11-20",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "05",
+     "nome": "1,00M",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
+     "altura": 1,
+     "dia": "2026-11-21",
+     "hora": "09:00",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "06",
+     "nome": "1,10M",
+     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/ABER/CN5",
+     "altura": 1.1,
+     "dia": "2026-11-21",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "07",
+     "nome": "1,20M",
+     "desc": "1,20M - 1,20M - AM/JC/JR/M/MR/PJR/SRE/CN6",
+     "altura": 1.2,
+     "dia": "2026-11-21",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "08",
+     "nome": "1,30M",
+     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
+     "altura": 1.3,
+     "dia": "2026-11-21",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3509"
+  },
+  {
+   "id": 3510,
+   "nome": "6ª ETAPA CENTRAL CUP 2026 - (FINAL) HARAS COOPER",
+   "modalidade": "SALTO PARA INICIANTES",
+   "local": "",
+   "status": "Inscrições em Breve",
+   "inicio": "2026-11-22",
+   "fim": "2026-11-22",
+   "provas": [
+    {
+     "id": null,
+     "numero": "01",
+     "nome": "MMR ASP",
+     "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
+     "altura": 0.4,
+     "dia": "2026-11-22",
+     "hora": "09:00",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "02",
+     "nome": "MMR PREL",
+     "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
+     "altura": 0.6,
+     "dia": "2026-11-22",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "03",
+     "nome": "MMR INTER",
+     "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
+     "altura": 0.8,
+     "dia": "2026-11-22",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "04",
+     "nome": "MMR PRINC",
+     "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
+     "altura": 0.9,
+     "dia": "2026-11-22",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false
+    }
+   ],
+   "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3510"
   },
   {
    "id": 3501,
@@ -14114,18 +14282,6 @@
     },
     {
      "id": null,
-     "numero": "11",
-     "nome": "CN 04 ANOS",
-     "desc": "CN 04 ANOS - HC 05 ANOS - 1,05M - CN4/HC 05 ANOS",
-     "altura": 1.05,
-     "dia": "2026-12-04",
-     "hora": "09:00",
-     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "08A",
      "nome": "1,10M",
      "desc": "1,10M - AMA/MA - 1,10M - AMA/MA",
@@ -14145,6 +14301,18 @@
      "dia": "2026-12-04",
      "hora": "09:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "11",
+     "nome": "CN 04 ANOS",
+     "desc": "CN 04 ANOS - HC 05 ANOS - 1,05M - CN4/HC 05 ANOS",
+     "altura": 1.05,
+     "dia": "2026-12-04",
+     "hora": "09:00",
+     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
     },
@@ -14186,18 +14354,6 @@
     },
     {
      "id": null,
-     "numero": "13",
-     "nome": "CN 06 ANOS",
-     "desc": "CN 06 ANOS - HC 07 ANOS - 1,25M - CN6/HC 07 ANOS",
-     "altura": 1.25,
-     "dia": "2026-12-04",
-     "hora": "15:00",
-     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "10",
      "nome": "COPA OURO",
      "desc": "COPA OURO - 1,40M - JR/SR/AST",
@@ -14205,6 +14361,18 @@
      "dia": "2026-12-04",
      "hora": "15:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "13",
+     "nome": "CN 06 ANOS",
+     "desc": "CN 06 ANOS - HC 07 ANOS - 1,25M - CN6/HC 07 ANOS",
+     "altura": 1.25,
+     "dia": "2026-12-04",
+     "hora": "15:00",
+     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
     },
@@ -14574,7 +14742,7 @@
      "altura": 1,
      "dia": "2026-12-12",
      "hora": "15:00",
-     "pista": "AREIA - SERGIO BRANDÃO",
+     "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
      "linkResultado": false
     },
