@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-12T02:19:50.040Z",
+ "atualizadoEm": "2026-11-12T17:35:17.051Z",
  "torneios": [
   {
    "id": 3404,
@@ -13311,8 +13311,14 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 126
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MARIA FERNANDA WARMLING SUCUPIRA",
+      "h": "DOLCE VITA DO FEROLETO (IA)"
+     },
+     "oe": 126,
+     "n": 125
     },
     {
      "id": 14811,
@@ -13324,8 +13330,14 @@
      "hora": "14:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 59
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "LUANA VAZQUEZ SILVA"
+     },
+     "oe": 59,
+     "n": 4
     },
     {
      "id": null,
