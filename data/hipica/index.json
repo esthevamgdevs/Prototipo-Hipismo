@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-11T23:41:33.052Z",
+ "atualizadoEm": "2026-11-12T02:19:50.040Z",
  "torneios": [
   {
    "id": 3404,
@@ -13331,11 +13331,11 @@
      "id": null,
      "numero": "09",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,00M - 1,00M - LB (MMR)",
+     "desc": "AMAZONAS B - 1,00M",
      "altura": 1,
      "dia": "2026-11-13",
-     "hora": "08:00",
-     "pista": "AREIA - SERGIO BRANDÃO",
+     "hora": "A seguir",
+     "pista": null,
      "gp": false,
      "linkResultado": false
     },
@@ -13406,7 +13406,7 @@
      "desc": "AMAZONAS B - 1,05M - 1,05M - LB (MMR)",
      "altura": 1.05,
      "dia": "2026-11-14",
-     "hora": "12:30",
+     "hora": "13:00",
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": false
@@ -13463,11 +13463,11 @@
      "id": null,
      "numero": "18",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,05M - 1,05M - LB (MMR)",
+     "desc": "AMAZONAS B - 1,05M",
      "altura": 1.05,
      "dia": "2026-11-15",
-     "hora": "12:30",
-     "pista": "AREIA - SERGIO BRANDÃO",
+     "hora": "A seguir",
+     "pista": null,
      "gp": false,
      "linkResultado": false
     },
