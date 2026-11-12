@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-12T17:35:17.051Z",
+ "atualizadoEm": "2026-11-12T20:01:09.617Z",
  "torneios": [
   {
    "id": 3404,
@@ -13299,7 +13299,7 @@
       "h": "J&A VIVIANO 4"
      },
      "oe": 21,
-     "n": 21
+     "n": 20
     },
     {
      "id": 14804,
@@ -13333,11 +13333,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "NATHANA MARTINS BEDRAN CALIL"
+      "c": "OLIVIA PASTORE VILELA",
+      "h": "COPA HARE KRISHNA"
      },
      "oe": 59,
-     "n": 11
+     "n": 59
     },
     {
      "id": null,
@@ -13352,7 +13352,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14799,
      "numero": "09A",
      "nome": "AMAZONAS B1",
      "desc": "AMAZONAS B1 - 1,00M - 1,00M - LB (JCB/AMB/MB)",
@@ -13361,10 +13361,11 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 151
     },
     {
-     "id": null,
+     "id": 14807,
      "numero": "05",
      "nome": "AMAZONAS",
      "desc": "AMAZONAS - 1,20M - 1,20M - L",
@@ -13373,10 +13374,11 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 122
     },
     {
-     "id": null,
+     "id": 14812,
      "numero": "06",
      "nome": "AMAZONAS TOP",
      "desc": "AMAZONAS TOP - 1,35M - 1,35M - LT",
@@ -13385,10 +13387,11 @@
      "hora": "13:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 59
     },
     {
-     "id": null,
+     "id": 14817,
      "numero": "07",
      "nome": "AMAZONAS SUPER TOP",
      "desc": "AMAZONAS SUPER TOP - 1,40M - 1,40M - LST",
@@ -13397,7 +13400,8 @@
      "hora": "16:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 20
     },
     {
      "id": null,
@@ -13520,7 +13524,7 @@
    "fim": "2026-11-15",
    "provas": [
     {
-     "id": null,
+     "id": 14824,
      "numero": "08",
      "nome": "AMAZONAS ASPIRANTE",
      "desc": "AMAZONAS ASPIRANTE - 0,90M - 90 - CBH",
@@ -13529,7 +13533,8 @@
      "hora": "08:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 97
     },
     {
      "id": null,
@@ -13669,7 +13674,7 @@
    "nome": "2ª ETAPA - TEMPORADA OFICIAL TEAM NIJHOF HARAS COOPER 2026",
    "modalidade": "SALTO",
    "local": "COOPER - COMERCIO IMPORTACAO E EXPORTACAO LTDA",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-20",
    "fim": "2026-11-21",
    "provas": [
@@ -13777,7 +13782,7 @@
    "nome": "6ª ETAPA CENTRAL CUP 2026 - (FINAL) HARAS COOPER",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições em Breve",
+   "status": "Inscrições Abertas",
    "inicio": "2026-11-22",
    "fim": "2026-11-22",
    "provas": [
