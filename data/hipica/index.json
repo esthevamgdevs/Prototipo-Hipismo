@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-13T17:28:03.915Z",
+ "atualizadoEm": "2026-11-13T19:49:22.597Z",
  "torneios": [
   {
    "id": 3404,
@@ -13248,7 +13248,7 @@
    "nome": "CBS MASTER / CIRCUITO CBH DE CAVALOS NOVOS",
    "modalidade": "SALTO",
    "local": "FEDERACAO EQUESTRE DO ESTADO DO RIO DE JANEIRO",
-   "status": "Inscrições direto com o C.O.",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-05",
    "fim": "2026-11-08",
    "provas": [],
@@ -13370,12 +13370,12 @@
      "gp": false,
      "linkResultado": true,
      "res": true,
-     "n": 21,
      "v": {
       "c": "Luiza Librizzi D. C.",
       "h": "EJANNASTYTSKE VDL"
      },
-     "oe": 22
+     "oe": 22,
+     "n": 21
     },
     {
      "id": 14799,
@@ -13387,8 +13387,14 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 150
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "DANIELA RIBEIRO",
+      "h": "UEGOND XANGO"
+     },
+     "oe": 150,
+     "n": 70
     },
     {
      "id": 14812,
@@ -13403,11 +13409,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "LUANA VAZQUEZ SILVA",
-      "h": "J&A LIBERTE H IMPERIO EGIPCIO"
+      "c": "GABRIELLA COELHO BARBARA",
+      "h": "GR JAVA"
      },
      "oe": 59,
-     "n": 29
+     "n": 56
     },
     {
      "id": 14817,
@@ -13419,8 +13425,14 @@
      "hora": "16:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 20
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "ISADORA PASTORE RESENDE VILELA",
+      "h": "URIELLI FLORES (TE)"
+     },
+     "oe": 20,
+     "n": 10
     },
     {
      "id": 14805,
@@ -13436,7 +13448,7 @@
      "oe": 84
     },
     {
-     "id": null,
+     "id": 14821,
      "numero": "13",
      "nome": "AMAZONAS B",
      "desc": "AMAZONAS B - 1,05M - 1,05M - LB (MMR)",
@@ -13445,7 +13457,8 @@
      "hora": "13:00",
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 21
     },
     {
      "id": null,
@@ -13460,7 +13473,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14808,
      "numero": "11",
      "nome": "AMAZONAS",
      "desc": "AMAZONAS - 1,25M - 1,25M - L",
@@ -13469,7 +13482,8 @@
      "hora": "13:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 119
     },
     {
      "id": null,
@@ -13563,7 +13577,7 @@
      "n": 94
     },
     {
-     "id": null,
+     "id": 14825,
      "numero": "12",
      "nome": "AMAZONAS ASPIRANTE",
      "desc": "AMAZONAS ASPIRANTE - 0,90M - 90 - CBH",
@@ -13572,7 +13586,8 @@
      "hora": "08:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 94
     },
     {
      "id": null,
@@ -13649,7 +13664,7 @@
      "oe": 59
     },
     {
-     "id": null,
+     "id": 14937,
      "numero": "04",
      "nome": "MMR PRINC",
      "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -13658,7 +13673,8 @@
      "hora": "15:30",
      "pista": "PISTA AREIA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 41
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
@@ -13822,7 +13838,7 @@
      "desc": "0,40M (MMR/JC/AM) - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
      "altura": 0.4,
      "dia": "2026-11-22",
-     "hora": "09:00",
+     "hora": "00:00",
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false
