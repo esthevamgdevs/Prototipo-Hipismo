@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-12T20:01:09.617Z",
+ "atualizadoEm": "2026-11-13T16:21:35.360Z",
  "torneios": [
   {
    "id": 3404,
@@ -13362,7 +13362,7 @@
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": false,
-     "oe": 151
+     "oe": 150
     },
     {
      "id": 14807,
@@ -13374,8 +13374,14 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 122
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "BRUNA DUARTE MOREIRA",
+      "h": "CHS FENIX"
+     },
+     "oe": 122,
+     "n": 119
     },
     {
      "id": 14812,
@@ -13404,7 +13410,7 @@
      "oe": 20
     },
     {
-     "id": null,
+     "id": 14805,
      "numero": "10",
      "nome": "AMAZONAS A",
      "desc": "AMAZONAS A - 1,15M - 1,15M - LA",
@@ -13413,7 +13419,8 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 84
     },
     {
      "id": null,
@@ -13533,8 +13540,14 @@
      "hora": "08:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 97
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LOUISE EMILLE DE CARVALHO GUIMARÃES",
+      "h": "ÓRION DI CHARRUA"
+     },
+     "oe": 97,
+     "n": 94
     },
     {
      "id": null,
@@ -13579,7 +13592,7 @@
    "nome": "8ª ETAPA METROPOLITANA CUP 2026 - FINAL",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Abertas",
+   "status": "Inscrições Encerradas",
    "inicio": "2026-11-14",
    "fim": "2026-11-14",
    "provas": [
