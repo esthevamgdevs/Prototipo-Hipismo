@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-13T19:49:22.597Z",
+ "atualizadoEm": "2026-11-13T22:46:00.431Z",
  "torneios": [
   {
    "id": 3404,
@@ -13390,11 +13390,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "DANIELA RIBEIRO",
-      "h": "UEGOND XANGO"
+      "c": "VANESSA GEMENTE BICUDO",
+      "h": "JCR AREOLA (IA)"
      },
      "oe": 150,
-     "n": 70
+     "n": 148
     },
     {
      "id": 14812,
@@ -13428,11 +13428,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "ISADORA PASTORE RESENDE VILELA",
-      "h": "URIELLI FLORES (TE)"
+      "c": "ANA CLARA RIZATTO DIAS DE CASTRO UCHOAS",
+      "h": "FOSTHER JMEN"
      },
      "oe": 20,
-     "n": 10
+     "n": 17
     },
     {
      "id": 14805,
@@ -13635,7 +13635,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 75
+     "oe": 73
     },
     {
      "id": 14935,
