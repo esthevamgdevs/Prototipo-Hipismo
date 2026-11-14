@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-13T22:46:00.431Z",
+ "atualizadoEm": "2026-11-14T01:32:32.147Z",
  "torneios": [
   {
    "id": 3404,
@@ -13461,7 +13461,7 @@
      "oe": 21
     },
     {
-     "id": null,
+     "id": 14800,
      "numero": "13A",
      "nome": "AMAZONAS B1",
      "desc": "AMAZONAS B1 - 1,05M - 1,05M - LB (JCB/AMB/MB)",
@@ -13470,7 +13470,8 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 148
     },
     {
      "id": 14808,
