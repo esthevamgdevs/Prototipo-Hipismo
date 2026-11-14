@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-14T01:32:32.147Z",
+ "atualizadoEm": "2026-11-14T15:05:22.965Z",
  "torneios": [
   {
    "id": 3404,
@@ -13444,8 +13444,14 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 84
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MARIA FERNANDA WARMLING SUCUPIRA",
+      "h": "DOLCE VITA DO FEROLETO (IA)"
+     },
+     "oe": 84,
+     "n": 84
     },
     {
      "id": 14821,
@@ -13587,8 +13593,14 @@
      "hora": "08:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 94
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MANUELA ROBERTA FERREIRA",
+      "h": "MR CAPUCCINO"
+     },
+     "oe": 94,
+     "n": 94
     },
     {
      "id": null,
@@ -13621,7 +13633,7 @@
    "nome": "8ª ETAPA METROPOLITANA CUP 2026 - FINAL",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Inscrições Encerradas",
+   "status": "Torneio em Andamento",
    "inicio": "2026-11-14",
    "fim": "2026-11-14",
    "provas": [
@@ -13636,7 +13648,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 73
+     "oe": 74
     },
     {
      "id": 14935,
@@ -13649,7 +13661,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 88
+     "oe": 99
     },
     {
      "id": 14936,
@@ -13662,7 +13674,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 59
+     "oe": 56
     },
     {
      "id": 14937,
@@ -13675,7 +13687,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 41
+     "oe": 39
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
