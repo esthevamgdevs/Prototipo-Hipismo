@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-14T15:05:22.965Z",
+ "atualizadoEm": "2026-11-14T16:17:41.870Z",
  "torneios": [
   {
    "id": 3404,
@@ -13603,7 +13603,7 @@
      "n": 94
     },
     {
-     "id": null,
+     "id": 14826,
      "numero": "17",
      "nome": "AMAZONAS ASPIRANTE",
      "desc": "AMAZONAS ASPIRANTE - 0,95M - 90 - CBH",
@@ -13612,7 +13612,8 @@
      "hora": "08:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 59
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3498"
