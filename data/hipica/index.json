@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-14T16:17:41.870Z",
+ "atualizadoEm": "2026-11-14T18:12:24.668Z",
  "torneios": [
   {
    "id": 3404,
@@ -13463,8 +13463,14 @@
      "hora": "13:00",
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 21
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "Stella Tortorelli F. D. R.",
+      "h": "DARA AJM (IA)"
+     },
+     "oe": 21,
+     "n": 21
     },
     {
      "id": 14800,
@@ -13476,8 +13482,14 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 148
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "MARIANA EMANUELE PORTELA MOURAO"
+     },
+     "oe": 148,
+     "n": 31
     },
     {
      "id": 14808,
@@ -13489,8 +13501,14 @@
      "hora": "13:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 119
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "HELENA ESTELLITA FERRAZ DE SIQUEIRA"
+     },
+     "oe": 119,
+     "n": 46
     },
     {
      "id": null,
@@ -13649,7 +13667,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 74
+     "oe": 71
     },
     {
      "id": 14935,
@@ -13662,7 +13680,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 99
+     "oe": 97
     },
     {
      "id": 14936,
@@ -13675,7 +13693,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 56
+     "oe": 60
     },
     {
      "id": 14937,
