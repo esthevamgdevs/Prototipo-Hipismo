@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-14T18:12:24.668Z",
+ "atualizadoEm": "2026-11-14T20:47:23.171Z",
  "torneios": [
   {
    "id": 3404,
@@ -13485,11 +13485,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "MARIANA EMANUELE PORTELA MOURAO"
+      "c": "GIULIA VIEIRA DOS SANTOS",
+      "h": "CHAMEL"
      },
      "oe": 148,
-     "n": 31
+     "n": 99
     },
     {
      "id": 14808,
@@ -13504,11 +13504,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "HELENA ESTELLITA FERRAZ DE SIQUEIRA"
+      "c": "BEATRIZ ELAINE DOURADO JACKSON",
+      "h": "RI QUAD JORNATA"
      },
      "oe": 119,
-     "n": 46
+     "n": 112
     },
     {
      "id": null,
@@ -13706,7 +13706,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 39
+     "oe": 40
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
