@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-14T20:47:23.171Z",
+ "atualizadoEm": "2026-11-15T00:24:42.946Z",
  "torneios": [
   {
    "id": 3404,
@@ -13489,7 +13489,7 @@
       "h": "CHAMEL"
      },
      "oe": 148,
-     "n": 99
+     "n": 144
     },
     {
      "id": 14808,
@@ -13511,7 +13511,7 @@
      "n": 112
     },
     {
-     "id": null,
+     "id": 14809,
      "numero": "14",
      "nome": "AMAZONAS",
      "desc": "AMAZONAS - 1,25M - 1,25M - L",
@@ -13520,10 +13520,11 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 81
     },
     {
-     "id": null,
+     "id": 14813,
      "numero": "15",
      "nome": "AMAZONAS TOP",
      "desc": "AMAZONAS TOP - 1,35M - 1,35M - LT",
@@ -13532,7 +13533,8 @@
      "hora": "12:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 43
     },
     {
      "id": null,
@@ -13547,7 +13549,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14801,
      "numero": "18A",
      "nome": "AMAZONAS B1",
      "desc": "AMAZONAS B1 - 1,05M - 1,05M - LB (JCB/AMB/MB)",
@@ -13556,10 +13558,11 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 90
     },
     {
-     "id": null,
+     "id": 14818,
      "numero": "16",
      "nome": "AMAZONAS SUPER TOP",
      "desc": "AMAZONAS SUPER TOP - 1,45M - 1,45M - LST",
@@ -13568,7 +13571,8 @@
      "hora": "15:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 16
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3497"
@@ -13590,7 +13594,7 @@
      "altura": 0.9,
      "dia": "2026-11-13",
      "hora": "08:00",
-     "pista": "AREIA - CEL. RENYLDO",
+     "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": true,
      "res": true,
@@ -13609,7 +13613,7 @@
      "altura": 0.9,
      "dia": "2026-11-14",
      "hora": "08:00",
-     "pista": "AREIA - CEL. RENYLDO",
+     "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": true,
      "res": true,
@@ -13628,7 +13632,7 @@
      "altura": 0.95,
      "dia": "2026-11-15",
      "hora": "08:00",
-     "pista": "AREIA - CEL. RENYLDO",
+     "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": false,
      "oe": 59
@@ -13652,7 +13656,7 @@
    "nome": "8ª ETAPA METROPOLITANA CUP 2026 - FINAL",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-14",
    "fim": "2026-11-14",
    "provas": [
@@ -13706,7 +13710,7 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 40
+     "oe": 41
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
