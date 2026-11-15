@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-15T18:58:57.268Z",
+ "atualizadoEm": "2026-11-15T21:22:31.482Z",
  "torneios": [
   {
    "id": 3404,
@@ -13259,7 +13259,7 @@
    "nome": "CBS AMAZONAS 2026",
    "modalidade": "SALTO",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-10",
    "fim": "2026-11-15",
    "provas": [
@@ -13560,12 +13560,12 @@
      "gp": false,
      "linkResultado": true,
      "res": true,
-     "n": 15,
      "v": {
       "c": "Laura Junqueira R. D. M.",
       "h": "ESTRELLA DEL SEMILLY"
      },
-     "oe": 20
+     "oe": 20,
+     "n": 15
     },
     {
      "id": 14801,
@@ -13580,11 +13580,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "MAISA DA SILVA CARDOSO"
+      "c": "LUY SOPHIA MENDONCA TSAI",
+      "h": "ALANA MONTANA (IA)"
      },
      "oe": 90,
-     "n": 47
+     "n": 84
     },
     {
      "id": 14818,
@@ -13613,7 +13613,7 @@
    "nome": "CAMPEONATO BRASILEIRO DE AMAZONAS ASPIRANTE 2026",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-10",
    "fim": "2026-11-15",
    "provas": [
