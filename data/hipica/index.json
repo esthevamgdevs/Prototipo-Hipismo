@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-15T16:45:44.262Z",
+ "atualizadoEm": "2026-11-15T18:58:57.268Z",
  "torneios": [
   {
    "id": 3404,
@@ -13542,23 +13542,30 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "GABRIELLA COELHO BARBARA"
+      "c": "SOFIA TIBERIO PARIZOTTO",
+      "h": "FC ITOLLILE DO BOSQUE (TE)"
      },
      "oe": 43,
-     "n": 34
+     "n": 37
     },
     {
-     "id": null,
+     "id": 14822,
      "numero": "18",
      "nome": "AMAZONAS B",
-     "desc": "AMAZONAS B - 1,05M",
+     "desc": "AMAZONAS B - 1,05M - 1,05M - LB (MMR)",
      "altura": 1.05,
      "dia": "2026-11-15",
-     "hora": "A seguir",
-     "pista": null,
+     "hora": "13:00",
+     "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": true,
+     "res": true,
+     "n": 15,
+     "v": {
+      "c": "Laura Junqueira R. D. M.",
+      "h": "ESTRELLA DEL SEMILLY"
+     },
+     "oe": 20
     },
     {
      "id": 14801,
@@ -13570,8 +13577,14 @@
      "hora": null,
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 90
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "MAISA DA SILVA CARDOSO"
+     },
+     "oe": 90,
+     "n": 47
     },
     {
      "id": 14818,
@@ -13583,8 +13596,14 @@
      "hora": "15:00",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 16
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "LUANA VAZQUEZ SILVA",
+      "h": "J&A VIVIANO 4"
+     },
+     "oe": 16,
+     "n": 14
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3497"
