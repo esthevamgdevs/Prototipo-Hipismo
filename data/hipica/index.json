@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-15T00:24:42.946Z",
+ "atualizadoEm": "2026-11-15T15:41:19.908Z",
  "torneios": [
   {
    "id": 3404,
@@ -13520,8 +13520,14 @@
      "hora": "08:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 81
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "CARLOTA MENEGHEL VILELA",
+      "h": "CHEVAL OHARA VAN ORTI"
+     },
+     "oe": 81,
+     "n": 76
     },
     {
      "id": 14813,
@@ -13533,8 +13539,14 @@
      "hora": "12:30",
      "pista": "AREIA - CEL. RENYLDO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 43
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "YASMIN CARMONA"
+     },
+     "oe": 43,
+     "n": 5
     },
     {
      "id": null,
@@ -13634,8 +13646,14 @@
      "hora": "08:00",
      "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
-     "linkResultado": false,
-     "oe": 59
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "MARIA LUÍSA DALLA LASTA KOSTYCZ",
+      "h": "SABRINA GIRL"
+     },
+     "oe": 59,
+     "n": 58
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3498"
