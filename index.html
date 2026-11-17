@@ -8,7 +8,7 @@
 <meta property="og:title" content="Salta · Provas e resultados de salto">
 <meta property="og:description" content="Calendário, resultados, ranking e perfis de cavaleiros e cavalos. Um projeto Opportunity Leilões.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="./icon-512-v2.png">
+<meta property="og:image" content="https://esthevamgdevs.github.io/Prototipo-Hipismo/icon-512-v2.png">
 <meta name="twitter:card" content="summary">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -867,7 +867,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '20/10/2026 · Índice Salta (em teste)';
+const VERSAO_APP = '17/11/2026 · Índice Salta (em teste)';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -2338,7 +2338,7 @@ function baixarCard() {
     c.toBlob(b => {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(b);
-      a.download = 'pista-campeao.png';
+      a.download = 'salta-campeao.png';
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     }, 'image/png');

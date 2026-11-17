@@ -1,7 +1,7 @@
 {
-  "name": "Pista · Salto",
-  "short_name": "Pista",
-  "description": "Calendário e resultados de provas de salto no Brasil.",
+  "name": "Salta · Provas de salto",
+  "short_name": "Salta",
+  "description": "Calendário, ordem de entrada e resultados das provas de salto no Brasil.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -10,7 +10,7 @@
   "theme_color": "#123D30",
   "lang": "pt-BR",
   "icons": [
-    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+    { "src": "./icon-192-v2.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512-v2.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }
