@@ -471,26 +471,6 @@ body[data-arena] .capa{background:radial-gradient(120% 90% at 70% 0%,#1F4D3E 0%,
 body[data-arena] .chips.clara .chip[aria-pressed="true"]{background:#D9B45A;border-color:#D9B45A;color:#1C231F}
 @media (max-width:1099px){body[data-arena] nav.abas{background:rgba(22,33,28,.94);border-color:#25332C;box-shadow:0 10px 30px rgba(0,0,0,.4)}body[data-arena] nav.abas button[aria-current="page"]{color:#D9B45A}}
 
-/* campeão em tela cheia */
-#campeao{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;color:#fff;background:linear-gradient(170deg,#1E4E3E 0%,#123D30 45%,#08110E 100%);padding:calc(env(safe-area-inset-top,0px) + 16px) 20px calc(env(safe-area-inset-bottom,0px) + 24px);overflow-y:auto}
-.campeao-arco{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.campeao-topo{position:relative;display:flex;align-items:center;gap:10px}
-.campeao-marca{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex:none}
-.campeao-topo>span:nth-child(2){flex:1;display:flex;flex-direction:column;min-width:0}
-.campeao-topo b{font-size:14px}.campeao-topo small{font-size:12px;opacity:.7}
-.campeao-fechar{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer}
-.campeao-centro{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:20px 0}
-.campeao-olho{font-size:12px;font-weight:700;letter-spacing:.2em;color:#D9B45A;margin-bottom:8px}
-.campeao-centro h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,10vw,52px);line-height:1.02;margin:10px 0 0;max-width:620px;text-wrap:balance}
-.campeao-cavalo{font-size:17px;color:#E3EAE6}
-.campeao-cavalo small{display:block;font-size:13px;opacity:.75;margin-top:4px}
-.campeao-fil{font-size:13px;color:#B9C8C1;font-style:italic}
-.campeao-nums{display:flex;gap:20px;margin-top:14px;padding:12px 20px;border-radius:18px;background:rgba(255,255,255,.1)}
-.campeao-nums span{display:flex;flex-direction:column}
-.campeao-nums b{font-family:var(--serif);font-weight:400;font-size:26px}
-.campeao-nums small{font-size:11px;opacity:.75}
-.campeao-acoes{position:relative;display:flex;gap:10px;max-width:520px;width:100%;margin:0 auto}
-.campeao-acoes .btn{flex:1;min-height:52px;border-radius:26px;justify-content:center}
 .btn.vidro{background:rgba(255,255,255,.12);color:#fff;border:0;font-weight:700}
 .btn.clara-capa{background:rgba(255,255,255,.1);color:#F4F1EA;border:1px solid rgba(255,255,255,.18);font-weight:700}
 
@@ -779,7 +759,7 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
 .link-ficha{padding:10px 0;margin:-10px 0}
 .chip{min-height:40px}
 .btn-fino{min-height:40px}
-.redondo,.pf-voltar,.campeao-fechar{width:44px;height:44px}
+.redondo,.pf-voltar{width:44px;height:44px}
 .capa .voltar{min-height:44px}
 
 .fonte a,.tr-yt,.pf-sub a{padding:10px 0;margin:-10px 0}
@@ -821,6 +801,102 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
 .painel.teste .btn-fino{align-self:flex-start;color:var(--ink);border-color:var(--linha)}
 @media (min-width:760px){.indice-card{margin:14px 28px 0}}
 @media (min-width:1100px){.indice-card{margin:14px 32px 0}}
+/* ---------- refinamentos de uso (nov/2026) ---------- */
+/* cabeçalho das abas: busca e Sobre em todas */
+.topo-botoes{display:flex;gap:8px;align-items:center}
+.redondo.pequeno{width:38px;height:38px}
+.capa:has(> .topo-linha) .redondo{background:var(--surface);border-color:var(--linha);color:var(--ink)}
+.hoje-botoes{align-items:center}
+.hoje-botoes .btn-fino{color:var(--ink);border-color:var(--linha);background:var(--surface)}
+/* nomes de pessoas e cavalos nas listas: sem serifa, mais fáceis de ler em sequência */
+.linha-podio .nome{font-family:var(--sans);font-size:16px;font-weight:600;line-height:1.25}
+/* cartão de torneio mais compacto */
+.cartao .data{width:62px;padding:8px 4px}
+.cartao .data b{font-size:22px}
+.cartao .data b.longo{font-size:17px}
+.cartao .nome{font-size:17px}
+/* seus próximos */
+.proximos{display:flex;flex-direction:column;gap:8px;padding:0 16px}
+.prox{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border:1px solid var(--linha);border-radius:18px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.prox:hover{border-color:var(--ouro)}
+.prox-hora{width:58px;flex:none;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.prox-hora b{font-size:15px;line-height:1.15}
+.prox-hora small{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.prox-corpo{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.prox-corpo>small{font-size:11.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prox-quem{font-size:14.5px;line-height:1.3}
+.prox-quem b{font-weight:700}
+.prox-status{font-size:13px;color:var(--muted)}
+.prox.agora{border-color:var(--vivo);box-shadow:inset 0 0 0 1px var(--vivo)}
+.prox.agora .prox-status{color:var(--vivo)}
+.prox.podio{border-color:rgba(217,180,90,.75)}
+.prox.podio .prox-status{color:var(--ouro-escuro)}
+.prox>svg{flex:none;color:var(--muted-2)}
+.story-anel.hoje{background:conic-gradient(var(--vivo),#E8735E,var(--vivo))}
+.story-hoje{display:block;font-style:normal;font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--vivo);text-transform:uppercase}
+/* ao vivo: hora da atualização e uma prova por cartão */
+.ao-vivo-hora{display:block;padding:8px 18px 0;font-size:11.5px;color:#C9D6CF}
+.ao-vivo-fila{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px;scrollbar-width:none}
+.ao-vivo-fila::-webkit-scrollbar{display:none}
+.ao-vivo-fila .ao-vivo{flex:none;width:min(86%,380px);margin:16px 0 0!important;scroll-snap-align:start}
+/* vitórias recentes em linhas compactas */
+.vitorias{display:flex;flex-direction:column;padding:0 16px}
+.vit{display:flex;align-items:center;gap:12px;width:100%;padding:10px 4px;border:0;border-bottom:1px solid var(--linha);background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.vit:last-child{border-bottom:0}
+.vit-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.vit-txt b{font-size:14.5px;line-height:1.3}
+.vit-txt small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vit.seg .vit-txt b::after{content:' · você segue';font-weight:600;font-size:11.5px;color:var(--ouro-escuro)}
+/* busca geral e lista do Seguindo */
+.busca-capa{margin-top:4px;background:var(--surface);color:var(--ink);border-color:transparent}
+.lista-busca,.seg-lista{display:flex;flex-direction:column;padding:0 16px}
+.linha-busca{display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--linha)}
+.linha-busca:last-child,.linha-seg:last-child{border-bottom:0}
+.lb-abre,.linha-seg{flex:1;min-width:0;display:flex;align-items:center;gap:12px;padding:10px 4px;border:0;background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.linha-seg{border-bottom:1px solid var(--linha)}
+.linha-seg>svg{flex:none;color:var(--muted-2)}
+.lb-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.lb-txt b{font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-txt small{font-size:12.5px;color:var(--muted)}
+.lb-seguir{width:44px;height:44px;flex:none;display:flex;align-items:center;justify-content:center;border:0;background:none;color:var(--muted-2);cursor:pointer;border-radius:50%}
+.lb-seguir[aria-pressed="true"]{color:var(--ouro)}
+.lb-seguir[aria-pressed="true"] svg{fill:currentColor}
+.btn-buscar{display:flex;align-items:center;gap:10px;width:100%;min-height:48px;padding:0 16px;border:1px solid var(--linha);border-radius:16px;background:var(--surface);color:var(--muted);font:inherit;font-size:15px;text-align:left;cursor:pointer}
+/* empate no 1º lugar: uma linha só */
+.empate-box{display:flex;align-items:center;gap:14px;width:100%;margin:6px 0 4px;padding:14px 16px;border-radius:18px;background:linear-gradient(150deg,rgba(217,180,90,.2),rgba(217,180,90,.06))}
+.empate-box .cb-texto{display:flex;flex-direction:column;gap:3px;min-width:0}
+.empate-tit{font-size:17px;font-weight:700;line-height:1.25}
+.empate-sub{font-size:13px;color:var(--muted)}
+/* resumo do torneio em números */
+.resumo-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:4px 0 10px}
+.resumo-nums span{display:flex;flex-direction:column;padding:10px 12px;border-radius:14px;background:var(--bg)}
+.resumo-nums b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
+.resumo-nums small{font-size:11.5px;color:var(--muted);line-height:1.3}
+.resumo-torneio p{font-size:14px;line-height:1.5}
+.ver-mais{flex:none;margin:0 auto}
+/* contraste (WCAG AA): ouro um pouco mais escuro no tema claro, e o bloco de data de torneio em andamento */
+.secao .aux.link-ficha{color:#7A5C17}
+:root[data-theme="dark"] .secao .aux.link-ficha{color:var(--ouro-escuro)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .secao .aux.link-ficha{color:var(--ouro-escuro)}}
+.cartao .data.destaque{background:#7A5C17;color:#FFF8EA}
+.pf-olho,.capa:has(> .topo-linha) .olho{color:#7A5C17}
+:root[data-theme="dark"] .pf-olho,:root[data-theme="dark"] .capa:has(> .topo-linha) .olho{color:var(--ouro-escuro)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pf-olho,:root:not([data-theme="light"]) .capa:has(> .topo-linha) .olho{color:var(--ouro-escuro)}}
+/* o link para o resultado oficial da FPH sumia no tema escuro */
+.fonte a{color:var(--ink)}
+@media (min-width:760px){.proximos,.vitorias,.lista-busca,.seg-lista{padding-left:28px;padding-right:28px}.ao-vivo-fila{padding:0 28px}}
+/* linha de quem você segue, na prova */
+.linha.seg,.linha-podio.seg{width:calc(100% + 24px);margin:0 -12px;padding-left:12px;padding-right:12px;background:linear-gradient(90deg,rgba(184,145,47,.14),rgba(184,145,47,.03));box-shadow:inset 3px 0 0 var(--ouro)}
+.linha.espera .cav,.linha.espera .pos{color:var(--muted);font-weight:500}
+.linha.seg .conj::before{content:'VOCÊ SEGUE';font-size:10.5px;font-weight:700;letter-spacing:.07em;line-height:1.3;color:var(--ouro-escuro)}
+.linha-podio.seg .nome::after,.campeao-box.seg .cb-nome::after{content:' · você segue';font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--ouro-escuro);white-space:nowrap}
+.alvo{animation:alvo 1.6s ease-out 1}
+@keyframes alvo{0%,35%{outline:2px solid var(--ouro);outline-offset:-2px}100%{outline:2px solid transparent;outline-offset:-2px}}
+@media (prefers-reduced-motion:reduce){.alvo{animation:none;outline:2px solid var(--ouro);outline-offset:-2px}}
+.capa-topo{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+.capa-topo .voltar{min-width:0;flex:0 1 auto}
+.capa-topo .redondo{flex:none}
+@media (min-width:1100px){.proximos,.vitorias,.lista-busca,.seg-lista{padding-left:32px;padding-right:32px}.ao-vivo-fila{padding:0 32px}}
 </style>
 </head>
 <body>
@@ -867,7 +943,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '17/11/2026 · Índice Salta (em teste)';
+const VERSAO_APP = '17/11/2026 · refinamentos de uso';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -900,9 +976,9 @@ const S = {
   aba: 'calendario', tela: null, erro: null,
   dados: null, stats: null, busca: null, destaques: null, vendidos: null,
   torneios: {}, perfis: {},
-  cat: 'Todas', altura: 'todas', soSalvos: false,
+  cat: 'Todas', vistaTorneios: 'proximos', filtroTorneios: '', buscaQ: '',
   torneio: null, dia: null, prova: null, filtro: '',
-  perfilTipo: null, perfilK: null, rankTipo: 'geral',
+  perfilTipo: null, perfilK: null, rankTipo: 'geral', criacaoTipo: 'garanhoes', criacaoLimite: 30, soPodios: false,
   compartilhar: null,
 };
 const guarda = {
@@ -934,6 +1010,22 @@ function prepararDados(d) {
     t.temRes = t.provas.some(p => p.res);
     t.dias = [...new Set(t.provas.map(p => p.dia).filter(Boolean))].sort();
   });
+  // A FPH às vezes cadastra o mesmo torneio duas vezes: uma cópia sem provas ("programação em breve") e o
+  // torneio de verdade. A cópia vazia sai da lista quando existe outro da mesma categoria, nas mesmas
+  // datas (até 2 dias de diferença) e com nome parecido.
+  const palavras = t => new Set(chave(t.nome).replace(/\b20\d\d\b/g, ' ').split(' ').filter(w => w.length > 2 && !/^\d/.test(w) && !/^(CSN|CSI|CSIO|CBS)\d*$/.test(w) && !['DAS', 'DOS', 'COM', 'PARA'].includes(w)));
+  const emDias = s => Date.parse(s + 'T12:00:00') / 864e5;
+  for (const t of d.torneios) {
+    if (t.todasProvas.length || !t.inicio) continue;
+    const pt = palavras(t);
+    if (!pt.size) continue;
+    t.duplicado = d.torneios.some(u => {
+      if (u === t || !u.todasProvas.length || u.cat !== t.cat || !u.inicio || Math.abs(emDias(u.inicio) - emDias(t.inicio)) > 2) return false;
+      const pu = palavras(u); let comuns = 0;
+      for (const w of pt) if (pu.has(w)) comuns++;
+      return pu.size > 0 && comuns / Math.min(pt.size, pu.size) >= 0.6;
+    });
+  }
   return d;
 }
 async function carregar() {
@@ -983,7 +1075,8 @@ async function carregarBusca() {
   if (S.busca) return;
   S.busca = 'carregando';
   try { S.busca = await pegar(`${BASE}/busca.json`); } catch { S.busca = 'erro'; }
-  render();
+  const alvo = S.tela === 'busca' && document.getElementById('resultadosBusca');
+  if (alvo) alvo.innerHTML = resultadosBusca(); else render();
 }
 
 // ---------- ações ----------
@@ -995,13 +1088,21 @@ function alternar(lista, chaveArmazenada, valor) {
   render();
 }
 const estaSeguindo = (tipo, k) => seguindo.some(s => s.tipo === tipo && s.k === k);
-function seguir(tipo, k, nome, semPedido) {
+// numa prova, a linha de quem a pessoa segue ganha destaque; vinda de uma novidade ou de um perfil,
+// a linha daquela pessoa é o alvo e a tela rola até ela
+function marcaSeg(c, h) {
+  const kc = chave(c), kh = chave(h);
+  const seg = estaSeguindo('cavaleiros', kc) || estaSeguindo('cavalos', kh);
+  const alvo = !!S.marcar && (S.marcar === 'cavaleiros:' + kc || S.marcar === 'cavalos:' + kh);
+  return (seg ? ' seg' : '') + (alvo ? ' alvo' : '');
+}
+function seguir(tipo, k, nome, semPedido, semRender) {
   const i = seguindo.findIndex(s => s.tipo === tipo && s.k === k);
   const novo = i < 0;
   if (i >= 0) seguindo.splice(i, 1); else seguindo.push({ tipo, k, nome });
   guarda.gravar('pista-seguindo', seguindo);
   sincronizarAvisos();
-  render();
+  if (!semRender) render();
   // logo depois de seguir alguém é o momento em que o aviso faz sentido para a pessoa
   if (novo && !semPedido && !document.getElementById('boas-vindas')) talvezPedirAvisos(nome);
 }
@@ -1017,7 +1118,7 @@ function talvezPedirAvisos(nome) {
     <span class="pa-alca" aria-hidden="true"></span>
     <div class="pa-icone">${svg('<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4zM10 20a2 2 0 0 0 4 0"/>', 26)}</div>
     <h3 id="pa-t">Quer saber na hora quando ${esc(titulo(nome || ''))} subir no pódio?</h3>
-    <p>O Salta avisa no celular logo depois de cada resultado de quem você segue e quando sai a programação dos torneios que você salvou.</p>
+    <p>O Salta avisa no celular logo depois de cada resultado de quem você segue e quando sai a programação dos torneios que você segue.</p>
     ${precisaInstalar ? `<p>No iPhone, os avisos só funcionam com o Salta na tela de início:</p>
       <ol class="bv-passos"><li>No Safari, toque em <b>Compartilhar</b></li><li>Escolha <b>Adicionar à Tela de Início</b></li><li>Abra o Salta pelo ícone e ative os avisos</li></ol>
       <button class="btn ouro" data-pa="depois">Entendi</button>`
@@ -1101,7 +1202,7 @@ async function desativarAvisos() {
 }
 function blocoAvisos() {
   const opcoes = `<div class="opcoes">
-      ${[['podio', 'Vitórias e pódios'], ['programa', 'Programação publicada nos torneios salvos']].map(([k, t]) =>
+      ${[['podio', 'Vitórias e pódios'], ['programa', 'Programação publicada nos torneios que você segue']].map(([k, t]) =>
         `<button class="opcao" data-aviso="${k}" aria-pressed="${!!avisos[k]}"><span>${t}</span><span class="switch"><i></i></span></button>`).join('')}
       <div class="opcao" aria-disabled="true"><span style="color:var(--muted)">Quando entrar na pista ao vivo · em breve</span></div>
     </div>`;
@@ -1115,7 +1216,7 @@ function blocoAvisos() {
   if (msg) return html + `<div class="aviso">${esc(msg)}</div>`;
   if (push.estado === 'inativo') {
     return html + `<div class="painel" style="margin-top:0">
-        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Receba um aviso quando quem você segue subir no pódio ou quando um torneio salvo publicar a programação.</p>
+        <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Receba um aviso quando quem você segue subir no pódio ou quando um torneio que você segue publicar a programação.</p>
         <button class="btn ouro" data-acao="ativarAvisos" ${push.ocupado ? 'disabled' : ''} style="flex:none">${push.ocupado ? 'Ativando…' : 'Ativar avisos neste aparelho'}</button>
         ${push.erro ? `<p style="margin:0;font-size:13px;color:var(--vivo)">${esc(push.erro)}</p>` : ''}
       </div>`;
@@ -1127,6 +1228,7 @@ function blocoAvisos() {
 // ---------- peças ----------
 const ICONES = {
   calendario: '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  torneios: '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
   resultados: '<circle cx="12" cy="9" r="5.5"/><path d="M9 14l-2 7 5-2.5 5 2.5-2-7"/>',
   seguindo: '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" stroke-linejoin="round"/>',
   ranking: '<path d="M5 20V11M12 20V5M19 20v-6"/>',
@@ -1152,11 +1254,13 @@ function marcaSvg(t = 26) {
 const iconeOpp = `<svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M6 88C10 46 26 20 50 20s40 26 44 68" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 14"/><rect x="20" y="50" width="52" height="7" rx="3.5" fill="currentColor" opacity=".55"/><rect x="28" y="64" width="52" height="8" rx="4" fill="currentColor"/><rect x="26" y="54" width="10" height="38" rx="5" fill="currentColor"/><rect x="72" y="54" width="10" height="38" rx="5" fill="currentColor"/></svg>`;
 const temOpp = () => !!(S.vendidos?.size || S.stats?.opp?.totais?.cavalos);
 function abas() {
-  const itens = [['calendario', 'Hoje'], ['resultados', 'Resultados'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
+  const itens = [['calendario', 'Hoje'], ['torneios', 'Torneios'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
   const naAba = !S.tela;
   return `<nav class="abas${itens.length > 4 ? ' cinco' : ''}"><div class="inner">${itens.map(([k, t]) =>
     `<button data-aba="${k}" aria-current="${naAba && S.aba === k ? 'page' : 'false'}"><span class="aba-ic">${k === 'opp' ? iconeOpp : svg(k === 'calendario' ? '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" stroke-linejoin="round"/>' : ICONES[k])}</span>${t}<b></b></button>`).join('')}</div></nav>`;
 }
+const lupaSvg = (t = 18) => svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>', t);
+const topoAba = () => `<div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><span class="topo-botoes"><button class="redondo pequeno" data-acao="buscar" aria-label="Buscar cavaleiro, cavalo ou torneio">${lupaSvg()}</button><button class="btn-fino" data-acao="sobre">Sobre</button></span></div>`;
 const voltar = (acao, texto) => `<button class="voltar" data-acao="${acao}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg>${esc(texto)}</button>`;
 
 function periodo(t) {
@@ -1188,11 +1292,18 @@ function provaAconteceOuVaiAcontecer(t, p) {
 }
 // Torneio cancelado ou adiado, ou que já terminou sem nenhuma prova realizada, não aparece
 // e torneio que já começou sem nenhuma prova cadastrada na FPH (programação publicada em outro sistema) também não
-const torneioVisivel = t => !cancelado(t)
+const torneioVisivel = t => !cancelado(t) && !t.duplicado
   && !(t.fim && t.fim < hojeISO() && t.todasProvas && t.todasProvas.length && !t.provas.length)
   && !(t.inicio && t.inicio <= hojeISO() && t.todasProvas && !t.todasProvas.length);
 const achar = id => S.dados.torneios.find(t => t.id === +id);
 const destaqueDe = t => (S.destaques && S.destaques[String(t.id)]) || null;
+// palavras de lugar que a FPH grava sem acento
+const ACENTOS = { HIPICO: 'Hípico', HIPICA: 'Hípica', HIPICOS: 'Hípicos', HIPICAS: 'Hípicas', SAO: 'São', ESTANCIA: 'Estância', ASSOCIACAO: 'Associação', FEDERACAO: 'Federação', CONFEDERACAO: 'Confederação', JOAO: 'João', JOSE: 'José', PARANA: 'Paraná', BRASILIA: 'Brasília', GOIANIA: 'Goiânia', RIBEIRAO: 'Ribeirão', PARAISO: 'Paraíso', AGUA: 'Água', AGUAS: 'Águas', UBERLANDIA: 'Uberlândia', TAUBATE: 'Taubaté', JUNDIAI: 'Jundiaí', CAMPEAO: 'Campeão' };
+const tituloLugar = s => titulo(s).replace(/[A-Za-zÀ-ÿ]+/g, w => { const a = ACENTOS[w.toUpperCase()]; return a ? (w === w.toLowerCase() ? a.toLowerCase() : a) : w; });
+const nomeTorneio = t => tituloLugar(t.nome || '');
+// o campo "local" da FPH às vezes traz a empresa organizadora ou a federação: aí não é lugar, e não aparece
+const NAO_E_LUGAR = /\b(LTDA|EIRELI|COMERCIO|IMPORTACAO|EXPORTACAO|FEDERACAO|CONFEDERACAO|A CONFIRMAR)\b/;
+const localDe = t => { const l = String(t.local || '').trim(); return !l || NAO_E_LUGAR.test(chave(l)) ? '' : tituloLugar(l); };
 // parceiros exibidos com logo; url do canal fica vazia até termos o endereço oficial
 const PARCEIROS = { horsepix: { nome: 'HorsePix', logo: './img/horsepix.png', url: null } };
 function logoParceiro(k, altura = 18) {
@@ -1255,8 +1366,8 @@ function cartaoTorneio(t, comVencedor) {
     <span class="data${destaque ? ' destaque' : ''}"><b class="${p.cima.length > 4 ? 'longo' : ''}">${p.cima}</b><span>${p.baixo}</span></span>
     <span class="corpo">
       ${destaque ? '<span class="vivo"><i></i>ACONTECENDO AGORA</span>' : ''}
-      <span class="nome">${esc(titulo(t.nome))}</span>
-      <span class="meta">${esc(titulo(t.local || 'Local a confirmar'))}</span>
+      <span class="nome">${esc(nomeTorneio(t))}</span>
+      ${localDe(t) ? `<span class="meta">${esc(localDe(t))}</span>` : ''}
       <span class="tag">${t.cat.toUpperCase()}${t.alturas.length ? ' · ' + fmtAlt(t.alturas[0]) + (t.alturas.length > 1 ? ' a ' + fmtAlt(t.alturas[t.alturas.length - 1]) : '') : ''}${venc ? '' : (t.provas.length ? ` · ${t.provas.length} PROVAS` : ' · PROGRAMAÇÃO EM BREVE')}</span>
       ${venc ? `<span class="meta">Venceu a ${fmtAlt(venc.altura)}: <strong>${esc(titulo(venc.v.c))}</strong> com ${esc(titulo(venc.v.h))}</span>` : ''}
       ${aoVivoHoje(t) ? `<span class="selo-tr"><i></i>Transmissão ao vivo</span>` : ''}
@@ -1265,7 +1376,6 @@ function cartaoTorneio(t, comVencedor) {
   </button>`;
 }
 
-const FAIXAS = { todas: () => true, baixa: h => h <= 1.00, media: h => h >= 1.05 && h <= 1.30, alta: h => h >= 1.35 };
 function chipsCategoria(base) {
   const cats = ['Todas', ...[...new Set(base.map(t => t.cat))].sort()];
   if (cats.length < 3) return '';
@@ -1273,21 +1383,6 @@ function chipsCategoria(base) {
       ${cats.map(c => `<button class="chip" data-cat="${esc(c)}" aria-pressed="${S.cat === c}">${esc(c)}</button>`).join('')}
     </div>`;
 }
-function filtros() {
-  return `<div class="barra-filtros">
-      <label class="sr" for="altura">Altura</label>
-      <select id="altura">
-        <option value="todas">Todas as alturas</option>
-        <option value="baixa">Até 1,00m</option>
-        <option value="media">1,05m a 1,30m</option>
-        <option value="alta">1,35m ou mais</option>
-      </select>
-      <button class="btn clara" style="flex:none" data-acao="salvos" aria-pressed="${S.soSalvos}">★ Salvos</button>
-    </div>`;
-}
-const aplicar = lista => lista.filter(t => (S.cat === 'Todas' || t.cat === S.cat)
-  && (S.altura === 'todas' || t.alturas.some(FAIXAS[S.altura]))
-  && (!S.soSalvos || salvos.includes(t.id)));
 const semFiltro = `<div class="vazio"><b>Nada com esses filtros</b><button class="btn clara" style="margin-top:12px;flex:none" data-acao="limpar">Limpar filtros</button></div>`;
 
 function rodape(extra) {
@@ -1331,15 +1426,15 @@ const minutosDe = hora => { const m = String(hora || '').match(/(\d{1,2})[:h](\d
 const minutosAgora = () => { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); };
 // começou e ainda está dentro de uma janela de quatro horas; sem horário, conta como em andamento no dia
 const comecouHaPouco = (p, agora = minutosAgora()) => { const ini = minutosDe(p.hora); return ini == null || (agora >= ini && agora - ini <= 240); };
-// a prova que está acontecendo agora: de hoje, já começada, com parte dos conjuntos ainda por saltar
-function provaAoVivo() {
+// as provas que estão acontecendo agora: de hoje, já começadas, com parte dos conjuntos ainda por saltar.
+// Com duas pistas ao mesmo tempo, aparecem as duas.
+function provasAoVivo() {
   const hoje = hojeISO(), agora = minutosAgora();
   const cands = [];
   for (const t of S.dados.torneios.filter(emAndamento))
     for (const p of t.provas || [])
       if (p.dia === hoje && p.oe && (p.n || 0) > 0 && p.oe - (p.n || 0) >= 2 && comecouHaPouco(p, agora)) cands.push({ t, p });
-  cands.sort((a, b) => (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0));
-  return cands[0] || null;
+  return cands.sort((a, b) => (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0));
 }
 function proximoNaOrdem(tId, p) {
   const dados = S.torneios[tId];
@@ -1350,77 +1445,165 @@ function proximoNaOrdem(tId, p) {
   return ordem.find(o => !feitos.has(chave(o.h))) || null;
 }
 // ---------- aba Hoje: seguidos, a prova ao vivo e os momentos do dia ----------
-function blocoHoje() {
-  let html = '';
-  // seguidos, como stories
-  const seg = seguindo.slice(0, 12);
-  html += `<div class="stories" role="list">${seg.map(x => `<button class="story" role="listitem" data-perfil="${x.tipo}" data-k="${esc(x.k)}"><span class="story-anel">${avatar(x.nome || x.k, 54)}</span><span>${esc(titulo(x.nome || x.k))}</span></button>`).join('')}
-    <button class="story" role="listitem" data-aba="seguindo"><span class="story-anel vazio">${svg('<path d="M12 5v14M5 12h14"/>', 22)}</span><span>${seg.length ? 'Seguir mais' : 'Seguir'}</span></button></div>`;
-  // a prova ao vivo, com o arco
-  const vivo = provaAoVivo();
-  if (vivo) {
-    const { t, p } = vivo;
-    const prox = proximoNaOrdem(t.id, p);
-    const feito = Math.min(p.n || 0, p.oe);
-    html += `<section class="ao-vivo">
-      <div class="ao-vivo-topo"><span class="selo-vivo"><i></i>AO VIVO</span><span>${esc(titulo(t.nome))} · ${fmtAlt(p.altura)}</span></div>
+// próximas largadas (e resultados de hoje) de quem a pessoa segue, a partir da ordem de entrada ou, antes dela, dos inscritos
+const somarDiasISO = (iso, n) => { const d = dt(iso); d.setDate(d.getDate() + n); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+function proximosSeguidos() {
+  if (!seguindo.length || !S.dados) return { itens: [], carregando: false };
+  const hoje = hojeISO(), ate = somarDiasISO(hoje, 2);
+  const quer = new Map(seguindo.map(x => [`${x.tipo}:${x.k}`, x]));
+  const itens = []; let carregando = false;
+  for (const t of S.dados.torneios) {
+    if (!t.inicio || !t.fim || t.fim < hoje || t.inicio > ate || !torneioVisivel(t)) continue;
+    // só baixa o arquivo do torneio quando já há ordem de entrada ou inscritos nos dias que interessam
+    if (!t.provas.some(p => p.dia && p.dia >= hoje && p.dia <= ate && (p.oe || p.ni || p.res))) continue;
+    const dados = S.torneios[t.id];
+    if (!dados) { carregarTorneio(t.id); carregando = true; continue; }
+    if (dados === 'carregando') { carregando = true; continue; }
+    if (typeof dados !== 'object') continue;
+    for (const p of t.provas) {
+      if (!p.dia || p.dia < hoje || p.dia > ate) continue;
+      const ordem = (p.id && (dados.ordem || {})[String(p.id)]) || [];
+      const linhas = ordem.length ? ordem : ((dados.inscritos || {})[String(p.numero).toUpperCase()] || []);
+      if (!linhas.length) continue;
+      const res = (p.id && (dados.provas || {})[String(p.id)]) || [];
+      const resDo = new Map(res.map(l => [chave(l.h), l]));
+      for (const l of linhas) {
+        const quem = quer.get(`cavaleiros:${chave(l.c)}`) || quer.get(`cavalos:${chave(l.h)}`);
+        if (!quem) continue;
+        const r = resDo.get(chave(l.h)) || null;
+        if (r && p.dia !== hoje) continue;
+        const antes = ordem.length && l.o ? ordem.filter(o => o.o < l.o && !resDo.has(chave(o.h))).length : null;
+        itens.push({ t, p, l, r, quem, total: linhas.length, antes, comecou: res.length > 0, porOrdem: ordem.length > 0 });
+      }
+    }
+  }
+  itens.sort((a, b) => a.p.dia.localeCompare(b.p.dia) || (!!a.r - !!b.r) || (minutosDe(a.p.hora) ?? 9999) - (minutosDe(b.p.hora) ?? 9999) || (a.l.o || 0) - (b.l.o || 0));
+  return { itens, carregando };
+}
+function cartaoProximo({ t, p, l, r, quem, total, antes, comecou, porOrdem }) {
+  const d = dt(p.dia), falta = diasEntre(p.dia, hojeISO());
+  const quando = falta === 0 ? 'Hoje' : (falta === 1 ? 'Amanhã' : `${DIA_CURTO[d.getDay()].charAt(0)}${DIA_CURTO[d.getDay()].slice(1).toLowerCase()} ${d.getDate()}`);
+  let status, classe = '';
+  if (r) {
+    const fase = r.r && r.r[r.r.length - 1];
+    status = r.s ? esc(titulo(r.s)) : `<b>${r.p}º lugar</b>${fase ? ` · ${fmtN(fase[0])} falta${fase[0] === 1 ? '' : 's'}` : ''}`;
+    classe = !r.s && r.p <= 3 ? ' podio' : ' feito';
+  } else if (porOrdem) {
+    status = `Entra em ${l.o}º de ${total}${comecou && antes != null ? (antes === 0 ? ' · <b>é o próximo</b>' : ` · faltam ${antes} antes`) : ''}`;
+    if (comecou && antes === 0) classe = ' agora';
+  } else status = 'Inscrito · a ordem de entrada ainda não saiu';
+  const quemTxt = quem.tipo === 'cavaleiros' ? `<b>${esc(titulo(l.c))}</b> com ${esc(titulo(l.h))}` : `<b>${esc(titulo(l.h))}</b> com ${esc(titulo(l.c))}`;
+  const abre = p.id ? `data-hist-prova="${t.id}:${p.id}" data-marcar="${esc(quem.tipo + ':' + quem.k)}"${!r && porOrdem ? ' data-ver-ordem="1"' : ''}` : `data-torneio="${t.id}"`;
+  return `<button class="prox${classe}" ${abre}>
+    <span class="prox-hora"><b>${esc(p.hora || '–')}</b><small>${quando}</small></span>
+    <span class="prox-corpo"><small>Prova ${esc(numProva(p))} · ${fmtAlt(p.altura)} · ${esc(nomeTorneio(t))}</small><span class="prox-quem">${quemTxt}</span><span class="prox-status">${status}</span></span>
+    ${seta}</button>`;
+}
+function blocoProximos(px) {
+  if (!seguindo.length) return '';
+  const { itens, carregando } = px;
+  const cab = `<div class="secao"><h2>Seus próximos</h2><span class="risco"></span>${itens.length ? `<span class="aux">${itens.length} largada${itens.length > 1 ? 's' : ''}</span>` : ''}</div>`;
+  if (!itens.length) return cab + (carregando ? esqueleto(2, 72) : '<p class="fonte" style="padding-top:0">Ninguém que você segue está na ordem de entrada de hoje ou dos próximos dois dias.</p>');
+  const mostrar = itens.slice(0, 8);
+  return cab + `<div class="proximos">${mostrar.map(cartaoProximo).join('')}</div>${itens.length > mostrar.length ? `<p class="fonte" style="padding-top:6px">E mais ${itens.length - mostrar.length} largadas nos próximos dias.</p>` : ''}`;
+}
+function cartaoAoVivo({ t, p }) {
+  const prox = proximoNaOrdem(t.id, p);
+  const feito = Math.min(p.n || 0, p.oe);
+  const hora = quandoAtualizado();
+  return `<section class="ao-vivo">
+      <div class="ao-vivo-topo"><span class="selo-vivo"><i></i>AO VIVO</span><span>${esc(nomeTorneio(t))} · ${fmtAlt(p.altura)}${p.pista ? ' · Pista ' + esc(titulo(p.pista)) : ''}</span></div>
       ${arcoTrajetoria(feito, p.oe, prox ? prox.h : '', { larg: 300, alt: 96 })}
       <button class="ao-vivo-acao" data-hist-prova="${t.id}:${p.id}">
         <span><small>${prox ? 'PRÓXIMO NA PISTA' : 'PROVA ' + esc(numProva(p))}</small><b>${prox ? `${esc(titulo(prox.h))} e ${esc(titulo(prox.c))}` : 'Acompanhe a prova'}</b></span>
         <span class="btn-vivo">${svg('<path d="M8 5.5v13l11-6.5z" fill="currentColor"/>', 14)} Ver</span></button>
+      ${hora ? `<span class="ao-vivo-hora">Atualizado ${hora}</span>` : ''}
     </section>`;
-  }
-  // momentos: os vencedores mais recentes
-  const recentes = [];
-  const limite = new Date(Date.now() - 3 * 864e5); const lim = `${limite.getFullYear()}-${pad(limite.getMonth() + 1)}-${pad(limite.getDate())}`;
-  for (const t of S.dados.torneios) for (const p of t.provas || []) if (p.res && p.v && p.v.h && p.dia >= lim && p.dia <= hojeISO()) recentes.push({ t, p });
-  recentes.sort((a, b) => b.p.dia.localeCompare(a.p.dia) || (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0) || (b.p.altura || 0) - (a.p.altura || 0));
+}
+function blocoHoje() {
+  let html = '';
+  const px = proximosSeguidos();
+  const competeHoje = new Set(px.itens.filter(x => x.p.dia === hojeISO()).map(x => `${x.quem.tipo}:${x.quem.k}`));
+  // seguidos: o anel acende para quem compete hoje
+  const seg = seguindo.slice(0, 12);
+  html += `<div class="stories" role="list">${seg.map(x => {
+    const hoje = competeHoje.has(`${x.tipo}:${x.k}`);
+    return `<button class="story" role="listitem" data-perfil="${x.tipo}" data-k="${esc(x.k)}"><span class="story-anel${hoje ? ' hoje' : ''}">${avatar(x.nome || x.k, 54)}</span><span>${hoje ? '<i class="story-hoje">Hoje</i>' : ''}${esc(titulo(x.nome || x.k))}</span></button>`;
+  }).join('')}
+    <button class="story" role="listitem" data-acao="buscar"><span class="story-anel vazio">${svg('<path d="M12 5v14M5 12h14"/>', 22)}</span><span>${seg.length ? 'Seguir mais' : 'Seguir'}</span></button></div>`;
+  html += blocoProximos(px);
+  // ao vivo: um cartão por prova em andamento
+  const vivos = provasAoVivo();
+  if (vivos.length) html += vivos.length > 1 ? `<div class="ao-vivo-fila">${vivos.map(cartaoAoVivo).join('')}</div>` : cartaoAoVivo(vivos[0]);
+  // vitórias recentes, primeiro as de quem a pessoa segue
+  const segK = new Set(seguindo.map(x => `${x.tipo}:${x.k}`));
+  const deSeguido = p => segK.has(`cavaleiros:${chave(p.v.c)}`) || segK.has(`cavalos:${chave(p.v.h)}`);
+  const lim = somarDiasISO(hojeISO(), -3), recentes = [];
+  for (const t of S.dados.torneios) for (const p of t.provas || []) if (p.res && p.v && p.v.h && p.dia >= lim && p.dia <= hojeISO()) recentes.push({ t, p, seg: deSeguido(p) });
+  recentes.sort((a, b) => b.seg - a.seg || b.p.dia.localeCompare(a.p.dia) || (minutosDe(b.p.hora) ?? 0) - (minutosDe(a.p.hora) ?? 0) || (b.p.altura || 0) - (a.p.altura || 0));
   if (recentes.length) {
-    html += `<div class="secao"><h2>Momentos</h2><span class="risco"></span></div><div class="momentos">${recentes.slice(0, 4).map(({ t, p }) => {
+    html += `<div class="secao"><h2>Vitórias recentes</h2><span class="risco"></span></div><div class="vitorias">${recentes.slice(0, 4).map(({ t, p, seg }) => {
       const x = dt(p.dia);
-      return `<button class="momento" data-hist-prova="${t.id}:${p.id}">
-        <span class="momento-arte">${roseta(1, 46)}</span>
-        <span class="momento-texto"><small>${x.getDate()} ${MES[x.getMonth()].toUpperCase()} · ${esc(titulo(t.nome))}</small>
-          <b>${esc(titulo(p.v.h))} venceu a ${fmtAlt(p.altura)}</b><span>com ${esc(titulo(p.v.c))}${seloOpp(p.v.h)}</span></span></button>`;
+      return `<button class="vit${seg ? ' seg' : ''}" data-hist-prova="${t.id}:${p.id}">${roseta(1, 30)}
+        <span class="vit-txt"><b>${esc(titulo(p.v.h))} venceu a ${fmtAlt(p.altura)}</b><small>com ${esc(titulo(p.v.c))} · ${x.getDate()} ${MES[x.getMonth()]} · ${esc(nomeTorneio(t))}</small></span>${seloOpp(p.v.h)}</button>`;
     }).join('')}</div>`;
   }
+  // os próximos torneios, com atalho para o calendário completo
+  const prox = S.dados.torneios.filter(t => t.inicio && t.fim && t.fim >= hojeISO() && torneioVisivel(t)).sort((a, b) => a.inicio.localeCompare(b.inicio)).slice(0, 3);
+  if (prox.length) html += `<div class="secao"><h2>Próximos torneios</h2><span class="risco"></span><button class="link-ficha aux" data-aba="torneios">Ver calendário</button></div><div class="lista">${prox.map(t => cartaoTorneio(t, false)).join('')}</div>`;
   return html;
 }
 
 function telaCalendario() {
-  const base = S.dados.torneios.filter(t => t.fim >= hojeISO() && torneioVisivel(t)).sort((a, b) => a.inicio.localeCompare(b.inicio));
-  const vazio = `<header class="capa"><div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div><h1 class="grande">A temporada<br>de salto, prova a prova</h1></header>`;
   const hj = new Date();
   const capa = `<header class="hoje-cab">
       <span class="hoje-titulo"><small>${DIA_LONGO[hj.getDay()]}, ${hj.getDate()} de ${MES_LONGO[hj.getMonth()]}</small><h1>Hoje</h1></span>
-      <span class="hoje-botoes"><button class="redondo" data-aba="seguindo" aria-label="Buscar e seguir">${svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>', 20)}</button><button class="redondo" data-acao="sobre" aria-label="Sobre o Salta">${marcaSvg(24)}</button></span>
-    </header>${blocoHoje()}
-    <div class="secao"><h2>Calendário</h2><span class="risco"></span><span class="aux">${base.length} torneio${base.length > 1 ? 's' : ''}</span></div>
-    ${chipsCategoria(base).replace('class="chips"', 'class="chips clara" style="padding:0 20px 12px"')}`;
-  if (!base.length) return vazio + `<main><div class="vazio"><b>Nenhum torneio programado</b>O calendário é atualizado automaticamente algumas vezes por dia.</div>${rodape()}</main>`;
-  const lista = aplicar(base);
-  let corpo = filtros();
-  if (!lista.length) corpo += semFiltro;
-  else {
-    let mes = '';
-    lista.forEach(t => {
-      const m = t.inicio.slice(0, 7);
-      // fecha a lista do mês anterior antes de abrir a do próximo (sem isso cada mês ficava dentro do anterior)
-      if (m !== mes) { corpo += `${mes ? '</div>' : ''}<div class="secao"><h2>${titulo(MES_LONGO[+m.slice(5) - 1])}</h2><span class="risco"></span></div><div class="lista">`; mes = m; }
-      corpo += cartaoTorneio(t, false);
-    });
-    corpo += '</div>';
-  }
-  return `<main class="fade">${capa}${corpo}${rodape()}</main>`;
+      <span class="hoje-botoes"><button class="redondo" data-acao="buscar" aria-label="Buscar cavaleiro, cavalo ou torneio">${lupaSvg(20)}</button><button class="btn-fino" data-acao="sobre">Sobre</button></span>
+    </header>`;
+  return `<main class="fade">${capa}${blocoHoje()}${rodape()}</main>`;
 }
 
-function telaResultados() {
-  const base = S.dados.torneios.filter(t => t.temRes && torneioVisivel(t)).sort((a, b) => b.fim.localeCompare(a.fim));
-  const cab = extra => `<header class="capa"><div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
-    <h1>Resultados</h1><span class="sub">${base.length ? base.length + ' torneios já disputados' : 'Provas de salto já disputadas'}</span>${extra}</header>`;
-  if (!base.length) return cab('') + `<main><div class="vazio"><b>Ainda sem resultados</b>Eles aparecem assim que a federação publicar.</div>${rodape()}</main>`;
-  const lista = aplicar(base);
-  return cab(chipsCategoria(base)) + `<main class="fade">${filtros()}${lista.length ? `<div class="secao"><h2>Últimos torneios</h2><span class="risco"></span></div><div class="lista">${lista.map(t => cartaoTorneio(t, true)).join('')}</div>` : semFiltro}${rodape()}</main>`;
+// aba Torneios: próximos e encerrados no mesmo lugar, por mês, com busca
+function baseTorneios(vista) {
+  const hoje = hojeISO();
+  return vista === 'encerrados'
+    ? S.dados.torneios.filter(t => t.temRes && t.fim && t.fim < hoje && torneioVisivel(t)).sort((a, b) => b.fim.localeCompare(a.fim))
+    : S.dados.torneios.filter(t => t.fim && t.inicio && t.fim >= hoje && torneioVisivel(t)).sort((a, b) => a.inicio.localeCompare(b.inicio));
+}
+function telaTorneios() {
+  const vista = S.vistaTorneios === 'encerrados' ? 'encerrados' : 'proximos';
+  const base = baseTorneios(vista);
+  return `<header class="capa">${topoAba()}
+      <h1>Torneios</h1>
+      <div class="chips" role="group" aria-label="Quais torneios">
+        <button class="chip" data-vista-torneios="proximos" aria-pressed="${vista === 'proximos'}">Próximos</button>
+        <button class="chip" data-vista-torneios="encerrados" aria-pressed="${vista === 'encerrados'}">Encerrados</button>
+      </div>
+    </header><main class="fade">
+    <div class="barra-filtros"><label class="sr" for="filtroTorneios">Buscar torneio ou local</label>
+      <input class="busca" id="filtroTorneios" type="search" placeholder="Buscar torneio ou local" autocomplete="off" value="${esc(S.filtroTorneios || '')}"></div>
+    ${chipsCategoria(base).replace('class="chips"', 'class="chips clara" style="padding:12px 20px 0"')}
+    <div id="listaTorneios">${listaTorneios(base, vista)}</div>
+    ${rodape()}</main>`;
+}
+function listaTorneios(base, vista) {
+  if (!base.length) return vista === 'encerrados'
+    ? '<div class="vazio"><b>Ainda sem resultados</b>Eles aparecem assim que a federação publicar.</div>'
+    : '<div class="vazio"><b>Nenhum torneio programado</b>O calendário é atualizado sozinho algumas vezes por dia.</div>';
+  const q = chave(S.filtroTorneios || '');
+  const lista = base.filter(t => (S.cat === 'Todas' || t.cat === S.cat) && (!q || chave(`${t.nome} ${t.local || ''}`).includes(q)));
+  if (!lista.length) return semFiltro;
+  const ano = hojeISO().slice(0, 4);
+  let html = '', mes = '';
+  for (const t of lista) {
+    const m = (vista === 'encerrados' ? t.fim : t.inicio).slice(0, 7);
+    if (m !== mes) {
+      html += `${mes ? '</div>' : ''}<div class="secao"><h2>${titulo(MES_LONGO[+m.slice(5) - 1])}${m.slice(0, 4) !== ano ? ' de ' + m.slice(0, 4) : ''}</h2><span class="risco"></span></div><div class="lista">`;
+      mes = m;
+    }
+    html += cartaoTorneio(t, vista === 'encerrados');
+  }
+  return html + '</div>';
 }
 
 function telaTorneio() {
@@ -1435,20 +1618,19 @@ function telaTorneio() {
   let corpo = `<header class="capa">
       ${voltar('voltarLista', 'Voltar')}
       <span class="olho">${t.cat.toUpperCase()} · ${(t.status || '').toUpperCase()}</span>
-      <h1>${esc(titulo(t.nome))}</h1>
-      <span class="sub">${esc(titulo(t.local || 'Local a confirmar'))} · ${periodoLongo(t)}</span>
+      <h1>${esc(nomeTorneio(t))}</h1>
+      <span class="sub">${localDe(t) ? esc(localDe(t)) + ' · ' : ''}${periodoLongo(t)}</span>
       <div class="numeros">
         <div><b>${t.provas.length || '–'}</b><span>provas</span></div>
         <div><b>${dias.length || '–'}</b><span>dias</span></div>
         <div><b>${t.alturas.length ? fmtAlt(t.alturas[t.alturas.length - 1]) : '–'}</b><span>maior altura</span></div>
       </div>
       <div class="acoes">
-        <button class="btn ouro" data-acao="salvar" data-id="${t.id}">★ ${salvo ? 'Torneio salvo' : 'Seguir torneio'}</button>
+        <button class="btn ouro" data-acao="salvar" data-id="${t.id}">★ ${salvo ? 'Seguindo' : 'Seguir torneio'}</button>
         <a class="btn fantasma" href="${esc(t.url)}" target="_blank" rel="noopener">Site da FPH ↗</a>
       </div>
     </header>`;
   corpo += blocoTransmissao(t);
-  corpo += blocoResumo(t);
   const dest = destaqueDe(t);
   if (dest) {
     corpo += `<div class="destaque-aviso">
@@ -1486,15 +1668,20 @@ function telaTorneio() {
     </button>`;
   }).join('')}</div>`;
   if (t.ocultas) corpo += `<p class="fonte" style="padding-top:12px">${t.ocultas} prova${t.ocultas > 1 ? 's' : ''} sem inscritos ou sem resultado publicado ${t.ocultas > 1 ? 'não aparecem' : 'não aparece'} aqui. <a href="${esc(t.url)}" target="_blank" rel="noopener">Ver programação completa na FPH ↗</a></p>`;
+  // o resumo vem depois da lista: primeiro as provas, que é o que a pessoa veio ver
+  corpo += blocoResumo(t);
   return corpo + rodape() + '</main>';
 }
+
+// linhas da tabela da prova: com empate no 1º lugar, a tabela traz todos; sem empate, do 4º em diante
+const linhasTabela = (linhas, q) => q ? linhas.filter(l => (l.c + ' ' + l.h).toLowerCase().includes(q)) : (linhas.filter(l => l.p === 1).length > 1 ? linhas : linhas.filter(l => l.p > 3));
 
 function telaProva() {
   const t = achar(S.torneio), p = acharProva(t, S.prova);
   if (!p) return telaTorneio();
   const x = p.dia ? dt(p.dia) : null;
   const cab = `<header class="capa">
-      ${voltar('voltarTorneio', titulo(t.nome))}
+      <div class="capa-topo">${voltar('voltarTorneio', nomeTorneio(t))}${p.res && typeof S.torneios[t.id] === 'object' ? `<button class="redondo pequeno" data-acao="compartilhar" aria-label="Compartilhar o card desta prova" title="Compartilhar o card desta prova">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}</button>` : ''}</div>
       <span class="olho">PROVA ${numProva(p)}${x ? ` · ${DIA_LONGO[x.getDay().toString()] || ''}, ${x.getDate()} DE ${MES_LONGO[x.getMonth()].toUpperCase()}` : ''}</span>
       <h1>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') + (p.altura === 1 ? ' metro' : ' metros') : esc(titulo(p.nome))}</h1>
       <span class="sub">${esc([/^\d[,.]\d{2}\s*M$/i.test((p.nome || '').trim()) ? '' : titulo(p.nome), p.hora, p.pista ? 'Pista ' + titulo(p.pista) : ''].filter(Boolean).join(' · '))}</span>`;
@@ -1509,9 +1696,9 @@ function telaProva() {
   const linhas = dados.provas[String(p.id)] || [];
   const fed = i => i != null ? dados.fed[i] : null;
   const q = S.filtro.trim().toLowerCase();
-  const filtradas = q ? linhas.filter(l => (l.c + ' ' + l.h).toLowerCase().includes(q)) : linhas;
-  const podio = q ? [] : filtradas.filter(l => l.p <= 3);
-  const resto = q ? filtradas : filtradas.filter(l => l.p > 3);
+  const empatados = linhas.filter(l => l.p === 1).length;
+  const podio = q || empatados > 1 ? [] : linhas.filter(l => l.p <= 3);
+  const resto = linhasTabela(linhas, q);
   const temDesempate = linhas.some(l => l.r && l.r.length > 1);
 
   const ordem = (dados.ordem || {})[String(p.id)] || [];
@@ -1524,17 +1711,24 @@ function telaProva() {
   const campeoes = linhas.filter(l => l.p === 1);
   let corpo = cab + `<span class="sub">${emAndamentoProva ? `${ordem.length - faltam} de ${ordem.length} já saltaram` : `${linhas.length} conjuntos`}${temDesempate ? ' · com desempate' : ''}</span>
     ${naArena ? `<div class="arco-capa">${arcoTrajetoria(ordem.length - faltam, ordem.length, proxA ? proxA.h : '', { larg: 320, alt: 96 })}${proxA ? `<span class="arco-prox">Próximo na pista: <b>${esc(titulo(proxA.h))}</b> com ${esc(titulo(proxA.c))}</span>` : ''}</div>` : ''}
-    ${emAndamento(t) && horaAtualizacao() ? `<span class="sub atualizado"><i></i>Atualizado às ${horaAtualizacao()} · atualiza sozinho</span>` : ''}
+    ${emAndamento(t) && horaAtualizacao() ? `<span class="sub atualizado"><i></i>Atualizado ${quandoAtualizado()} · atualiza sozinho</span>` : ''}
     ${aoVivoHoje(t) && p.dia === hojeISO() ? `<button class="btn-fino" data-acao="verTransmissao" style="align-self:flex-start">▶ Assistir à transmissão</button>` : ''}
-    <div class="acoes">
-      <button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}${emAndamentoProva ? 'Compartilhar líder' : 'Compartilhar campeão'}</button>
-    </div></header><main class="fade">`;
+    </header><main class="fade">`;
   if (ordem.length) {
     corpo += `<div class="chips clara" role="group" aria-label="Visão da prova" style="padding:16px 20px 0">
       <button class="chip" data-aba-prova="classificacao" aria-pressed="${S.abaProva !== 'ordem'}">Classificação</button>
       <button class="chip" data-aba-prova="ordem" aria-pressed="${S.abaProva === 'ordem'}">Ordem de entrada</button>
     </div>`;
     if (S.abaProva === 'ordem') return corpo + telaCruzada(p, ordem, linhas, fed, faltam) + '</main>';
+  }
+  // a busca vem antes do pódio: em prova grande, achar alguém é o que a pessoa mais faz
+  if (linhas.length > 3 || q) corpo += `<div class="barra-filtros"><label class="sr" for="filtro">Buscar cavaleiro ou cavalo</label>
+      <input class="busca" id="filtro" type="search" placeholder="Buscar cavaleiro ou cavalo" value="${esc(S.filtro)}"></div>`;
+  // empate no 1º lugar: uma linha só, em vez de um cartão dourado para cada um
+  if (!q && empatados > 1) {
+    const faltasDe = l => (l.r || []).reduce((soma, f) => soma + (f[0] || 0), 0);
+    const iguais = campeoes.every(l => !l.s && faltasDe(l) === faltasDe(campeoes[0]));
+    corpo += `<div class="podio"><div class="empate-box">${roseta(1, 52)}<span class="cb-texto"><span class="cb-olho">${emAndamentoProva ? 'LIDERANDO' : '1º LUGAR'} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span><span class="empate-tit">${empatados} conjuntos dividem o 1º lugar</span>${iguais ? `<span class="empate-sub">${faltasDe(campeoes[0]) === 0 ? 'Todos zeraram o percurso.' : `Todos com ${fmtN(faltasDe(campeoes[0]))} faltas.`} Estão na tabela abaixo.</span>` : ''}</span></div></div>`;
   }
   if (podio.length) {
     const primeiro = podio.find(l => l.p === 1);
@@ -1546,7 +1740,7 @@ function telaProva() {
       const ult = fases[fases.length - 1] || [];
       const faltas = fases.length > 1 ? fases.map(x => fmtN(x[0])).join(' + ') : fmtN(ult[0]);
       const rot = emAndamentoProva ? 'LIDERANDO' : (empatados > 1 ? `CAMPEÕES · ${empatados} EMPATADOS` : 'CAMPEÃO');
-      destaque = `<button class="campeao-box" data-perfil="cavaleiros" data-k="${esc(chave(primeiro.c))}">
+      destaque = `<button class="campeao-box${marcaSeg(primeiro.c, primeiro.h)}" data-perfil="cavaleiros" data-k="${esc(chave(primeiro.c))}">
         <span class="cb-roseta">${roseta(1, 64)}</span>
         <span class="cb-texto">
           <span class="cb-olho">${rot} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span>
@@ -1559,7 +1753,7 @@ function telaProva() {
     }
     corpo += `<div class="podio">${destaque}${demais.map(l => {
       const f = fed(l.f), perc = l.r?.[0], des = l.r?.length > 1 ? l.r[l.r.length - 1] : null;
-      return `<button class="linha-podio" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+      return `<button class="linha-podio${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
         ${roseta(l.p, 38)}
         <span class="conj" style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(l.c))}</span>
@@ -1569,10 +1763,8 @@ function telaProva() {
       </button>`;
     }).join('')}</div>`;
   }
-  // só pódio (três conjuntos ou menos) dispensa a busca e a tabela
-  if (linhas.length > 3 || q) {
-    corpo += `<div class="barra-filtros"><label class="sr" for="filtro">Buscar cavaleiro ou cavalo</label>
-      <input class="busca" id="filtro" type="search" placeholder="Buscar cavaleiro ou cavalo" value="${esc(S.filtro)}"></div>`;
+  // só pódio (três conjuntos ou menos, sem empate) dispensa a tabela
+  if (resto.length || q) {
     corpo += `<div class="tabela"><div class="cab"><span class="p">#</span><span class="c">CONJUNTO</span><span class="f">FALTAS</span><span class="t">TEMPO</span></div><div id="linhas">${corpoLinhas(resto, fed, ordemDoCavalo)}</div></div>`;
   }
   corpo += rodape(`<a href="${URL_FPH_PROVA(p.id)}" target="_blank" rel="noopener">Ver resultado oficial no site da FPH ↗</a>. `);
@@ -1605,12 +1797,12 @@ function linhasCruzadas(lista, resultadoDo, proximo, p) {
     const r = resultadoDo.get(chave(o.h));
     const perc = r && r.r && r.r[0];
     let res;
-    if (!r) res = `<span class="status">${proximo && proximo.o === o.o && p.dia >= hojeISO() ? 'próximo' : 'aguardando'}</span>`;
+    if (!r) res = `<span class="status">${p.dia < hojeISO() ? 'não largou' : (proximo && proximo.o === o.o ? 'próximo' : 'aguardando')}</span>`;
     else if (r.s) res = `<span class="status">${esc(r.s)}</span>`;
     else res = `<span style="display:flex;flex-direction:column;align-items:flex-end;line-height:1.2">
         <b style="font-size:15px;color:${r.p <= 3 ? 'var(--ouro-escuro)' : 'var(--ink)'}">${r.p}º</b>
-        <span style="font-size:11.5px;color:var(--muted)">${fmtN(perc && perc[0])} flt · ${fmtT(perc && perc[1])}</span></span>`;
-    return `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(o.c))}" style="${r ? '' : 'opacity:.72'}">
+        <span style="font-size:11.5px;color:var(--muted)">${fmtN(perc && perc[0])} falta${perc && perc[0] === 1 ? '' : 's'} · ${fmtT(perc && perc[1])}</span></span>`;
+    return `<button class="linha${marcaSeg(o.c, o.h)}${r ? '' : ' espera'}" data-perfil="cavaleiros" data-k="${esc(chave(o.c))}">
       <span class="pos">${o.o}</span>
       <span class="conj"><span class="cav">${esc(titulo(o.c))}</span><span class="cavalo">${esc(titulo(o.h))}${seloOpp(o.h)}${o.cat ? ' · ' + esc(o.cat) : ''}</span>${filiacao(o)}</span>
       <span class="f" style="width:92px">${res}</span>
@@ -1629,7 +1821,7 @@ function telaInscritos(p, lista) {
     <div class="secao"><h2>Inscritos</h2><span class="risco"></span><span class="aux">${lista.length} conjuntos</span></div>
     <p class="fonte" style="padding-top:0">A ordem de entrada ainda não saiu. Esta é a lista de inscritos do torneio para esta prova, sem ordem definida.</p>
     <div class="tabela"><div class="cab"><span class="c">CONJUNTO</span><span class="f" style="width:70px">CATEG.</span></div>
-      ${lista.map(l => `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+      ${lista.map(l => `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
         <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span>${filiacaoDe(l.h)}</span>
         <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span></button>`).join('')}</div>
   </main>`;
@@ -1658,7 +1850,7 @@ const filiacaoDe = (h, l) => {
 const filiacao = l => filiacaoDe(l && l.h, l);
 function linhasOrdem(lista) {
   if (!lista.length) return `<div class="vazio">Ninguém encontrado com esse nome.</div>`;
-  return lista.map(l => `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+  return lista.map(l => `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
       <span class="pos">${l.o}</span>
       <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span>${filiacao(l)}</span>
       <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span>
@@ -1669,7 +1861,7 @@ function corpoLinhas(linhas, fed, ordemDoCavalo) {
   return linhas.map(l => {
     const f = fed(l.f), perc = l.r?.[0];
     const entrou = ordemDoCavalo && ordemDoCavalo.get(chave(l.h));
-    return `<button class="linha" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+    return `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
       <span class="pos">${l.p}</span>
       <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}${f ? ' · ' + esc(fedCurta(f)) : ''}${entrou ? ` · entrou em ${entrou}º` : ''}</span>${filiacaoDe(l.h)}</span>
       <span class="f${!l.s && perc?.[0] === 0 ? ' zero' : ''}">${l.s ? `<span class="status">${esc(l.s)}</span>` : fmtN(perc?.[0])}</span>
@@ -1679,48 +1871,55 @@ function corpoLinhas(linhas, fed, ordemDoCavalo) {
 }
 
 function telaSeguindo() {
-  const capa = `<header class="capa"><div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
+  const capa = `<header class="capa">${topoAba()}
     <h1>Seguindo</h1><span class="sub">Cavaleiros, cavalos e torneios que você acompanha</span></header>`;
   const salvosT = salvos.map(id => achar(id)).filter(Boolean);
+  const buscar = `<button class="btn-buscar" data-acao="buscar">${lupaSvg(18)}<span>Buscar cavaleiro, cavalo ou torneio para seguir</span></button>`;
   if (!seguindo.length && !salvosT.length) {
-    return capa + `<main><div class="vazio"><b>Você ainda não segue ninguém</b>Toque na estrela de um torneio ou no nome de um cavaleiro nos resultados para acompanhá-lo por aqui.</div>${blocoAvisos()}</main>`;
+    return capa + `<main><div class="barra-filtros">${buscar}</div><div class="vazio"><b>Você ainda não segue ninguém</b>Siga cavaleiros e cavalos para ver as próximas largadas deles no Hoje e receber aviso de pódio.</div>${blocoAvisos()}</main>`;
   }
-  let corpo = '<main class="fade">';
-  if (seguindo.length || salvosT.length) {
-    corpo += `<div class="secao"><h2>Quem você segue</h2><span class="risco"></span></div><div class="seguidos">${
-      seguindo.map(s => `<button class="seguido" data-perfil="${s.tipo}" data-k="${esc(s.k)}"><span class="bolha">${esc(iniciais(s.nome))}</span><span>${esc(titulo(s.nome))}</span></button>`).join('')
-      + salvosT.map(t => `<button class="seguido" data-torneio="${t.id}"><span class="bolha">${esc(iniciais(t.nome))}</span><span>${esc(titulo(t.nome))}</span></button>`).join('')
-    }</div>`;
-  }
+  let corpo = `<main class="fade"><div class="barra-filtros">${buscar}</div>`;
+  corpo += `<div class="secao"><h2>Quem você segue</h2><span class="risco"></span><span class="aux">${seguindo.length + salvosT.length}</span></div><div class="seg-lista">${
+    seguindo.map(x => `<button class="linha-seg" data-perfil="${x.tipo}" data-k="${esc(x.k)}">${avatar(x.nome || x.k, 40)}<span class="lb-txt"><b>${esc(titulo(x.nome || x.k))}</b><small>${x.tipo === 'cavaleiros' ? 'Cavaleiro' : 'Cavalo'}</small></span>${seta}</button>`).join('')
+    + salvosT.map(t => `<button class="linha-seg" data-torneio="${t.id}">${avatar(t.nome, 40)}<span class="lb-txt"><b>${esc(nomeTorneio(t))}</b><small>Torneio · ${periodoLongo(t)}</small></span>${seta}</button>`).join('')
+  }</div>`;
   const novidades = montarNovidades();
   corpo += `<div class="secao"><h2>Novidades</h2><span class="risco"></span></div>`;
   corpo += novidades.length
     ? `<div class="feed">${novidades.map(n => `<button class="novidade" ${n.acao}>
         <span class="topo"><span class="tag" style="color:${n.cor}">${n.tag}</span><span class="meta" style="font-size:12px;color:var(--muted)">${n.quando}</span></span>
         <span class="txt">${esc(n.texto)}</span><span class="onde">${esc(n.onde)}</span></button>`).join('')}</div>`
-    : `<div class="vazio">Nada novo por enquanto. Assim que alguém que você segue competir, aparece aqui.</div>`;
+    : `<div class="vazio">Nada novo por enquanto. Pódios e próximas largadas de quem você segue aparecem aqui.</div>`;
   corpo += blocoAvisos();
   return capa + corpo + '</main>';
 }
 const iniciais = n => titulo(n).split(/\s+/).filter(w => /[A-Za-zÀ-ÿ]/.test(w[0])).slice(0, 2).map(w => w[0].toUpperCase()).join('');
 
+// novidades de quem a pessoa segue: próximas largadas, pódios recentes e torneios que começam em breve
 function montarNovidades() {
   const out = [];
   const hoje = hojeISO();
+  for (const x of proximosSeguidos().itens.filter(i => !i.r).slice(0, 3)) {
+    const falta = diasEntre(x.p.dia, hoje);
+    out.push({
+      d: x.p.dia, prioridade: 1, tag: 'PRÓXIMA LARGADA', cor: 'var(--ok)',
+      quando: falta === 0 ? `hoje${x.p.hora ? ' · ' + x.p.hora : ''}` : (falta === 1 ? 'amanhã' : `em ${falta} dias`),
+      texto: `${titulo(x.quem.tipo === 'cavaleiros' ? x.l.c : x.l.h)} entra na prova ${numProva(x.p)}, ${fmtAlt(x.p.altura)}${x.porOrdem ? `, em ${x.l.o}º de ${x.total}` : ''}`,
+      onde: nomeTorneio(x.t), acao: x.p.id ? `data-hist-prova="${x.t.id}:${x.p.id}" data-marcar="${esc(x.quem.tipo + ':' + x.quem.k)}"${x.porOrdem ? ' data-ver-ordem="1"' : ''}` : `data-torneio="${x.t.id}"`,
+    });
+  }
   for (const s of seguindo) {
     const p = perfilDe(s.tipo, s.k);
     if (!p || typeof p !== 'object') { carregarPerfil(s.tipo, s.k); continue; }
-    for (const h of (p.hist || []).slice(0, 3)) {
+    for (const h of (p.hist || []).filter(h => !h.s && h.p <= 3).slice(0, 3)) {
       const d = diasEntre(hoje, h.d);
       if (d > 45) continue;
-      const pos = h.p;
       out.push({
-        d: h.d, tag: pos === 1 ? 'VITÓRIA' : (pos <= 3 ? 'PÓDIO' : 'RESULTADO'),
-        cor: pos === 1 ? 'var(--ouro-escuro)' : (pos <= 3 ? 'var(--bronze)' : 'var(--muted)'),
+        d: h.d, prioridade: 0, tag: h.p === 1 ? 'VITÓRIA' : 'PÓDIO', cor: h.p === 1 ? 'var(--ouro-escuro)' : 'var(--bronze)',
         quando: d === 0 ? 'hoje' : (d === 1 ? 'ontem' : `${d} dias atrás`),
-        texto: `${titulo(p.nome)} ficou em ${pos}º na prova de ${fmtAlt(h.a)}${h.h ? ' com ' + titulo(h.h) : (h.c ? ' com ' + titulo(h.c) : '')}`,
-        onde: `${titulo(h.t)} · ${h.n} conjuntos`,
-        acao: `data-torneio="${h.ti}"`,
+        texto: `${titulo(p.nome)} ficou em ${h.p}º na prova de ${fmtAlt(h.a)}${h.h ? ' com ' + titulo(h.h) : (h.c ? ' com ' + titulo(h.c) : '')}`,
+        onde: `${tituloLugar(h.t)} · ${h.n} conjuntos`,
+        acao: h.pid ? `data-hist-prova="${h.ti}:${h.pid}" data-marcar="${esc(s.tipo + ':' + s.k)}"` : `data-torneio="${h.ti}"`,
       });
     }
   }
@@ -1730,14 +1929,15 @@ function montarNovidades() {
     const faltam = diasEntre(t.inicio, hoje);
     if (faltam >= 0 && faltam <= 30) {
       out.push({
-        d: t.inicio, tag: faltam === 0 ? 'COMEÇA HOJE' : 'PRÓXIMO', cor: 'var(--verde)',
+        d: t.inicio, prioridade: 1, tag: faltam === 0 ? 'COMEÇA HOJE' : 'TORNEIO QUE VOCÊ SEGUE', cor: 'var(--ok)',
         quando: faltam === 0 ? 'hoje' : `em ${faltam} dia${faltam > 1 ? 's' : ''}`,
-        texto: `${titulo(t.nome)}${t.provas.length ? ` · ${t.provas.length} provas publicadas` : ' · programação ainda não publicada'}`,
-        onde: `${titulo(t.local || '')} · ${periodoLongo(t)}`, acao: `data-torneio="${t.id}"`,
+        texto: `${nomeTorneio(t)}${t.provas.length ? ` · ${t.provas.length} provas publicadas` : ' · programação ainda não publicada'}`,
+        onde: [localDe(t), periodoLongo(t)].filter(Boolean).join(' · '), acao: `data-torneio="${t.id}"`,
       });
     }
   }
-  return out.sort((a, b) => b.d.localeCompare(a.d)).slice(0, 8);
+  // o que vem pela frente primeiro (do mais próximo ao mais distante), depois os pódios (do mais recente)
+  return out.sort((a, b) => b.prioridade - a.prioridade || (a.prioridade ? a.d.localeCompare(b.d) : b.d.localeCompare(a.d))).slice(0, 10);
 }
 
 function telaSobre() {
@@ -1803,9 +2003,11 @@ function rankingCriacao(tipo) {
   if (!lista.length) return `<main><div class="vazio">Ainda não há fichas suficientes. Os dados aparecem conforme o coletor lê as ordens de entrada.</div></main>`;
   let pos = 0, ult = null;
   const titulos = { garanhoes: 'Garanhões pelos filhos em pista', matrizes: 'Matrizes pelos filhos em pista', criadores: 'Criadores pelos cavalos em pista' };
+  const total = lista.length, limite = Math.max(30, S.criacaoLimite || 30);
+  const tipos = `<div class="chips clara" role="group" aria-label="Garanhões, matrizes ou criadores" style="padding:16px 20px 0">${[['garanhoes', 'Garanhões'], ['matrizes', 'Matrizes'], ['criadores', 'Criadores']].map(([k, r]) => `<button class="chip" data-criacao-tipo="${k}" aria-pressed="${tipo === k}">${r}</button>`).join('')}</div>`;
   const atr = { garanhoes: 'data-garanhao', matrizes: 'data-matriz', criadores: 'data-haras' }[tipo];
-  return `<main class="fade"><div class="secao"><h2>${titulos[tipo]}</h2><span class="risco"></span></div>
-    <div class="podio">${lista.map((g, i) => {
+  return `<main class="fade">${tipos}<div class="secao"><h2>${titulos[tipo]}</h2><span class="risco"></span></div>
+    <div class="podio">${lista.slice(0, limite).map((g, i) => {
       if (g.v !== ult) { pos = i + 1; ult = g.v; }
       const n = g.cavalos.length;
       return `<button class="linha-podio" ${atr}="${esc(g.k)}">
@@ -1815,6 +2017,7 @@ function rankingCriacao(tipo) {
           <span class="meta">${n} ${tipo === 'criadores' ? (n > 1 ? 'cavalos' : 'cavalo') : (n > 1 ? 'filhos' : 'filho')} em pista · ${g.l} largadas${g.max ? ' · até ' + fmtAlt(g.max) : ''}${g.destaques ? ` · ${g.destaques} no pódio a ${fmtAlt(S.criacao.alturaDestaque || 1.4)}+` : ''}</span></span>
         <span class="res"><b>${g.v}</b><span>vitórias</span></span></button>`;
     }).join('')}</div>
+    ${total > limite ? `<div class="barra-filtros"><button class="btn clara ver-mais" data-acao="maisCriacao">Ver mais ${Math.min(30, total - limite)}</button></div>` : ''}
     ${notaFonte(` A partir dos resultados públicos da FPH e do ${{ garanhoes: 'pai', matrizes: 'mãe', criadores: 'criador' }[tipo]} informado na ficha de cada cavalo.${coberturaTxt()}`)}
   </main>`;
 }
@@ -1855,47 +2058,38 @@ function telaCriacao(tipo) {
   </main>`;
   return html;
 }
-// resumo do torneio, montado só com fatos dos dados
+// resumo do torneio, montado só com fatos dos dados: três números e quem mais venceu
 function blocoResumo(t) {
   if (S.resumos === undefined) carregarArquivo('resumos', 'resumos.json');
   const r = S.resumos && typeof S.resumos === 'object' ? S.resumos[String(t.id)] : null;
   if (!r) return '';
-  const alt = r.altMin && r.altMax ? (r.altMin === r.altMax ? ` a ${fmtAlt(r.altMax)}` : `, de ${fmtAlt(r.altMin)} a ${fmtAlt(r.altMax)}`) : '';
+  const nums = [[r.provas, r.provas > 1 ? 'provas com resultado' : 'prova com resultado'], [r.largadas.toLocaleString('pt-BR'), 'largadas'], ...(r.zeroPct != null ? [[r.zeroPct + '%', 'dos percursos sem faltas']] : [])];
   const frases = [];
-  frases.push(`${r.parcial ? 'Até agora, o torneio teve' : 'O torneio teve'} ${r.provas} ${r.provas > 1 ? 'provas com resultado' : 'prova com resultado'}${alt}, com ${r.largadas.toLocaleString('pt-BR')} largadas de ${r.conjuntos.toLocaleString('pt-BR')} conjuntos.`);
-  if (r.topCav && r.topCav.length) frases.push(`Quem mais venceu foi ${esc(titulo(r.topCav[0].nome))}, com ${r.topCav[0].v} vitórias${r.topCav[1] ? `, seguido de ${esc(titulo(r.topCav[1].nome))}, com ${r.topCav[1].v}` : ''}.`);
-  if (r.maior) frases.push(`Na prova mais alta, a ${fmtAlt(r.maior.a)}, ${r.maior.empate > 1 ? `${r.maior.empate} conjuntos dividiram o primeiro lugar, entre eles ${esc(titulo(r.maior.c))} com ${esc(titulo(r.maior.h))}` : `venceu ${esc(titulo(r.maior.c))} com ${esc(titulo(r.maior.h))}`}.`);
-  if (r.zeroPct != null) frases.push(`${r.zeroPct}% dos percursos terminaram sem faltas.`);
-  if (r.topCriador) frases.push(`Entre os criadores, ${esc(titulo(r.topCriador.nome))} somou mais vitórias, com ${r.topCriador.v}.`);
-  if (r.opp) frases.push(`Os cavalos vendidos pela Opportunity largaram ${r.opp.l} ${r.opp.l > 1 ? 'vezes' : 'vez'}${r.opp.v ? ` e venceram ${r.opp.v} ${r.opp.v > 1 ? 'provas' : 'prova'}` : ''}.`);
+  if (r.topCav && r.topCav.length) frases.push(`Quem mais venceu: <b>${esc(titulo(r.topCav[0].nome))}</b>, com ${r.topCav[0].v} vitória${r.topCav[0].v > 1 ? 's' : ''}.`);
+  if (r.opp && r.opp.l) frases.push(`Cavalos vendidos pela Opportunity: ${r.opp.l} largada${r.opp.l > 1 ? 's' : ''}${r.opp.v ? ` e ${r.opp.v} vitória${r.opp.v > 1 ? 's' : ''}` : ''}.`);
   return `<section class="resumo-torneio"><div class="secao" style="padding-left:0;padding-right:0"><h2>${r.parcial ? 'O torneio até agora' : 'Resumo do torneio'}</h2><span class="risco"></span></div>
-    <p>${frases.join(' ')}</p><span class="selo-fonte">Calculado pelo Salta a partir dos resultados da FPH</span></section>`;
+    <div class="resumo-nums">${nums.map(([n, rot]) => `<span><b>${n}</b><small>${rot}</small></span>`).join('')}</div>
+    ${frases.length ? `<p>${frases.join(' ')}</p>` : ''}<span class="selo-fonte">Calculado pelo Salta a partir dos resultados da FPH</span></section>`;
 }
 
 function telaRanking() {
   const capa = `<header class="capa">
-      <div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
+      ${topoAba()}
       <span class="olho">TEMPORADA ${(S.stats?.desde || '2026').slice(0, 4)}</span>
       <h1>Quem mais venceu</h1>
       <div class="chips" role="group" aria-label="Tipo de ranking">
-        ${[['geral', 'Visão geral'], ...(indiceAtivo() ? [['indice', 'Índice Salta']] : []), ['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['garanhoes', 'Garanhões'], ['matrizes', 'Matrizes'], ['criadores', 'Criadores'], ['clubes', 'Federações']].map(([k, t]) =>
+        ${[['geral', 'Visão geral'], ...(indiceAtivo() ? [['indice', 'Índice Salta']] : []), ['cavaleiros', 'Cavaleiros'], ['cavalos', 'Cavalos'], ['criacao', 'Criação']].map(([k, t]) =>
           `<button class="chip" data-rank="${k}" aria-pressed="${S.rankTipo === k}">${t}</button>`).join('')}
       </div>
     </header>`;
-  if (S.rankTipo === 'garanhoes' || S.rankTipo === 'matrizes' || S.rankTipo === 'criadores') return capa + rankingCriacao(S.rankTipo);
+  if (S.rankTipo === 'criacao') return capa + rankingCriacao(['garanhoes', 'matrizes', 'criadores'].includes(S.criacaoTipo) ? S.criacaoTipo : 'garanhoes');
   if (S.rankTipo === 'geral') return capa + visaoGeral();
   if (S.rankTipo === 'indice' && indiceAtivo()) return capa + rankingIndice();
   if (!S.stats) return capa + '<main>' + esqueleto(6) + '</main>';
   const t = S.stats.totais;
 
-  let corpo = `<main class="fade"><div class="secao"><h2>${S.rankTipo === 'clubes' ? 'Por federação' : 'Por vitórias'}</h2><span class="risco"></span></div><div class="podio">`;
-  if (S.rankTipo === 'clubes') {
-    corpo += (S.stats.clubes || []).map((c, i) => `<div class="linha-podio">
-      ${i < 3 ? roseta(i + 1, 38) : `<span class="pos" style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${i + 1}</span>`}
-      <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
-        <span class="nome">${esc(c.sig || titulo(c.nome))}</span><span class="meta">${esc(titulo(c.nome))}</span></span>
-      <span class="res"><b>${c.vitorias}</b><span>vitórias</span></span></div>`).join('');
-  } else {
+  let corpo = `<main class="fade"><div class="secao"><h2>Por vitórias</h2><span class="risco"></span></div><div class="podio">`;
+  {
     const lista = S.stats[S.rankTipo] || [];
     let pos = 0, ult = null;
     corpo += lista.map((r, i) => {
@@ -1944,7 +2138,7 @@ async function carregarOpp() {
 function telaOpp() {
   const t = S.opp && typeof S.opp === 'object' ? S.opp.totais : S.stats?.opp?.totais;
   const capa = `<header class="capa">
-      <div class="topo-linha"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span><button class="btn-fino" data-acao="sobre">Sobre</button></div>
+      ${topoAba()}
       <span class="olho">VENDIDOS PELA OPPORTUNITY</span>
       <h1>Nossos cavalos em pista</h1>
       <span class="sub">${t ? `${t.cavalos} cavalos vendidos em leilões da Opportunity competindo na temporada` : 'Cavalos vendidos em leilões da Opportunity competindo na temporada'}</span>
@@ -2016,13 +2210,13 @@ function cartaoProvaOpp(g, futuro) {
   const x = dt(g.d);
   return `<button class="cartao-opp" data-abrir-prova="${g.ti}:${g.pid || 'n' + g.pn}">
     <span class="topo-opp"><b>${futuro ? (g.hora ? g.hora + ' · ' : '') : ''}${x.getDate()} ${MES[x.getMonth()]}</b> · Prova ${esc(String(g.pn || '').replace(/^0+(?=\d)/, ''))} · ${fmtAlt(g.a)}</span>
-    <span class="torneio-opp">${esc(titulo(g.t))}</span>
+    <span class="torneio-opp">${esc(tituloLugar(g.t))}</span>
     ${g.cavalos.map(c => {
       const perc = c.r && c.r[0];
       const res = futuro
         ? `<span class="res-opp">${c.o ? `entra em ${c.o}º de ${c.n}` : `inscrito · ${c.n} na prova`}</span>`
         : (c.s ? `<span class="res-opp">${esc(c.s)}</span>`
-               : `<span class="res-opp"><b style="color:${c.p === 1 ? 'var(--ouro-escuro)' : (c.p <= 3 ? 'var(--bronze)' : 'var(--ink)')}">${c.p}º</b> de ${c.n}${perc ? ' · ' + fmtN(perc[0]) + ' flt' : ''}</span>`);
+               : `<span class="res-opp"><b style="color:${c.p === 1 ? 'var(--ouro-escuro)' : (c.p <= 3 ? 'var(--bronze)' : 'var(--ink)')}">${c.p}º</b> de ${c.n}${perc ? ' · ' + fmtN(perc[0]) + (perc[0] === 1 ? ' falta' : ' faltas') : ''}</span>`);
       return `<span class="linha-opp"><span class="cav-opp"><b>${esc(titulo(c.h))}</b><span>${esc(titulo(c.c))}</span>${filiacaoDe(c.h)}</span>${res}</span>`;
     }).join('')}
     ${seta}
@@ -2056,29 +2250,6 @@ function capaPerfil(nome, rotulo, cor, acaoVoltar, acao = '') {
       <span class="pf-olho">${rotulo}</span>
       <h1 class="pf-nome">${esc(titulo(nome))}</h1>`;
 }
-// um momento da temporada, em forma de cartão na linha do tempo
-function cartaoMomento(h) {
-  const x = dt(h.d), fases = h.r || [];
-  const faltas = fases.reduce((s, f) => s + (f[0] || 0), 0);
-  const tempo = fases.length ? fases[fases.length - 1][1] : null;
-  const alt = fmtAlt(h.a), zerouPrimeira = fases.length && (fases[0][0] || 0) === 0;
-  let tit;
-  if (h.s) tit = `${titulo(h.s)} na ${alt}`;
-  else if (h.p <= 3) tit = `${h.p}º lugar na ${alt}`;
-  else if (zerouPrimeira) tit = fases.length > 1 ? `Zerou a 1ª fase da ${alt}` : `Zerou a ${alt}`;
-  else tit = `${h.p}º lugar na ${alt}`;
-  const det = [
-    !h.s && fases.length ? `${fases.length > 1 ? fases.map(f => f[0] || 0).join(' + ') + ' faltas' : `${faltas} falta${faltas === 1 ? '' : 's'}`}${tempo ? ' · ' + String(tempo).replace('.', ',') + 's' : ''}` : '',
-    !h.s && h.p > 3 ? `${h.p}º de ${h.n}` : `${h.n} conjuntos`,
-    (h.h || h.c) ? 'com ' + titulo(h.h || h.c) : '',
-  ].filter(Boolean).join(' · ');
-  const top = !h.s && h.p <= 3;
-  return `<button class="tl-card${top ? ' top' : ''}" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
-      <span class="tl-ponto" aria-hidden="true"></span>
-      <span class="tl-corpo"><small>${x.getDate()} ${MES[x.getMonth()].toUpperCase()} · ${esc(titulo(h.t))}</small><b>${esc(tit)}</b><span>${esc(det)}</span></span>
-      ${top ? roseta(h.p, 30) : ''}</button>`;
-}
-
 function telaPerfil() {
   const tipo = S.perfilTipo, k = S.perfilK;
   const p = perfilDe(tipo, k);
@@ -2110,16 +2281,18 @@ function telaPerfil() {
       ${anelDesempenho(p.po, p.l ? p.po / p.l : 0, `pódio${p.po === 1 ? '' : 's'}`)}
       ${anelDesempenho(alturas.length ? fmtAlt(+alturas[0][0]).replace('m', '') : '–', alturas.length ? Math.min(1, +alturas[0][0] / 1.6) : 0, 'maior altura', true)}
     </div>${pessoa ? '' : blocoIndice(k)}`;
-  // abas: momentos, resultados e família (ou cavalos, para cavaleiros)
-  const abas = [['momentos', 'Momentos'], ['resultados', 'Resultados'], ['familia', pessoa ? 'Cavalos' : 'Família']];
-  const aba = abas.some(([a]) => a === S.abaPerfil) ? S.abaPerfil : 'momentos';
+  // abas: a temporada inteira numa lista só, e família (ou cavalos, para cavaleiros)
+  const abas = [['temporada', 'Temporada'], ['familia', pessoa ? 'Cavalos' : 'Família']];
+  const aba = abas.some(([a]) => a === S.abaPerfil) ? S.abaPerfil : 'temporada';
   corpo += `<div class="pf-abas" role="tablist">${abas.map(([a, t]) => `<button role="tab" data-aba-perfil="${a}" aria-selected="${aba === a}">${t}</button>`).join('')}</div>`;
   const hist = p.hist || [];
-  if (aba === 'momentos') {
-    corpo += hist.length ? `<div class="tl">${hist.slice(0, 30).map(cartaoMomento).join('')}</div>${hist.length > 30 ? `<p class="fonte">Mostrando os 30 momentos mais recentes. A lista completa está em Resultados.</p>` : ''}`
-      : '<div class="vazio">Nenhuma largada registrada na temporada.</div>';
-  } else if (aba === 'resultados') {
-    if (alturas.length) {
+  if (aba === 'temporada') {
+    const podios = hist.filter(h => !h.s && h.p <= 3);
+    const lista = S.soPodios ? podios : hist;
+    corpo += `<div class="chips clara" role="group" aria-label="Quais largadas" style="padding:16px 20px 0">
+      <button class="chip" data-acao="soPodios" data-v="0" aria-pressed="${!S.soPodios}">Recentes · ${hist.length}</button>
+      <button class="chip" data-acao="soPodios" data-v="1" aria-pressed="${!!S.soPodios}">Só pódios · ${podios.length}</button></div>`;
+    if (alturas.length && !S.soPodios) {
       corpo += `<div class="painel"><h3>Desempenho por altura</h3>
         ${alturas.map(([a, [l, v]]) => `<div class="barra">
           <span class="rot">${a.replace('.', ',')}</span>
@@ -2127,13 +2300,16 @@ function telaPerfil() {
           <span class="num">${l} · ${v}</span></div>`).join('')}
         <div class="legenda"><span><i style="background:var(--ouro)"></i>vitórias</span><span><i style="background:var(--verde-3)"></i>outras largadas</span></div></div>`;
     }
-    corpo += `<div class="secao"><h2>Todas as largadas</h2><span class="risco"></span><span class="aux">${hist.length}</span></div><div class="tabela">${hist.map(h => {
-      const x = dt(h.d);
-      return `<button class="linha" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}"` : `data-torneio="${h.ti}"`}>
-        <span class="pos" style="color:${h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)')}">${h.s ? '–' : h.p + 'º'}</span>
-        <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${h.s ? ' · ' + esc(h.s) : ''}</span>
-        <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(titulo(h.t))} · ${h.n} conjuntos</span></span>${seta}</button>`;
-    }).join('')}</div>`;
+    corpo += lista.length ? `<div class="tabela tabela-temporada">${lista.map(h => {
+      const x = dt(h.d), fases = h.r || [];
+      const faltas = fases.reduce((soma, f) => soma + (f[0] || 0), 0);
+      const det = h.s ? esc(titulo(h.s)) : (fases.length ? (faltas === 0 ? 'zerou' : `${fmtN(faltas)} falta${faltas === 1 ? '' : 's'}`) : '');
+      return `<button class="linha" ${h.pid ? `data-hist-prova="${h.ti}:${h.pid}" data-marcar="${esc(S.perfilTipo + ':' + S.perfilK)}"` : `data-torneio="${h.ti}"`}>
+        <span class="pos" style="color:${h.s ? 'var(--muted)' : (h.p === 1 ? 'var(--ouro-escuro)' : (h.p <= 3 ? 'var(--bronze)' : 'var(--muted)'))}">${h.s ? '–' : h.p + 'º'}</span>
+        <span class="conj"><span class="cav">${fmtAlt(h.a)}${h.h ? ' com ' + esc(titulo(h.h)) : (h.c ? ' com ' + esc(titulo(h.c)) : '')}${det ? ' · ' + det : ''}</span>
+        <span class="cavalo">${x.getDate()} ${MES[x.getMonth()]} · ${esc(tituloLugar(h.t))} · ${h.s ? '' : h.p + 'º de '}${h.n} conjuntos</span></span>${seta}</button>`;
+    }).join('')}</div>` : `<div class="vazio">${S.soPodios ? 'Nenhum pódio entre as largadas mais recentes.' : 'Nenhuma largada registrada na temporada.'}</div>`;
+    if (p.l > hist.length) corpo += `<p class="fonte">Aqui estão as ${hist.length} largadas mais recentes. Os números de cima contam a temporada inteira (${p.l} largadas).</p>`;
   } else {
     if (pessoa) {
       corpo += p.par?.length ? `<div class="pf-pares">${p.par.map(x => `<button class="pf-par" data-perfil="cavalos" data-k="${esc(chave(x.n))}">${avatar(x.n, 52)}<span><b>${esc(titulo(x.n))}</b><small>${x.q} largada${x.q > 1 ? 's' : ''} juntos</small>${filiacaoDe(x.n)}</span></button>`).join('')}</div>`
@@ -2248,36 +2424,16 @@ function telaMetodo() {
 }
 
 // ---------- o campeão em tela cheia, no formato de stories ----------
-function telaCampeao() {
-  const t = achar(S.torneio), p = t && acharProva(t, S.prova), dados = t && S.torneios[t.id];
-  if (!p || !dados || typeof dados !== 'object') return '';
-  const linhas = (dados.provas || {})[String(p.id)] || [];
-  const venc = linhas.filter(l => l.p === 1);
-  if (!venc.length) return '';
-  const c = venc[0], fases = c.r || [], ult = fases[fases.length - 1] || [];
-  const faltas = fases.reduce((s, f) => s + (f[0] || 0), 0);
-  const ficha = S.filiacao && S.filiacao[chave(c.h)];
-  return `<div id="campeao" role="dialog" aria-modal="true" aria-label="Campeão da prova">
-    <svg class="campeao-arco" viewBox="0 0 390 844" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-30 640C20 330 120 210 200 210s170 120 220 430" stroke="#D9B45A" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 16" opacity=".55"/></svg>
-    <div class="campeao-topo"><span class="campeao-marca">${marcaSvg(22)}</span><span><b>${esc(titulo(t.nome))}</b><small>Prova ${esc(numProva(p))}</small></span><button class="campeao-fechar" data-acao="fecharCampeao" aria-label="Fechar">${svg('<path d="M6 6l12 12M18 6L6 18"/>', 22)}</button></div>
-    <div class="campeao-centro">
-      <span class="campeao-olho">${venc.length > 1 ? 'CAMPEÕES' : 'CAMPEÃO'} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span>
-      ${roseta(1, 96)}
-      <h2>${esc(titulo(c.c))}</h2>
-      <span class="campeao-cavalo">com ${esc(titulo(c.h))}${venc.length > 1 ? ` <small>e mais ${venc.length - 1} ${venc.length > 2 ? 'conjuntos empatados' : 'conjunto empatado'}</small>` : ''}</span>
-      ${ficha && (ficha[0] || ficha[1]) ? `<span class="campeao-fil">${esc(titulo(ficha[0] || '?'))} × ${esc(titulo(ficha[1] || '?'))}</span>` : ''}
-      <div class="campeao-nums"><span><b>${faltas}</b><small>faltas</small></span>${ult[1] ? `<span><b>${String(ult[1]).replace('.', ',')}s</b><small>${fases.length > 1 ? 'desempate' : 'percurso'}</small></span>` : ''}<span><b>${linhas.length}</b><small>conjuntos</small></span></div>
-    </div>
-    <div class="campeao-acoes"><button class="btn ouro" data-acao="compartilhar">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)} Compartilhar</button><button class="btn vidro" data-acao="fecharCampeao">Ver a classificação</button></div>
-  </div>`;
-}
-
 // ---------- compartilhar ----------
 function cartaoSVG() {
   const t = achar(S.torneio), p = t.provas.find(x => x.id === +S.prova), dados = S.torneios[t.id];
   const linhas = dados?.provas?.[String(p.id)] || [];
   const c = linhas.find(l => l.p === 1);
   if (!c) return '';
+  const empate = linhas.filter(l => l.p === 1).length;
+  const ordem = dados?.ordem?.[String(p.id)] || [];
+  const lider = ordem.some(o => !linhas.some(l => chave(l.h) === chave(o.h))) && p.dia >= hojeISO();
+  const rotulo = lider ? 'LIDERANDO' : (empate > 1 ? '1º LUGAR' : 'CAMPEÃO');
   const perc = c.r?.[0], des = c.r?.length > 1 ? c.r[c.r.length - 1] : null;
   const x = p.dia ? dt(p.dia) : null;
   const quebra = (s, max) => {
@@ -2290,8 +2446,8 @@ function cartaoSVG() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" font-family="DM Sans, system-ui, sans-serif">
   <rect width="1080" height="1920" fill="#123D30"/>
   <rect x="40" y="40" width="1000" height="1840" fill="none" stroke="#D9B45A" stroke-width="2"/>
-  <text x="540" y="180" text-anchor="middle" fill="#D9B45A" font-size="30" font-weight="700" letter-spacing="6">${esc(titulo(t.nome)).toUpperCase().slice(0, 34)}</text>
-  <text x="540" y="230" text-anchor="middle" fill="#C9D6CF" font-size="28">${esc(titulo(t.local || ''))}${x ? ` · ${x.getDate()} ${MES[x.getMonth()]} ${x.getFullYear()}` : ''}</text>
+  <text x="540" y="180" text-anchor="middle" fill="#D9B45A" font-size="30" font-weight="700" letter-spacing="6">${esc(nomeTorneio(t).toUpperCase().slice(0, 34))}</text>
+  <text x="540" y="230" text-anchor="middle" fill="#C9D6CF" font-size="28">${esc(localDe(t))}${x ? ` · ${x.getDate()} ${MES[x.getMonth()]} ${x.getFullYear()}` : ''}</text>
   <g transform="translate(430,430) scale(4.8)">
     <path d="M14 34l-5 22 8-5 5 6 2-22M32 34l5 22-8-5-5 6-2-22" fill="#8A6A1F"/>
     <circle cx="23" cy="22" r="20" fill="#D9B45A"/>
@@ -2299,10 +2455,11 @@ function cartaoSVG() {
     <circle cx="23" cy="22" r="11" fill="#F4F1EA"/>
     <text x="23" y="27" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="14" fill="#123D30">1º</text>
   </g>
-  <text x="540" y="880" text-anchor="middle" fill="#D9B45A" font-size="40" letter-spacing="14" font-family="DM Serif Display, Georgia, serif">CAMPEÃO</text>
+  <text x="540" y="880" text-anchor="middle" fill="#D9B45A" font-size="40" letter-spacing="14" font-family="DM Serif Display, Georgia, serif">${rotulo}</text>
   ${nome.map((l, i) => `<text x="540" y="${970 + i * 88}" text-anchor="middle" fill="#F4F1EA" font-size="76" font-family="DM Serif Display, Georgia, serif">${esc(l)}</text>`).join('')}
   <text x="540" y="${1000 + nome.length * 88}" text-anchor="middle" fill="#C9D6CF" font-size="38">com ${esc(titulo(c.h))}</text>
   <text x="540" y="${1070 + nome.length * 88}" text-anchor="middle" fill="#F4F1EA" font-size="34" font-weight="700" letter-spacing="4">PROVA ${numProva(p)} · ${fmtAlt(p.altura).toUpperCase()}</text>
+  ${empate > 1 ? `<text x="540" y="${1130 + nome.length * 88}" text-anchor="middle" fill="#C9D6CF" font-size="30">dividido com mais ${empate - 1} conjunto${empate > 2 ? 's' : ''}</text>` : ''}
   <line x1="200" y1="1560" x2="880" y2="1560" stroke="#2C5747" stroke-width="2"/>
   <text x="${des ? 360 : 540}" y="1650" text-anchor="middle" fill="#F4F1EA" font-size="52" font-family="DM Serif Display, Georgia, serif">${fmtN(perc?.[0])} · ${fmtT(perc?.[1])}</text>
   <text x="${des ? 360 : 540}" y="1695" text-anchor="middle" fill="#D9B45A" font-size="26" letter-spacing="5">PERCURSO</text>
@@ -2314,20 +2471,21 @@ function cartaoSVG() {
 }
 function folhaCompartilhar() {
   if (!S.compartilhar) return '';
+  const pode = typeof navigator.canShare === 'function';
   return `<div class="folha" data-acao="fecharFolha"><div class="caixa" role="dialog" aria-label="Compartilhar resultado">
-    <h3>Card do campeão</h3>
+    <h3>Card da prova</h3>
     <div id="cartaoArea">${S.compartilhar}</div>
     <div class="acoes">
-      <button class="btn ouro" data-acao="baixarCard">Baixar imagem</button>
+      ${pode ? '<button class="btn ouro" data-acao="compartilharCard">Compartilhar</button><button class="btn clara" data-acao="baixarCard">Baixar</button>' : '<button class="btn ouro" data-acao="baixarCard">Baixar imagem</button>'}
       <button class="btn clara" data-acao="fecharFolha">Fechar</button>
     </div>
-    <p class="fonte" style="padding:0">A imagem sai em 1080×1920, no tamanho de stories.</p>
+    <p class="fonte" style="padding:0">${pode ? 'Manda direto para o WhatsApp ou o Instagram. ' : ''}A imagem sai em 1080×1920, no tamanho de stories.</p>
   </div></div>`;
 }
-function baixarCard() {
+// transforma o card (SVG) em PNG
+function gerarPNG(pronto) {
   const svgEl = document.querySelector('#cartaoArea svg');
-  if (!svgEl) return;
-  const texto = new XMLSerializer().serializeToString(svgEl);
+  if (!svgEl) return pronto(null);
   const img = new Image();
   img.onload = () => {
     const c = document.createElement('canvas');
@@ -2335,17 +2493,114 @@ function baixarCard() {
     const ctx = c.getContext('2d');
     ctx.fillStyle = '#123D30'; ctx.fillRect(0, 0, 1080, 1920);
     ctx.drawImage(img, 0, 0, 1080, 1920);
-    c.toBlob(b => {
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(b);
-      a.download = 'salta-campeao.png';
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-    }, 'image/png');
+    c.toBlob(b => pronto(b || null), 'image/png');
   };
-  img.onerror = () => alert('Não foi possível gerar a imagem neste navegador. Você pode tirar um print do card.');
-  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(texto);
+  img.onerror = () => pronto(null);
+  img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(svgEl));
 }
+// o PNG é gerado assim que a folha abre: o celular só deixa compartilhar logo depois do toque
+function prepararCard() { S.cardArquivo = null; setTimeout(() => gerarPNG(b => { S.cardArquivo = b; }), 0); }
+function baixarCard() {
+  gerarPNG(b => {
+    if (!b) return alert('Não foi possível gerar a imagem neste navegador. Você pode tirar um print do card.');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b);
+    a.download = 'salta-campeao.png';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  });
+}
+function compartilharCard() {
+  const b = S.cardArquivo;
+  if (b && typeof navigator.canShare === 'function') {
+    const f = new File([b], 'salta-campeao.png', { type: 'image/png' });
+    if (navigator.canShare({ files: [f] })) { navigator.share({ files: [f], title: 'Salta' }).catch(() => {}); return; }
+  }
+  baixarCard();
+}
+
+// ---------- busca geral: cavaleiros, cavalos e torneios ----------
+function telaBusca() {
+  if (!Array.isArray(S.busca)) carregarBusca();
+  return `<header class="capa">
+      ${voltar('voltarBusca', 'Voltar')}
+      <h1>Buscar</h1>
+      <label class="sr" for="buscaGeral">Buscar cavaleiro, cavalo ou torneio</label>
+      <input class="busca busca-capa" id="buscaGeral" type="search" placeholder="Cavaleiro, cavalo ou torneio" autocomplete="off" value="${esc(S.buscaQ || '')}">
+    </header><main class="fade"><div id="resultadosBusca">${resultadosBusca()}</div></main>`;
+}
+function resultadosBusca() {
+  const q = chave(S.buscaQ || '');
+  if (q.length < 2) return '<p class="fonte" style="padding-top:16px">Digite pelo menos duas letras do nome. Toque na estrela para seguir: as próximas largadas de quem você segue aparecem no Hoje.</p>';
+  let html = '';
+  if (S.busca === 'erro') html += '<div class="vazio">Não deu para carregar a lista de nomes agora.</div>';
+  else if (!Array.isArray(S.busca)) html += esqueleto(4, 56);
+  else {
+    const comeca = x => chave(x[2]).startsWith(q) ? 0 : 1;
+    const achados = S.busca.filter(x => chave(x[2]).includes(q)).sort((a, b) => comeca(a) - comeca(b) || b[4] - a[4] || b[3] - a[3]).slice(0, 30);
+    if (achados.length) html += `<div class="secao"><h2>Cavaleiros e cavalos</h2><span class="risco"></span><span class="aux">${achados.length === 30 ? 'os 30 primeiros' : achados.length}</span></div>
+      <div class="lista-busca">${achados.map(([tp, k, nome, l, v]) => {
+        const tipo = tp === 'c' ? 'cavaleiros' : 'cavalos', on = estaSeguindo(tipo, k);
+        return `<div class="linha-busca"><button class="lb-abre" data-perfil="${tipo}" data-k="${esc(k)}">${avatar(nome, 40)}<span class="lb-txt"><b>${esc(titulo(nome))}</b><small>${tipo === 'cavaleiros' ? 'Cavaleiro' : 'Cavalo'} · ${v ? `${v} vitória${v === 1 ? '' : 's'} · ` : ''}${l} largada${l === 1 ? '' : 's'}</small></span></button><button class="lb-seguir" data-acao="seguir" data-tipo="${tipo}" data-k="${esc(k)}" data-nome="${esc(nome)}" aria-pressed="${on}" aria-label="Seguir ${esc(titulo(nome))}">${estrelaSvg}</button></div>`;
+      }).join('')}</div>`;
+  }
+  const torneios = S.dados.torneios.filter(t => torneioVisivel(t) && chave(`${t.nome} ${t.local || ''}`).includes(q))
+    .sort((a, b) => (b.inicio || '').localeCompare(a.inicio || '')).slice(0, 6);
+  if (torneios.length) html += `<div class="secao"><h2>Torneios</h2><span class="risco"></span></div><div class="lista">${torneios.map(t => cartaoTorneio(t, false)).join('')}</div>`;
+  return html || '<div class="vazio"><b>Nada encontrado</b>Confira a grafia: os nomes seguem o cadastro da FPH.</div>';
+}
+
+// ---------- histórico do navegador ----------
+// Cada tela entra no histórico: o Voltar do celular (e o do navegador) volta uma tela em vez de fechar o app,
+// e o endereço muda junto (#t=…&p=…, #perfil=…&k=…), então qualquer tela pode ser aberta por um link.
+const CAMPOS_ROTA = ['aba', 'tela', 'torneio', 'prova', 'perfilTipo', 'perfilK', 'garanhaoK', 'matrizK', 'harasK'];
+const CAMPOS_LEVES = ['dia', 'abaProva', 'rankTipo', 'criacaoTipo', 'vistaTorneios', 'abaPerfil', 'oppVista'];
+let histPronto = false, rotaAnterior = null, nivelHist = 0, restaurando = false, ultimoY = 0;
+// o próprio app devolve a pessoa ao ponto da tela onde estava (o navegador voltaria para o topo)
+try { history.scrollRestoration = 'manual'; } catch {}
+window.addEventListener('scroll', () => { ultimoY = window.scrollY; }, { passive: true });
+function enderecoDe() {
+  const h = new URLSearchParams();
+  if ((S.tela === 'torneio' || S.tela === 'prova') && S.torneio) { h.set('t', S.torneio); if (S.tela === 'prova' && S.prova != null) h.set('p', S.prova); }
+  else if (S.tela === 'perfil' && S.perfilK) { h.set('perfil', S.perfilTipo); h.set('k', S.perfilK); }
+  else if (S.tela === 'garanhao' && S.garanhaoK) h.set('garanhao', S.garanhaoK);
+  else if (S.tela === 'matriz' && S.matrizK) h.set('matriz', S.matrizK);
+  else if (S.tela === 'haras' && S.harasK) h.set('criador', S.harasK);
+  else if (['sobre', 'metodo', 'busca'].includes(S.tela)) h.set('tela', S.tela);
+  else if (!S.tela && S.aba && S.aba !== 'calendario') { h.set('aba', S.aba); if (S.aba === 'ranking' && S.rankTipo && S.rankTipo !== 'geral') h.set('ranking', S.rankTipo); }
+  const s = h.toString();
+  return location.pathname + location.search + (s ? '#' + s : '');
+}
+function registrarHistorico() {
+  if (!histPronto) return;
+  const rota = {}; for (const c of CAMPOS_ROTA) rota[c] = S[c] ?? null;
+  const leve = {}; for (const c of CAMPOS_LEVES) leve[c] = S[c] ?? null;
+  const chaveRota = JSON.stringify(rota);
+  try {
+    if (rotaAnterior !== null && chaveRota !== rotaAnterior && !restaurando) {
+      // guarda onde a pessoa estava, para o Voltar devolver ao mesmo ponto da tela
+      if (history.state && history.state.salta) history.replaceState({ ...history.state, y: ultimoY }, '');
+      nivelHist++;
+      history.pushState({ salta: true, n: nivelHist, rota, leve }, '', enderecoDe());
+    } else {
+      history.replaceState({ salta: true, n: nivelHist, rota, leve, y: history.state && history.state.y }, '', enderecoDe());
+    }
+  } catch {}
+  rotaAnterior = chaveRota; restaurando = false;
+}
+window.addEventListener('popstate', e => {
+  const st = e.state;
+  if (!st || !st.salta) return abrirPeloEndereco();
+  restaurando = true; nivelHist = st.n || 0;
+  Object.assign(S, st.rota, st.leve || {}, { filtro: '', compartilhar: null, pilha: [] });
+  document.getElementById('pedido-avisos')?.remove();
+  if (S.tela === 'perfil' && S.perfilTipo && S.perfilK) carregarPerfil(S.perfilTipo, S.perfilK);
+  if (['garanhao', 'matriz', 'haras'].includes(S.tela) && S.haras === undefined) carregarArquivo('haras', 'haras.json');
+  render();
+  window.scrollTo(0, st.y || 0);
+});
+// o Voltar das telas volta pelo histórico; aberta por link direto, a tela volta para a de cima
+const voltarTela = alternativa => nivelHist > 0 ? history.back() : alternativa();
 
 // ---------- render ----------
 const app = document.getElementById('app');
@@ -2381,7 +2636,7 @@ function render() {
   if (S.erro) {
     html = `<header class="capa"><span class="marca">${marcaSvg(26)}Salta<small>by Opportunity</small></span></header><main><div class="vazio">${
       S.erro === 'sem-dados'
-        ? '<b>Dados ainda não coletados</b>Rode o coletor no GitHub (aba Actions) e volte em alguns minutos.'
+        ? '<b>Os dados estão sendo atualizados</b>Volte em alguns minutos.<button class="btn clara" style="margin-top:12px;flex:none" data-acao="recarregar">Tentar de novo</button>'
         : '<b>Não deu para carregar</b><button class="btn clara" style="margin-top:12px;flex:none" data-acao="recarregar">Tentar de novo</button>'
     }</div></main>`;
   } else if (!S.dados) {
@@ -2394,47 +2649,60 @@ function render() {
   else if (S.tela === 'haras') html = telaCriacao('haras');
   else if (S.tela === 'matriz') html = telaCriacao('matriz');
   else if (S.tela === 'metodo') html = telaMetodo();
-  else if (S.aba === 'resultados') html = telaResultados();
+  else if (S.tela === 'busca') html = telaBusca();
+  else if (S.aba === 'torneios' || S.aba === 'resultados') html = telaTorneios();
   else if (S.aba === 'seguindo') html = telaSeguindo();
   else if (S.aba === 'ranking') html = telaRanking();
   else if (S.aba === 'opp') html = telaOpp();
   else html = telaCalendario();
   const arena = !!S._arena && S.tela === 'prova'; S._arena = false;
   document.body.toggleAttribute('data-arena', arena);
-  app.innerHTML = html + abas() + folhaCompartilhar() + (S.campeao && S.tela === 'prova' ? telaCampeao() : '');
-  const sel = document.getElementById('altura'); if (sel) sel.value = S.altura;
+  app.innerHTML = html + abas() + folhaCompartilhar();
   ajustarChips();
+  if (S.tela === 'busca' && S._focarBusca) { S._focarBusca = false; const i = document.getElementById('buscaGeral'); if (i) i.focus(); }
+  if (S.marcar) {
+    const el = S.tela === 'prova' ? app.querySelector('.alvo') : null;
+    if (el) requestAnimationFrame(() => el.scrollIntoView({ block: 'center' }));
+    // sem a linha na tela: espera o arquivo do torneio chegar; chegou e não achou, desiste
+    if (el || S.tela !== 'prova' || typeof S.torneios[S.torneio] === 'object') S.marcar = null;
+  }
+  registrarHistorico();
 }
 
 function irPara(tela, extra = {}) { Object.assign(S, { tela }, extra); window.scrollTo(0, 0); render(); }
 
 document.addEventListener('click', e => {
-  const alvo = e.target.closest('[data-aba],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras],[data-matriz],[data-hist-prova],[data-aba-perfil]');
+  const alvo = e.target.closest('[data-aba],[data-vista-torneios],[data-criacao-tipo],[data-aba-prova],[data-acao],[data-torneio],[data-prova],[data-perfil],[data-cat],[data-dia],[data-rank],[data-aviso],[data-opp-vista],[data-abrir-prova],[data-tr],[data-bv-rever],[data-garanhao],[data-haras],[data-matriz],[data-hist-prova],[data-aba-perfil]');
   if (!alvo) return;
   const d = alvo.dataset;
   if (d.acao === 'fecharFolha' && e.target.closest('.caixa') && !e.target.closest('[data-acao="fecharFolha"]')) return;
-  if (d.aba) { Object.assign(S, { aba: d.aba, tela: null, torneio: null, prova: null, origem: null, pilha: [] }); window.scrollTo(0, 0); return render(); }
+  if (d.aba) { Object.assign(S, { aba: d.aba === 'resultados' ? 'torneios' : d.aba, tela: null, torneio: null, prova: null, origem: null, pilha: [] }); window.scrollTo(0, 0); return render(); }
+  if (d.vistaTorneios) { S.vistaTorneios = d.vistaTorneios; S.cat = 'Todas'; return render(); }
   if (d.acao === 'salvar') return alternar(salvos, 'pista-salvos', +d.id);
-  if (d.acao === 'seguir') return seguir(d.tipo, d.k, d.nome);
-  if (d.acao === 'salvos') { S.soSalvos = !S.soSalvos; return render(); }
-  if (d.acao === 'limpar') { Object.assign(S, { cat: 'Todas', altura: 'todas', soSalvos: false }); return render(); }
+  if (d.acao === 'seguir') {
+    // na busca, seguir não redesenha a tela, para o teclado não fechar
+    if (S.tela === 'busca') { seguir(d.tipo, d.k, d.nome, false, true); alvo.setAttribute('aria-pressed', String(estaSeguindo(d.tipo, d.k))); return; }
+    return seguir(d.tipo, d.k, d.nome);
+  }
+  if (d.acao === 'buscar') { S._focarBusca = true; return irPara('busca'); }
+  if (d.acao === 'voltarBusca') return voltarTela(() => irPara(null));
+  if (d.acao === 'limpar') { Object.assign(S, { cat: 'Todas', filtroTorneios: '' }); return render(); }
   if (d.acao === 'sobre') return irPara('sobre');
-  if (d.acao === 'voltarSobre') return irPara(null);
-  if (d.acao === 'voltarLista') return irPara(null, { torneio: null });
-  if (d.acao === 'voltarTorneio') {
+  if (d.acao === 'voltarSobre') return voltarTela(() => irPara(null));
+  if (d.acao === 'voltarLista') return voltarTela(() => irPara(null, { torneio: null }));
+  if (d.acao === 'voltarTorneio') return voltarTela(() => {
     if (S.pilha && S.pilha.length && S.tela === 'prova') return voltarCaminho();
     if (S.origem === 'opp') { S.origem = null; return irPara(null, { torneio: null, prova: null, filtro: '' }); }
     return irPara('torneio', { prova: null, filtro: '' });
-  }
-  if (d.acao === 'voltarPerfil') {
+  });
+  if (d.acao === 'voltarPerfil') return voltarTela(() => {
     if (S.pilha && S.pilha.length) return voltarCaminho();
     return irPara(S.prova ? 'prova' : (S.torneio ? 'torneio' : null), { perfilTipo: null, perfilK: null });
-  }
+  });
   if (d.acao === 'recarregar') { S.erro = null; S.dados = null; render(); return carregar(); }
   if (d.acao === 'recarregarProva') { delete S.torneios[S.torneio]; return render(); }
-  if (d.acao === 'compartilhar') { S.campeao = false; S.compartilhar = cartaoSVG(); return render(); }
-  if (d.acao === 'verCampeao') { S.campeao = true; return render(); }
-  if (d.acao === 'fecharCampeao') { S.campeao = false; return render(); }
+  if (d.acao === 'compartilhar') { S.compartilhar = cartaoSVG(); render(); return prepararCard(); }
+  if (d.acao === 'compartilharCard') return compartilharCard();
   if (d.acao === 'fecharFolha') { S.compartilhar = null; return render(); }
   if (d.acao === 'baixarCard') return baixarCard();
   if (d.aviso) { avisos[d.aviso] = !avisos[d.aviso]; guarda.gravar('pista-avisos', avisos); sincronizarAvisos(); return render(); }
@@ -2443,9 +2711,18 @@ document.addEventListener('click', e => {
   if (d.acao === 'desativarAvisos') return desativarAvisos();
   if (d.cat) { S.cat = d.cat; return render(); }
   if (d.dia) { S.dia = d.dia; return render(); }
-  if (d.rank) { S.rankTipo = d.rank === 'opp' ? 'cavaleiros' : d.rank; return render(); }
+  if (d.rank) {
+    // os rankings de criação (garanhões, matrizes e criadores) ficam juntos em "Criação"
+    if (['garanhoes', 'matrizes', 'criadores'].includes(d.rank)) Object.assign(S, { rankTipo: 'criacao', criacaoTipo: d.rank, criacaoLimite: 30 });
+    else S.rankTipo = ['geral', 'indice', 'cavaleiros', 'cavalos', 'criacao'].includes(d.rank) ? d.rank : 'geral';
+    window.scrollTo(0, 0);
+    return render();
+  }
   if (d.oppVista) { S.oppVista = d.oppVista; return render(); }
   if (d.abaPerfil) { S.abaPerfil = d.abaPerfil; return render(); }
+  if (d.acao === 'soPodios') { S.soPodios = d.v === '1'; return render(); }
+  if (d.criacaoTipo) { S.criacaoTipo = d.criacaoTipo; S.criacaoLimite = 30; return render(); }
+  if (d.acao === 'maisCriacao') { S.criacaoLimite = (S.criacaoLimite || 30) + 30; return render(); }
   if (d.garanhao || d.haras || d.matriz) {
     guardarCaminho();
     if (S.haras === undefined) carregarArquivo('haras', 'haras.json');
@@ -2456,12 +2733,12 @@ document.addEventListener('click', e => {
   if (d.histProva) {
     const [ti, pid] = d.histProva.split(':').map(Number);
     guardarCaminho();
-    return irPara('prova', { torneio: ti, prova: pid, dia: null, filtro: '', abaProva: 'classificacao' });
+    return irPara('prova', { torneio: ti, prova: pid, dia: null, filtro: '', abaProva: d.verOrdem ? 'ordem' : 'classificacao', marcar: d.marcar || null });
   }
   if (d.acao === 'metodo') { guardarCaminho(); return irPara('metodo', {}); }
   if (d.acao === 'indiceBeta') { guarda.gravar('salta-indice-beta', !indiceAtivo()); if (!indiceAtivo() && S.rankTipo === 'indice') S.rankTipo = 'geral'; return render(); }
-  if (d.acao === 'voltarMetodo') return voltarCaminho();
-  if (d.acao === 'voltarCriacao') return voltarCaminho();
+  if (d.acao === 'voltarMetodo') return voltarTela(voltarCaminho);
+  if (d.acao === 'voltarCriacao') return voltarTela(voltarCaminho);
   if (d.tr) { S.trIdx = +d.tr; S.trTocando = false; return render(); }
   if (d.acao === 'tocarTransmissao') { S.trTocando = true; return render(); }
   if (d.acao === 'verTransmissao') {
@@ -2480,12 +2757,22 @@ document.addEventListener('click', e => {
   if (d.perfil) {
     // vindo de uma página de criação, de outro perfil ou de uma prova aberta pelo perfil, o Voltar retorna para lá
     if (['garanhao', 'haras', 'matriz', 'perfil', 'metodo'].includes(S.tela) || (S.tela === 'prova' && S.pilha && S.pilha.length)) guardarCaminho();
-    carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k, abaPerfil: 'momentos' });
+    carregarPerfil(d.perfil, d.k); return irPara('perfil', { perfilTipo: d.perfil, perfilK: d.k, abaPerfil: 'temporada', soPodios: false });
   }
   if (d.torneio) return irPara('torneio', { torneio: +d.torneio, dia: null, prova: null });
 });
-document.addEventListener('change', e => { if (e.target.id === 'altura') { S.altura = e.target.value; render(); } });
 document.addEventListener('input', e => {
+  if (e.target.id === 'buscaGeral') {
+    S.buscaQ = e.target.value;
+    const alvo = document.getElementById('resultadosBusca'); if (alvo) alvo.innerHTML = resultadosBusca();
+    return;
+  }
+  if (e.target.id === 'filtroTorneios') {
+    S.filtroTorneios = e.target.value;
+    const vista = S.vistaTorneios === 'encerrados' ? 'encerrados' : 'proximos';
+    const alvo = document.getElementById('listaTorneios'); if (alvo) alvo.innerHTML = listaTorneios(baseTorneios(vista), vista);
+    return;
+  }
   if (e.target.id === 'filtroOpp') {
     S.filtroOpp = e.target.value;
     const alvo = document.getElementById('corpoOpp');
@@ -2519,7 +2806,7 @@ document.addEventListener('input', e => {
   const t = achar(S.torneio), dados = S.torneios[t.id];
   const linhas = dados?.provas?.[String(S.prova)] || [];
   const q = S.filtro.trim().toLowerCase();
-  const filtradas = q ? linhas.filter(l => (l.c + ' ' + l.h).toLowerCase().includes(q)) : linhas.filter(l => l.p > 3);
+  const filtradas = linhasTabela(linhas, q);
   const alvo = document.getElementById('linhas');
   const ordemDoCavalo = new Map(((dados && dados.ordem && dados.ordem[String(S.prova)]) || []).map(o => [chave(o.h), o.o]));
   if (alvo) alvo.innerHTML = corpoLinhas(filtradas, i => i != null ? dados.fed[i] : null, ordemDoCavalo);
@@ -2548,6 +2835,13 @@ async function atualizarAoVivo() {
 setInterval(atualizarAoVivo, AO_VIVO_MS);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') atualizarAoVivo(); });
 // "atualizado às 10h12": horário da última coleta, mostrado nas telas de torneio em andamento
+// "às 10h12" quando a última coleta foi hoje; "em 16/11 às 19h10" quando não foi
+function quandoAtualizado() {
+  const hora = horaAtualizacao();
+  if (!hora) return '';
+  const d = new Date(S.stats.atualizadoEm);
+  return d.toDateString() === new Date().toDateString() ? `às ${hora}` : `em ${pad(d.getDate())}/${pad(d.getMonth() + 1)} às ${hora}`;
+}
 function horaAtualizacao() {
   const iso = S.stats && S.stats.atualizadoEm;
   if (!iso) return '';
@@ -2556,11 +2850,22 @@ function horaAtualizacao() {
 }
 
 function abrirPeloEndereco() {
+  if (!S.dados) return;
   const h = new URLSearchParams(location.hash.slice(1));
-  const t = +h.get('t'), p = +h.get('p');
-  if (!t || !S.dados || !achar(t)) return;
-  Object.assign(S, { torneio: t, dia: null, prova: p || null, filtro: '', tela: p ? 'prova' : 'torneio' });
-  history.replaceState(null, '', location.pathname);
+  const t = +h.get('t'), p = h.get('p'), tipo = h.get('perfil'), k = h.get('k');
+  const base = { tela: null, torneio: null, prova: null, dia: null, filtro: '', perfilTipo: null, perfilK: null };
+  if (t && achar(t)) Object.assign(S, base, { torneio: t, prova: p ? (/^\d+$/.test(p) ? +p : p) : null, tela: p ? 'prova' : 'torneio', abaProva: 'classificacao' });
+  else if ((tipo === 'cavaleiros' || tipo === 'cavalos') && k) { Object.assign(S, base, { tela: 'perfil', perfilTipo: tipo, perfilK: chave(k), abaPerfil: 'temporada' }); carregarPerfil(tipo, chave(k)); }
+  else if (h.get('garanhao')) Object.assign(S, base, { tela: 'garanhao', garanhaoK: chave(h.get('garanhao')) });
+  else if (h.get('matriz')) Object.assign(S, base, { tela: 'matriz', matrizK: chave(h.get('matriz')) });
+  else if (h.get('criador')) Object.assign(S, base, { tela: 'haras', harasK: chave(h.get('criador')) });
+  else if (['sobre', 'metodo', 'busca'].includes(h.get('tela'))) Object.assign(S, base, { tela: h.get('tela') });
+  else if (['calendario', 'torneios', 'resultados', 'seguindo', 'ranking', 'opp'].includes(h.get('aba'))) {
+    Object.assign(S, base, { aba: h.get('aba') === 'resultados' ? 'torneios' : h.get('aba') });
+    const r = h.get('ranking');
+    if (['geral', 'indice', 'cavaleiros', 'cavalos', 'criacao'].includes(r)) S.rankTipo = r;
+  } else return;
+  if (['garanhao', 'matriz', 'haras'].includes(S.tela) && S.haras === undefined) carregarArquivo('haras', 'haras.json');
   render();
 }
 window.addEventListener('hashchange', abrirPeloEndereco);
@@ -2644,10 +2949,11 @@ document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === 
 function talvezBoasVindas() {
   let visto = false;
   try { visto = localStorage.getItem(CHAVE_BV) === '1'; } catch {}
-  if (!visto) mostrarBoasVindas();
+  // quem chega por um link (de uma prova, de um perfil) vê primeiro o que veio buscar
+  if (!visto && !location.hash) mostrarBoasVindas();
 }
 
-carregar().then(abrirPeloEndereco).then(talvezBoasVindas);
+carregar().then(abrirPeloEndereco).then(() => { histPronto = true; registrarHistorico(); }).then(talvezBoasVindas);
 iniciarPush();
 </script>
 </body>
