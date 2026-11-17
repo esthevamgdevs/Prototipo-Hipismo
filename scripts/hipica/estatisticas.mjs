@@ -9,6 +9,10 @@ import { calcularIndice } from './indice.mjs';
 
 // Códigos de categoria da FPH que correspondem a crianças (mini mirim, pré-mirim, mirim...)
 export const CAT_INFANTIL = /\b(MMR|PMR|MRA|MRB|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]?MIRIM|INFANTIL|KIDS?)\b/i;
+// Categoria de UM conjunto (ordem de entrada e inscritos trazem a categoria de cada atleta).
+// Além das infantis, inclui Mirim (MR), Pré-Júnior (PJR) e Júnior (JR), que também são de menores de 18.
+// Não serve para o nome da prova: provas como "SR/JR/U25" juntam adultos e menores.
+export const CAT_MENOR = /\b(MMR|PMR|MRA|MRB|MR|PJR|JR|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]?MIRIM|PR[ÉE][- ]?J[ÚU]NIOR|J[ÚU]NIOR|INFANTIL|KIDS?)\b/i;
 const SIGLAS = [
   [/PAULISTA/i, 'FPH'], [/PARANAENSE/i, 'FPrH'], [/BRAS[ÍI]LIA/i, 'FHBr'],
   [/RIO DE JANEIRO/i, 'FEERJ'], [/MINAS/i, 'FHMG'], [/RIO GRANDE DO SUL|GA[ÚU]CHA/i, 'FGH'],
@@ -19,9 +23,11 @@ const SIGLAS = [
 const sigla = f => { for (const [re, s] of SIGLAS) if (re.test(f || '')) return s; return null; };
 
 // "MARIA EDUARDA PARMA RODRIGUES" -> "Maria Eduarda P. R." em provas infantis
+// "ANA SOUZA" -> "Ana S." (nome de duas palavras também esconde o sobrenome)
 export function abreviar(nome) {
-  const partes = nome.trim().split(/\s+/);
-  if (partes.length <= 2) return partes.map(p => p[0] + p.slice(1).toLowerCase()).join(' ');
+  const partes = String(nome || '').trim().split(/\s+/).filter(Boolean);
+  if (partes.length <= 1) return partes.map(p => p[0] + p.slice(1).toLowerCase()).join(' ');
+  if (partes.length === 2) return partes[0][0] + partes[0].slice(1).toLowerCase() + ' ' + partes[1][0] + '.';
   return partes.slice(0, 2).map(p => p[0] + p.slice(1).toLowerCase()).join(' ') + ' ' +
     partes.slice(2).map(p => p[0] + '.').join(' ');
 }

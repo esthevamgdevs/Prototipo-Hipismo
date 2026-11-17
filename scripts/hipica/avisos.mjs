@@ -11,6 +11,20 @@ import { CAT_INFANTIL, abreviar } from './estatisticas.mjs';
 
 const MAX_POR_PESSOA = 4;          // avisos por pessoa em cada rodada
 const JANELA_DEDUP_DIAS = 30;       // quanto tempo lembramos do que já foi enviado
+const ESPERA_MAX_MS = 10000;        // tempo máximo de espera por envio: um endereço que não responde não trava a rodada
+const POR_PAGINA = 1000;            // limite de linhas por pedido do Supabase
+
+// Lê todas as linhas de uma consulta do Supabase, de 1.000 em 1.000
+async function lerTudo(url, headers) {
+  const todas = [];
+  for (let offset = 0; ; offset += POR_PAGINA) {
+    const r = await fetch(`${url}&limit=${POR_PAGINA}&offset=${offset}`, { headers, signal: AbortSignal.timeout(30000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const pagina = await r.json();
+    todas.push(...pagina);
+    if (pagina.length < POR_PAGINA) return todas;
+  }
+}
 
 const chave = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   .toUpperCase().replace(/[^A-Z0-9]+/g, ' ').trim();
@@ -49,9 +63,10 @@ export async function enviarAvisos({ saida, anterior, atual }) {
   }
 
   // 2) Quem está inscrito
-  const ri = await fetch(`${base}/rest/v1/inscricoes?select=endpoint,p256dh,auth,seguindo,torneios,avisos`, { headers: H });
-  if (!ri.ok) { console.warn(`Avisos: não deu para ler as inscrições (HTTP ${ri.status}).`); return { enviados: 0 }; }
-  const inscricoes = await ri.json();
+  // O Supabase devolve no máximo 1.000 linhas por pedido: lê em páginas até acabar.
+  let inscricoes;
+  try { inscricoes = await lerTudo(`${base}/rest/v1/inscricoes?select=endpoint,p256dh,auth,seguindo,torneios,avisos&order=endpoint`, H); }
+  catch (e) { console.warn(`Avisos: não deu para ler as inscrições (${e.message}).`); return { enviados: 0 }; }
   if (!inscricoes.length) { console.log('Avisos: ninguém inscrito ainda.'); return { enviados: 0 }; }
 
   // 3) Pódios das provas novas
@@ -75,8 +90,10 @@ export async function enviarAvisos({ saida, anterior, atual }) {
 
   // 4) O que já foi enviado recentemente, para não repetir
   const desde = new Date(Date.now() - JANELA_DEDUP_DIAS * 864e5).toISOString();
-  const re = await fetch(`${base}/rest/v1/enviados?select=endpoint,chave&enviado_em=gte.${encodeURIComponent(desde)}`, { headers: H });
-  const jaEnviados = new Set(re.ok ? (await re.json()).map(x => `${x.endpoint} ${x.chave}`) : []);
+  let lidos = [];
+  try { lidos = await lerTudo(`${base}/rest/v1/enviados?select=endpoint,chave&enviado_em=gte.${encodeURIComponent(desde)}&order=endpoint,chave`, H); }
+  catch (e) { console.warn(`Avisos: não deu para ler o histórico de envios (${e.message}); nada será enviado para não repetir aviso.`); return { enviados: 0 }; }
+  const jaEnviados = new Set(lidos.map(x => `${x.endpoint} ${x.chave}`));
 
   // 5) Montar e enviar
   let enviados = 0, expirados = 0, falhas = 0;
@@ -127,7 +144,7 @@ export async function enviarAvisos({ saida, anterior, atual }) {
     let expirou = false;
     for (const m of fila) {
       try {
-        await webpush.sendNotification(assinatura, JSON.stringify({ titulo: m.titulo, texto: m.texto, url: m.url, tag: m.tag }), { TTL: 60 * 60 * 24 });
+        await webpush.sendNotification(assinatura, JSON.stringify({ titulo: m.titulo, texto: m.texto, url: m.url, tag: m.tag }), { TTL: 60 * 60 * 24, timeout: ESPERA_MAX_MS });
         enviados++;
         if (m.chave) registrar.push({ endpoint: i.endpoint, chave: m.chave });
       } catch (e) {
@@ -141,7 +158,7 @@ export async function enviarAvisos({ saida, anterior, atual }) {
     }
     if (expirou) {
       expirados++;
-      await fetch(`${base}/rest/v1/inscricoes?endpoint=eq.${encodeURIComponent(i.endpoint)}`, { method: 'DELETE', headers: H }).catch(() => {});
+      await fetch(`${base}/rest/v1/inscricoes?endpoint=eq.${encodeURIComponent(i.endpoint)}`, { method: 'DELETE', headers: H, signal: AbortSignal.timeout(15000) }).catch(() => {});
     }
   }
 
@@ -150,6 +167,7 @@ export async function enviarAvisos({ saida, anterior, atual }) {
       method: 'POST',
       headers: { ...H, Prefer: 'resolution=ignore-duplicates,return=minimal' },
       body: JSON.stringify(registrar),
+      signal: AbortSignal.timeout(30000),
     }).catch(() => {});
   }
   console.log(`Avisos: ${enviados} enviados, ${expirados} inscrições expiradas removidas, ${falhas} falhas.`);

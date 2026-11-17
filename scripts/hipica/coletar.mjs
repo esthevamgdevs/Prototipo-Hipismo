@@ -6,10 +6,12 @@
 //  - uma página por vez, com pausa entre elas, e um teto de páginas por execução
 //  - resultados já coletados não são baixados de novo depois que o torneio fecha
 import fs from 'node:fs/promises';
+import os from 'node:os';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseTorneio, parseResultados, parseOrdemEntrada, idsDoCalendario, camposOcultos, alvoListaInscritos, parseInscritos } from './parsers.mjs';
-import { gerarEstatisticas, CAT_INFANTIL, abreviar } from './estatisticas.mjs';
+import { gerarEstatisticas, CAT_INFANTIL, CAT_MENOR, abreviar } from './estatisticas.mjs';
 import { enviarAvisos } from './avisos.mjs';
 import { atualizarTransmissoes } from './transmissoes.mjs';
 
@@ -22,6 +24,8 @@ const ID_INICIAL = +(process.env.ID_INICIAL ?? 3300);      // primeiro torneio a
 const JANELA_NOVOS = +(process.env.JANELA_NOVOS ?? 25);    // quantos IDs acima do maior conhecido sondar
 const A_PARTIR = process.env.A_PARTIR || '2026-01-01';     // ignora torneios que terminaram antes disto
 const DESDE = process.env.DESDE || A_PARTIR;               // resultados a partir desta data
+// foto do índice antes da coleta, usada pelo passo de avisos (fica fora do repositório)
+const ARQ_ANTERIOR = process.env.AVISOS_ANTERIOR || path.join(process.env.RUNNER_TEMP || os.tmpdir(), 'salta-index-anterior.json');
 const UA = 'SaltaApp/0.2 (app de hipismo; +https://github.com/esthevamgdevs/Prototipo-Hipismo)';
 
 const hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
@@ -159,6 +163,89 @@ async function gravarJSON(arquivo, dados, identar = 0) {
   await fs.writeFile(arquivo, JSON.stringify(dados, null, identar) + '\n');
 }
 
+// Proteção de menores. Quem aparece com categoria de menor (CAT_MENOR) em qualquer ordem de entrada
+// ou lista de inscritos fica com o sobrenome abreviado em todos os torneios, inclusive em provas
+// que juntam adultos e menores (ex.: "SR/JR/U25"), onde o nome da prova não basta para saber.
+// Para não pegar adultos por engano, nome de duas palavras ("Ana S.") só é protegido junto com o
+// mesmo cavalo; nome com três palavras ou mais ("Sofia Tiberio P.") é protegido em qualquer prova.
+// Quem já foi visto com nome completo numa categoria de menor fica num registro em estado.json,
+// guardado só como código (hash), para continuar protegido nas próximas coletas, com qualquer cavalo.
+const variasPalavras = nome => String(nome || '').trim().split(/\s+/).length >= 3;
+// Na hora de gravar uma prova infantil: nome com três palavras ou mais já sai abreviado; nome de duas
+// palavras fica para a passada de proteção decidir (ela sabe se é adulto montando em prova de criança).
+const abreviarNaProva = nome => variasPalavras(nome) ? abreviar(nome) : nome;
+const chave = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9]+/g, ' ').trim();
+async function protegerMenores(torneios, arquivosTorneio, estado) {
+  const dados = new Map();
+  for (const t of torneios.values()) {
+    const d = arquivosTorneio.get(t.id) || await lerJSON(path.join(SAIDA, 't', `${t.id}.json`), null);
+    if (d) dados.set(t.id, d);
+  }
+  const k = nome => chave(abreviar(nome));
+  const pessoas = new Set(), pares = new Set();
+  const codigo = nome => createHash('sha256').update(chave(nome)).digest('hex').slice(0, 16);
+  const registro = new Set(estado.menores || []);
+  for (const d of dados.values()) for (const sec of ['ordem', 'inscritos']) for (const linhas of Object.values(d[sec] || {})) for (const l of linhas) {
+    if (!l.c || !CAT_MENOR.test(l.cat || '')) continue;
+    pessoas.add(k(l.c));
+    pares.add(`${k(l.c)}|${chave(l.h)}`);
+    if (!/\b\p{L}\.$/u.test(l.c.trim())) registro.add(codigo(l.c)); // nome ainda completo
+  }
+  const ehMenor = (c, h) => pares.has(`${k(c)}|${chave(h)}`) || (variasPalavras(c) && pessoas.has(k(c))) || registro.has(codigo(c));
+  // Nome de duas palavras numa prova infantil, sem nenhum sinal de que a pessoa é menor, e que aparece
+  // com nome completo em provas de adultos: é um adulto montando numa prova de criança. Fica como estava,
+  // para o perfil dele não se dividir em dois ("Ana Souza" e "Ana S.").
+  const provasInfantis = t => new Set((t.provas || []).filter(p => p.id && CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`)).map(p => String(p.id)));
+  const completo = nome => !/\b\p{L}\.$/u.test(String(nome).trim());
+  const adultoVisivel = new Set();
+  for (const [id, d] of dados) {
+    const infantis = provasInfantis(torneios.get(id));
+    for (const [pid, linhas] of Object.entries(d.provas || {})) for (const l of linhas) {
+      if (!infantis.has(pid) && l.c && !variasPalavras(l.c) && completo(l.c) && !ehMenor(l.c, l.h)) adultoVisivel.add(chave(l.c));
+    }
+  }
+  const pelaProva = (c, h) => variasPalavras(c) || !adultoVisivel.has(chave(c)) || ehMenor(c, h);
+  let trocas = 0;
+  const abreviarLinha = l => { const novo = abreviar(l.c); if (novo === l.c) return false; l.c = novo; trocas++; return true; };
+  for (const [id, d] of dados) {
+    const infantis = provasInfantis(torneios.get(id));
+    let mudou = false;
+    for (const [pid, linhas] of Object.entries(d.provas || {})) for (const l of linhas) {
+      if (l.c && ((infantis.has(pid) && pelaProva(l.c, l.h)) || ehMenor(l.c, l.h)) && abreviarLinha(l)) mudou = true;
+    }
+    for (const [pid, linhas] of Object.entries(d.ordem || {})) for (const l of linhas) {
+      if (l.c && ((infantis.has(pid) && pelaProva(l.c, l.h)) || CAT_MENOR.test(l.cat || '') || ehMenor(l.c, l.h)) && abreviarLinha(l)) mudou = true;
+    }
+    for (const linhas of Object.values(d.inscritos || {})) for (const l of linhas) {
+      if (l.c && (CAT_MENOR.test(l.cat || '') || ehMenor(l.c, l.h)) && abreviarLinha(l)) mudou = true;
+    }
+    if (mudou) arquivosTorneio.set(id, d);
+  }
+  // vencedor de cada prova, guardado no índice
+  for (const t of torneios.values()) for (const p of t.provas || []) {
+    if (!p.v || !p.v.c) continue;
+    const infantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
+    if ((infantil && pelaProva(p.v.c, p.v.h)) || ehMenor(p.v.c, p.v.h)) {
+      const novo = abreviar(p.v.c);
+      if (novo !== p.v.c) { p.v.c = novo; trocas++; }
+    }
+  }
+  // fila de rascunhos de posts (posts-pendentes.json) também guarda o nome do cavaleiro
+  const arqPosts = path.join(SAIDA, 'posts-pendentes.json');
+  const posts = await lerJSON(arqPosts, null);
+  if (Array.isArray(posts)) {
+    let mudouPosts = false;
+    for (const x of posts) {
+      if (!x || !x.cavaleiro || !ehMenor(x.cavaleiro, x.cavalo)) continue;
+      const novo = abreviar(x.cavaleiro);
+      if (novo !== x.cavaleiro) { x.cavaleiro = novo; mudouPosts = true; trocas++; }
+    }
+    if (mudouPosts) await fs.writeFile(arqPosts, JSON.stringify(posts, null, 2));
+  }
+  estado.menores = [...registro].sort();
+  return { pessoas: pessoas.size, trocas };
+}
+
 async function main() {
   console.log(`Salta · coleta FPH · ${hoje} · modo ${MODO}`);
   if (!(await robotsPermite())) {
@@ -249,7 +336,7 @@ async function main() {
         const linhas = parseResultados(html);
         if (linhas.length) {
           const provaInfantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
-          if (provaInfantil) for (const l of linhas) l.cavaleiro = abreviar(l.cavaleiro);
+          if (provaInfantil) for (const l of linhas) l.cavaleiro = abreviarNaProva(l.cavaleiro);
           dados.provas[p.id] = linhas.map(l => {
             let f = -1;
             if (l.federacao) { f = dados.fed.indexOf(l.federacao); if (f < 0) { dados.fed.push(l.federacao); f = dados.fed.length - 1; } }
@@ -292,8 +379,7 @@ async function main() {
         const linhas = parseOrdemEntrada(html);
         const provaInfantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
         dados.ordem[p.id] = linhas.map(l => {
-          const protegido = provaInfantil || CAT_INFANTIL.test(l.cat || '');
-          const linha = { o: l.o, c: protegido ? abreviar(l.c) : l.c, h: l.h };
+          const linha = { o: l.o, c: CAT_MENOR.test(l.cat || '') ? abreviar(l.c) : (provaInfantil ? abreviarNaProva(l.c) : l.c), h: l.h };
           if (l.cat) linha.cat = l.cat;
           for (const k of ['nasc', 'raca', 'criador', 'pai', 'mae']) if (l[k]) linha[k] = l[k];
           return linha;
@@ -326,8 +412,7 @@ async function main() {
           if (!linhas.length) { estado.filiacao[p.id] = 'vazio'; continue; }
           const provaInfantil = CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`);
           dados.ordem[p.id] = linhas.map(l => {
-            const protegido = provaInfantil || CAT_INFANTIL.test(l.cat || '');
-            const linha = { o: l.o, c: protegido ? abreviar(l.c) : l.c, h: l.h };
+            const linha = { o: l.o, c: CAT_MENOR.test(l.cat || '') ? abreviar(l.c) : (provaInfantil ? abreviarNaProva(l.c) : l.c), h: l.h };
             if (l.cat) linha.cat = l.cat;
           for (const k of ['nasc', 'raca', 'criador', 'pai', 'mae']) if (l[k]) linha[k] = l[k];
             return linha;
@@ -361,7 +446,7 @@ async function main() {
           const prova = t.provas.find(p => String(p.numero).toUpperCase() === numero);
           const provaInfantil = prova && CAT_INFANTIL.test(`${prova.nome || ''} ${prova.desc || ''}`);
           dados.inscritos[numero] = lista.map(l => {
-            const x = { c: (provaInfantil || CAT_INFANTIL.test(l.cat || '')) ? abreviar(l.c) : l.c, h: l.h };
+            const x = { c: CAT_MENOR.test(l.cat || '') ? abreviar(l.c) : (provaInfantil ? abreviarNaProva(l.c) : l.c), h: l.h };
             if (l.cat) x.cat = l.cat;
             return x;
           });
@@ -378,21 +463,9 @@ async function main() {
     } else throw e;
   }
 
-  // Proteção de menores nos dados já gravados antes desta versão (resultados e vencedor da prova)
-  for (const t of torneios.values()) {
-    const infantis = t.provas.filter(p => p.id && CAT_INFANTIL.test(`${p.nome || ''} ${p.desc || ''}`));
-    if (!infantis.length) continue;
-    for (const p of infantis) if (p.v && p.v.c) p.v.c = abreviar(p.v.c);
-    const arq = path.join(SAIDA, 't', `${t.id}.json`);
-    const dados = arquivosTorneio.get(t.id) || await lerJSON(arq, null);
-    if (!dados) continue;
-    let mudou = false;
-    for (const p of infantis) for (const l of (dados.provas && dados.provas[p.id]) || []) {
-      const novo = abreviar(l.c);
-      if (novo !== l.c) { l.c = novo; mudou = true; }
-    }
-    if (mudou) arquivosTorneio.set(t.id, dados);
-  }
+  // Proteção de menores em tudo o que já está gravado (resultados, ordem, inscritos e vencedor da prova)
+  const prot = await protegerMenores(torneios, arquivosTorneio, estado);
+  console.log(`Menores: ${prot.pessoas} atletas identificados pela categoria, ${prot.trocas} nomes abreviados nesta rodada.`);
 
   // 3) Gravar
   for (const [id, dados] of arquivosTorneio) {
@@ -416,9 +489,17 @@ async function main() {
   try { await atualizarTransmissoes({ saida: SAIDA, torneios: listaTorneios }); }
   catch (e) { console.warn('Transmissões: falha ao ler o canal,', e.message); }
 
-  // 5) Avisos para quem ativou as notificações (uma falha aqui nunca derruba a coleta)
-  try { await enviarAvisos({ saida: SAIDA, anterior, atual: listaTorneios }); }
-  catch (e) { console.warn('Avisos: falha no envio,', e.message); }
+  // 5) Avisos para quem ativou as notificações.
+  // O envio roda num passo separado do GitHub Actions (enviar-avisos.mjs), depois que os dados já
+  // foram salvos: assim uma demora no envio nunca faz perder a coleta. Aqui só fica a foto do índice
+  // de antes desta rodada, fora da pasta de dados, para o outro passo saber o que é novidade.
+  try { await gravarJSON(ARQ_ANTERIOR, anterior); }
+  catch (e) { console.warn('Avisos: não deu para guardar a foto do índice anterior,', e.message); }
+  // Compatibilidade: se as chaves estiverem neste passo (workflow antigo), envia aqui mesmo.
+  if (process.env.SUPABASE_SECRET_KEY) {
+    try { await enviarAvisos({ saida: SAIDA, anterior, atual: listaTorneios }); }
+    catch (e) { console.warn('Avisos: falha no envio,', e.message); }
+  }
   if (!listaTorneios.length && cal) await guardarAmostra('calendario.html', cal);
   console.log(`Pronto: ${listaTorneios.length} torneios de salto, ${paginas} páginas lidas, ${naoReconhecidos} páginas não reconhecidas${limite ? ' (parcial)' : ''}.`);
 }
