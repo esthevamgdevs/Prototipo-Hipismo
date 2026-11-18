@@ -13708,7 +13708,13 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 71
+     "oe": 71,
+     "res": true,
+     "n": 71,
+     "v": {
+      "c": "Bruna Maria S. S.",
+      "h": "MSML ZEBRINO"
+     }
     },
     {
      "id": 14935,
@@ -13721,7 +13727,13 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 97
+     "oe": 97,
+     "res": true,
+     "n": 95,
+     "v": {
+      "c": "Maria Eduarda P. M.",
+      "h": "HACKER"
+     }
     },
     {
      "id": 14936,
@@ -13734,7 +13746,13 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 60
+     "oe": 60,
+     "res": true,
+     "n": 55,
+     "v": {
+      "c": "Rafael Dias L. D. S.",
+      "h": "JAZZ FLY"
+     }
     },
     {
      "id": 14937,
@@ -13747,7 +13765,13 @@
      "pista": "PISTA AREIA",
      "gp": false,
      "linkResultado": false,
-     "oe": 41
+     "oe": 41,
+     "res": true,
+     "n": 40,
+     "v": {
+      "c": "Danilo Alves P.",
+      "h": "JARNO PULLMAN (IA)"
+     }
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
