@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-18T01:27:42.084Z",
+ "atualizadoEm": "2026-11-18T02:59:12.263Z",
  "torneios": [
   {
    "id": 3404,
@@ -14902,7 +14902,7 @@
    "nome": "COPA DO BRASIL 2026 - INICIANTE",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "CLUBE HIPICO DE SANTO AMARO",
-   "status": "Inscrições Encerradas",
+   "status": "Inscrições Abertas",
    "inicio": "2026-12-09",
    "fim": "2026-12-13",
    "provas": [
