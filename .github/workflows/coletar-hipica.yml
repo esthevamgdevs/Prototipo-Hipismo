@@ -2,11 +2,19 @@ name: Coletar dados do hipismo (FPH)
 
 on:
   schedule:
-    # Horários em UTC (Brasília = UTC-3).
+    # Horários em UTC (Brasília = UTC-3). O GitHub descarta boa parte destes agendamentos quando está
+    # carregado (em nov/2026 rodavam 6 ou 7 de 97 por dia). Quem garante os 10 minutos é o agendador do
+    # Supabase, que aperta o "Run workflow" abaixo; estes ficam como reserva.
     - cron: "17 12,17,21,0 * * *"   # coleta completa: 9h, 14h, 18h e 21h em Brasília
     - cron: "*/10 10-23 * * *"      # coleta rápida a cada 10 min, das 7h às 21h em Brasília (horário das provas)
     - cron: "17 1-9 * * *"          # coleta rápida de hora em hora durante a madrugada
-  workflow_dispatch:          # botão "Run workflow" pra rodar na hora
+  workflow_dispatch:          # botão "Run workflow" e o agendador do Supabase
+    inputs:
+      modo:
+        description: "completo procura torneios novos; rapido só atualiza os torneios em andamento"
+        type: choice
+        options: [completo, rapido]
+        default: completo
 
 # Só o necessário: gravar os dados no repositório.
 permissions:
@@ -23,11 +31,11 @@ jobs:
     steps:
       # Ações fixadas pelo código do commit (não mudam sozinhas). O token do GitHub NÃO fica
       # gravado na pasta .git: só o passo "Salvar dados" usa o token, e só na hora do envio.
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
 
@@ -41,7 +49,7 @@ jobs:
         working-directory: scripts/hipica
         timeout-minutes: 35
         env:
-          MODO: ${{ (github.event_name == 'workflow_dispatch' || github.event.schedule == '17 12,17,21,0 * * *') && 'completo' || 'rapido' }}
+          MODO: ${{ github.event_name == 'workflow_dispatch' && inputs.modo || (github.event.schedule == '17 12,17,21,0 * * *' && 'completo' || 'rapido') }}
         run: node coletar.mjs
 
       # Se você subir arquivos pelo site durante a coleta, o pull --rebase junta as duas coisas
