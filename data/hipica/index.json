@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-18T02:59:12.263Z",
+ "atualizadoEm": "2026-11-18T17:10:46.870Z",
  "torneios": [
   {
    "id": 3404,
@@ -13707,14 +13707,14 @@
      "hora": "08:00",
      "pista": "PISTA AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 71,
+     "linkResultado": true,
      "res": true,
-     "n": 71,
      "v": {
       "c": "Bruna Maria S. S.",
       "h": "MSML ZEBRINO"
-     }
+     },
+     "oe": 71,
+     "n": 71
     },
     {
      "id": 14935,
@@ -13726,14 +13726,14 @@
      "hora": "10:30",
      "pista": "PISTA AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 97,
+     "linkResultado": true,
      "res": true,
-     "n": 95,
      "v": {
       "c": "Maria Eduarda P. M.",
       "h": "HACKER"
-     }
+     },
+     "oe": 97,
+     "n": 95
     },
     {
      "id": 14936,
@@ -13745,14 +13745,14 @@
      "hora": "13:30",
      "pista": "PISTA AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 60,
+     "linkResultado": true,
      "res": true,
-     "n": 55,
      "v": {
       "c": "Rafael Dias L. D. S.",
       "h": "JAZZ FLY"
-     }
+     },
+     "oe": 60,
+     "n": 55
     },
     {
      "id": 14937,
@@ -13764,14 +13764,14 @@
      "hora": "15:30",
      "pista": "PISTA AREIA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 41,
+     "linkResultado": true,
      "res": true,
-     "n": 40,
      "v": {
       "c": "Danilo Alves P.",
       "h": "JARNO PULLMAN (IA)"
-     }
+     },
+     "oe": 41,
+     "n": 40
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3503"
