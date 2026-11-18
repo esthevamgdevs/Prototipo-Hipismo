@@ -755,7 +755,9 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
 .bv-lista .esq{margin:6px 0 0}
 
 /* áreas de toque de pelo menos 44px, sem mudar o visual */
-.link-fil{padding:10px 3px;margin:-10px -3px}
+/* pai e mãe: 26px de altura (WCAG 2.5.8 pede 24px). Com mais que isso, quando a filiação quebra em duas
+   linhas, a área de um link cobre o texto do outro e o toque abre o cavalo errado */
+.link-fil{padding:6px 3px;margin:-6px -3px}
 .link-ficha{padding:10px 0;margin:-10px 0}
 .chip{min-height:40px}
 .btn-fino{min-height:40px}
@@ -885,6 +887,11 @@ select{border-radius:14px;min-height:46px;padding:0 14px}
 /* o link para o resultado oficial da FPH sumia no tema escuro */
 .fonte a{color:var(--ink)}
 @media (min-width:760px){.proximos,.vitorias,.lista-busca,.seg-lista{padding-left:28px;padding-right:28px}.ao-vivo-fila{padding:0 28px}}
+/* linha clicável com links de pai × mãe: o botão cobre a linha e os links ficam por cima */
+.com-links{position:relative}
+.com-links>.cobre{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;border-radius:inherit;cursor:pointer;z-index:0}
+.com-links>.cobre:focus-visible{outline:2px solid var(--ouro);outline-offset:-2px}
+.com-links .link-fil{position:relative;z-index:1}
 /* linha de quem você segue, na prova */
 .linha.seg,.linha-podio.seg{width:calc(100% + 24px);margin:0 -12px;padding-left:12px;padding-right:12px;background:linear-gradient(90deg,rgba(184,145,47,.14),rgba(184,145,47,.03));box-shadow:inset 3px 0 0 var(--ouro)}
 .linha.espera .cav,.linha.espera .pos{color:var(--muted);font-weight:500}
@@ -916,7 +923,7 @@ const hojeISO = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d
 const dt = s => { const [y, m, d] = String(s).split('-').map(Number); return new Date(y, m - 1, d); };
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const fmtAlt = h => h == null ? '' : h.toFixed(2).replace('.', ',') + 'm';
-const fmtN = n => n == null ? '–' : String(n).replace('.', ',');
+const fmtN = n => n == null ? '–' : esc(String(n).replace('.', ','));
 const fmtT = n => n == null ? '–' : n.toFixed(2).replace('.', ',') + 's';
 const chave = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9]+/g, ' ').trim();
 const diasEntre = (a, b) => Math.round((dt(a) - dt(b)) / 864e5);
@@ -943,7 +950,7 @@ const SIGLAS_FED = [[/PAULISTA/i,'FPH'],[/PARANAENSE/i,'FPrH'],[/BRAS[ÍI]LIA/i,
 const fedCurta = f => { for (const [re, s] of SIGLAS_FED) if (re.test(f || '')) return s; return titulo(f || ''); };
 const categoria = m => /INICIANTE/i.test(m) ? 'Iniciantes' : (/CAVALOS?\s+NOVOS?/i.test(m) ? 'Cavalos novos' : (/ESCOLA/i.test(m) ? 'Escola' : 'Salto'));
 
-const VERSAO_APP = '17/11/2026 · refinamentos de uso';
+const VERSAO_APP = '18/11/2026 · correções da revisão';
 
 // ---------- medição de uso (Cloudflare Web Analytics) ----------
 // Gratuita, sem cookies e sem identificar ninguém: conta visitas e visitantes de forma agregada.
@@ -985,10 +992,14 @@ const guarda = {
   ler(k, padrao) { try { return JSON.parse(localStorage.getItem(k)) ?? padrao; } catch { return padrao; } },
   gravar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-// Índice Salta: começa visível só para quem liga "Recursos em teste" na tela Sobre.
-// Depois de validado, basta trocar para true para mostrar a todos.
+// O que fica escondido por enquanto (decisão de 18/11/2026). Para religar, troque para true.
+const MOSTRAR_ABA_OPP = false;        // aba Opportunity (o selo nos cavalos vendidos continua)
+const MOSTRAR_INDICE = false;         // Índice Salta, inclusive o botão "Recursos em teste" no Sobre
+const MOSTRAR_CONVITE_HARAS = false;  // convite "Este é o seu haras?" na tela do criador
+// Índice Salta: com MOSTRAR_INDICE ligado, aparece para quem liga "Recursos em teste" na tela Sobre.
+// Depois de validado, basta trocar INDICE_PUBLICO para true para mostrar a todos.
 const INDICE_PUBLICO = false;
-const indiceAtivo = () => INDICE_PUBLICO || guarda.ler('salta-indice-beta', false) === true;
+const indiceAtivo = () => MOSTRAR_INDICE && (INDICE_PUBLICO || guarda.ler('salta-indice-beta', false) === true);
 let salvos = guarda.ler('pista-salvos', []);
 let seguindo = guarda.ler('pista-seguindo', []);
 let avisos = guarda.ler('pista-avisos', { podio: true, programa: true, aovivo: false });
@@ -1088,6 +1099,10 @@ function alternar(lista, chaveArmazenada, valor) {
   render();
 }
 const estaSeguindo = (tipo, k) => seguindo.some(s => s.tipo === tipo && s.k === k);
+// Linha clicável que pode ter links dentro (pai × mãe). Um botão não pode ter outro controle dentro:
+// o leitor de tela não alcança o link (WCAG 4.1.2). Então a linha é um bloco comum, com um botão
+// transparente cobrindo a linha inteira, e os links de filiação ficam por cima dele. O visual não muda.
+const abreLinha = (classe, attrs, rotulo) => `<div class="${classe} com-links"><button class="cobre" ${attrs} aria-label="${esc(rotulo)}"></button>`;
 // numa prova, a linha de quem a pessoa segue ganha destaque; vinda de uma novidade ou de um perfil,
 // a linha daquela pessoa é o alvo e a tela rola até ela
 function marcaSeg(c, h) {
@@ -1252,7 +1267,7 @@ function marcaSvg(t = 26) {
 }
 // símbolo do Salta em uma cor só, para a aba Opportunity
 const iconeOpp = `<svg width="22" height="22" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M6 88C10 46 26 20 50 20s40 26 44 68" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 14"/><rect x="20" y="50" width="52" height="7" rx="3.5" fill="currentColor" opacity=".55"/><rect x="28" y="64" width="52" height="8" rx="4" fill="currentColor"/><rect x="26" y="54" width="10" height="38" rx="5" fill="currentColor"/><rect x="72" y="54" width="10" height="38" rx="5" fill="currentColor"/></svg>`;
-const temOpp = () => !!(S.vendidos?.size || S.stats?.opp?.totais?.cavalos);
+const temOpp = () => MOSTRAR_ABA_OPP && !!(S.vendidos?.size || S.stats?.opp?.totais?.cavalos);
 function abas() {
   const itens = [['calendario', 'Hoje'], ['torneios', 'Torneios'], ['seguindo', 'Seguindo'], ['ranking', 'Ranking'], ...(temOpp() ? [['opp', 'Opportunity']] : [])];
   const naAba = !S.tela;
@@ -1320,7 +1335,7 @@ function idYoutube(url) {
 // junta as automáticas com as manuais; a manual vale mais, para corrigir o que o automático errar
 function transmissoesDe(t) {
   const manual = ((S.transmissoes && S.transmissoes[String(t.id)]) || []).map(x => ({ ...x, yt: idYoutube(x.url) })).filter(x => x.yt);
-  const auto = ((S.trAuto && S.trAuto.porTorneio && S.trAuto.porTorneio[String(t.id)]) || []).map(x => ({ ...x, yt: x.yt || idYoutube(x.url) })).filter(x => x.yt);
+  const auto = ((S.trAuto && S.trAuto.porTorneio && S.trAuto.porTorneio[String(t.id)]) || []).map(x => ({ ...x, yt: (/^[A-Za-z0-9_-]{11}$/.test(String(x.yt || '')) ? x.yt : null) || idYoutube(x.url) })).filter(x => x.yt);
   const porVideo = new Map();
   for (const x of [...auto, ...manual]) porVideo.set(x.yt, x);
   return [...porVideo.values()].sort((a, b) => a.dia.localeCompare(b.dia) || String(a.titulo || '').localeCompare(String(b.titulo || '')));
@@ -1661,8 +1676,8 @@ function telaTorneio() {
           p.oe ? `${p.oe} conjunto${p.oe > 1 ? 's' : ''} inscrito${p.oe > 1 ? 's' : ''}` : (p.ni ? `${p.ni} conjunto${p.ni > 1 ? 's' : ''} inscrito${p.ni > 1 ? 's' : ''}` : (p.dia && p.dia < hojeISO() ? 'Resultado ainda não publicado' : 'Ainda não disputada'))
         }</span><span class="meta">${esc(info || 'Horário a confirmar')}${p.oe ? ' · ver ordem de entrada' : (p.ni ? ' · ver inscritos' : '')}</span>`;
     const abre = p.res || p.oe || p.ni;
-    return `<button class="prova${dest ? ' destaque' : ''}" ${abre ? `data-prova="${p.id || 'n' + p.numero}"` : 'disabled aria-disabled="true"'}>
-      <span class="alt"><b>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') : '–'}</b><span>PROVA ${numProva(p)}</span></span>
+    return `<button class="prova${dest ? ' destaque' : ''}" ${abre ? `data-prova="${esc(String(p.id || 'n' + p.numero))}"` : 'disabled aria-disabled="true"'}>
+      <span class="alt"><b>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') : '–'}</b><span>PROVA ${esc(numProva(p))}</span></span>
       <span class="corpo">${corpoProva}</span>
       ${abre ? seta : ''}
     </button>`;
@@ -1682,7 +1697,7 @@ function telaProva() {
   const x = p.dia ? dt(p.dia) : null;
   const cab = `<header class="capa">
       <div class="capa-topo">${voltar('voltarTorneio', nomeTorneio(t))}${p.res && typeof S.torneios[t.id] === 'object' ? `<button class="redondo pequeno" data-acao="compartilhar" aria-label="Compartilhar o card desta prova" title="Compartilhar o card desta prova">${svg('<path d="M12 15V3M7 8l5-5 5 5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/>', 18)}</button>` : ''}</div>
-      <span class="olho">PROVA ${numProva(p)}${x ? ` · ${DIA_LONGO[x.getDay().toString()] || ''}, ${x.getDate()} DE ${MES_LONGO[x.getMonth()].toUpperCase()}` : ''}</span>
+      <span class="olho">PROVA ${esc(numProva(p))}${x ? ` · ${DIA_LONGO[x.getDay().toString()] || ''}, ${x.getDate()} DE ${MES_LONGO[x.getMonth()].toUpperCase()}` : ''}</span>
       <h1>${p.altura != null ? p.altura.toFixed(2).replace('.', ',') + (p.altura === 1 ? ' metro' : ' metros') : esc(titulo(p.nome))}</h1>
       <span class="sub">${esc([/^\d[,.]\d{2}\s*M$/i.test((p.nome || '').trim()) ? '' : titulo(p.nome), p.hora, p.pista ? 'Pista ' + titulo(p.pista) : ''].filter(Boolean).join(' · '))}</span>`;
   const dados = S.torneios[t.id];
@@ -1740,7 +1755,7 @@ function telaProva() {
       const ult = fases[fases.length - 1] || [];
       const faltas = fases.length > 1 ? fases.map(x => fmtN(x[0])).join(' + ') : fmtN(ult[0]);
       const rot = emAndamentoProva ? 'LIDERANDO' : (empatados > 1 ? `CAMPEÕES · ${empatados} EMPATADOS` : 'CAMPEÃO');
-      destaque = `<button class="campeao-box${marcaSeg(primeiro.c, primeiro.h)}" data-perfil="cavaleiros" data-k="${esc(chave(primeiro.c))}">
+      destaque = `${abreLinha('campeao-box' + marcaSeg(primeiro.c, primeiro.h), `data-perfil="cavaleiros" data-k="${esc(chave(primeiro.c))}"`, 'Abrir ' + titulo(primeiro.c))}
         <span class="cb-roseta">${roseta(1, 64)}</span>
         <span class="cb-texto">
           <span class="cb-olho">${rot} DA ${esc(fmtAlt(p.altura).toUpperCase())}</span>
@@ -1749,18 +1764,18 @@ function telaProva() {
           ${filiacaoDe(primeiro.h)}
         </span>
         <span class="cb-nums">${primeiro.s ? `<span><b>${esc(primeiro.s)}</b></span>` : `<span><b>${faltas}</b><small>faltas</small></span>${ult[1] ? `<span><b>${fmtT(ult[1])}</b><small>${fases.length > 1 ? 'desempate' : 'percurso'}</small></span>` : ''}`}</span>
-      </button>`;
+      </div>`;
     }
     corpo += `<div class="podio">${destaque}${demais.map(l => {
       const f = fed(l.f), perc = l.r?.[0], des = l.r?.length > 1 ? l.r[l.r.length - 1] : null;
-      return `<button class="linha-podio${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+      return `${abreLinha('linha-podio' + marcaSeg(l.c, l.h), `data-perfil="cavaleiros" data-k="${esc(chave(l.c))}"`, 'Abrir ' + titulo(l.c))}
         ${roseta(l.p, 38)}
         <span class="conj" style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(l.c))}</span>
           <span class="meta">${esc(titulo(l.h))}${seloOpp(l.h)}${f ? ' · ' + esc(fedCurta(f)) : ''}</span>${filiacaoDe(l.h)}
         </span>
         <span class="res"><b>${l.s ? esc(l.s) : fmtN((des || perc)?.[0]) + ' · ' + fmtT((des || perc)?.[1])}</b><span>${des ? 'desempate' : 'percurso'}</span></span>
-      </button>`;
+      </div>`;
     }).join('')}</div>`;
   }
   // só pódio (três conjuntos ou menos, sem empate) dispensa a tabela
@@ -1802,11 +1817,11 @@ function linhasCruzadas(lista, resultadoDo, proximo, p) {
     else res = `<span style="display:flex;flex-direction:column;align-items:flex-end;line-height:1.2">
         <b style="font-size:15px;color:${r.p <= 3 ? 'var(--ouro-escuro)' : 'var(--ink)'}">${r.p}º</b>
         <span style="font-size:11.5px;color:var(--muted)">${fmtN(perc && perc[0])} falta${perc && perc[0] === 1 ? '' : 's'} · ${fmtT(perc && perc[1])}</span></span>`;
-    return `<button class="linha${marcaSeg(o.c, o.h)}${r ? '' : ' espera'}" data-perfil="cavaleiros" data-k="${esc(chave(o.c))}">
+    return `${abreLinha('linha' + marcaSeg(o.c, o.h) + (r ? '' : ' espera'), `data-perfil="cavaleiros" data-k="${esc(chave(o.c))}"`, 'Abrir ' + titulo(o.c))}
       <span class="pos">${o.o}</span>
       <span class="conj"><span class="cav">${esc(titulo(o.c))}</span><span class="cavalo">${esc(titulo(o.h))}${seloOpp(o.h)}${o.cat ? ' · ' + esc(o.cat) : ''}</span>${filiacao(o)}</span>
       <span class="f" style="width:92px">${res}</span>
-    </button>`;
+    </div>`;
   }).join('');
 }
 // a prova pode ser aberta pelo número na FPH ou, antes de ele existir, por "n" + número da prova no torneio
@@ -1821,9 +1836,9 @@ function telaInscritos(p, lista) {
     <div class="secao"><h2>Inscritos</h2><span class="risco"></span><span class="aux">${lista.length} conjuntos</span></div>
     <p class="fonte" style="padding-top:0">A ordem de entrada ainda não saiu. Esta é a lista de inscritos do torneio para esta prova, sem ordem definida.</p>
     <div class="tabela"><div class="cab"><span class="c">CONJUNTO</span><span class="f" style="width:70px">CATEG.</span></div>
-      ${lista.map(l => `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+      ${lista.map(l => `${abreLinha('linha' + marcaSeg(l.c, l.h), `data-perfil="cavaleiros" data-k="${esc(chave(l.c))}"`, 'Abrir ' + titulo(l.c))}
         <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span>${filiacaoDe(l.h)}</span>
-        <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span></button>`).join('')}</div>
+        <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span></div>`).join('')}</div>
   </main>`;
 }
 function telaOrdem(p, ordem) {
@@ -1850,23 +1865,23 @@ const filiacaoDe = (h, l) => {
 const filiacao = l => filiacaoDe(l && l.h, l);
 function linhasOrdem(lista) {
   if (!lista.length) return `<div class="vazio">Ninguém encontrado com esse nome.</div>`;
-  return lista.map(l => `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+  return lista.map(l => `${abreLinha('linha' + marcaSeg(l.c, l.h), `data-perfil="cavaleiros" data-k="${esc(chave(l.c))}"`, 'Abrir ' + titulo(l.c))}
       <span class="pos">${l.o}</span>
       <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}</span>${filiacao(l)}</span>
       <span class="f" style="width:70px;font-weight:600;font-size:12.5px;color:var(--muted)">${esc(l.cat || '')}</span>
-    </button>`).join('');
+    </div>`).join('');
 }
 function corpoLinhas(linhas, fed, ordemDoCavalo) {
   if (!linhas.length) return `<div class="vazio">Ninguém encontrado com esse nome.</div>`;
   return linhas.map(l => {
     const f = fed(l.f), perc = l.r?.[0];
     const entrou = ordemDoCavalo && ordemDoCavalo.get(chave(l.h));
-    return `<button class="linha${marcaSeg(l.c, l.h)}" data-perfil="cavaleiros" data-k="${esc(chave(l.c))}">
+    return `${abreLinha('linha' + marcaSeg(l.c, l.h), `data-perfil="cavaleiros" data-k="${esc(chave(l.c))}"`, 'Abrir ' + titulo(l.c))}
       <span class="pos">${l.p}</span>
       <span class="conj"><span class="cav">${esc(titulo(l.c))}</span><span class="cavalo">${esc(titulo(l.h))}${seloOpp(l.h)}${f ? ' · ' + esc(fedCurta(f)) : ''}${entrou ? ` · entrou em ${entrou}º` : ''}</span>${filiacaoDe(l.h)}</span>
       <span class="f${!l.s && perc?.[0] === 0 ? ' zero' : ''}">${l.s ? `<span class="status">${esc(l.s)}</span>` : fmtN(perc?.[0])}</span>
       <span class="t">${l.s || !perc ? '–' : fmtT(perc[1])}</span>
-    </button>`;
+    </div>`;
   }).join('');
 }
 
@@ -1969,7 +1984,7 @@ function telaSobre() {
         <p style="margin:0;font-size:14px;line-height:1.55;color:var(--muted)">Transmissões ao vivo das provas de salto, exibidas no Salta com autorização da HorsePix.</p></div>
     </div>
     <p style="text-align:center;margin:8px 0 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn-fino" data-acao="metodo">Como calculamos</button><button class="btn-fino" data-bv-rever="1">Ver a apresentação de novo</button></p>
-    ${INDICE_PUBLICO ? '' : `<div class="painel teste"><h3>Recursos em teste</h3><p>O Índice Salta dá uma nota a cada cavalo pelo desempenho próprio e da família. Ele está em validação e só aparece para quem ligar aqui.</p>
+    ${INDICE_PUBLICO || !MOSTRAR_INDICE ? '' : `<div class="painel teste"><h3>Recursos em teste</h3><p>O Índice Salta dá uma nota a cada cavalo pelo desempenho próprio e da família. Ele está em validação e só aparece para quem ligar aqui.</p>
       <button class="btn-fino" data-acao="indiceBeta" aria-pressed="${indiceAtivo()}">${indiceAtivo() ? '✓ Índice Salta ligado · desligar' : 'Ligar o Índice Salta'}</button></div>`}
     <p class="fonte" style="text-align:center">Versão do app: ${VERSAO_APP}</p>
     ${rodape()}</main>`;
@@ -2047,12 +2062,12 @@ function telaCriacao(tipo) {
     ${tipo !== 'haras' ? indiceReprodutor(tipo, k) : ''}
     <div class="stats"><div><b>${cavs.length}</b><span>${tipo === 'haras' ? 'cavalos' : 'filhos'}</span></div><div><b>${g.l}</b><span>largadas</span></div><div><b style="color:var(--ouro-escuro)">${g.v}</b><span>vitórias</span></div><div><b>${g.po}</b><span>pódios</span></div></div>
     <div class="secao"><h2>${tipo === 'haras' ? 'Cavalos em pista' : 'Filhos em pista'}</h2><span class="risco"></span></div>
-    <div class="podio">${cavs.map(({ k: ck, d }) => `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(ck)}">
+    <div class="podio">${cavs.map(({ k: ck, d }) => `${abreLinha('linha-podio', `data-perfil="cavalos" data-k="${esc(ck)}"`, 'Abrir ' + titulo(d[0]))}
         <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(d[0]))}${seloOpp(d[0])}</span>
           <span class="meta">${d[1]} largadas${d[4] ? ' · até ' + fmtAlt(d[4]) : ''}${d[8] ? ` · <span class="dest">pódio a ${fmtAlt(S.criacao.alturaDestaque || 1.4)}+</span>` : ''}</span>${filiacaoDe(d[0], { pai: d[5], mae: d[6] })}</span>
-        <span class="res"><b>${d[2]}</b><span>vitórias</span></span></button>`).join('')}</div>
-    ${tipo === 'haras' && !extra ? `<div class="painel convite"><h3>Este é o seu haras?</h3><p>Destaque o perfil com o logotipo, uma apresentação e o contato do haras. Fale com a Opportunity.</p>
+        <span class="res"><b>${d[2]}</b><span>vitórias</span></span></div>`).join('')}</div>
+    ${MOSTRAR_CONVITE_HARAS && tipo === 'haras' && !extra ? `<div class="painel convite"><h3>Este é o seu haras?</h3><p>Destaque o perfil com o logotipo, uma apresentação e o contato do haras. Fale com a Opportunity.</p>
       <a class="btn ouro" href="mailto:contato@opportunityleiloes.com.br?subject=${encodeURIComponent('Salta · destacar o perfil do ' + titulo(g.nome))}">Pedir destaque do perfil</a></div>` : ''}
     ${notaFonte(` A partir dos resultados públicos da FPH e do ${{ garanhao: 'pai', matriz: 'mãe', haras: 'criador' }[tipo]} informado na ficha de cada cavalo.${coberturaTxt()}`)}
   </main>`;
@@ -2094,12 +2109,12 @@ function telaRanking() {
     let pos = 0, ult = null;
     corpo += lista.map((r, i) => {
       if (r.v !== ult) { pos = i + 1; ult = r.v; }
-      return `<button class="linha-podio" data-perfil="${S.rankTipo}" data-k="${esc(r.k)}">
+      return `${abreLinha('linha-podio', `data-perfil="${S.rankTipo}" data-k="${esc(r.k)}"`, 'Abrir ' + titulo(r.nome))}
         ${pos <= 3 ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${pos}</span>`}
         <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
           <span class="nome">${esc(titulo(r.nome))}${S.rankTipo === 'cavalos' ? seloOpp(r.nome) : ''}</span>
           <span class="meta">${r.fed ? esc(r.fed) + ' · ' : ''}${r.l} largadas · ${r.po} pódios</span>${S.rankTipo === 'cavalos' ? filiacaoDe(r.nome) : ''}</span>
-        <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
+        <span class="res"><b>${r.v}</b><span>vitórias</span></span></div>`;
     }).join('');
   }
   corpo += `</div><p class="fonte">Contagem do Salta em ${t.torneios} torneios, ${t.cavaleiros.toLocaleString('pt-BR')} cavaleiros e ${t.percursos.toLocaleString('pt-BR')} percursos de ${(S.stats.desde || '').slice(0, 4)}, a partir dos resultados públicos da FPH. Não é o ranking oficial da federação.</p></main>`;
@@ -2112,9 +2127,9 @@ function visaoGeral() {
   if (S.criacao === undefined) carregarArquivo('criacao', 'criacao.json');
   const bloco = (tipo, titulo_, itens, linha) => `<section class="bloco-geral"><div class="secao"><h2>${titulo_}</h2><span class="risco"></span><button class="link-ficha aux" data-rank="${tipo}">Ver todos</button></div>
     <div class="podio">${itens.slice(0, 3).map((x, i) => linha(x, i)).join('') || '<div class="vazio" style="padding:12px 0">Em breve.</div>'}</div></section>`;
-  const pessoa = tipo => (r, i) => `<button class="linha-podio" data-perfil="${tipo}" data-k="${esc(r.k)}">${roseta(i + 1, 34)}
+  const pessoa = tipo => (r, i) => `${abreLinha('linha-podio', `data-perfil="${tipo}" data-k="${esc(r.k)}"`, 'Abrir ' + titulo(r.nome))}${roseta(i + 1, 34)}
       <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(r.nome))}${tipo === 'cavalos' ? seloOpp(r.nome) : ''}</span>
-      <span class="meta">${r.l} largadas · ${r.po} pódios</span>${tipo === 'cavalos' ? filiacaoDe(r.nome) : ''}</span><span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
+      <span class="meta">${r.l} largadas · ${r.po} pódios</span>${tipo === 'cavalos' ? filiacaoDe(r.nome) : ''}</span><span class="res"><b>${r.v}</b><span>vitórias</span></span></div>`;
   const cria = (atr, rot) => (g, i) => `<button class="linha-podio" ${atr}="${esc(g.k)}">${roseta(i + 1, 34)}
       <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(g.nome))}${atr === 'data-garanhao' ? seloWbfsh(g.k) : ''}</span>
       <span class="meta">${g.cavalos.length} ${rot} em pista · ${g.l} largadas</span></span><span class="res"><b>${g.v}</b><span>vitórias</span></span></button>`;
@@ -2188,12 +2203,12 @@ function oppPorCavalo(o, q) {
   let pos = 0, ult = null;
   return `<div class="podio">${lista.map((r, i) => {
     if (r.v !== ult) { pos = i + 1; ult = r.v; }
-    return `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(r.k)}">
+    return `${abreLinha('linha-podio', `data-perfil="cavalos" data-k="${esc(r.k)}"`, 'Abrir ' + titulo(r.nome))}
       ${pos <= 3 && r.v > 0 && !q ? roseta(pos, 38) : `<span style="width:38px;flex:none;text-align:center;font-family:var(--serif);font-size:20px;color:var(--muted)">${q ? '·' : pos}</span>`}
       <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px">
         <span class="nome">${esc(titulo(r.nome))}</span>
         <span class="meta">${esc(titulo(r.leilao))}${r.ano ? ', ' + r.ano : ''} · ${r.l} largadas${r.max ? ' · até ' + fmtAlt(r.max) : ''}</span>${filiacaoDe(r.nome)}</span>
-      <span class="res"><b>${r.v}</b><span>vitórias</span></span></button>`;
+      <span class="res"><b>${r.v}</b><span>vitórias</span></span></div>`;
   }).join('')}</div>`;
 }
 // agrupa as largadas por prova: um cartão por prova, com todos os cavalos vendidos que saltaram nela
@@ -2208,7 +2223,7 @@ function agruparPorProva(itens) {
 }
 function cartaoProvaOpp(g, futuro) {
   const x = dt(g.d);
-  return `<button class="cartao-opp" data-abrir-prova="${g.ti}:${g.pid || 'n' + g.pn}">
+  return `${abreLinha('cartao-opp', `data-abrir-prova="${esc(g.ti + ':' + (g.pid || 'n' + g.pn))}"`, 'Abrir a prova ' + String(g.pn || '').replace(/^0+(?=\d)/, '') + ' · ' + tituloLugar(g.t))}
     <span class="topo-opp"><b>${futuro ? (g.hora ? g.hora + ' · ' : '') : ''}${x.getDate()} ${MES[x.getMonth()]}</b> · Prova ${esc(String(g.pn || '').replace(/^0+(?=\d)/, ''))} · ${fmtAlt(g.a)}</span>
     <span class="torneio-opp">${esc(tituloLugar(g.t))}</span>
     ${g.cavalos.map(c => {
@@ -2220,7 +2235,7 @@ function cartaoProvaOpp(g, futuro) {
       return `<span class="linha-opp"><span class="cav-opp"><b>${esc(titulo(c.h))}</b><span>${esc(titulo(c.c))}</span>${filiacaoDe(c.h)}</span>${res}</span>`;
     }).join('')}
     ${seta}
-  </button>`;
+  </div>`;
 }
 function oppPorProva(o, q) {
   const filtra = l => q ? l.filter(x => x.h.toLowerCase().includes(q)) : l;
@@ -2312,7 +2327,7 @@ function telaPerfil() {
     if (p.l > hist.length) corpo += `<p class="fonte">Aqui estão as ${hist.length} largadas mais recentes. Os números de cima contam a temporada inteira (${p.l} largadas).</p>`;
   } else {
     if (pessoa) {
-      corpo += p.par?.length ? `<div class="pf-pares">${p.par.map(x => `<button class="pf-par" data-perfil="cavalos" data-k="${esc(chave(x.n))}">${avatar(x.n, 52)}<span><b>${esc(titulo(x.n))}</b><small>${x.q} largada${x.q > 1 ? 's' : ''} juntos</small>${filiacaoDe(x.n)}</span></button>`).join('')}</div>`
+      corpo += p.par?.length ? `<div class="pf-pares">${p.par.map(x => `${abreLinha('pf-par', `data-perfil="cavalos" data-k="${esc(chave(x.n))}"`, 'Abrir ' + titulo(x.n))}${avatar(x.n, 52)}<span><b>${esc(titulo(x.n))}</b><small>${x.q} largada${x.q > 1 ? 's' : ''} juntos</small>${filiacaoDe(x.n)}</span></div>`).join('')}</div>`
         : '<div class="vazio">Nenhum cavalo registrado na temporada.</div>';
     } else {
       corpo += (f.pai || f.mae || f.criador) ? blocoFamilia(f) : '<div class="vazio">A FPH ainda não informou a filiação deste cavalo.</div>';
@@ -2392,11 +2407,11 @@ function rankingIndice() {
   if (!indicePronto()) return '<main>' + esqueleto(6) + '</main>';
   const I = S.indice;
   return `<main class="fade"><div class="secao"><h2>Índice Salta</h2><span class="risco"></span><span class="aux">em teste</span></div>
-    <div class="podio">${I.ranking.map(([k, nome], i) => { const v = I.cavalos[k]; return `<button class="linha-podio" data-perfil="cavalos" data-k="${esc(k)}">
+    <div class="podio">${I.ranking.map(([k, nome], i) => { const v = I.cavalos[k]; return `${abreLinha('linha-podio', `data-perfil="cavalos" data-k="${esc(k)}"`, 'Abrir ' + titulo(nome))}
       <span class="ir-pos">${i + 1}</span>${seloNota(v[1], v[2], true)}
       <span style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="nome">${esc(titulo(nome))}${seloOpp(nome)}</span>
       <span class="meta">${v[8]} largadas · ${CONF_TXT[v[2]]}</span>${filiacaoDe(nome)}</span>
-      <span class="res"><b>${Math.round(v[0])}</b><span>de 100</span></span></button>`; }).join('')}</div>
+      <span class="res"><b>${Math.round(v[0])}</b><span>de 100</span></span></div>`; }).join('')}</div>
     ${notaFonte(` Ranking pelo Índice Salta (${esc(I.versao)}), só com cavalos de confiança média ou alta, a partir de ${I.totais.largadas.toLocaleString('pt-BR')} largadas da temporada.`)}
   </main>`;
 }
@@ -2458,7 +2473,7 @@ function cartaoSVG() {
   <text x="540" y="880" text-anchor="middle" fill="#D9B45A" font-size="40" letter-spacing="14" font-family="DM Serif Display, Georgia, serif">${rotulo}</text>
   ${nome.map((l, i) => `<text x="540" y="${970 + i * 88}" text-anchor="middle" fill="#F4F1EA" font-size="76" font-family="DM Serif Display, Georgia, serif">${esc(l)}</text>`).join('')}
   <text x="540" y="${1000 + nome.length * 88}" text-anchor="middle" fill="#C9D6CF" font-size="38">com ${esc(titulo(c.h))}</text>
-  <text x="540" y="${1070 + nome.length * 88}" text-anchor="middle" fill="#F4F1EA" font-size="34" font-weight="700" letter-spacing="4">PROVA ${numProva(p)} · ${fmtAlt(p.altura).toUpperCase()}</text>
+  <text x="540" y="${1070 + nome.length * 88}" text-anchor="middle" fill="#F4F1EA" font-size="34" font-weight="700" letter-spacing="4">PROVA ${esc(numProva(p))} · ${fmtAlt(p.altura).toUpperCase()}</text>
   ${empate > 1 ? `<text x="540" y="${1130 + nome.length * 88}" text-anchor="middle" fill="#C9D6CF" font-size="30">dividido com mais ${empate - 1} conjunto${empate > 2 ? 's' : ''}</text>` : ''}
   <line x1="200" y1="1560" x2="880" y2="1560" stroke="#2C5747" stroke-width="2"/>
   <text x="${des ? 360 : 540}" y="1650" text-anchor="middle" fill="#F4F1EA" font-size="52" font-family="DM Serif Display, Georgia, serif">${fmtN(perc?.[0])} · ${fmtT(perc?.[1])}</text>
@@ -2653,7 +2668,7 @@ function render() {
   else if (S.aba === 'torneios' || S.aba === 'resultados') html = telaTorneios();
   else if (S.aba === 'seguindo') html = telaSeguindo();
   else if (S.aba === 'ranking') html = telaRanking();
-  else if (S.aba === 'opp') html = telaOpp();
+  else if (S.aba === 'opp' && temOpp()) html = telaOpp();
   else html = telaCalendario();
   const arena = !!S._arena && S.tela === 'prova'; S._arena = false;
   document.body.toggleAttribute('data-arena', arena);
@@ -2819,12 +2834,19 @@ const AO_VIVO_MS = 2 * 60e3;
 async function atualizarAoVivo() {
   if (document.visibilityState !== 'visible' || !S.dados) return;
   const t = S.torneio && achar(S.torneio);
-  if (!t || !(S.tela === 'torneio' || S.tela === 'prova') || !emAndamento(t)) return;
+  const naTela = !!t && (S.tela === 'torneio' || S.tela === 'prova') && emAndamento(t);
+  // no Hoje, "Seus próximos", o ao vivo e as vitórias usam o índice e os arquivos dos torneios de hoje a
+  // dois dias que já foram abertos; quando nada mudou, o GitHub Pages responde só "sem novidade" (304)
+  const hoje = hojeISO(), ate = somarDiasISO(hoje, 2);
+  const naJanela = x => torneioVisivel(x) && x.inicio && x.fim && x.inicio <= ate && x.fim >= hoje && !cancelado(x);
+  const noHoje = !S.tela && S.aba === 'calendario' && S.dados.torneios.some(naJanela);
+  if (!naTela && !noHoje) return;
+  const ids = naTela ? [t.id] : S.dados.torneios.filter(x => naJanela(x) && S.torneios[x.id] && typeof S.torneios[x.id] === 'object').map(x => x.id);
   try {
-    const [idx, dados, st] = await Promise.all([pegar(`${BASE}/index.json`), pegar(`${BASE}/t/${t.id}.json`), pegar(`${BASE}/stats.json`)]);
-    const mudou = st.atualizadoEm !== S.stats?.atualizadoEm || JSON.stringify(dados) !== JSON.stringify(S.torneios[t.id]);
+    const [idx, st, ...arquivos] = await Promise.all([pegar(`${BASE}/index.json`), pegar(`${BASE}/stats.json`), ...ids.map(id => pegar(`${BASE}/t/${id}.json`))]);
+    let mudou = st.atualizadoEm !== S.stats?.atualizadoEm;
+    ids.forEach((id, i) => { if (JSON.stringify(arquivos[i]) !== JSON.stringify(S.torneios[id])) mudou = true; S.torneios[id] = arquivos[i]; });
     S.dados = prepararDados(idx);
-    S.torneios[t.id] = dados;
     S.stats = st;
     const digitando = document.activeElement && document.activeElement.tagName === 'INPUT';
     // com o vídeo da transmissão tocando, não redesenha para não interromper o vídeo
@@ -2861,9 +2883,10 @@ function abrirPeloEndereco() {
   else if (h.get('criador')) Object.assign(S, base, { tela: 'haras', harasK: chave(h.get('criador')) });
   else if (['sobre', 'metodo', 'busca'].includes(h.get('tela'))) Object.assign(S, base, { tela: h.get('tela') });
   else if (['calendario', 'torneios', 'resultados', 'seguindo', 'ranking', 'opp'].includes(h.get('aba'))) {
-    Object.assign(S, base, { aba: h.get('aba') === 'resultados' ? 'torneios' : h.get('aba') });
+    const aba = h.get('aba') === 'resultados' ? 'torneios' : h.get('aba');
+    Object.assign(S, base, { aba: aba === 'opp' && !temOpp() ? 'calendario' : aba });
     const r = h.get('ranking');
-    if (['geral', 'indice', 'cavaleiros', 'cavalos', 'criacao'].includes(r)) S.rankTipo = r;
+    if (['geral', 'indice', 'cavaleiros', 'cavalos', 'criacao'].includes(r)) S.rankTipo = r === 'indice' && !indiceAtivo() ? 'geral' : r;
   } else return;
   if (['garanhao', 'matriz', 'haras'].includes(S.tela) && S.haras === undefined) carregarArquivo('haras', 'haras.json');
   render();
