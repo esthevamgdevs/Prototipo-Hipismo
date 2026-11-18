@@ -75,7 +75,7 @@ export async function atualizarTransmissoes({ saida, torneios }) {
     yt: (e.match(/<yt:videoId>([^<]+)<\/yt:videoId>/) || [])[1],
     titulo: xml((e.match(/<title>([^<]*)<\/title>/) || [])[1] || ''),
     publicado: (e.match(/<published>([^<]+)<\/published>/) || [])[1],
-  })).filter(v => v.yt && v.titulo);
+  })).filter(v => v.yt && /^[A-Za-z0-9_-]{11}$/.test(v.yt) && v.titulo); // só códigos de vídeo válidos do YouTube
 
   const jaConhecidos = new Set([
     ...Object.values(atual.porTorneio).flat().map(x => x.yt),

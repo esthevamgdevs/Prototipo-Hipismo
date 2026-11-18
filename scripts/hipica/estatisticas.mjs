@@ -12,7 +12,16 @@ export const CAT_INFANTIL = /\b(MMR|PMR|MRA|MRB|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]
 // Categoria de UM conjunto (ordem de entrada e inscritos trazem a categoria de cada atleta).
 // Além das infantis, inclui Mirim (MR), Pré-Júnior (PJR) e Júnior (JR), que também são de menores de 18.
 // Não serve para o nome da prova: provas como "SR/JR/U25" juntam adultos e menores.
-export const CAT_MENOR = /\b(MMR|PMR|MRA|MRB|MR|PJR|JR|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]?MIRIM|PR[ÉE][- ]?J[ÚU]NIOR|J[ÚU]NIOR|INFANTIL|KIDS?)\b/i;
+export const CAT_MENOR_BASE = /\b(MMR|PMR|MRA|MRB|MR|PJR|JR|MIRIM|PR[ÉE][- ]?MIRIM|MINI[- ]?MIRIM|PR[ÉE][- ]?J[ÚU]NIOR|J[ÚU]NIOR|INFANTIL|KIDS?)\b/i;
+// Jovens Cavaleiros (JC, JCA, JCB, JCT e as provas "JC PREL", "JC INTER"...): a categoria vai dos 16 aos
+// 21 anos, então mistura menores e adultos. Por decisão de 18/11/2026 entra na proteção: alguns adultos
+// ficam com o sobrenome abreviado, mas nenhum menor fica exposto. Os atletas reconhecidos por ela ficam
+// num registro separado (estado.menoresJC); com PROTEGER_JC em false, esse registro deixa de valer para
+// os dados novos (os nomes já abreviados só voltam numa coleta completa da temporada).
+export const PROTEGER_JC = true;
+export const CAT_JC = /\b(JC[ABT]?|JOVE(?:M|NS) CAVALEIROS?)\b/i;
+// Usado como as outras expressões: CAT_MENOR.test(categoria)
+export const CAT_MENOR = { test: cat => CAT_MENOR_BASE.test(cat || '') || (PROTEGER_JC && CAT_JC.test(cat || '')) };
 const SIGLAS = [
   [/PAULISTA/i, 'FPH'], [/PARANAENSE/i, 'FPrH'], [/BRAS[ÍI]LIA/i, 'FHBr'],
   [/RIO DE JANEIRO/i, 'FEERJ'], [/MINAS/i, 'FHMG'], [/RIO GRANDE DO SUL|GA[ÚU]CHA/i, 'FGH'],

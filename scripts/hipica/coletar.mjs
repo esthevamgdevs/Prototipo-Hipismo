@@ -11,7 +11,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseTorneio, parseResultados, parseOrdemEntrada, idsDoCalendario, camposOcultos, alvoListaInscritos, parseInscritos } from './parsers.mjs';
-import { gerarEstatisticas, CAT_INFANTIL, CAT_MENOR, abreviar } from './estatisticas.mjs';
+import { gerarEstatisticas, CAT_INFANTIL, CAT_MENOR, CAT_MENOR_BASE, PROTEGER_JC, abreviar } from './estatisticas.mjs';
 import { enviarAvisos } from './avisos.mjs';
 import { atualizarTransmissoes } from './transmissoes.mjs';
 
@@ -43,13 +43,20 @@ const minutosDe = hora => { const m = String(hora || '').match(/(\d{1,2})[:h](\d
 const somarDias = (d, n) => { const x = new Date(d + 'T12:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
 const dormir = ms => new Promise(r => setTimeout(r, ms));
 
-const AMOSTRAS = +(process.env.AMOSTRAS ?? 3);   // páginas não reconhecidas guardadas pra diagnóstico
+// Páginas que o coletor não reconheceu. Antes iam inteiras para data/hipica/_diagnostico, que é publicado
+// no repositório, e algumas traziam nomes completos de menores. Agora o registro da execução mostra só o
+// endereço e o tamanho (a página continua na FPH); o HTML só é gravado quando AMOSTRAS_DIR aponta para
+// uma pasta fora do repositório, por exemplo ao rodar o coletor no seu computador.
+const AMOSTRAS = +(process.env.AMOSTRAS ?? 3);
+const AMOSTRAS_DIR = process.env.AMOSTRAS_DIR || '';
 let amostras = 0, naoReconhecidos = 0;
-async function guardarAmostra(nome, html) {
-  const arq = path.join(SAIDA, '_diagnostico', nome);
-  await fs.mkdir(path.dirname(arq), { recursive: true });
-  await fs.writeFile(arq, html.slice(0, 400000));
-  console.log(`  ? página não reconhecida guardada em data/hipica/_diagnostico/${nome}`);
+async function guardarAmostra(nome, html, endereco = '') {
+  console.log(`  ? página não reconhecida: ${nome}${endereco ? ' · ' + endereco : ''} (${Math.round(html.length / 1024)} KB)`);
+  if (!AMOSTRAS_DIR) return;
+  const pasta = path.resolve(AMOSTRAS_DIR);
+  if (pasta === SAIDA || pasta.startsWith(SAIDA + path.sep)) return; // nunca dentro dos dados publicados
+  await fs.mkdir(pasta, { recursive: true });
+  await fs.writeFile(path.join(pasta, nome), html.slice(0, 400000));
 }
 
 // Decide se o resultado de uma prova precisa ser baixado de novo nesta execução
@@ -185,13 +192,15 @@ async function protegerMenores(torneios, arquivosTorneio, estado) {
   const pessoas = new Set(), pares = new Set();
   const codigo = nome => createHash('sha256').update(chave(nome)).digest('hex').slice(0, 16);
   const registro = new Set(estado.menores || []);
+  const registroJC = new Set(PROTEGER_JC ? (estado.menoresJC || []) : []);
   for (const d of dados.values()) for (const sec of ['ordem', 'inscritos']) for (const linhas of Object.values(d[sec] || {})) for (const l of linhas) {
     if (!l.c || !CAT_MENOR.test(l.cat || '')) continue;
     pessoas.add(k(l.c));
     pares.add(`${k(l.c)}|${chave(l.h)}`);
-    if (!/\b\p{L}\.$/u.test(l.c.trim())) registro.add(codigo(l.c)); // nome ainda completo
+    // nome ainda completo: guarda o código; quem só aparece como JC fica no registro próprio
+    if (!/\b\p{L}\.$/u.test(l.c.trim())) (CAT_MENOR_BASE.test(l.cat || '') ? registro : registroJC).add(codigo(l.c));
   }
-  const ehMenor = (c, h) => pares.has(`${k(c)}|${chave(h)}`) || (variasPalavras(c) && pessoas.has(k(c))) || registro.has(codigo(c));
+  const ehMenor = (c, h) => pares.has(`${k(c)}|${chave(h)}`) || (variasPalavras(c) && pessoas.has(k(c))) || registro.has(codigo(c)) || registroJC.has(codigo(c));
   // Nome de duas palavras numa prova infantil, sem nenhum sinal de que a pessoa é menor, e que aparece
   // com nome completo em provas de adultos: é um adulto montando numa prova de criança. Fica como estava,
   // para o perfil dele não se dividir em dois ("Ana Souza" e "Ana S.").
@@ -243,6 +252,7 @@ async function protegerMenores(torneios, arquivosTorneio, estado) {
     if (mudouPosts) await fs.writeFile(arqPosts, JSON.stringify(posts, null, 2));
   }
   estado.menores = [...registro].sort();
+  if (PROTEGER_JC) estado.menoresJC = [...registroJC].sort(); else delete estado.menoresJC;
   return { pessoas: pessoas.size, trocas };
 }
 
@@ -252,6 +262,9 @@ async function main() {
     console.error('O robots.txt da FPH não permite acesso a estas páginas. Nada foi coletado.');
     process.exit(1);
   }
+
+  // a pasta antiga de páginas brutas sai do repositório nesta rodada (o "git add data/hipica" registra a remoção)
+  await fs.rm(path.join(SAIDA, '_diagnostico'), { recursive: true, force: true });
 
   const arqIndice = path.join(SAIDA, 'index.json');
   const arqEstado = path.join(SAIDA, 'estado.json');
@@ -301,7 +314,7 @@ async function main() {
       const t = parseTorneio(html, id);
       if (!t) {
         naoReconhecidos++;
-        if (amostras < AMOSTRAS && html.length > 3000) { amostras++; await guardarAmostra(`torneio-${id}.html`, html); }
+        if (amostras < AMOSTRAS && html.length > 3000) { amostras++; await guardarAmostra(`torneio-${id}.html`, html, `${BASE}/calendario/ListaProvas.aspx?ID=${id}`); }
         continue;
       }
       estado.maiorId = Math.max(estado.maiorId || 0, id);
@@ -419,7 +432,7 @@ async function main() {
           });
           p.oe = linhas.length;
           estado.filiacao[p.id] = linhas.some(l => l.pai) ? 'ok' : 'sem-ficha';
-          if (!linhas.some(l => l.pai) && amostras < AMOSTRAS) { amostras++; await guardarAmostra(`ordem-sem-ficha-${p.id}.html`, html); }
+          if (!linhas.some(l => l.pai) && amostras < AMOSTRAS) { amostras++; await guardarAmostra(`ordem-sem-ficha-${p.id}.html`, html, `${BASE}/calendario/OrdemEntrada.aspx?ID=${p.id}`); }
         }
       }
       if (feitas) console.log(`  ✓ pai e mãe: ${feitas} provas já disputadas lidas nesta coleta`);
@@ -436,7 +449,7 @@ async function main() {
         const lido = parseInscritos(r.html);
         const primeiraVez = !estado.inscritos[t.id];
         estado.inscritos[t.id] = new Date().toISOString();
-        if (primeiraVez || !lido.total) await guardarAmostra(`inscritos-${t.id}.html`, `<!-- ${r.endereco} -->\n` + r.html);
+        if (!lido.total) await guardarAmostra(`inscritos-${t.id}.html`, r.html, r.endereco);
         if (!lido.total) { console.log(`  ? lista de inscritos ${t.id}: nenhum inscrito reconhecido`); continue; }
         const arq = path.join(SAIDA, 't', `${t.id}.json`);
         const dados = arquivosTorneio.get(t.id) || await lerJSON(arq, { id: t.id, fed: [], provas: {} });
@@ -500,7 +513,7 @@ async function main() {
     try { await enviarAvisos({ saida: SAIDA, anterior, atual: listaTorneios }); }
     catch (e) { console.warn('Avisos: falha no envio,', e.message); }
   }
-  if (!listaTorneios.length && cal) await guardarAmostra('calendario.html', cal);
+  if (!listaTorneios.length && cal) await guardarAmostra('calendario.html', cal, `${BASE}/calendario/Default`);
   console.log(`Pronto: ${listaTorneios.length} torneios de salto, ${paginas} páginas lidas, ${naoReconhecidos} páginas não reconhecidas${limite ? ' (parcial)' : ''}.`);
 }
 
