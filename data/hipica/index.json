@@ -13869,7 +13869,13 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 15
+     "oe": 15,
+     "res": true,
+     "n": 2,
+     "v": {
+      "c": "",
+      "h": "JOAO MARCOS CORAZZA"
+     }
     },
     {
      "id": 15005,
