@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T12:40:36.358Z",
+ "atualizadoEm": "2026-11-20T14:00:38.095Z",
  "torneios": [
   {
    "id": 3404,
@@ -13849,14 +13849,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 26,
+     "linkResultado": true,
      "res": true,
-     "n": 21,
      "v": {
       "c": "",
-      "h": "FERNANDO CAPOVILA"
-     }
+      "h": "LEANDRO JOSE ABRAHAO"
+     },
+     "oe": 26,
+     "n": 29
     },
     {
      "id": 15003,
