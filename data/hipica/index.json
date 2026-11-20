@@ -13850,7 +13850,13 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 26
+     "oe": 26,
+     "res": true,
+     "n": 5,
+     "v": {
+      "c": "",
+      "h": "JOEL ALVES BEZERRA"
+     }
     },
     {
      "id": 15003,
