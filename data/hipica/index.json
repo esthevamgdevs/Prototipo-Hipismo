@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T16:40:43.759Z",
+ "atualizadoEm": "2026-11-20T17:40:52.300Z",
  "torneios": [
   {
    "id": 3404,
@@ -13922,7 +13922,7 @@
      "oe": 30
     },
     {
-     "id": null,
+     "id": 15004,
      "numero": "07",
      "nome": "1,20M",
      "desc": "1,20M - 1,20M - AM/JC/JR/M/MR/PJR/SRE/CN6",
@@ -13931,10 +13931,11 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 14
     },
     {
-     "id": null,
+     "id": 15006,
      "numero": "08",
      "nome": "1,30M",
      "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
@@ -13943,7 +13944,8 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 12
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3509"
