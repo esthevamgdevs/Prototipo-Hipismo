@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T14:00:38.095Z",
+ "atualizadoEm": "2026-11-20T14:40:43.985Z",
  "torneios": [
   {
    "id": 3404,
@@ -13888,11 +13888,11 @@
      "id": null,
      "numero": "05",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
+     "desc": "1,00M",
      "altura": 1,
      "dia": "2026-11-21",
-     "hora": "09:00",
-     "pista": "AREIA NOVA",
+     "hora": "A seguir",
+     "pista": null,
      "gp": false,
      "linkResultado": false
     },
