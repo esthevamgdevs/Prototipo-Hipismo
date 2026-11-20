@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T16:00:33.428Z",
+ "atualizadoEm": "2026-11-20T16:40:43.759Z",
  "torneios": [
   {
    "id": 3404,
@@ -13887,8 +13887,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 11
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "FERNANDO CAPOVILA",
+      "h": "LM HEX-CAL"
+     },
+     "oe": 11,
+     "n": 2
     },
     {
      "id": null,
