@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T15:20:52.902Z",
+ "atualizadoEm": "2026-11-20T16:00:33.428Z",
  "torneios": [
   {
    "id": 3404,
@@ -13868,14 +13868,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 15,
+     "linkResultado": true,
      "res": true,
-     "n": 2,
      "v": {
       "c": "",
-      "h": "JOAO MARCOS CORAZZA"
-     }
+      "h": "MARCEL VINICIUS MONTEIRO"
+     },
+     "oe": 15,
+     "n": 6
     },
     {
      "id": 15005,
