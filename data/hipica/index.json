@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-20T19:20:26.569Z",
+ "atualizadoEm": "2026-11-21T13:21:02.300Z",
  "torneios": [
   {
    "id": 3404,
@@ -13898,28 +13898,15 @@
     },
     {
      "id": null,
-     "numero": "05",
-     "nome": "1,00M",
-     "desc": "1,00M",
-     "altura": 1,
+     "numero": "06",
+     "nome": "1,10M",
+     "desc": "1,10M",
+     "altura": 1.1,
      "dia": "2026-11-21",
      "hora": "A seguir",
      "pista": null,
      "gp": false,
      "linkResultado": false
-    },
-    {
-     "id": 15002,
-     "numero": "06",
-     "nome": "1,10M",
-     "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR/ABER/CN5",
-     "altura": 1.1,
-     "dia": "2026-11-21",
-     "hora": null,
-     "pista": "AREIA NOVA",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 30
     },
     {
      "id": 15004,
@@ -13946,6 +13933,19 @@
      "gp": false,
      "linkResultado": false,
      "oe": 12
+    },
+    {
+     "id": 15000,
+     "numero": "05",
+     "nome": "1,00M",
+     "desc": "1,00M - 1,00M - AMB/JCB/MB/MMR/ABER/CN4",
+     "altura": 1,
+     "dia": "2026-11-21",
+     "hora": "09:30",
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": true,
+     "oe": 21
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3509"
