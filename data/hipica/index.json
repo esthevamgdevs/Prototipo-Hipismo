@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-21T13:21:02.300Z",
+ "atualizadoEm": "2026-11-21T15:21:14.379Z",
  "torneios": [
   {
    "id": 3404,
@@ -13919,7 +13919,7 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 14
+     "oe": 20
     },
     {
      "id": 15006,
@@ -13972,7 +13972,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 15008,
      "numero": "02",
      "nome": "MMR PREL",
      "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
@@ -13981,10 +13981,11 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 22
     },
     {
-     "id": null,
+     "id": 15009,
      "numero": "03",
      "nome": "MMR INTER",
      "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -13993,10 +13994,11 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 10
     },
     {
-     "id": null,
+     "id": 15010,
      "numero": "04",
      "nome": "MMR PRINC",
      "desc": "0,90M (MMR/JC/AM) - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -14005,7 +14007,8 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 7
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3510"
