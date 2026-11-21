@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-21T16:00:51.544Z",
+ "atualizadoEm": "2026-11-21T16:41:07.714Z",
  "torneios": [
   {
    "id": 3404,
@@ -13897,31 +13897,6 @@
      "n": 5
     },
     {
-     "id": null,
-     "numero": "07",
-     "nome": "1,20M",
-     "desc": "1,20M",
-     "altura": 1.2,
-     "dia": "2026-11-21",
-     "hora": "A seguir",
-     "pista": null,
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": 15006,
-     "numero": "08",
-     "nome": "1,30M",
-     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
-     "altura": 1.3,
-     "dia": "2026-11-21",
-     "hora": null,
-     "pista": "AREIA NOVA",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 12
-    },
-    {
      "id": 15000,
      "numero": "05",
      "nome": "1,00M",
@@ -13946,6 +13921,38 @@
      "gp": false,
      "linkResultado": true,
      "oe": 31
+    },
+    {
+     "id": 15004,
+     "numero": "07",
+     "nome": "1,20M",
+     "desc": "1,20M - 1,20M - AM/JC/JR/M/MR/PJR/SRE/CN6",
+     "altura": 1.2,
+     "dia": "2026-11-21",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": true,
+     "oe": 20
+    },
+    {
+     "id": 15006,
+     "numero": "08",
+     "nome": "1,30M",
+     "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR/SRE/CN7",
+     "altura": 1.3,
+     "dia": "2026-11-21",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "PAULO HENRIQUE COELHO"
+     },
+     "oe": 12,
+     "n": 1
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3509"
