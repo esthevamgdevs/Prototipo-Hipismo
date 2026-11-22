@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-22T15:20:53.799Z",
+ "atualizadoEm": "2026-11-22T16:41:14.593Z",
  "torneios": [
   {
    "id": 3404,
@@ -13968,28 +13968,15 @@
    "provas": [
     {
      "id": null,
-     "numero": "02",
-     "nome": "0,60M (MMR/JC/AM)",
-     "desc": "0,60M (MMR/JC/AM)",
-     "altura": 0.6,
+     "numero": "03",
+     "nome": "0,80M (MMR/JC/AM)",
+     "desc": "0,80M (MMR/JC/AM)",
+     "altura": 0.8,
      "dia": "2026-11-22",
      "hora": "A seguir",
      "pista": null,
      "gp": false,
      "linkResultado": false
-    },
-    {
-     "id": 15009,
-     "numero": "03",
-     "nome": "MMR INTER",
-     "desc": "0,80M (MMR/JC/AM) - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
-     "altura": 0.8,
-     "dia": "2026-11-22",
-     "hora": null,
-     "pista": "AREIA NOVA",
-     "gp": false,
-     "linkResultado": false,
-     "oe": 14
     },
     {
      "id": 15010,
@@ -14022,6 +14009,19 @@
      },
      "oe": 21,
      "n": 19
+    },
+    {
+     "id": 15008,
+     "numero": "02",
+     "nome": "MMR PREL",
+     "desc": "0,60M (MMR/JC/AM) - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
+     "altura": 0.6,
+     "dia": "2026-11-22",
+     "hora": null,
+     "pista": "AREIA NOVA",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 26
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3510"
