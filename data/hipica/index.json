@@ -13996,7 +13996,13 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 26
+     "oe": 26,
+     "res": true,
+     "n": 25,
+     "v": {
+      "c": "Bettina Baccili M.",
+      "h": "CORAÇÃO VALENTE"
+     }
     },
     {
      "id": 15009,
