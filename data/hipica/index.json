@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-22T17:40:53.443Z",
+ "atualizadoEm": "2026-11-22T18:11:13.218Z",
  "torneios": [
   {
    "id": 3404,
@@ -13962,7 +13962,7 @@
    "nome": "6ª ETAPA CENTRAL CUP 2026 - (FINAL) HARAS COOPER",
    "modalidade": "SALTO PARA INICIANTES",
    "local": "",
-   "status": "Torneio em Andamento",
+   "status": "Torneio Concluído",
    "inicio": "2026-11-22",
    "fim": "2026-11-22",
    "provas": [
@@ -13976,7 +13976,7 @@
      "hora": "09:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
       "c": "Maria Clara H.",
@@ -13995,14 +13995,14 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
-     "oe": 26,
+     "linkResultado": true,
      "res": true,
-     "n": 25,
      "v": {
       "c": "Bettina Baccili M.",
       "h": "CORAÇÃO VALENTE"
-     }
+     },
+     "oe": 26,
+     "n": 25
     },
     {
      "id": 15009,
@@ -14014,7 +14014,7 @@
      "hora": null,
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
       "c": "Marcella Blum D. M.",
