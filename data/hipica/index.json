@@ -13989,7 +13989,13 @@
      "pista": "AREIA NOVA",
      "gp": false,
      "linkResultado": false,
-     "oe": 8
+     "oe": 8,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "LAIS TELES GARCIA"
+     }
     },
     {
      "id": 15007,
