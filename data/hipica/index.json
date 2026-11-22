@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-22T14:41:03.972Z",
+ "atualizadoEm": "2026-11-22T15:20:53.799Z",
  "torneios": [
   {
    "id": 3404,
@@ -14014,7 +14014,7 @@
      "hora": "09:30",
      "pista": "AREIA NOVA",
      "gp": false,
-     "linkResultado": true,
+     "linkResultado": false,
      "res": true,
      "v": {
       "c": "Maria Clara H.",
