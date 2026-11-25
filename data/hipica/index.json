@@ -14102,7 +14102,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 30
+     "oe": 30,
+     "res": true,
+     "n": 5,
+     "v": {
+      "c": "",
+      "h": "FELIPE JUARES DE LIMA"
+     }
     },
     {
      "id": 14901,
@@ -14275,7 +14281,7 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 85
+     "oe": 84
     },
     {
      "id": 14930,
@@ -14288,7 +14294,7 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 114
+     "oe": 113
     },
     {
      "id": null,
