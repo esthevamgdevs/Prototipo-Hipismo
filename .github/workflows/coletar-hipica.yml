@@ -16,9 +16,10 @@ on:
         options: [completo, rapido]
         default: completo
 
-# Só o necessário: gravar os dados no repositório.
+# Só o necessário: gravar os dados no repositório e abrir os avisos do vigia (issues).
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: coleta-hipica
@@ -46,6 +47,7 @@ jobs:
 
       # A coleta não recebe nenhuma chave: só lê o site da FPH e grava em data/hipica.
       - name: Coletar calendário e resultados
+        id: coletar
         working-directory: scripts/hipica
         timeout-minutes: 35
         env:
@@ -95,3 +97,15 @@ jobs:
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
         run: node enviar-avisos.mjs
+
+      # Vigia: roda SEMPRE, até quando a coleta quebra ou é cancelada. Lê o boletim da rodada e
+      # abre, atualiza ou fecha os avisos (issues) no GitHub. Não usa pacotes nem chaves do Supabase.
+      - name: Vigiar a coleta
+        if: always()
+        working-directory: scripts/hipica
+        timeout-minutes: 3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTADO_COLETA: ${{ steps.coletar.outcome }}
+          RESULTADO_SALVAR: ${{ steps.salvar.outcome }}
+        run: node vigiar.mjs
