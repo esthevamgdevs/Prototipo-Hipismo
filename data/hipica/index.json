@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-25T17:11:54.678Z",
+ "atualizadoEm": "2026-11-25T17:41:18.967Z",
  "torneios": [
   {
    "id": 3404,
@@ -14046,7 +14046,7 @@
   },
   {
    "id": 3501,
-   "nome": "JOGOS EQUESTRES PAULISTA DE SALTO 2026",
+   "nome": "JOGOS EQUESTRES PAULISTAS DE SALTO 2026",
    "modalidade": "SALTO",
    "local": "SOCIEDADE HIPICA PAULISTA",
    "status": "Torneio em Andamento",
@@ -14067,10 +14067,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "CAROLINA SOUZA CHADE"
+      "h": "JOSE ROBERTO REYNOSO FERNANDEZ FILHO"
      },
      "oe": 35,
-     "n": 17
+     "n": 22
     },
     {
      "id": 14907,
@@ -14099,7 +14099,7 @@
      "oe": 30
     },
     {
-     "id": null,
+     "id": 14901,
      "numero": "04",
      "nome": "1,10M",
      "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR",
@@ -14108,10 +14108,11 @@
      "hora": "08:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 70
     },
     {
-     "id": null,
+     "id": 14905,
      "numero": "05",
      "nome": "1,30M",
      "desc": "1,30M - 1,30M - AMT/JCT/MT/PJR",
@@ -14120,10 +14121,11 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 33
     },
     {
-     "id": null,
+     "id": 14903,
      "numero": "06",
      "nome": "1,20M",
      "desc": "1,20M - 1,20M - AM/JC/M/MR",
@@ -14132,7 +14134,8 @@
      "hora": "14:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 56
     },
     {
      "id": null,
