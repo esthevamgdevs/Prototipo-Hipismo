@@ -81,9 +81,25 @@ function precisaRever(p, ultima, refazerAte) {
 
 class LimiteAtingido extends Error {}
 let paginas = 0;
+let respostasFPH = 0, falhasFPH = 0;     // para o vigia: a FPH respondeu? (ok, 404 e 500 contam como resposta)
+const enderecosNaoReconhecidos = [];      // até 10 endereços de páginas que o coletor não entendeu
 
 const MAX_MINUTOS = +(process.env.MAX_MINUTOS ?? 30);        // para e salva antes do limite do Actions
 const inicioExecucao = Date.now();
+
+// Boletim da rodada para o vigia (vigiar.mjs). Fica FORA do repositório, na pasta temporária do
+// Actions, e é gravado em qualquer saída: fim normal, robots.txt bloqueando ou erro inesperado.
+// Só números e endereços da FPH, nunca nomes.
+const ARQ_BOLETIM = process.env.BOLETIM || path.join(process.env.RUNNER_TEMP || os.tmpdir(), 'salta-boletim.json');
+const boletim = { versao: 1, modo: MODO, inicio: new Date(inicioExecucao).toISOString(), terminou: false };
+async function gravarBoletim(extra = {}) {
+  Object.assign(boletim, extra, {
+    fim: new Date().toISOString(), paginas, respostasFPH, falhasFPH,
+    naoReconhecidos, enderecosNaoReconhecidos,
+  });
+  try { await fs.writeFile(ARQ_BOLETIM, JSON.stringify(boletim, null, 1) + '\n'); }
+  catch (e) { console.warn('Boletim: não deu para gravar,', e.message); }
+}
 
 async function baixar(caminho) {
   if (paginas >= MAX_PAGINAS) throw new LimiteAtingido();
@@ -99,13 +115,15 @@ async function baixar(caminho) {
         signal: AbortSignal.timeout(30000),
       });
       // A FPH responde 500 para torneios/provas que não existem: não insistimos.
-      if (r.status === 404 || r.status === 500) return null;
+      if (r.status === 404 || r.status === 500) { respostasFPH++; return null; }
       // Só vale tentar de novo quando o servidor pede calma ou está instável
       if ([429, 502, 503, 504].includes(r.status)) throw new Error(`HTTP ${r.status}`);
-      if (!r.ok) { console.warn(`  ! ${caminho}: HTTP ${r.status}`); return null; }
-      return await r.text();
+      if (!r.ok) { falhasFPH++; console.warn(`  ! ${caminho}: HTTP ${r.status}`); return null; }
+      const texto = await r.text();
+      respostasFPH++;
+      return texto;
     } catch (e) {
-      if (tentativa === 3) { console.warn(`  ! falhou ${caminho}: ${e.message}`); return null; }
+      if (tentativa === 3) { falhasFPH++; console.warn(`  ! falhou ${caminho}: ${e.message}`); return null; }
       await dormir(8000 * tentativa);
     }
   }
@@ -260,6 +278,7 @@ async function main() {
   console.log(`Salta · coleta FPH · ${hoje} · modo ${MODO}`);
   if (!(await robotsPermite())) {
     console.error('O robots.txt da FPH não permite acesso a estas páginas. Nada foi coletado.');
+    await gravarBoletim({ robotsBloqueou: true });
     process.exit(1);
   }
 
@@ -270,6 +289,7 @@ async function main() {
   const arqEstado = path.join(SAIDA, 'estado.json');
   const indice = await lerJSON(arqIndice, { torneios: [] });
   const anterior = JSON.parse(JSON.stringify(indice)); // foto de antes, para saber o que é novidade nos avisos
+  const statsAntes = await lerJSON(path.join(SAIDA, 'stats.json'), null); // totais de antes, para o vigia
   const estado = await lerJSON(arqEstado, { maiorId: 0, ignorados: [], resultados: {} });
   const ignorados = new Set(estado.ignorados);
   const torneios = new Map(indice.torneios.map(t => [t.id, t]));
@@ -314,6 +334,7 @@ async function main() {
       const t = parseTorneio(html, id);
       if (!t) {
         naoReconhecidos++;
+        if (enderecosNaoReconhecidos.length < 10) enderecosNaoReconhecidos.push(`${BASE}/calendario/ListaProvas.aspx?ID=${id}`);
         if (amostras < AMOSTRAS && html.length > 3000) { amostras++; await guardarAmostra(`torneio-${id}.html`, html, `${BASE}/calendario/ListaProvas.aspx?ID=${id}`); }
         continue;
       }
@@ -492,6 +513,10 @@ async function main() {
     torneios: listaTorneios,
   }, 1);
   estado.ignorados = [...ignorados].sort((a, b) => a - b);
+  // Rodada sem nenhuma resposta da FPH soma 1; qualquer resposta zera. Rodada sem páginas não conta.
+  const seguidasAntes = estado.saude?.fphSemRespostaSeguidas || 0;
+  const fphSemResposta = paginas > 0 && respostasFPH === 0 && falhasFPH > 0;
+  estado.saude = { fphSemRespostaSeguidas: paginas === 0 ? seguidasAntes : (fphSemResposta ? seguidasAntes + 1 : 0) };
   await gravarJSON(arqEstado, estado, 1);
 
   // 4) Ranking e perfis, calculados sobre o que já está gravado
@@ -514,7 +539,17 @@ async function main() {
     catch (e) { console.warn('Avisos: falha no envio,', e.message); }
   }
   if (!listaTorneios.length && cal) await guardarAmostra('calendario.html', cal, `${BASE}/calendario/Default`);
+  await gravarBoletim({
+    terminou: true, parcial: limite,
+    torneiosAntes: (indice.torneios || []).length, torneiosDepois: listaTorneios.length,
+    percursosAntes: statsAntes?.totais?.percursos ?? null, percursosDepois: totais.percursos ?? null,
+    fphSemRespostaSeguidas: estado.saude.fphSemRespostaSeguidas,
+  });
   console.log(`Pronto: ${listaTorneios.length} torneios de salto, ${paginas} páginas lidas, ${naoReconhecidos} páginas não reconhecidas${limite ? ' (parcial)' : ''}.`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch(async e => {
+  console.error(e);
+  await gravarBoletim({ erro: String(e?.message || e).slice(0, 300) });
+  process.exit(1);
+});
