@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-25T18:21:08.148Z",
+ "atualizadoEm": "2026-11-25T19:01:03.422Z",
  "torneios": [
   {
    "id": 3404,
@@ -14082,8 +14082,14 @@
      "hora": "15:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 51
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "LEANDRO JOSE ABRAHAO"
+     },
+     "oe": 51,
+     "n": 3
     },
     {
      "id": 14910,
@@ -14138,7 +14144,7 @@
      "oe": 56
     },
     {
-     "id": null,
+     "id": 14919,
      "numero": "07",
      "nome": "SRE (FINAL)",
      "desc": "1,20M - SRE (FINAL) - 1,20M - SRE",
@@ -14147,7 +14153,8 @@
      "hora": "17:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 35
     },
     {
      "id": null,
