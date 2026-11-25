@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-25T16:11:06.913Z",
+ "atualizadoEm": "2026-11-25T17:11:54.678Z",
  "torneios": [
   {
    "id": 3404,
@@ -14063,8 +14063,14 @@
      "hora": "14:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 35
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "ANDRE NASCIMENTO XAVIER"
+     },
+     "oe": 35,
+     "n": 5
     },
     {
      "id": 14907,
