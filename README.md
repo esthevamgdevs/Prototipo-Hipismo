@@ -13,8 +13,12 @@ sempre a um toque de distância, pelo link que aparece no rodapé da tela de res
   ele lê os arquivos de dados da pasta `data/hipica/`.
 - `scripts/hipica/` — o coletor, em Node. Lê as páginas de torneio da FPH, entende as provas e os
   resultados e grava os dados em `data/hipica/`.
-- `.github/workflows/coletar-hipica.yml` — roda o coletor a cada 6 horas pelo GitHub Actions e
-  publica o que mudou.
+- `.github/workflows/coletar-hipica.yml` — roda o coletor várias vezes por dia pelo GitHub Actions
+  (quem dispara é o agendador do Supabase) e publica o que mudou.
+- `scripts/hipica/vigiar.mjs` — o vigia: no fim de cada rodada, até quando a coleta quebra, confere
+  se algo saiu do normal e abre um aviso (issue) no GitHub, com a etiqueta `alerta-coletor`. O aviso
+  se fecha sozinho quando o problema passa 30 minutos sem aparecer. Só números e endereços da FPH,
+  nunca nomes.
 
 ### Dados gerados
 
