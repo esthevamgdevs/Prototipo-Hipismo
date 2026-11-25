@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-25T11:10:50.356Z",
+ "atualizadoEm": "2026-11-25T16:11:06.913Z",
  "torneios": [
   {
    "id": 3404,
@@ -14054,7 +14054,7 @@
    "fim": "2026-11-29",
    "provas": [
     {
-     "id": null,
+     "id": 14918,
      "numero": "01",
      "nome": "1,20M",
      "desc": "1,20M - SRE - 1,20M - SRE",
@@ -14063,10 +14063,11 @@
      "hora": "14:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 35
     },
     {
-     "id": null,
+     "id": 14907,
      "numero": "02",
      "nome": "1,30M",
      "desc": "1,30M - 1,30M - JR/SRE",
@@ -14075,10 +14076,11 @@
      "hora": "15:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 51
     },
     {
-     "id": null,
+     "id": 14910,
      "numero": "03",
      "nome": "1,40M",
      "desc": "1,40M - 1,40M - JR/SR/U25/AST",
@@ -14087,7 +14089,8 @@
      "hora": "18:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 30
     },
     {
      "id": null,
@@ -14192,7 +14195,7 @@
      "desc": "1,35M (FINAL) - 1,35M - JR/SRE",
      "altura": 1.35,
      "dia": "2026-11-27",
-     "hora": "17:00",
+     "hora": "17:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false
@@ -14288,7 +14291,7 @@
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
      "altura": 0.9,
      "dia": "2026-11-27",
-     "hora": "13:00",
+     "hora": "14:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
@@ -14312,7 +14315,7 @@
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
      "altura": 0.8,
      "dia": "2026-11-28",
-     "hora": "12:30",
+     "hora": "13:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
@@ -14324,7 +14327,7 @@
      "desc": "0,60M - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
      "altura": 0.6,
      "dia": "2026-11-29",
-     "hora": "08:30",
+     "hora": "08:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
