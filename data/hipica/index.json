@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-25T17:41:18.967Z",
+ "atualizadoEm": "2026-11-25T18:21:08.148Z",
  "torneios": [
   {
    "id": 3404,
@@ -14258,7 +14258,7 @@
    "fim": "2026-11-29",
    "provas": [
     {
-     "id": null,
+     "id": 14926,
      "numero": "08",
      "nome": "MMR ASP",
      "desc": "0,40M - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
@@ -14267,10 +14267,11 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 85
     },
     {
-     "id": null,
+     "id": 14930,
      "numero": "09",
      "nome": "MMR INTER",
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -14279,7 +14280,8 @@
      "hora": "13:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 114
     },
     {
      "id": null,
