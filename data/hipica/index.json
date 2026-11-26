@@ -14171,7 +14171,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 57
+     "oe": 57,
+     "res": true,
+     "n": 2,
+     "v": {
+      "c": "",
+      "h": "JULIA NASCIMENTO SENNA DE LIMA"
+     }
     },
     {
      "id": 14919,
