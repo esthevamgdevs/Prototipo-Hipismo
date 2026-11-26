@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T12:11:23.532Z",
+ "atualizadoEm": "2026-11-26T12:41:34.930Z",
  "torneios": [
   {
    "id": 3404,
@@ -14136,10 +14136,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "MARIA LUIZA DUQUE POGGI"
+      "h": "SOPHIA LAURA LIMA DO VALE"
      },
      "oe": 70,
-     "n": 32
+     "n": 36
     },
     {
      "id": 14905,
@@ -14152,7 +14152,7 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 30
+     "oe": 29
     },
     {
      "id": 14903,
@@ -14184,7 +14184,7 @@
      "id": null,
      "numero": "10A",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - AMB/MB",
+     "desc": "1,00M - 1,00M - JCB/MMR",
      "altura": 1,
      "dia": "2026-11-27",
      "hora": "08:30",
@@ -14196,7 +14196,7 @@
      "id": null,
      "numero": "10B",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - JCB/MMR",
+     "desc": "1,00M - 1,00M - AMB/MB",
      "altura": 1,
      "dia": "2026-11-27",
      "hora": null,
@@ -14244,7 +14244,7 @@
      "id": null,
      "numero": "16A",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - AMB/MB",
+     "desc": "1,00M - 1,00M - JCB/MMR",
      "altura": 1,
      "dia": "2026-11-28",
      "hora": "08:30",
@@ -14256,7 +14256,7 @@
      "id": null,
      "numero": "16B",
      "nome": "1,00M",
-     "desc": "1,00M - 1,00M - JCB/MMR",
+     "desc": "1,00M - 1,00M - AMB/MB",
      "altura": 1,
      "dia": "2026-11-28",
      "hora": null,
@@ -14311,13 +14311,13 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 84,
      "res": true,
-     "n": 1,
      "v": {
       "c": "",
       "h": "JULIANA LEAL SILVA"
-     }
+     },
+     "oe": 84,
+     "n": 1
     },
     {
      "id": 14930,
