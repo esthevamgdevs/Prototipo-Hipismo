@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T16:41:21.870Z",
+ "atualizadoEm": "2026-11-26T17:11:46.870Z",
  "torneios": [
   {
    "id": 3404,
@@ -14170,14 +14170,14 @@
      "hora": "14:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57,
+     "linkResultado": true,
      "res": true,
-     "n": 2,
      "v": {
       "c": "",
-      "h": "JULIA NASCIMENTO SENNA DE LIMA"
-     }
+      "h": "LEILA MILRE SKAF BUCANNA"
+     },
+     "oe": 57,
+     "n": 7
     },
     {
      "id": 14919,
@@ -14219,7 +14219,7 @@
      "oe": 37
     },
     {
-     "id": null,
+     "id": 14902,
      "numero": "11",
      "nome": "1,10M",
      "desc": "1,10M - 1,10M - AMA/JCA/MA/PMR",
@@ -14228,7 +14228,8 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 68
     },
     {
      "id": null,
@@ -14348,7 +14349,7 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "BRUNA DE ANDRADE GERMANO"
+      "h": "ALEXANDRA GERNER DE ALBUQUERQUE FELIZOLA"
      },
      "oe": 115,
      "n": 1
@@ -14367,7 +14368,7 @@
      "oe": 137
     },
     {
-     "id": null,
+     "id": 14932,
      "numero": "15",
      "nome": "MMR PRINC",
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -14376,7 +14377,8 @@
      "hora": "14:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 93
     },
     {
      "id": null,
