@@ -14121,7 +14121,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 70
+     "oe": 70,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "BELLA ADORNI MATEOS"
+     }
     },
     {
      "id": 14905,
