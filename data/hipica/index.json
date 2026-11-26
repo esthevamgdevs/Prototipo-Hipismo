@@ -14339,7 +14339,13 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 115
+     "oe": 115,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "ALICE JURADO GOMES PINHO"
+     }
     },
     {
      "id": null,
