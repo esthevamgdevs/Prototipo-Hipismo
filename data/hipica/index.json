@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T13:21:42.354Z",
+ "atualizadoEm": "2026-11-26T14:01:44.135Z",
  "torneios": [
   {
    "id": 3404,
@@ -14181,7 +14181,7 @@
      "oe": 35
     },
     {
-     "id": null,
+     "id": 14921,
      "numero": "10A",
      "nome": "1,00M",
      "desc": "1,00M - 1,00M - JCB/MMR",
@@ -14190,10 +14190,11 @@
      "hora": "08:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 50
     },
     {
-     "id": null,
+     "id": 14899,
      "numero": "10B",
      "nome": "1,00M",
      "desc": "1,00M - 1,00M - AMB/MB",
@@ -14202,7 +14203,8 @@
      "hora": null,
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 37
     },
     {
      "id": null,
@@ -14229,7 +14231,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14908,
      "numero": "13",
      "nome": "1,35M (FINAL)",
      "desc": "1,35M (FINAL) - 1,35M - JR/SRE",
@@ -14238,7 +14240,8 @@
      "hora": "17:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 51
     },
     {
      "id": null,
