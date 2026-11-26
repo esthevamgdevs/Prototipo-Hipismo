@@ -14190,7 +14190,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 36
+     "oe": 36,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "LEONARDO GONCALVES DA SILVA"
+     }
     },
     {
      "id": 14921,
