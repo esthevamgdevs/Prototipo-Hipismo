@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T21:01:22.960Z",
+ "atualizadoEm": "2026-11-26T21:11:48.854Z",
  "torneios": [
   {
    "id": 3404,
@@ -14192,11 +14192,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "IVO ROZA FILHO"
+      "c": "MARCELA AMORIM GRIPPE",
+      "h": "AFRIKA SD (TE)"
      },
      "oe": 36,
-     "n": 31
+     "n": 33
     },
     {
      "id": 14921,
@@ -14600,6 +14600,18 @@
     },
     {
      "id": null,
+     "numero": "11",
+     "nome": "CN 04 ANOS",
+     "desc": "CN 04 ANOS - HC 05 ANOS - 1,05M - CN4/HC 05 ANOS",
+     "altura": 1.05,
+     "dia": "2026-12-04",
+     "hora": "09:00",
+     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
      "numero": "08A",
      "nome": "1,10M",
      "desc": "1,10M - AMA/MA - 1,10M - AMA/MA",
@@ -14619,18 +14631,6 @@
      "dia": "2026-12-04",
      "hora": "09:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
-     "numero": "11",
-     "nome": "CN 04 ANOS",
-     "desc": "CN 04 ANOS - HC 05 ANOS - 1,05M - CN4/HC 05 ANOS",
-     "altura": 1.05,
-     "dia": "2026-12-04",
-     "hora": "09:00",
-     "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false
     },
@@ -14672,18 +14672,6 @@
     },
     {
      "id": null,
-     "numero": "10",
-     "nome": "COPA OURO",
-     "desc": "COPA OURO - 1,40M - JR/SR/AST",
-     "altura": 1.4,
-     "dia": "2026-12-04",
-     "hora": "15:00",
-     "pista": "AREIA - Eduardo de Moraes Dantas",
-     "gp": false,
-     "linkResultado": false
-    },
-    {
-     "id": null,
      "numero": "13",
      "nome": "CN 06 ANOS",
      "desc": "CN 06 ANOS - HC 07 ANOS - 1,25M - CN6/HC 07 ANOS",
@@ -14691,6 +14679,18 @@
      "dia": "2026-12-04",
      "hora": "15:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
+     "id": null,
+     "numero": "10",
+     "nome": "COPA OURO",
+     "desc": "COPA OURO - 1,40M - JR/SR/AST",
+     "altura": 1.4,
+     "dia": "2026-12-04",
+     "hora": "15:00",
+     "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false
     },
@@ -15433,7 +15433,7 @@
      "altura": 1,
      "dia": "2026-12-12",
      "hora": "15:00",
-     "pista": "AREIA - CEL. RENYLDO",
+     "pista": "AREIA - SERGIO BRANDÃO",
      "gp": false,
      "linkResultado": false
     },
