@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T14:41:30.424Z",
+ "atualizadoEm": "2026-11-26T15:21:40.256Z",
  "torneios": [
   {
    "id": 3404,
@@ -14151,14 +14151,14 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 30,
+     "linkResultado": true,
      "res": true,
-     "n": 6,
      "v": {
       "c": "",
-      "h": "FRANCISCO GOMES VIDIGAL GONCALVES"
-     }
+      "h": "JOSE VLADEMIR VALERIO DE ALMEIDA"
+     },
+     "oe": 30,
+     "n": 11
     },
     {
      "id": 14903,
@@ -14319,14 +14319,14 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "JULIANA LEAL SILVA"
+      "c": "Sofia Randrup C.",
+      "h": "LUTHER"
      },
      "oe": 84,
-     "n": 1
+     "n": 88
     },
     {
      "id": 14930,
