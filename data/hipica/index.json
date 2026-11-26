@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T20:21:34.593Z",
+ "atualizadoEm": "2026-11-26T21:01:22.960Z",
  "torneios": [
   {
    "id": 3404,
@@ -14092,6 +14092,18 @@
      "n": 51
     },
     {
+     "id": null,
+     "numero": "19A",
+     "nome": "FINAL",
+     "desc": "1,45M SR/U25 - FINAL - 1,45M - SR/U25",
+     "altura": 1.45,
+     "dia": "2026-11-25",
+     "hora": "18:00",
+     "pista": "AREIA - Eduardo de Moraes Dantas",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
      "id": 14910,
      "numero": "03",
      "nome": "1,40M",
@@ -14109,18 +14121,6 @@
      },
      "oe": 30,
      "n": 29
-    },
-    {
-     "id": null,
-     "numero": "19A",
-     "nome": "FINAL",
-     "desc": "1,45M SR/U25 - FINAL - 1,45M - SR/U25",
-     "altura": 1.45,
-     "dia": "2026-11-25",
-     "hora": "18:00",
-     "pista": "AREIA - Eduardo de Moraes Dantas",
-     "gp": false,
-     "linkResultado": false
     },
     {
      "id": 14901,
@@ -14193,10 +14193,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "LUIZ CARLOS DA COSTA MATA"
+      "h": "IVO ROZA FILHO"
      },
      "oe": 36,
-     "n": 26
+     "n": 31
     },
     {
      "id": 14921,
