@@ -14136,10 +14136,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "ISADORA PEREIRA IMMEZI"
+      "h": "MARIA LUIZA DUQUE POGGI"
      },
      "oe": 70,
-     "n": 27
+     "n": 32
     },
     {
      "id": 14905,
@@ -14311,7 +14311,13 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 84
+     "oe": 84,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "JULIANA LEAL SILVA"
+     }
     },
     {
      "id": 14930,
