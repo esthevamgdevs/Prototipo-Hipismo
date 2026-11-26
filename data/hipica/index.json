@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T16:01:23.969Z",
+ "atualizadoEm": "2026-11-26T16:41:21.870Z",
  "torneios": [
   {
    "id": 3404,
@@ -14171,7 +14171,7 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 55
+     "oe": 57
     },
     {
      "id": 14919,
@@ -14338,17 +14338,17 @@
      "hora": "13:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
-     "oe": 115,
+     "linkResultado": true,
      "res": true,
-     "n": 1,
      "v": {
       "c": "",
-      "h": "ALICE JURADO GOMES PINHO"
-     }
+      "h": "BEATRIZ VEIGA VELICKA"
+     },
+     "oe": 115,
+     "n": 1
     },
     {
-     "id": null,
+     "id": 14928,
      "numero": "14",
      "nome": "MMR PREL",
      "desc": "0,60M - 0,60M - MMR PREL - 0,60M/JC PREL - 0,60M/AM PREL - 0,60M",
@@ -14357,7 +14357,8 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 137
     },
     {
      "id": null,
