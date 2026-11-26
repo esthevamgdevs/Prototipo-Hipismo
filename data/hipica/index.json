@@ -14152,7 +14152,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 30
+     "oe": 30,
+     "res": true,
+     "n": 6,
+     "v": {
+      "c": "",
+      "h": "FRANCISCO GOMES VIDIGAL GONCALVES"
+     }
     },
     {
      "id": 14903,
