@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-26T19:01:18.359Z",
+ "atualizadoEm": "2026-11-26T20:21:34.593Z",
  "torneios": [
   {
    "id": 3404,
@@ -14189,14 +14189,14 @@
      "hora": "17:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 36,
+     "linkResultado": true,
      "res": true,
-     "n": 5,
      "v": {
       "c": "",
-      "h": "ELIVALDO BRAZIERI MARIANO"
-     }
+      "h": "RICARDO COELHO JUNIOR"
+     },
+     "oe": 36,
+     "n": 11
     },
     {
      "id": 14921,
@@ -14351,14 +14351,14 @@
      "hora": "13:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "DANTE BELLOTTI CONTINI"
+      "c": "Catarina Ferraz F. D. S.",
+      "h": "LORI FOR"
      },
      "oe": 115,
-     "n": 1
+     "n": 112
     },
     {
      "id": 14928,
