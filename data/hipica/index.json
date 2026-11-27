@@ -14216,7 +14216,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": true,
-     "oe": 35
+     "oe": 35,
+     "res": true,
+     "n": 4,
+     "v": {
+      "c": "",
+      "h": "RICARDO LEONI MAFFEI"
+     }
     },
     {
      "id": 14902,
