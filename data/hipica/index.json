@@ -14254,7 +14254,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 31
+     "oe": 31,
+     "res": true,
+     "n": 2,
+     "v": {
+      "c": "",
+      "h": "ANA LIVIA ANTONIO"
+     }
     },
     {
      "id": 14908,
