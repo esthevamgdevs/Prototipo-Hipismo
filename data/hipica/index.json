@@ -14275,10 +14275,10 @@
      "linkResultado": false,
      "oe": 51,
      "res": true,
-     "n": 3,
+     "n": 8,
      "v": {
       "c": "",
-      "h": "SOPHIE ROCCIA"
+      "h": "PEDRO HENRIQUE ARANTES TAVORA DE MATOS"
      }
     },
     {
@@ -14439,7 +14439,13 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 94
+     "oe": 94,
+     "res": true,
+     "n": 90,
+     "v": {
+      "c": "YASMIN NASCIMENTO",
+      "h": "RIVALDI JMEN"
+     }
     },
     {
      "id": 14927,
