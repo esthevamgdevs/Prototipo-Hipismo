@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T21:01:18.072Z",
+ "atualizadoEm": "2026-11-27T21:12:35.496Z",
  "torneios": [
   {
    "id": 3404,
@@ -14276,10 +14276,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "ALEXANDRE DOS SANTOS ARAUJO"
+      "h": "LEANDRO JOSE ABRAHAO"
      },
      "oe": 51,
-     "n": 19
+     "n": 24
     },
     {
      "id": 14922,
@@ -14438,14 +14438,14 @@
      "hora": "14:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
-     "oe": 94,
+     "linkResultado": true,
      "res": true,
-     "n": 90,
      "v": {
       "c": "YASMIN NASCIMENTO",
       "h": "RIVALDI JMEN"
-     }
+     },
+     "oe": 94,
+     "n": 90
     },
     {
      "id": 14927,
