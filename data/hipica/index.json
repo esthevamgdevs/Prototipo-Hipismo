@@ -14235,7 +14235,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 69
+     "oe": 69,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "HASSAN SOUEID"
+     }
     },
     {
      "id": 14906,
