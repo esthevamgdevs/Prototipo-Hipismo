@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T19:02:01.978Z",
+ "atualizadoEm": "2026-11-27T21:01:18.072Z",
  "torneios": [
   {
    "id": 3404,
@@ -14272,14 +14272,14 @@
      "hora": "17:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 51,
+     "linkResultado": true,
      "res": true,
-     "n": 13,
      "v": {
       "c": "",
-      "h": "JULIANA DE MELLO ALMEIDA MONTEIRO"
-     }
+      "h": "ALEXANDRE DOS SANTOS ARAUJO"
+     },
+     "oe": 51,
+     "n": 19
     },
     {
      "id": 14922,
