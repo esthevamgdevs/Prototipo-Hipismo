@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T12:41:57.277Z",
+ "atualizadoEm": "2026-11-27T13:21:52.922Z",
  "torneios": [
   {
    "id": 3404,
@@ -14295,6 +14295,18 @@
      "oe": 56
     },
     {
+     "id": null,
+     "numero": "18",
+     "nome": "1,15M (FINAL)",
+     "desc": "1,15M (FINAL) - 1,15M - AMA/JCA/MA/PMR",
+     "altura": 1.15,
+     "dia": "2026-11-28",
+     "hora": "15:00",
+     "pista": "AREIA - Eduardo de Moraes Dantas",
+     "gp": false,
+     "linkResultado": false
+    },
+    {
      "id": 14924,
      "numero": "19A",
      "nome": "FINAL",
@@ -14416,7 +14428,7 @@
      "oe": 88
     },
     {
-     "id": null,
+     "id": 14931,
      "numero": "21",
      "nome": "MMR INTER",
      "desc": "0,80M - 0,80M - MMR INTER - 0,80M/JC INTER - 0,80M/AM INTER - 0,80M",
@@ -14425,7 +14437,8 @@
      "hora": "13:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 115
     },
     {
      "id": null,
