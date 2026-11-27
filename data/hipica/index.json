@@ -14273,7 +14273,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 51
+     "oe": 51,
+     "res": true,
+     "n": 3,
+     "v": {
+      "c": "",
+      "h": "SOPHIE ROCCIA"
+     }
     },
     {
      "id": 14922,
