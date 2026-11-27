@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T10:52:10.987Z",
+ "atualizadoEm": "2026-11-27T11:32:42.542Z",
  "torneios": [
   {
    "id": 3404,
@@ -14196,8 +14196,14 @@
      "hora": "08:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 50
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "MARIANA PICARRA WIGGERS"
+     },
+     "oe": 50,
+     "n": 2
     },
     {
      "id": 14899,
@@ -14209,7 +14215,7 @@
      "hora": null,
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 35
     },
     {
@@ -14276,7 +14282,7 @@
      "linkResultado": false
     },
     {
-     "id": null,
+     "id": 14904,
      "numero": "17",
      "nome": "1,20M",
      "desc": "1,20M - 1,20M - AM/JC/M/MR",
@@ -14285,7 +14291,8 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 56
     },
     {
      "id": null,
@@ -14372,7 +14379,7 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 137
+     "oe": 139
     },
     {
      "id": 14932,
