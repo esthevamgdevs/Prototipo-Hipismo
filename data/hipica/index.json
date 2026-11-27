@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T12:12:05.249Z",
+ "atualizadoEm": "2026-11-27T12:41:57.277Z",
  "torneios": [
   {
    "id": 3404,
@@ -14199,11 +14199,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "Manuela Gibin M.",
-      "h": "JATOBA LMZ"
+      "c": "",
+      "h": "LAURA JUNQUEIRA RIBEIRO DE MENDONÇA"
      },
      "oe": 50,
-     "n": 30
+     "n": 37
     },
     {
      "id": 14899,
@@ -14308,7 +14308,7 @@
      "oe": 23
     },
     {
-     "id": null,
+     "id": 14925,
      "numero": "19B",
      "nome": "FINAL",
      "desc": "1,45M AST/JR - FINAL - 1,45M - JR/AST",
@@ -14317,7 +14317,8 @@
      "hora": "17:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 6
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3501"
@@ -14379,7 +14380,7 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": true,
+     "linkResultado": false,
      "res": true,
      "v": {
       "c": "",
@@ -14402,7 +14403,7 @@
      "oe": 93
     },
     {
-     "id": null,
+     "id": 14927,
      "numero": "20",
      "nome": "MMR ASP",
      "desc": "0,40M - 0,40M - MMR ASP - 0,40M/JC ASP - 0,40M/AM ASP - 0,40M",
@@ -14411,7 +14412,8 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 88
     },
     {
      "id": null,
