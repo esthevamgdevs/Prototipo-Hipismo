@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T18:22:45.009Z",
+ "atualizadoEm": "2026-11-27T19:02:01.978Z",
  "torneios": [
   {
    "id": 3404,
@@ -14253,14 +14253,14 @@
      "hora": "15:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 31,
+     "linkResultado": true,
      "res": true,
-     "n": 11,
      "v": {
       "c": "",
-      "h": "ANA LIVIA ANTONIO"
-     }
+      "h": "YASMIN CARMONA"
+     },
+     "oe": 31,
+     "n": 17
     },
     {
      "id": 14908,
@@ -14315,7 +14315,7 @@
      "oe": 56
     },
     {
-     "id": null,
+     "id": 14915,
      "numero": "18",
      "nome": "1,15M (FINAL)",
      "desc": "1,15M (FINAL) - 1,15M - AMA/JCA/MA/PMR",
@@ -14324,7 +14324,8 @@
      "hora": "15:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 33
     },
     {
      "id": 14924,
