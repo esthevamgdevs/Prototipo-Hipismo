@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T14:01:40.872Z",
+ "atualizadoEm": "2026-11-27T15:21:28.121Z",
  "torneios": [
   {
    "id": 3404,
@@ -14234,14 +14234,14 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 69,
+     "linkResultado": true,
      "res": true,
-     "n": 5,
      "v": {
       "c": "",
-      "h": "LUANA BERNARDES GERMANO"
-     }
+      "h": "BELLA ADORNI MATEOS"
+     },
+     "oe": 69,
+     "n": 9
     },
     {
      "id": 14906,
