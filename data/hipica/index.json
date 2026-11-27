@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T11:32:42.542Z",
+ "atualizadoEm": "2026-11-27T12:12:05.249Z",
  "torneios": [
   {
    "id": 3404,
@@ -14200,10 +14200,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "NINA LEIBRUDER NOGUEIRA BARBIERI"
+      "h": "ALICE GEYER COUTO"
      },
      "oe": 50,
-     "n": 19
+     "n": 24
     },
     {
      "id": 14899,
@@ -14229,7 +14229,7 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 68
+     "oe": 69
     },
     {
      "id": 14906,
@@ -14242,7 +14242,7 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 29
+     "oe": 30
     },
     {
      "id": 14908,
@@ -14295,7 +14295,7 @@
      "oe": 56
     },
     {
-     "id": null,
+     "id": 14924,
      "numero": "19A",
      "nome": "FINAL",
      "desc": "1,45M SR/U25 - FINAL - 1,45M - SR/U25",
@@ -14304,7 +14304,8 @@
      "hora": "17:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 23
     },
     {
      "id": null,
@@ -14378,8 +14379,14 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
-     "oe": 139
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "DANTE BELLOTTI CONTINI"
+     },
+     "oe": 139,
+     "n": 1
     },
     {
      "id": 14932,
