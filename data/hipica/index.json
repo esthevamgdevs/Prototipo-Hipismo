@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T17:12:03.237Z",
+ "atualizadoEm": "2026-11-28T17:41:43.252Z",
  "torneios": [
   {
    "id": 3404,
@@ -14378,7 +14378,7 @@
      "oe": 6
     },
     {
-     "id": null,
+     "id": 14917,
      "numero": "24",
      "nome": "1,35M (FINAL)",
      "desc": "1,35M (FINAL) - 1,35M - AMT/JCT/MT/PJR",
@@ -14506,7 +14506,7 @@
      "hora": "13:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": true,
+     "linkResultado": false,
      "res": true,
      "v": {
       "c": "",
