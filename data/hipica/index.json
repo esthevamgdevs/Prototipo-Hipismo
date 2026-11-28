@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T13:21:43.300Z",
+ "atualizadoEm": "2026-11-28T14:02:25.145Z",
  "torneios": [
   {
    "id": 3404,
@@ -14310,14 +14310,14 @@
      "hora": null,
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 35,
+     "linkResultado": true,
      "res": true,
-     "n": 7,
      "v": {
       "c": "",
-      "h": "LEONARDO DE LIMA RIBEIRO"
-     }
+      "h": "VIVIANE PASSARELLI RAMIN SILVA"
+     },
+     "oe": 35,
+     "n": 12
     },
     {
      "id": 14904,
