@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T16:02:46.063Z",
+ "atualizadoEm": "2026-11-28T16:41:48.342Z",
  "torneios": [
   {
    "id": 3404,
@@ -14332,11 +14332,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "",
-      "h": "DAVID RITTNER GREGORI"
+      "c": "Giovana Cicci F. M.",
+      "h": "FORTIN KASMIR"
      },
      "oe": 57,
-     "n": 35
+     "n": 39
     },
     {
      "id": 14915,
@@ -14507,14 +14507,14 @@
      "hora": "13:30",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
-     "oe": 115,
+     "linkResultado": true,
      "res": true,
-     "n": 1,
      "v": {
       "c": "",
       "h": "CAROLINA DE ARRUDA BOTELHO MATTAR"
-     }
+     },
+     "oe": 115,
+     "n": 1
     },
     {
      "id": 14929,
