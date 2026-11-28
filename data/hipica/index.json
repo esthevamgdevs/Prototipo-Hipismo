@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T16:41:48.342Z",
+ "atualizadoEm": "2026-11-28T17:12:03.237Z",
  "torneios": [
   {
    "id": 3404,
@@ -14378,7 +14378,7 @@
      "oe": 6
     },
     {
-     "id": 14917,
+     "id": null,
      "numero": "24",
      "nome": "1,35M (FINAL)",
      "desc": "1,35M (FINAL) - 1,35M - AMT/JCT/MT/PJR",
@@ -14387,8 +14387,7 @@
      "hora": "14:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 21
+     "linkResultado": false
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3501"
@@ -14511,7 +14510,7 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "ALICE NAVARRO NISHIKAWA"
+      "h": "LUANA TARANTA TEZOLIN GARCIA"
      },
      "oe": 115,
      "n": 1
