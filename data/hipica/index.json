@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T14:02:25.145Z",
+ "atualizadoEm": "2026-11-28T14:41:34.655Z",
  "torneios": [
   {
    "id": 3404,
@@ -14518,7 +14518,7 @@
      "oe": 139
     },
     {
-     "id": null,
+     "id": 14933,
      "numero": "26",
      "nome": "MMR PRINC",
      "desc": "0,90M - 0,90M - MMR PRINC - 0,90M/JC PRIN - 0,90M/AM PRIN - 0,9M",
@@ -14527,7 +14527,8 @@
      "hora": "13:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false
+     "linkResultado": false,
+     "oe": 94
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3502"
