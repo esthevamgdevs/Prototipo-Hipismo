@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T12:42:24.997Z",
+ "atualizadoEm": "2026-11-28T13:21:43.300Z",
  "torneios": [
   {
    "id": 3404,
@@ -14295,10 +14295,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "LORENA NADER YUNES"
+      "h": "RAFAELLA MONNERAT BOIN"
      },
      "oe": 53,
-     "n": 41
+     "n": 46
     },
     {
      "id": 14900,
@@ -14364,6 +14364,19 @@
      "gp": false,
      "linkResultado": false,
      "oe": 6
+    },
+    {
+     "id": 14917,
+     "numero": "24",
+     "nome": "1,35M (FINAL)",
+     "desc": "1,35M (FINAL) - 1,35M - AMT/JCT/MT/PJR",
+     "altura": 1.35,
+     "dia": "2026-11-29",
+     "hora": "14:00",
+     "pista": "AREIA - Eduardo de Moraes Dantas",
+     "gp": false,
+     "linkResultado": false,
+     "oe": 21
     }
    ],
    "url": "https://www.fph.com.br/calendario/ListaProvas.aspx?ID=3501"
@@ -14463,7 +14476,7 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": true,
+     "linkResultado": false,
      "res": true,
      "v": {
       "c": "",
