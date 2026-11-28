@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-27T22:02:08.677Z",
+ "atualizadoEm": "2026-11-28T11:22:39.959Z",
  "torneios": [
   {
    "id": 3404,
@@ -14291,7 +14291,7 @@
      "hora": "08:30",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "oe": 53
     },
     {
