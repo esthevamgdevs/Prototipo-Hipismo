@@ -14292,7 +14292,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": true,
-     "oe": 53
+     "oe": 53,
+     "res": true,
+     "n": 2,
+     "v": {
+      "c": "",
+      "h": "CLARA CALIXTRO BORGES"
+     }
     },
     {
      "id": 14900,
