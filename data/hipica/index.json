@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T12:14:41.690Z",
+ "atualizadoEm": "2026-11-28T12:42:24.997Z",
  "torneios": [
   {
    "id": 3404,
@@ -14294,11 +14294,11 @@
      "linkResultado": true,
      "res": true,
      "v": {
-      "c": "Clara Calixtro B.",
-      "h": "DOBLE A"
+      "c": "",
+      "h": "JULIA SAORI TAKASHIMA"
      },
      "oe": 53,
-     "n": 25
+     "n": 27
     },
     {
      "id": 14900,
@@ -14467,7 +14467,7 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "ISADORA ABUKATER KARAN"
+      "h": "EDUARDO KIRSINGER FAIRBANKS RIBEIRO"
      },
      "oe": 88,
      "n": 1
