@@ -1,6 +1,6 @@
 {
  "fonte": "Federação Paulista de Hipismo (fph.com.br)",
- "atualizadoEm": "2026-11-28T14:41:34.655Z",
+ "atualizadoEm": "2026-11-28T15:21:55.426Z",
  "torneios": [
   {
    "id": 3404,
@@ -14329,8 +14329,14 @@
      "hora": "12:00",
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
-     "linkResultado": false,
-     "oe": 57
+     "linkResultado": true,
+     "res": true,
+     "v": {
+      "c": "",
+      "h": "JULIA TREVISAN RODRIGUES"
+     },
+     "oe": 57,
+     "n": 4
     },
     {
      "id": 14915,
@@ -14482,7 +14488,7 @@
      "hora": "09:00",
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
-     "linkResultado": false,
+     "linkResultado": true,
      "res": true,
      "v": {
       "c": "Graziella B.",
