@@ -14333,10 +14333,10 @@
      "res": true,
      "v": {
       "c": "",
-      "h": "RODRIGO OSTANELLO"
+      "h": "DAVID RITTNER GREGORI"
      },
      "oe": 57,
-     "n": 30
+     "n": 35
     },
     {
      "id": 14915,
@@ -14508,7 +14508,13 @@
      "pista": "AREIA - Nelson Pessoa Filho (Neco)",
      "gp": false,
      "linkResultado": false,
-     "oe": 115
+     "oe": 115,
+     "res": true,
+     "n": 1,
+     "v": {
+      "c": "",
+      "h": "CAROLINA DE ARRUDA BOTELHO MATTAR"
+     }
     },
     {
      "id": 14929,
