@@ -14311,7 +14311,13 @@
      "pista": "AREIA - Eduardo de Moraes Dantas",
      "gp": false,
      "linkResultado": false,
-     "oe": 35
+     "oe": 35,
+     "res": true,
+     "n": 2,
+     "v": {
+      "c": "",
+      "h": "JOYCE COLACIO DE OLIVERA"
+     }
     },
     {
      "id": 14904,
